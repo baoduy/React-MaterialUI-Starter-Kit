@@ -18,8 +18,31 @@ import Menu from '@material-ui/core/Menu';
 const reactLogo = require("./../assets/img/react_logo.svg");
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      auth: true,
+      anchorEl: null,
+    };
+  }
+
+  handleChange = (event, checked) => {
+    this.setState({ auth: checked });
+  };
+
+  handleMenu = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
+
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes } = this.props;
+    const { auth, anchorEl } = this.state;
+    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>

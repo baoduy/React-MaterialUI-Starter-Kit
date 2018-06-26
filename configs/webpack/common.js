@@ -18,7 +18,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["babel-preset-env"] //Preset used for env setup
+            presets: ["latest"] //Preset used for env setup
           }
         },
         exclude: /node_modules/,

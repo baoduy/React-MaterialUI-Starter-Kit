@@ -1,10 +1,13 @@
 {
   "presets": [
-    "env",
+    "latest", ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": [">0.25%", "not ie 10", "not op_mini all"]
+      }
+    }],
     "react",
-    "es2015",
-    "stage-3",
-    "es2017"
+    "stage-3"
   ],
   "plugins": [
     "react-hot-loader/babel", //Enables React code to work with HMR.
