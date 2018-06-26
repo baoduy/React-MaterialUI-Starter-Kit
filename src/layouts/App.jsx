@@ -29,7 +29,7 @@ class App extends React.Component {
 
   handleChange = (event, checked) => {
     this.setState({ auth: checked });
-  };
+  }
 
   handleMenu = event => {
     this.setState({ anchorEl: event.currentTarget });

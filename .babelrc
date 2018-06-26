@@ -1,15 +1,32 @@
 {
   "presets": [
-    "latest", ["env", {
+    ["env", {
       "modules": false,
       "targets": {
         "browsers": [">0.25%", "not ie 10", "not op_mini all"]
       }
     }],
-    "react",
+    "latest",
+    "react-latest",
     "stage-3"
   ],
   "plugins": [
+    ["@babel/plugin-transform-classes", {
+      "spec": true
+    }],
+    ["@babel/plugin-proposal-class-properties", {
+      "spec": true
+    }],
+    ["transform-object-rest-spread", {
+      "useBuiltIns": true
+    }],
+    ["transform-class-properties", {
+      "spec": true
+    }],
+    ["transform-es2015-arrow-functions", {
+      "spec": true
+    }],
+    "babel-plugin-transform-async-to-generator",
     "react-hot-loader/babel", //Enables React code to work with HMR.
     [
       "module-resolver", {
