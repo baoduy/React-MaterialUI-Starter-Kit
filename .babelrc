@@ -1,17 +1,15 @@
 {
   "presets": [
-    ["env", {
-      "modules": false
-    }], // webpack understands the native import syntax, and uses it for tree shaking
-    "react", // Transpile React components to JavaScript
+    "env",
+    "react",
     "es2015",
     "stage-3",
-    "babel-preset-es2015",
-    "babel-preset-es2016",
-    "babel-preset-es2017"
+    "babel-preset-env"
   ],
   "plugins": [
     "inline-react-svg",
+    "transform-class-properties",
+    "transform-decorators-legacy",
     "react-hot-loader/babel", // Enables React code to work with HMR.
     [
       "module-resolver", {
@@ -23,6 +21,13 @@
     "test": {
       "presets": ["env", "react"],
       "plugins": ["transform-es2015-modules-commonjs"]
+    },
+    "production": {
+      "plugins": [
+        [
+          "babel-plugin-webpack-alias"
+        ]
+      ]
     }
   }
 }

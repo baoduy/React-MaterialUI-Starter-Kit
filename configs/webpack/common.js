@@ -5,6 +5,7 @@ const {
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   resolve: {
@@ -14,7 +15,12 @@ module.exports = {
   module: {
     rules: [{
         test: /\.(js|jsx)$/,
-        use: ['babel-loader'],
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["babel-preset-env"] //Preset used for env setup
+          }
+        },
         exclude: /node_modules/,
       },
       {
@@ -52,9 +58,9 @@ module.exports = {
         }]
       },
       {
-        test: /\.(jpe?g|png|gif)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]',
+          'file-loader?hash=sha512&digest=hex&name=img/[name].[hash].[ext]',
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
         ],
       },
@@ -73,13 +79,22 @@ module.exports = {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url-loader?mimetype=application/octet-stream"
       },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader?mimetype=image/svg+xml"
-      }
+      // {
+      //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: "url-loader?mimetype=image/svg+xml"
+      // },
+      // {
+      //   test: /\.svg$/,
+      //   exclude: '/node_modules/',
+      //   loader: 'babel-loader!svg-react-loader'
+      // }
     ],
   },
   plugins: [
+    // new CopyWebpackPlugin([{
+    //   from: './assets/img',
+    //   to: __dirname + '/dist/assets/img'
+    // }]),
     new HtmlWebpackPlugin({
       template: 'index.html.ejs',
     }),
