@@ -4,13 +4,10 @@
     "react",
     "es2015",
     "stage-3",
-    "babel-preset-env"
+    "es2017"
   ],
   "plugins": [
-    "inline-react-svg",
-    "transform-class-properties",
-    "transform-decorators-legacy",
-    "react-hot-loader/babel", // Enables React code to work with HMR.
+    "react-hot-loader/babel", //Enables React code to work with HMR.
     [
       "module-resolver", {
         "root": ["./src"]
