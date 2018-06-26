@@ -1,5 +1,4 @@
 import React from 'react';
-
 const reactLogo = require("./../assets/img/react_logo.svg");
 
 class App extends React.PureComponent {
