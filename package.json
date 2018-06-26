@@ -35,6 +35,7 @@
     "test": "jest --watch --coverage --config=configs/jest.json"
   },
   "devDependencies": {
+    "@types/prop-types": "^15.5.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.2.0",
@@ -48,7 +49,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
-    "copy-webpack-plugin": "^4.5.1",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
@@ -74,8 +75,9 @@
   },
   "dependencies": {
     "@material-ui/core": "^1.2.3",
-    "classnames": "*",
-    "react": "^16.4.0",
+    "@material-ui/icons": "1.1.0",
+    "classnames": "2.2.6",
+    "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
   "postcss": {}
