@@ -1,32 +1,32 @@
 {
-  "name": "react-webpack-babel-starter",
-  "version": "0.1.0",
+  "name": "react-start-kit",
+  "version": "0.0.1",
   "description": "Starter kit for React, Webpack (with Hot Module Replacement) and Babel.",
   "keywords": [
     "react",
     "webpack",
     "babel",
-    "sass",
+    "less",
     "hmr",
     "starter",
     "boilerplate"
   ],
-  "author": "Viktor Persson",
+  "author": "Duy Hoang",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vikpe/react-webpack-babel-starter.git"
+    "url": "git+https://github.com/baoduy/React-Start-Kit.git"
   },
   "bugs": {
-    "url": "https://github.com/vikpe/react-webpack-babel-starter/issues"
+    "url": "https://github.com/baoduy/React-Start-Kit/issues"
   },
-  "homepage": "https://github.com/vikpe/react-webpack-babel-starter",
+  "homepage": "https://github.com/baoduy/React-Start-Kit",
   "scripts": {
     "build": "npm run clean-dist && webpack -p --config=configs/webpack/prod",
     "clean-dist": "rm -f -r -d dist",
-    "lint": "npm run lint:js && npm run lint:sass",
+    "lint": "npm run lint:js && npm run lint:less",
     "lint:js": "jshint",
-    "lint:sass": "stylelint ./src/**/*.scss",
+    "lint:less": "lesshint .src/assets/less",
     "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm run build && node express.js",
@@ -35,37 +35,38 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-jest": "^23.0.1",
+    "babel-jest": "^23.2.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-inline-react-svg": "^0.5.2",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "image-webpack-loader": "^4.3.0",
-    "jest": "^23.1.0",
+    "image-webpack-loader": "^4.3.1",
+    "jest": "^23.2.0",
     "jshint": "^2.9.5",
-    "node-sass": "^4.9.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
     "postcss-loader": "^2.1.5",
-    "react": "^16.4.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.4.0",
-    "react-hot-loader": "^4.3.0",
-    "sass-loader": "^7.0.3",
+    "react-hot-loader": "^4.3.3",
     "style-loader": "^0.21.0",
-    "stylelint": "^9.2.1",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-webpack-plugin": "^0.10.5",
-    "webpack": "^4.11.1",
-    "webpack-cli": "^3.0.3",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
     "webpack-dev-middleware": "^3.1.3",
     "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lesshint": "^5.1.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.1"
+  },
   "postcss": {}
 }

@@ -1,6 +1,8 @@
 // shared config (dev and prod)
-const {resolve} = require('path');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+const {
+  resolve
+} = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -9,8 +11,7 @@ module.exports = {
   },
   context: resolve(__dirname, '../../src'),
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
         exclude: /node_modules/,
@@ -19,18 +20,35 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          {loader: 'css-loader', options: {importLoaders: 1}},
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
           'postcss-loader',
         ],
       },
+      // {
+      //   test: /\.scss$/,
+      //   loaders: [
+      //     'style-loader',
+      //     {loader: 'css-loader', options: {importLoaders: 1}},
+      //     'postcss-loader',
+      //     'sass-loader',
+      //   ],
+      // },
       {
-        test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          {loader: 'css-loader', options: {importLoaders: 1}},
-          'postcss-loader',
-          'sass-loader',
-        ],
+        rules: [{
+          test: /\.less$/,
+          use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+          }, {
+            loader: "css-loader" // translates CSS into CommonJS
+          }, {
+            loader: "less-loader" // compiles Less to CSS
+          }]
+        }]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -42,8 +60,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new StyleLintPlugin(),
-    new HtmlWebpackPlugin({template: 'index.html.ejs',}),
+    new HtmlWebpackPlugin({
+      template: 'index.html.ejs',
+    }),
   ],
   externals: {
     'react': 'React',
