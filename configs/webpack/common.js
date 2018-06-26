@@ -4,6 +4,7 @@ const {
 } = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   resolve: {
@@ -51,22 +52,45 @@ module.exports = {
         }]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         loaders: [
           'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]',
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
         ],
       },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "file-loader",
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: "file-loader?name=fonts/[name].[ext]"
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url-loader?mimetype=application/octet-stream"
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url-loader?mimetype=image/svg+xml"
+      }
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html.ejs',
     }),
+    new webpack.ProvidePlugin({
+      "React": "react",
+      'ReactDOM': 'react-dom',
+    }),
   ],
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
+    'React': 'react',
+    'ReactDOM': 'react-dom',
   },
   performance: {
     hints: false,

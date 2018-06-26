@@ -1,14 +1,17 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import {AppContainer} from "react-hot-loader";
-import App from "components/App";
+import { AppContainer } from "react-hot-loader";
+import App from "./components/App";
+
+//Style-sheets
+import './assets/less/App.less';
 
 const rootEl = document.getElementById("root");
 
-const renderComponent = (Component) => {
+const renderComponent = Component => {
     ReactDOM.render(
         <AppContainer>
-            <Component/>
+            <Component />
         </AppContainer>,
         rootEl
     );

@@ -5,7 +5,10 @@
     }], // webpack understands the native import syntax, and uses it for tree shaking
     "react", // Transpile React components to JavaScript
     "es2015",
-    "stage-3"
+    "stage-3",
+    "babel-preset-es2015",
+    "babel-preset-es2016",
+    "babel-preset-es2017"
   ],
   "plugins": [
     "inline-react-svg",
