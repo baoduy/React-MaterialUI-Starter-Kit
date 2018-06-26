@@ -1,4 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import withStyles from "@material-ui/core/styles/withStyles";
+import appStyle from "./AppStyle";
+
 const reactLogo = require("./../assets/img/react_logo.svg");
 
 class App extends React.PureComponent {
@@ -13,4 +17,8 @@ class App extends React.PureComponent {
   }
 }
 
-export default App;
+App.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(appStyle)(App);
