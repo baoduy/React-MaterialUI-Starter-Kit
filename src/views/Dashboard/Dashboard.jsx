@@ -1,5 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import actions from './Actions';
+
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -31,20 +35,29 @@ import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
-import { bugs, website, server } from "variables/general";
-
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart
-} from "variables/charts";
-
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
-class Dashboard extends React.Component {
-  state = {
-    value: 0
+function mapStateToProps(state) {
+  return {
+    charts: state.charts,
+    general: state.general
   };
+}
+
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actionCreators, dispatch) };
+}
+
+@connect(mapStateToProps, mapDispatchToProps)
+class Dashboard extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      value: 0
+    };
+  }
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
