@@ -38,11 +38,9 @@ import CardFooter from "components/Card/CardFooter.jsx";
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
 function mapStateToProps(state) {
-  debugger;
-
   return {
-    charts: state.charts,
-    general: state.general
+    charts: state.charts.data || {},
+    general: state.general.data || {}
   };
 }
 
