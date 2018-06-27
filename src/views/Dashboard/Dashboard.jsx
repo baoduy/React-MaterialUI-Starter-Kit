@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import actions from './Actions';
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import actions from "./Actions";
 
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
@@ -38,6 +38,8 @@ import CardFooter from "components/Card/CardFooter.jsx";
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
 function mapStateToProps(state) {
+  debugger;
+
   return {
     charts: state.charts,
     general: state.general
@@ -45,9 +47,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actionCreators, dispatch) };
+  return { actions: bindActionCreators(actions, dispatch) };
 }
 
+//Connect component to Redux store.
 @connect(mapStateToProps, mapDispatchToProps)
 class Dashboard extends React.Component {
   constructor(props, context) {
@@ -58,6 +61,19 @@ class Dashboard extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { dailySalesChart, emailsSubscriptionChart, completedTasksChart } = this.props.charts;
+    const { bugs, website, server } = this.props.general;
+
+    //Check and load data from Server
+    if (!dailySalesChart || !emailsSubscriptionChart || !completedTasksChart)
+      this.props.actions.getChartData();
+
+    //Check and load data from Server
+    if (!bugs || !website || !server)
+      this.props.actions.getGeneral();
+  }
+
   handleChange = (_, value) => {
     this.setState({ value });
   };
@@ -65,8 +81,12 @@ class Dashboard extends React.Component {
   handleChangeIndex = index => {
     this.setState({ value: index });
   };
+
   render() {
     const { classes } = this.props;
+    const { dailySalesChart, emailsSubscriptionChart, completedTasksChart } = this.props.charts;
+    const { bugs, website, server } = this.props.general;
+
     return (
       <div>
         <Grid container>
@@ -149,13 +169,13 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="success">
-                <ChartistGraph
+                {dailySalesChart && <ChartistGraph
                   className="ct-chart"
                   data={dailySalesChart.data}
                   type="Line"
                   options={dailySalesChart.options}
                   listener={dailySalesChart.animation}
-                />
+                />}
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>Daily Sales</h4>
@@ -176,14 +196,14 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="warning">
-                <ChartistGraph
+                {emailsSubscriptionChart && <ChartistGraph
                   className="ct-chart"
                   data={emailsSubscriptionChart.data}
                   type="Bar"
                   options={emailsSubscriptionChart.options}
                   responsiveOptions={emailsSubscriptionChart.responsiveOptions}
                   listener={emailsSubscriptionChart.animation}
-                />
+                />}
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>Email Subscriptions</h4>
@@ -201,13 +221,13 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="danger">
-                <ChartistGraph
+                {completedTasksChart && <ChartistGraph
                   className="ct-chart"
                   data={completedTasksChart.data}
                   type="Line"
                   options={completedTasksChart.options}
                   listener={completedTasksChart.animation}
-                />
+                />}
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>Completed Tasks</h4>
@@ -233,33 +253,33 @@ class Dashboard extends React.Component {
                   tabName: "Bugs",
                   tabIcon: BugReport,
                   tabContent: (
-                    <Tasks
+                    bugs ? <Tasks
                       checkedIndexes={[0, 3]}
                       tasksIndexes={[0, 1, 2, 3]}
                       tasks={bugs}
-                    />
+                    /> : <p>No data</p>
                   )
                 },
                 {
                   tabName: "Website",
                   tabIcon: Code,
                   tabContent: (
-                    <Tasks
+                    website ? <Tasks
                       checkedIndexes={[0]}
                       tasksIndexes={[0, 1]}
                       tasks={website}
-                    />
+                    /> : <p>No data</p>
                   )
                 },
                 {
                   tabName: "Server",
                   tabIcon: Cloud,
                   tabContent: (
-                    <Tasks
+                    server ? <Tasks
                       checkedIndexes={[1]}
                       tasksIndexes={[0, 1, 2]}
                       tasks={server}
-                    />
+                    /> : <p>No data</p>
                   )
                 }
               ]}
