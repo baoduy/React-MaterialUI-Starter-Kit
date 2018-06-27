@@ -10,8 +10,8 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 * Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
 * Code quality (linting) for JavaScript and SASS/CSS.
 
-#Original Source Code
-The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages.
+# Original Source Code
+The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
 
 ## Installation
 1. Clone/download repo
