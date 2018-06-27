@@ -1,27 +1,31 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
+import { Provider } from 'react-redux';
 // import { AppContainer } from "react-hot-loader";
 // import App from "./layouts/Dashboard/Dashboard";
-
 //Style-sheets
-import './assets/less/App.less';
+import "./assets/less/App.less";
 import "./assets/css/material-dashboard-react.css?v=1.3.0";
 
 import indexRoutes from "routes/index.jsx";
+import storeCreator from "./store";
+import initialState from "./reducers/initialState";
 
 const hist = createBrowserHistory();
+const store = storeCreator(initialState);
 
 const renderComponent = () => {
-    ReactDOM.render(
+    ReactDOM.render(<Provider store={store}>
         <Router history={hist}>
             <Switch>
                 {indexRoutes.map((prop, key) => {
                     return <Route path={prop.path} component={prop.component} key={key} />;
                 })}
             </Switch>
-        </Router>,
+        </Router>
+    </Provider>,
         document.getElementById("root")
     );
 };

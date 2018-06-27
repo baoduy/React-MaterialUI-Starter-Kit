@@ -1,4 +1,5 @@
 # React Webpack Babel Starter
+
 Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 * **[React](https://facebook.github.io/react/)** (16.x)
@@ -8,24 +9,32 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 * [LESS](http://lesscss.org/)
 * [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
 * Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
-* Code quality (linting) for JavaScript and SASS/CSS.
+* Code quality (linting) for JavaScript and LESS/CSS.
+* [Redux](https://redux.js.org/) Manage the Component states.
+* [Redux-Thunk](https://github.com/reduxjs/redux-thunk) The middle-ware of Redux
+* [Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt) A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
+* ESLINT for Javascript and ReactJs
+* JSHINT standard configuration.
 
 # Original Source Code
+
 The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
 
 ## Installation
+
 1. Clone/download repo
 2. `npm install`
 
 ## Usage
-**Development**
+
+### Development
 
 `npm run start-dev`
 
 * Build app continously (HMR enabled)
 * App served @ `http://localhost:8080` 
 
-**Production**
+### Production
 
 `npm run start-prod`
 
@@ -34,19 +43,20 @@ The source had been clone from [vikpe/react-webpack-babel-starter](https://githu
 
 ---
 
-**All commands**
+### All commands
 
-| Command              | Description                                                             |
-| -------------------- | ----------------------------------------------------------------------- |
-| `npm run start-dev`  | Build app continously (HMR enabled) and serve @ `http://localhost:8080` |
-| `npm run start-prod` | Build app once (HMR disabled) and serve @ `http://localhost:3000`       |
-| `npm run build`      | Build app to `/dist/`                                                   |
-| `npm run test`       | Run tests                                                               |
-| `npm run lint`       | Run JavaScript and SASS linter                                          |
-| `npm run lint:js`    | Run JavaScript linter                                                   |
-| `npm run lint:sass`  | Run SASS linter                                                         |
-| `npm run start`      | (alias of `npm run start-dev`)                                          |
+| Command              | Description                                                              |
+| -------------------- | ------------------------------------------------------------------------ |
+| `npm run start-dev`  | Build app continuously (HMR enabled) and serve @ `http://localhost:8080` |
+| `npm run start-prod` | Build app once (HMR disabled) and serve @ `http://localhost:3000`        |
+| `npm run build`      | Build app to `/dist/`                                                    |
+| `npm run test`       | Run tests                                                                |
+| `npm run lint`       | Run JavaScript and LESS linter                                           |
+| `npm run lint:js`    | Run JavaScript linter                                                    |
+| `npm run lint:less`  | Run LESS linter                                                          |
+| `npm run start`      | (alias of `npm run start-dev`)                                           |
 
 ## See also
+
 * [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
 * [Isomorphic Webapp Starter](https://github.com/vikpe/isomorphic-webapp-starter)
