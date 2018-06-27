@@ -1,0 +1,51 @@
+{
+   "presets": [
+      [
+         "babel-preset-env",
+         {
+            "modules": false,
+            "targets": {
+               "browsers": [
+                  ">0.25%",
+                  "not ie 10",
+                  "not op_mini all"
+               ]
+            }
+         }
+      ],
+      "react-latest",
+      "stage-3"
+   ],
+   "plugins": [
+      "babel-plugin-transform-class-properties",
+      "babel-plugin-transform-class",
+      "babel-plugin-transform-async-to-generator",
+      "react-hot-loader/babel", //Enables React code to work with HMR.
+      [
+         "module-resolver",
+         {
+            "root": [
+               "./src"
+            ]
+         }
+      ]
+   ],
+   "env": {
+      "test": {
+         "presets": [
+            "env",
+            "react"
+         ],
+         "plugins": [
+            "transform-es2015-modules-commonjs"
+         ]
+      },
+      "production": {
+         "plugins": [
+            [
+               "babel-plugin-webpack-alias"
+            ]
+         ]
+      }
+   }
+}
