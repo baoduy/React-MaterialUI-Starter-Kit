@@ -12,7 +12,9 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 * Code quality (linting) for JavaScript and LESS/CSS.
 * [Redux](https://redux.js.org/) Manage the Component states.
 * [Redux-Thunk](https://github.com/reduxjs/redux-thunk) The middle-ware of Redux
-* [Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt) A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/). 
+* [Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt) A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
+* ESLINT for Javascript and ReactJs
+* JSHINT standard configuration.
 
 # Original Source Code
 

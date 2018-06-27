@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
     };
   }
 
-  handleChange = (event, value) => {
+  handleChange = (_, value) => {
     this.setState({ value });
   };
 
