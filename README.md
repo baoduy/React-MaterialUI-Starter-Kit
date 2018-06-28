@@ -6,15 +6,17 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 * **[Webpack](https://webpack.js.org/)** (4.x)
 * **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (4.x)
 * **[Babel](http://babeljs.io/)** (6.x)
-* [LESS](http://lesscss.org/)
+* **[LESS](http://lesscss.org/)**
 * [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
 * Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
 * Code quality (linting) for JavaScript and LESS/CSS.
-* [Redux](https://redux.js.org/) Manage the Component states.
-* [Redux-Thunk](https://github.com/reduxjs/redux-thunk) The middle-ware of Redux
-* [Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt) A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
+* **[Redux](https://redux.js.org/)** Manage the Component states.
+* **[Redux-Thunk](https://github.com/reduxjs/redux-thunk)** The middle-ware of Redux
+* **[Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt)** A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
 * ESLINT for Javascript and ReactJs
 * JSHINT standard configuration.
+
+- Convert CSS to LESS: http://kronus.me/cn/css2less/
 
 # Original Source Code
 

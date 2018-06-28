@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 // import App from "./layouts/Dashboard/Dashboard";
 //Style-sheets
 import "./assets/less/App.less";
-import "./assets/css/material-dashboard-react.css?v=1.3.0";
+import "./assets/less/material-dashboard-react.less";
 
 import indexRoutes from "routes/index.jsx";
 import storeCreator from "./store";
