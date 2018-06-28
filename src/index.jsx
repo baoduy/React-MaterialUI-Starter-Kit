@@ -17,24 +17,24 @@ const hist = createBrowserHistory();
 const store = storeCreator(initialState);
 
 const renderComponent = () => {
-    ReactDOM.render(<Provider store={store}>
-        <Router history={hist}>
-            <Switch>
-                {indexRoutes.map((prop, key) => {
-                    return <Route path={prop.path} component={prop.component} key={key} />;
-                })}
-            </Switch>
-        </Router>
-    </Provider>,
-        document.getElementById("root")
-    );
+   ReactDOM.render(<Provider store={store}>
+      <Router history={hist}>
+         <Switch>
+            {indexRoutes.map((prop, key) => {
+               return <Route path={prop.path} component={prop.component} key={key} />;
+            })}
+         </Switch>
+      </Router>
+   </Provider>,
+      document.getElementById("root")
+   );
 };
 
 renderComponent();
 
 // Hot Module Replacement API
 if (module.hot) {
-    module.hot.accept("./layouts/Dashboard/Dashboard", () => {
-        renderComponent();
-    });
+   module.hot.accept("./layouts/Dashboard/Dashboard", () => {
+      renderComponent();
+   });
 }
