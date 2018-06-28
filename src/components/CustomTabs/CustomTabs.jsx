@@ -12,6 +12,7 @@ import Tab from "@material-ui/core/Tab";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import customTabsStyle from "assets/jss/material-dashboard-react/components/customTabsStyle.jsx";
 
@@ -31,7 +32,8 @@ class CustomTabs extends React.Component {
       plainTabs,
       tabs,
       title,
-      rtlActive
+      rtlActive,
+      loading
     } = this.props;
     const cardTitle = classNames({
       [classes.cardTitle]: true,
@@ -76,6 +78,7 @@ class CustomTabs extends React.Component {
               );
             })}
           </Tabs>
+          {loading && <LinearProgress color="secondary" />}
         </CardHeader>
         <CardBody>
           {tabs.map((prop, key) => {
