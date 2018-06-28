@@ -5,8 +5,8 @@ import { Router, Route, Switch } from "react-router-dom";
 import { Provider } from 'react-redux';
 // import { AppContainer } from "react-hot-loader";
 // import App from "./layouts/Dashboard/Dashboard";
+
 //Style-sheets
-import "./assets/less/App.less";
 import "./assets/less/material-dashboard-react.less";
 
 import indexRoutes from "routes/index.jsx";

@@ -37,25 +37,22 @@ import CardFooter from "components/Card/CardFooter.jsx";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
-function mapStateToProps(state) {
+//Connect component to Redux store.
+@connect(state => {
   return {
     charts: state.charts.data || {},
-    general: state.general.data || {}
+    general: state.general.data || {},
+    loading: state.general.loading || state.charts.loading
   };
-}
-
-function mapDispatchToProps(dispatch) {
+}, dispatch => {
   return { actions: bindActionCreators(actions, dispatch) };
-}
-
-//Connect component to Redux store.
-@connect(mapStateToProps, mapDispatchToProps)
+})
 class Dashboard extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.state = {
-      value: 0
+      value: 0,
     };
   }
 
@@ -84,6 +81,7 @@ class Dashboard extends React.Component {
     const { classes } = this.props;
     const { dailySalesChart, emailsSubscriptionChart, completedTasksChart } = this.props.charts;
     const { bugs, website, server } = this.props.general;
+    const loading = this.props.loading;
 
     return (
       <div>
@@ -246,6 +244,7 @@ class Dashboard extends React.Component {
             <CustomTabs
               title="Tasks:"
               headerColor="primary"
+              loading={loading}
               tabs={[
                 {
                   tabName: "Bugs",
