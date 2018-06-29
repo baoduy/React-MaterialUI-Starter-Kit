@@ -1,39 +1,44 @@
 import {
-  container,
-  defaultFont,
   primaryColor,
-  defaultBoxShadow,
   infoColor,
   successColor,
   warningColor,
   dangerColor
-} from "assets/jss/material-dashboard-react.jsx";
+} from "../../assets/jss/material-dashboard-react.jsx";
+
+const titleType = {
+  padding: "12px",
+  paddingLeft: "25px",
+  color: "white",
+  fontWeight: "550"
+};
 
 const MessageBoxStyle = {
-  primary: {
+  dialog: {
+    minWidth: "30%"
+  },
+  content: {
+    marginTop: "10px"
+  },
+  confirm: {
     backgroundColor: primaryColor,
-    color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...titleType
   },
   info: {
     backgroundColor: infoColor,
-    color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...titleType
   },
   success: {
     backgroundColor: successColor,
-    color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...titleType
   },
   warning: {
     backgroundColor: warningColor,
-    color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...titleType
   },
   danger: {
     backgroundColor: dangerColor,
-    color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...titleType
   }
 };
 

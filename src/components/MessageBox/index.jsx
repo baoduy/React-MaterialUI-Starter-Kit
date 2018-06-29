@@ -6,33 +6,41 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import MessageBoxStyle from "./jss";
-
-export const MessageBoxType = {
-  SUCCESS: "success",
-  DANGER: "danger",
-  WARNING: "warning",
-  INFO: "info",
-  CONFIRM: "confirm"
-};
+import MessageBoxType from "./MessageBoxType";
+import { getTitleClasses, getTitle } from "./getTitleClasses";
 
 function MessageBox({
   type = MessageBoxType.INFO,
   open,
   message,
-  handleClose
+  handleClose,
+  classes,
+  ...other
 }) {
   return (
     <Dialog
+      classes={{ paper: classes.dialog }}
+      maxWidth={false}
       fullScreen={false}
       open={open}
       onClose={handleClose}
       aria-labelledby={`message-box-title-${type}`}
+      {...other}
     >
-      <DialogTitle id={`message-box-title-${type}`}>{title}</DialogTitle>
+      <Typography
+        variant="subheading"
+        className={getTitleClasses(type, classes)}
+        id={`message-box-title-${type}`}
+      >
+        {getTitle(type)}
+      </Typography>
       <DialogContent>
-        <DialogContentText>{message}</DialogContentText>
+        <DialogContentText className={classes.content}>
+          {message}
+        </DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">

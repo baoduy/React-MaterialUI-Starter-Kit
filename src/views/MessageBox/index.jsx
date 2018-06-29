@@ -8,7 +8,8 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
-import MessageBox, { MessageBoxType } from "components/MessageBox";
+import MessageBox from "components/MessageBox";
+import MessageBoxType from "components/MessageBox/MessageBoxType";
 
 const styles = {
   cardCategoryWhite: {
@@ -43,94 +44,113 @@ const styles = {
 class MessageBoxPage extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      tl: false,
-      tc: false,
-      tr: false,
-      bl: false,
-      bc: false,
-      br: false
+      message: "",
+      open: false,
+      type: ""
     };
   }
-  showMessageBox(type) {}
+
+  showMessageBox = type => {
+    this.setState({
+      message: `The Message box of ${type}`,
+      open: true,
+      type
+    });
+  };
 
   render() {
+    const { message, open, type } = this.state;
+
     return (
-      <Card>
-        <CardBody>
-          <Grid container justify="center">
-            <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
-              <h5>
-                <small>Click to view Message Box</small>
-              </h5>
-            </GridItem>
-          </Grid>
-          <Grid container justify="center">
-            <GridItem xs={12} sm={12} md={10} lg={8}>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={4}>
-                  <Button
-                    fullWidth
-                    color="primary"
-                    onClick={() =>
-                      this.showNotification(MessageBoxType.SUCCESS)
-                    }
-                  >
-                    Success
-                  </Button>
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <Button
-                    fullWidth
-                    color="primary"
-                    onClick={() => this.showNotification(MessageBoxType.DANGER)}
-                  >
-                    Danger
-                  </Button>
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <Button
-                    fullWidth
-                    color="primary"
-                    onClick={() =>
-                      this.showNotification(MessageBoxType.WARNING)
-                    }
-                  >
-                    Warning
-                  </Button>
-                </GridItem>
-              </Grid>
-            </GridItem>
-          </Grid>
-          <Grid container justify={"center"}>
-            <GridItem xs={12} sm={12} md={10} lg={8}>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={4}>
-                  <Button
-                    fullWidth
-                    color="primary"
-                    onClick={() => this.showNotification(MessageBoxType.INFO)}
-                  >
-                    Info
-                  </Button>
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <Button
-                    fullWidth
-                    color="primary"
-                    onClick={() =>
-                      this.showNotification(MessageBoxType.CONFIRM)
-                    }
-                  >
-                    Confirm
-                  </Button>
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4} />
-              </Grid>
-            </GridItem>
-          </Grid>
-        </CardBody>
-      </Card>
+      <div>
+        <MessageBox
+          message={message}
+          open={open}
+          type={type}
+          handleClose={() =>
+            this.setState({
+              open: false
+            })
+          }
+        />
+        <Card>
+          <CardBody>
+            <Grid container justify="center">
+              <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
+                <h5>
+                  <small>Click to view Message Box</small>
+                </h5>
+              </GridItem>
+            </Grid>
+            <Grid container justify="center">
+              <GridItem xs={12} sm={12} md={10} lg={8}>
+                <Grid container>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button
+                      fullWidth
+                      color="primary"
+                      onClick={() =>
+                        this.showMessageBox(MessageBoxType.SUCCESS)
+                      }
+                    >
+                      Success
+                    </Button>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button
+                      fullWidth
+                      color="primary"
+                      onClick={() => this.showMessageBox(MessageBoxType.DANGER)}
+                    >
+                      Danger
+                    </Button>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button
+                      fullWidth
+                      color="primary"
+                      onClick={() =>
+                        this.showMessageBox(MessageBoxType.WARNING)
+                      }
+                    >
+                      Warning
+                    </Button>
+                  </GridItem>
+                </Grid>
+              </GridItem>
+            </Grid>
+            <Grid container justify={"center"}>
+              <GridItem xs={12} sm={12} md={10} lg={8}>
+                <Grid container>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button
+                      fullWidth
+                      color="primary"
+                      onClick={() => this.showMessageBox(MessageBoxType.INFO)}
+                    >
+                      Info
+                    </Button>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button
+                      fullWidth
+                      color="primary"
+                      onClick={() =>
+                        this.showMessageBox(MessageBoxType.CONFIRM)
+                      }
+                    >
+                      Confirm
+                    </Button>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4} />
+                </Grid>
+              </GridItem>
+            </Grid>
+          </CardBody>
+        </Card>
+      </div>
     );
   }
 }
