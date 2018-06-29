@@ -20,10 +20,10 @@ const MessageBoxStyle = {
     minWidth: "40%",
     maxWidth: "65%"
   },
-  dialogContent:{ padding: "1px !important",margin: "1px !important" },
+  dialogContent: { padding: "1px !important", margin: "1px !important" },
   content: {
-    fontSize:"20px",
-    display:"table"
+    fontSize: "20px",
+    display: "table"
   },
   button: {
     minWidth: "80px"

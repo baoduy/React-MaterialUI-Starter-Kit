@@ -10,6 +10,7 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import MessageBox from "components/MessageBox";
 import MessageBoxType from "components/MessageBox/MessageBoxType";
+import Notification from "components/Notification";
 
 const styles = {
   cardCategoryWhite: {
@@ -48,8 +49,10 @@ class MessageBoxPage extends React.Component {
     this.state = {
       message: "",
       open: false,
-      icon:true,
-      type: ""
+      icon: true,
+      type: "",
+      notify: false,
+      clickedOn: ""
     };
   }
 
@@ -57,7 +60,7 @@ class MessageBoxPage extends React.Component {
     this.setState({
       message: `Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks. Message Box type ${type}`,
       open: true,
-      icon:type!==MessageBoxType.SUCCESS,
+      icon: type !== MessageBoxType.SUCCESS,
       type
     });
   };
@@ -66,14 +69,14 @@ class MessageBoxPage extends React.Component {
     const target = event.currentTarget || event.target;
 
     this.setState({
-      open: false
+      open: false,
+      notify: true,
+      clickedOn: target.value
     });
-
-    alert(target.value);
   };
 
   render() {
-    const { message, open, type,icon } = this.state;
+    const { message, open, type, icon, notify, clickedOn } = this.state;
 
     return (
       <div>
@@ -83,6 +86,12 @@ class MessageBoxPage extends React.Component {
           type={type}
           icon={icon}
           handler={this.dialogHandler}
+        />
+        <Notification
+          message={`Notification that the Message-Box just clicked on ${clickedOn}`}
+          type={type}
+          open={notify}
+          closeNotification={() => this.setState({ notify: false })}
         />
         <Card>
           <CardBody>
