@@ -30,13 +30,13 @@ function MessageBox({
       aria-labelledby={`message-box-title-${type}`}
       {...other}
     >
-      <Typography
+      <DialogTitle
         variant="subheading"
         className={getTitleClasses(type, classes)}
         id={`message-box-title-${type}`}
       >
         {getTitle(type)}
-      </Typography>
+      </DialogTitle>
       <DialogContent>
         <DialogContentText className={classes.content}>
           {message}

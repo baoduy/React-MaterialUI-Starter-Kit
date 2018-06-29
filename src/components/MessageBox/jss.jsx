@@ -7,8 +7,8 @@ import {
 } from "../../assets/jss/material-dashboard-react.jsx";
 
 const titleType = {
-  padding: "12px",
-  paddingLeft: "25px",
+  paddingTop: "12px",
+  paddingBottom: "12px",
   color: "white",
   fontWeight: "550"
 };
