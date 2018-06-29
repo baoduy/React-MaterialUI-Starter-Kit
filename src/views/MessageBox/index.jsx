@@ -48,20 +48,32 @@ class MessageBoxPage extends React.Component {
     this.state = {
       message: "",
       open: false,
+      icon:true,
       type: ""
     };
   }
 
   showMessageBox = type => {
     this.setState({
-      message: `The Message box of ${type}`,
+      message: `Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks. Message Box type ${type}`,
       open: true,
+      icon:type!==MessageBoxType.SUCCESS,
       type
     });
   };
 
+  dialogHandler = event => {
+    const target = event.currentTarget || event.target;
+
+    this.setState({
+      open: false
+    });
+
+    alert(target.value);
+  };
+
   render() {
-    const { message, open, type } = this.state;
+    const { message, open, type,icon } = this.state;
 
     return (
       <div>
@@ -69,11 +81,8 @@ class MessageBoxPage extends React.Component {
           message={message}
           open={open}
           type={type}
-          handleClose={() =>
-            this.setState({
-              open: false
-            })
-          }
+          icon={icon}
+          handler={this.dialogHandler}
         />
         <Card>
           <CardBody>

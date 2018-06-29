@@ -9,36 +9,59 @@ import {
 const titleType = {
   paddingTop: "12px",
   paddingBottom: "12px",
+  paddingLeft: "25px",
+  paddingRight: "25px",
   color: "white",
-  fontWeight: "550"
+  fontWeight: "600"
 };
 
 const MessageBoxStyle = {
   dialog: {
-    minWidth: "30%"
+    minWidth: "40%",
+    maxWidth: "65%"
   },
+  dialogContent:{ padding: "1px !important",margin: "1px !important" },
   content: {
-    marginTop: "10px"
+    fontSize:"20px",
+    display:"table"
+  },
+  button: {
+    minWidth: "80px"
   },
   confirm: {
     backgroundColor: primaryColor,
     ...titleType
   },
+  confirmIcon: {
+    color: primaryColor
+  },
   info: {
     backgroundColor: infoColor,
     ...titleType
+  },
+  infoIcon: {
+    color: infoColor
   },
   success: {
     backgroundColor: successColor,
     ...titleType
   },
+  successIcon: {
+    color: successColor
+  },
   warning: {
     backgroundColor: warningColor,
     ...titleType
   },
+  warningIcon: {
+    color: warningColor
+  },
   danger: {
     backgroundColor: dangerColor,
     ...titleType
+  },
+  dangerIcon: {
+    color: dangerColor
   }
 };
 

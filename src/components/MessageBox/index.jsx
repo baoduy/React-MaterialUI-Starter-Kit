@@ -1,54 +1,69 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import GridItem from "components/Grid/GridItem.jsx";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import MessageBoxStyle from "./jss";
 import MessageBoxType from "./MessageBoxType";
-import { getTitleClasses, getTitle } from "./getTitleClasses";
+import * as helper from "./helper";
 
 function MessageBox({
   type = MessageBoxType.INFO,
   open,
+  title,
   message,
-  handleClose,
+  handler,
+  icon,
+  okText,
+  cancelText,
   classes,
   ...other
 }) {
+   let finalIcon = undefined;
+if(icon===true||icon===undefined)
+   finalIcon = helper.getIcon(type, classes);
+else if(icon)
+   finalIcon = icon;
+
   return (
     <Dialog
       classes={{ paper: classes.dialog }}
       maxWidth={false}
       fullScreen={false}
       open={open}
-      onClose={handleClose}
       aria-labelledby={`message-box-title-${type}`}
       {...other}
     >
-      <DialogTitle
-        variant="subheading"
-        className={getTitleClasses(type, classes)}
+      <Typography
+        variant="title"
+        className={helper.getTitleClasses(type, classes)}
         id={`message-box-title-${type}`}
       >
-        {getTitle(type)}
-      </DialogTitle>
-      <DialogContent>
-        <DialogContentText className={classes.content}>
-          {message}
-        </DialogContentText>
+        {title || helper.getTitle(type)}
+      </Typography>
+      <DialogContent className={classes.dialogContent}>
+      <Grid className={classes.content} container  alignItems="baseline"
+            direction="row"
+            justify="flex-start">
+      {finalIcon &&
+         <GridItem xs={4} sm={2} md={2} style={{ padding: "0px"}}>
+         {finalIcon }
+              </GridItem>}
+
+              <GridItem>
+                 <p>
+              {message}
+              </p>
+              </GridItem>
+      </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose} color="primary">
-          Disagree
-        </Button>
-        <Button onClick={handleClose} color="primary" autoFocus>
-          Agree
-        </Button>
+        {helper.getActions(type, handler, classes, okText, cancelText)}
       </DialogActions>
     </Dialog>
   );
@@ -56,9 +71,12 @@ function MessageBox({
 
 MessageBox.propTypes = {
   type: PropTypes.string,
+  title: PropTypes.string,
   open: PropTypes.bool.isRequired,
   message: PropTypes.string.isRequired,
-  handleClose: PropTypes.func.isRequired
+  okText: PropTypes.string,
+  cancelText: PropTypes.string,
+  handler: PropTypes.func.isRequired
 };
 
 export default withStyles(MessageBoxStyle)(MessageBox);
