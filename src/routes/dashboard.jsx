@@ -6,6 +6,7 @@ import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
+import MessageBox from "@material-ui/icons/Message";
 import Unarchive from "@material-ui/icons/Unarchive";
 // core components/views
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
@@ -15,6 +16,7 @@ import Typography from "views/Typography/Typography.jsx";
 import Icons from "views/Icons/Icons.jsx";
 import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
+import MessageBoxPage from "views/MessageBox";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.jsx";
 
 const dashboardRoutes = [
@@ -66,6 +68,13 @@ const dashboardRoutes = [
     navbarName: "Notifications",
     icon: Notifications,
     component: NotificationsPage
+  },
+  {
+    path: "/messagebox",
+    sidebarName: "Message Box",
+    navbarName: "Message Box",
+    icon: MessageBox,
+    component: MessageBoxPage
   },
   {
     path: "/upgrade-to-pro",

@@ -1,4 +1,6 @@
 export default {
   charts: {},
-  general: {}
+  general: {},
+  messageBox: {},
+  notifications: []
 };

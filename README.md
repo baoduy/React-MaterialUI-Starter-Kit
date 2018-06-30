@@ -27,6 +27,8 @@ The source had been clone from [vikpe/react-webpack-babel-starter](https://githu
 1. Clone/download repo
 2. `npm install`
 
+## New Compoments
+1. **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
 ## Usage
 
 ### Development
