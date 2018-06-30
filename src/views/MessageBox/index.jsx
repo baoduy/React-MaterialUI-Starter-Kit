@@ -1,5 +1,8 @@
 /* eslint-disable */
 import React from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as actions from "./Actions";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
@@ -42,63 +45,72 @@ const styles = {
   }
 };
 
+//Connect component to Redux store.
+@connect(
+  state => {
+    return {
+      messageBox: state.messageBox || {},
+      notifications: state.notifications || []
+    };
+  },
+  dispatch => {
+    return { actions: bindActionCreators(actions, dispatch) };
+  }
+)
 class MessageBoxPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      message: "",
-      open: false,
-      icon: true,
-      type: "",
-      notify: false,
-      clickedOn: ""
+      messageBox: props.messageBox,
+      notifications: props.notifications
     };
   }
 
-  showMessageBox = type => {
+  componentWillReceiveProps(nextProps) {
     this.setState({
-      message: `Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks. Message Box type ${type}`,
-      open: true,
-      icon: type !== MessageBoxType.SUCCESS,
-      type
+      messageBox: nextProps.messageBox,
+      notifications: nextProps.notifications
     });
+  }
+
+  showMessageBox = type => {
+    this.props.actions.showMessage(
+      type,
+      `Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks. Message Box type ${type}`,
+      this.dialogHandler
+    );
   };
 
   dialogHandler = event => {
     const target = event.currentTarget || event.target;
-
-    this.setState({
-      open: false,
-      notify: true,
-      clickedOn: target.value
-    });
+    this.props.actions.notify(
+      MessageBoxType.INFO,
+      `The clicked button is ${target.value}`
+    );
   };
 
   render() {
-    const { message, open, type, icon, notify, clickedOn } = this.state;
+    const { messageBox, notifications } = this.state;
 
     return (
       <div>
-        <MessageBox
-          message={message}
-          open={open}
-          type={type}
-          icon={icon}
-          handler={this.dialogHandler}
-        />
-        <Notification
-          message={`Notification that the Message-Box just clicked on ${clickedOn}`}
-          type={type}
-          open={notify}
-          closeNotification={() => this.setState({ notify: false })}
-        />
+        <MessageBox {...messageBox} open={messageBox.open || false} />
+        <Notification dataSource={notifications} />
+
         <Card>
           <CardBody>
             <Grid container justify="center">
               <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
                 <h5>
-                  <small>Click to view Message Box</small>
+                  <small>
+                    Click to view Message Box. This demo is using Redux store to
+                    manage the state and callback of Message. You can please a
+                    MessageBox in your App level and using Redux store and
+                    actions to share to all children components. The limitation
+                    is only 1 message can be shown at the time. However that is
+                    enough for MessageBox purpose.
+                  </small>
                 </h5>
               </GridItem>
             </Grid>
@@ -162,7 +174,19 @@ class MessageBoxPage extends React.Component {
                       Confirm
                     </Button>
                   </GridItem>
-                  <GridItem xs={12} sm={12} md={4} />
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button
+                      fullWidth
+                      color="danger"
+                      onClick={() =>
+                        this.dialogHandler({
+                          target: { value: "Notification" }
+                        })
+                      }
+                    >
+                      Show Notify
+                    </Button>
+                  </GridItem>
                 </Grid>
               </GridItem>
             </Grid>

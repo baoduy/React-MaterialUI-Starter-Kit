@@ -34,7 +34,7 @@ function MessageBox({
       classes={{ paper: classes.dialog }}
       maxWidth={false}
       fullScreen={false}
-      open={open}
+      open={open || false}
       aria-labelledby={`message-box-title-${type}`}
     >
       <Typography
@@ -73,11 +73,11 @@ function MessageBox({
 MessageBox.propTypes = {
   type: PropTypes.string,
   title: PropTypes.string,
-  open: PropTypes.bool.isRequired,
-  message: PropTypes.string.isRequired,
+  open: PropTypes.bool,
+  message: PropTypes.string,
   okText: PropTypes.string,
   cancelText: PropTypes.string,
-  handler: PropTypes.func.isRequired
+  handler: PropTypes.func
 };
 
 export default withStyles(MessageBoxStyle)(MessageBox);
