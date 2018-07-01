@@ -58,7 +58,6 @@
         "identity-obj-proxy": "^3.0.0",
         "image-webpack-loader": "^4.3.0",
         "jest": "^23.2.0",
-        "jshint": "^2.9.5",
         "less": "^3.0.4",
         "less-loader": "^4.1.0",
         "lesshint": "^5.1.0",
