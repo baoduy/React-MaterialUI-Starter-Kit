@@ -26,7 +26,7 @@ The source had been clone from [vikpe/react-webpack-babel-starter](https://githu
 
 ## 1. async/await
 
-It is using babel-regenerator-runtime to transform the async and await functions to Promis.
+It is using `babel-regenerator-runtime` to transform the async and await functions to Promise.
 
 ```javascript
 //Transform from
