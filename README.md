@@ -22,6 +22,32 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
 
+# Support Features
+
+## 1. async/await
+
+It is using babel-regenerator-runtime to transform the async and await functions to Promis.
+
+```javascript
+//Transform from
+function getDataFromServer() {
+  return Promise((resolve, reject) => {
+    loadDataFromServer()
+      .then(data => resolve(data))
+      .catch(error => reject(error));
+  });
+}
+
+//To
+async function getDataFromServer() {
+  try {
+    return await loadDataFromServer();
+  } catch (error) {
+    throw error;
+  }
+}
+```
+
 ## Installation
 
 1.  Clone/download repo
