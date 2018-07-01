@@ -7,7 +7,7 @@ export default function Notification({
   displayIn = 6000,
   closeNotification
 }) {
-  let count = dataSource.lengh - 1 || 0;
+  let count = dataSource.length - 1 || 0;
   return (
     <div>
       {dataSource.map((p, i) => {
@@ -16,6 +16,7 @@ export default function Notification({
             key={p.id || i}
             {...p}
             displayIn={displayIn + count-- * 2000}
+            autoClose={i === 0}
             closeNotification={() => {
               if (p.closeNotification) p.closeNotification();
               if (closeNotification) closeNotification(p);

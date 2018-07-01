@@ -12,8 +12,9 @@ class NotificationItem extends React.Component {
   }
 
   setTimeout = props => {
-    const { closeNotification, open, displayIn } = props;
-    if (open) this.Timeout = setTimeout(closeNotification, displayIn);
+    const { closeNotification, open, autoClose, displayIn } = props;
+    if (open === true && autoClose === true && displayIn > 1000)
+      this.timeout = setTimeout(closeNotification, displayIn);
   };
 
   componentDidMount() {
@@ -22,10 +23,6 @@ class NotificationItem extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setTimeout(nextProps);
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.Timeout);
   }
 
   render() {
@@ -61,12 +58,14 @@ class NotificationItem extends React.Component {
 
 NotificationItem.defaultProps = {
   place: "tr", //Top right
-  displayIn: 6000
+  displayIn: 6000,
+  autoClose: true
 };
 
 NotificationItem.propTypes = {
   type: PropTypes.string,
   displayIn: PropTypes.number,
+  autoClose: PropTypes.bool,
   message: PropTypes.string.isRequired,
   closeNotification: PropTypes.func.isRequired
 };

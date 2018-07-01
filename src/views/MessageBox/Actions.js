@@ -1,16 +1,21 @@
 import * as actionTypes from "./ActionTypes";
 
-function createMessageId() {
-    return new Date().getTime();
-}
+const createMessageId = () => new Date().getTime();
+
 export function showMessage(type, message, handler) {
     return function (dispatch) {
+        const id = createMessageId();
+
         const callback = event => {
             try {
                 if (handler) handler(event);
             } finally {
                 dispatch({
-                    type: actionTypes.HIDE_MESSAGE_BOX
+                    type: actionTypes.HIDE_MESSAGE_BOX,
+                    payload: {
+                        id,
+                        type
+                    }
                 });
             }
         };
@@ -18,10 +23,9 @@ export function showMessage(type, message, handler) {
         dispatch({
             type: actionTypes.SHOW_MESSAGE_BOX,
             payload: {
-                id: createMessageId(),
+                id,
                 type,
                 message,
-                open: true,
                 handler: callback
             }
         });
@@ -37,7 +41,7 @@ export function notify(type, message) {
                 type: actionTypes.HIDE_NOTIFICATION,
                 payload: {
                     id,
-                    message: ""
+                    type
                 }
             });
         };
@@ -48,7 +52,6 @@ export function notify(type, message) {
                 id,
                 type,
                 message,
-                open: true,
                 closeNotification: callback
             }
         });
