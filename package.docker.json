@@ -1,0 +1,33 @@
+{
+    "name": "react-start-kit",
+    "version": "0.0.1",
+    "description": "Starter kit for React, Webpack (with Hot Module Replacement) and Babel.",
+    "keywords": [
+        "react",
+        "webpack",
+        "babel",
+        "less",
+        "hmr",
+        "starter",
+        "boilerplate",
+        "material-ui",
+        "dashboard"
+    ],
+    "author": "Duy Hoang",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/baoduy/React-Start-Kit.git"
+    },
+    "bugs": {
+        "url": "https://github.com/baoduy/React-Start-Kit/issues"
+    },
+    "homepage": "https://github.com/baoduy/React-Start-Kit",
+    "scripts": {
+        "start-prod": "node express.js",
+        "start": "npm run start-prod"
+    },
+    "dependencies": {
+        "express": "^4.16.3"
+    }
+}
