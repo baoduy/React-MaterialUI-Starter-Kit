@@ -13,8 +13,9 @@ class NotificationItem extends React.Component {
 
   setTimeout = props => {
     const { closeNotification, open, autoClose, displayIn } = props;
-    if (open === true && autoClose === true && displayIn > 1000)
+    if (open === true && autoClose === true && displayIn > 0) {
       this.timeout = setTimeout(closeNotification, displayIn);
+    }
   };
 
   componentDidMount() {
