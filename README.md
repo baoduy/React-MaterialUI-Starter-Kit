@@ -2,21 +2,21 @@
 
 Minimal starter kit with hot module replacement (HMR) for rapid development.
 
-* **[React](https://facebook.github.io/react/)** (16.x)
-* **[Webpack](https://webpack.js.org/)** (4.x)
-* **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (4.x)
-* **[Babel](http://babeljs.io/)** (6.x)
-* **[LESS](http://lesscss.org/)**
-* [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
-* Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
-* Code quality (linting) for JavaScript and LESS/CSS.
-* **[Redux](https://redux.js.org/)** Manage the Component states.
-* **[Redux-Thunk](https://github.com/reduxjs/redux-thunk)** The middle-ware of Redux
-* **[Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt)** A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
-* ESLINT for Javascript and ReactJs
-* JSHINT standard configuration.
+- **[React](https://facebook.github.io/react/)** (16.x)
+- **[Webpack](https://webpack.js.org/)** (4.x)
+- **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (4.x)
+- **[Babel](http://babeljs.io/)** (6.x)
+- **[LESS](http://lesscss.org/)**
+- [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
+- Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
+- Code quality (linting) for JavaScript and LESS/CSS.
+- **[Redux](https://redux.js.org/)** Manage the Component states.
+- **[Redux-Thunk](https://github.com/reduxjs/redux-thunk)** The middle-ware of Redux
+- **[Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt)** A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
+- ESLINT for Javascript and ReactJs
+- JSHINT standard configuration.
 
-- Convert CSS to LESS: http://kronus.me/cn/css2less/
+* Convert CSS to LESS: http://kronus.me/cn/css2less/
 
 # Original Source Code
 
@@ -24,28 +24,39 @@ The source had been clone from [vikpe/react-webpack-babel-starter](https://githu
 
 ## Installation
 
-1. Clone/download repo
-2. `npm install`
+1.  Clone/download repo
+2.  `npm install`
 
 ## New Compoments
-1. **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
+
+1.  **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
+
 ## Usage
 
 ### Development
 
 `npm run start-dev`
 
-* Build app continously (HMR enabled)
-* App served @ `http://localhost:8080` 
+- Build app continously (HMR enabled)
+- App served @ `http://localhost:8080`
 
 ### Production
 
 `npm run start-prod`
 
-* Build app once (HMR disabled)
-* App served @ `http://localhost:3000`
+- Build app once (HMR disabled)
+- App served @ `http://localhost:3000`
 
 ---
+
+### Docker Support
+
+1.  Build Image `docker build`.
+2.  Build and Tag the image `docker image build . -t [YOUR_ID]/react-start-kit:latest` exmple `docker image build . -t baoduy2412/react-start-kit:latest`.
+3.  Push inage to Docker hub `docker push [YOUR_ID]/react-start-kit:latest` example `docker push baoduy2412/react-start-kit:latest`.
+
+The application will running port 3000 in Docker.
+The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-start-kit/).
 
 ### All commands
 
@@ -62,5 +73,5 @@ The source had been clone from [vikpe/react-webpack-babel-starter](https://githu
 
 ## See also
 
-* [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
-* [Isomorphic Webapp Starter](https://github.com/vikpe/isomorphic-webapp-starter)
+- [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
+- [Isomorphic Webapp Starter](https://github.com/vikpe/isomorphic-webapp-starter)

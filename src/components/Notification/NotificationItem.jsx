@@ -39,7 +39,7 @@ class NotificationItem extends React.Component {
       ...other
     } = this.props;
 
-    let finalIcon = undefined;
+    let finalIcon;
     if (icon === true || icon === undefined) finalIcon = helper.getIcon(type);
     else if (icon) finalIcon = icon;
 
