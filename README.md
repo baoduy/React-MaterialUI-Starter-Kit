@@ -56,7 +56,7 @@ The source had been clone from [vikpe/react-webpack-babel-starter](https://githu
 3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest` example `docker push baoduy2412/react-materialui-started-kit:latest`.
 
 The application will running port 3000 in Docker.
-The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-start-kit/).
+The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
 
 ### All commands
 
