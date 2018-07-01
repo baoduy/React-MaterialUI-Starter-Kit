@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Item from "./NotificationItem";
-import NotificationType from "./NotificationType";
-import * as helper from "./helper";
 
 export default function Notification({
   dataSource,
   displayIn = 6000,
   closeNotification
 }) {
+  let count = dataSource.lengh - 1 || 0;
   return (
     <div>
       {dataSource.map((p, i) => {
@@ -16,7 +15,7 @@ export default function Notification({
           <Item
             key={p.id || i}
             {...p}
-            displayIn={displayIn}
+            displayIn={displayIn + count-- * 2000}
             closeNotification={() => {
               if (p.closeNotification) p.closeNotification();
               if (closeNotification) closeNotification(p);
