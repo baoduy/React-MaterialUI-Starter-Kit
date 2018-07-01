@@ -8,7 +8,7 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 - **[Babel](http://babeljs.io/)** (6.x)
 - **[LESS](http://lesscss.org/)**
 - [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
-- Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
+- **Image loading/minification using [Image Loader](https://github.com/vanwagonet/img-loader)**
 - Code quality (linting) for JavaScript and LESS/CSS.
 - **[Redux](https://redux.js.org/)** Manage the Component states.
 - **[Redux-Thunk](https://github.com/reduxjs/redux-thunk)** The middle-ware of Redux
