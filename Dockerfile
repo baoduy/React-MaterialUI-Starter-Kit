@@ -14,6 +14,7 @@ COPY --from=0 /app/dist ./dist
 COPY --from=0 /app/express.js ./express.js
 COPY --from=0 /app/package.docker.json ./package.json
 RUN npm install
-RUN npm start
 
 EXPOSE 3000
+
+CMD [ "npm", "start" ]
