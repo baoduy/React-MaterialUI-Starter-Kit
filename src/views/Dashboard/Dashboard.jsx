@@ -56,17 +56,17 @@ class Dashboard extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { dailySalesChart, emailsSubscriptionChart, completedTasksChart } = this.props.charts;
     const { bugs, website, server } = this.props.general;
 
     //Check and load data from Server
     if (!dailySalesChart || !emailsSubscriptionChart || !completedTasksChart)
-      this.props.actions.getChartData();
+      await this.props.actions.getChartData();
 
     //Check and load data from Server
     if (!bugs || !website || !server)
-      this.props.actions.getGeneral();
+      await this.props.actions.getGeneral();
   }
 
   handleChange = (_, value) => {

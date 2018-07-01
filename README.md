@@ -8,7 +8,7 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 - **[Babel](http://babeljs.io/)** (6.x)
 - **[LESS](http://lesscss.org/)**
 - [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
-- Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
+- **Image loading/minification using [Image Loader](https://github.com/vanwagonet/img-loader)**
 - Code quality (linting) for JavaScript and LESS/CSS.
 - **[Redux](https://redux.js.org/)** Manage the Component states.
 - **[Redux-Thunk](https://github.com/reduxjs/redux-thunk)** The middle-ware of Redux
@@ -21,6 +21,32 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 # Original Source Code
 
 The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
+
+# Support Features
+
+## 1. async/await
+
+It is using babel-regenerator-runtime to transform the async and await functions to Promis.
+
+```javascript
+//Transform from
+function getDataFromServer() {
+  return Promise((resolve, reject) => {
+    loadDataFromServer()
+      .then(data => resolve(data))
+      .catch(error => reject(error));
+  });
+}
+
+//To
+async function getDataFromServer() {
+  try {
+    return await loadDataFromServer();
+  } catch (error) {
+    throw error;
+  }
+}
+```
 
 ## Installation
 
@@ -52,11 +78,11 @@ The source had been clone from [vikpe/react-webpack-babel-starter](https://githu
 ### Docker Support
 
 1.  Build Image `docker build`.
-2.  Build and Tag the image `docker image build . -t [YOUR_ID]/react-start-kit:latest` exmple `docker image build . -t baoduy2412/react-start-kit:latest`.
-3.  Push inage to Docker hub `docker push [YOUR_ID]/react-start-kit:latest` example `docker push baoduy2412/react-start-kit:latest`.
+2.  Build and Tag the image `docker image build . -t [YOUR_ID]/react-materialui-started-kit:latest` exmple `docker image build . -t baoduy2412/react-materialui-started-kit:latest`.
+3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest` example `docker push baoduy2412/react-materialui-started-kit:latest`.
 
 The application will running port 3000 in Docker.
-The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-start-kit/).
+The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
 
 ### All commands
 

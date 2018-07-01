@@ -1,3 +1,4 @@
+# Build The Node Js Application
 FROM node:latest as build
 WORKDIR app
 
@@ -6,15 +7,14 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM node:latest as runtime
-WORKDIR app
+# Hosting the dist folder as static side.
+FROM kyma/docker-nginx as runtime
+WORKDIR /var/www
+#Copy the required files from Build.
+COPY --from=0 /app/dist ./
 
-COPY --from=0 /app/configs ./configs
-COPY --from=0 /app/dist ./dist
-COPY --from=0 /app/express.js ./express.js
-COPY --from=0 /app/package.docker.json ./package.json
-RUN npm install
-
+#Expose the port.
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+#The endpoint of Image.
+CMD "nginx"
