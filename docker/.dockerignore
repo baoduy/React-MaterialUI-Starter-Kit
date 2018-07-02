@@ -1,0 +1,9 @@
+.git
+.vscode
+.DS_Store
+node_modules
+dist
+tests
+.gitattributes
+.gitignore
+README.md

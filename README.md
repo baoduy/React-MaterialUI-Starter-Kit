@@ -78,12 +78,16 @@ async function getDataFromServer() {
 ### Docker Support
 
 1.  Build Image `docker build`.
-2.  Build and Tag the image `docker image build . -t [YOUR_ID]/react-materialui-started-kit:latest` exmple `docker image build . -t baoduy2412/react-materialui-started-kit:latest`.
+2.  Build and Tag the image `docker image build ../ -t [YOUR_ID]/react-materialui-started-kit:latest` exmple `docker image build ../ -t baoduy2412/react-materialui-started-kit:latest`.
 3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest` example `docker push baoduy2412/react-materialui-started-kit:latest`.
 
 The application will running port 3000 in Docker.
 The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
 
+**If you are using Docker the `Docker` folder in this project can be deleted without any impact.**
+
+### IIS Support
+The file 
 ### All commands
 
 | Command              | Description                                                              |
