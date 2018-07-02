@@ -8,20 +8,20 @@ COPY . .
 RUN npm run build
 
 # Hosting the dist folder as static side.
-FROM kyma/docker-nginx as runtime
-WORKDIR /var/www
+FROM nginx as runtime
+WORKDIR /usr/share/nginx/html
+#WORKDIR /var/www
 #Copy the required files from Build.
 COPY --from=0 /app/dist ./
-
-#Enable gzip. Comment below lines if you dont want Gzip.
-RUN gzip on;
-RUN gzip_vary on;
-RUN gzip_min_length 10240;
-RUN gzip_proxied expired no-cache no-store private auth;
-RUN gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/xml;
+COPY --from=0 /app/docker/nginx.conf /etc/nginx/conf.d/nginx.conf
 
 #Expose the port.
-EXPOSE 3000
+EXPOSE 80
 
 #The endpoint of Image.
-CMD "nginx"
+#The NOTE from https://hub.docker.com/_/nginx/
+#If you add a custom CMD in the Dockerfile, be sure to include -g daemon off; 
+# in the CMD in order for nginx to stay in the foreground, so that Docker can track the process properly
+# (otherwise your container will stop immediately after starting)!
+CMD ["nginx", "-g daemon off;"]
+#CMD "nginx"
