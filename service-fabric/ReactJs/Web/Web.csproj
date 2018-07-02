@@ -21,26 +21,17 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
-    <ItemGroup>
-      <DistFiles Include="wwwroot/**; ../../dist/**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
+   <!--Copy all file in dist folder to wwwroot folder--> 
+    <Exec Command=" xcopy ..\..\..\dist wwwroot /s/y" />
   </Target>
 
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-    <ItemGroup>
-      <DistFiles Include="wwwroot/**; ../../dist/**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
+    <!--Copy all file in dist folder to wwwroot folder-->
+    <Exec Command=" xcopy ..\..\..\dist wwwroot /s/y" />
   </Target>
 
 </Project>
