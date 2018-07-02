@@ -87,7 +87,14 @@ The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/
 **If you are using Docker the `Docker` folder in this project can be deleted without any impact.**
 
 ### IIS Support
-The file 
+
+The `Web.config` file had been added for IIS hosting purpose. When build the application this file will be copied to dist folder automatically and make the package ready for IIS.
+
+However if you are not hosting this app in IIS just simply delete this file.or leave if there. There is no impact to the application.
+
+### Azure Service Fabric Support
+
+
 ### All commands
 
 | Command              | Description                                                              |
