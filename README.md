@@ -93,7 +93,12 @@ The `Web.config` file had been added for IIS hosting purpose. When build the app
 However if you are not hosting this app in IIS just simply delete this file.or leave if there. There is no impact to the application.
 
 ### Azure Service Fabric Support
+All stuffs in `service-fabric` folder are using for **[Azure Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)** hosting purpose. 
+The project inside this folder will copy all files in dist folder and host as a static side in Azure Service Fabric.
 
+Defiantly, If you are not using **Azure Service Fabric**. This folder shall be deleted.
+
+>**Please note that the Gzip had been enabled for all supports above**
 
 ### All commands
 

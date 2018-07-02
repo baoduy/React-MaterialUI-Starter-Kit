@@ -6,15 +6,15 @@ module.exports = {
   },
   extends: "eslint:recommended",
   parserOptions: {
+    ecmaVersion: 6,
+    sourceType: "module",
     ecmaFeatures: {
-      experimentalObjectRestSpread: true,
       jsx: true
-    },
-    sourceType: "module"
+    }
   },
   plugins: ["react"],
   rules: {
-    indent: "none",
+    indent: "warn",
     "linebreak-style": ["warn", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"]
