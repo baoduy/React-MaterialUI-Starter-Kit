@@ -30,12 +30,12 @@
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' ">
    <!--Copy all file in dist folder to wwwroot folder--> 
-    <Exec Command=" xcopy ..\..\..\dist wwwroot /s /y /i" />
+    <Exec Command=" xcopy ..\..\..\..\dist wwwroot /s /y /i" />
   </Target>
 
   <Target Name="PublishRunWebpack" Condition=" '$(Configuration)' == 'Release' " AfterTargets="ComputeFilesToPublish">
     <!--Copy all file in dist folder to wwwroot folder-->
-    <Exec Command=" xcopy ..\..\..\dist wwwroot /s /y /i" />
+    <Exec Command=" xcopy ..\..\..\..\dist wwwroot /s /y /i" />
   </Target>
 
 </Project>
