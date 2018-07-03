@@ -121,5 +121,4 @@ Defiantly, If you are not using **Azure Service Fabric**. This folder shall be d
 
 ## See also
 
-- [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
-- [Isomorphic Webapp Starter](https://github.com/vikpe/isomorphic-webapp-starter)
+- [React-Bootstrap-Started-Kit](https://github.com/baoduy/React-Bootstrap-Started-Kit)
