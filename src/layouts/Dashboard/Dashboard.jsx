@@ -15,8 +15,8 @@ import Sidebar from "components/Sidebar/Sidebar.jsx";
 import dashboardRoutes from "routes/dashboard.jsx";
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
 
-import image from "assets/img/sidebar-2.jpg";
-import logo from "assets/img/react_logo.svg";
+import image from "../../assets/img/sidebar-2.jpg";
+import logo from "../../assets/img/react_logo.svg";
 
 const switchRoutes = (
   <Switch>
@@ -77,8 +77,8 @@ class App extends React.Component {
               <div className={classes.container}>{switchRoutes}</div>
             </div>
           ) : (
-              <div className={classes.map}>{switchRoutes}</div>
-            )}
+            <div className={classes.map}>{switchRoutes}</div>
+          )}
           {this.getRoute() ? <Footer /> : null}
         </div>
       </div>

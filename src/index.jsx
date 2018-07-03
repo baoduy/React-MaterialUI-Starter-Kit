@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-// import { AppContainer } from "react-hot-loader";
-// import App from "./layouts/Dashboard/Dashboard";
 
 //Style-sheets
 import "./assets/less/material-dashboard-react.less";

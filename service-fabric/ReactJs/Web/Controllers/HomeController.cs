@@ -14,6 +14,7 @@ namespace Web.Controllers
             //Enable Reserved Proxy - handle transform
             if (this.Request.PathBase == Startup._reservedProxyUrl)
             {
+                //The result can be cache for subsequence use.
                 var str = System.IO.File.ReadAllText(indexFile.Replace("~/","wwwroot/"));
                 //src
                 str = str.Replace("src=\"/", $"src =\"{Startup._reservedProxyUrl}/")
