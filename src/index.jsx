@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
-import { Provider } from 'react-redux';
+import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 // import { AppContainer } from "react-hot-loader";
 // import App from "./layouts/Dashboard/Dashboard";
 
@@ -13,28 +13,38 @@ import indexRoutes from "routes/index.jsx";
 import storeCreator from "./store";
 import initialState from "./reducers/initialState";
 
-const hist = createBrowserHistory();
+//Update for Reserved proxy
+const base =
+  document.getElementsByTagName("base")[0].getAttribute("href") || "/";
+console.info(`base URL ${base}`);
+
+const hist = createBrowserHistory({ basename: base });
 const store = storeCreator(initialState);
 
 const renderComponent = () => {
-   ReactDOM.render(<Provider store={store}>
-      <Router history={hist}>
-         <Switch>
+  ReactDOM.render(
+    <Provider store={store}>
+      <BrowserRouter basename={base}>
+        <Router history={hist}>
+          <Switch>
             {indexRoutes.map((prop, key) => {
-               return <Route path={prop.path} component={prop.component} key={key} />;
+              return (
+                <Route path={prop.path} component={prop.component} key={key} />
+              );
             })}
-         </Switch>
-      </Router>
-   </Provider>,
-      document.getElementById("root")
-   );
+          </Switch>
+        </Router>
+      </BrowserRouter>
+    </Provider>,
+    document.getElementById("root")
+  );
 };
 
 renderComponent();
 
 // Hot Module Replacement API
 if (module.hot) {
-   module.hot.accept("./layouts/Dashboard/Dashboard", () => {
-      renderComponent();
-   });
+  module.hot.accept("./layouts/Dashboard/Dashboard", () => {
+    renderComponent();
+  });
 }

@@ -11,7 +11,7 @@ namespace Web
 {
     public class Startup
     {
-        private readonly string _reservedProxyUrl = "/ReactJs/Web";
+        public const string _reservedProxyUrl = "/ReactJs/Web";
         //Uncomment this incase you use it.
         //public Startup(IConfiguration configuration)
         //{
@@ -57,12 +57,19 @@ namespace Web
             //app.UseDefaultFiles();
             app.UseStaticFiles(new StaticFileOptions
             {
+                //Apply Cache for Static Files
                 OnPrepareResponse = ctx =>
-                {
-                    //Apply Cache for Static Files
-                    var age = new TimeSpan(7, 0, 0, 0);
-                    ctx.Context.Response.Headers.Append("Cache-Control", $"public,max-age={age.TotalSeconds}");
-                }
+                    ctx.Context.Response.Headers.Append("Cache-Control", $"public,max-age={new TimeSpan(7, 0, 0, 0).TotalSeconds}")
+            });
+
+            //Enable Reserved Proxy - handle transform
+            app.Use(async (context, next) =>
+            {
+                //Apply the Preserved Proxy if accessing by the Service Fabric Reserved Proxy
+                if (context.Request.Headers.TryGetValue("X-Forwarded-Host", out var url) && url.ToString().Contains("19081"))
+                    context.Request.PathBase = _reservedProxyUrl;
+
+                await next();
             });
 
             app.UseMvc(routes =>
@@ -74,16 +81,6 @@ namespace Web
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
-            });
-
-            //Enable Reserved Proxy - handle transform
-            app.Use((context, next) =>
-            {
-                //Apply the Preserved Proxy if accessing by the Service Fabric Reserved Proxy
-                if (context.Request.Headers.TryGetValue("X-Forwarded-Host", out var url) && url.ToString().Contains("19081"))
-                    context.Request.PathBase = _reservedProxyUrl;
-
-                return next();
             });
         }
     }
