@@ -14,7 +14,7 @@ import initialState from "./reducers/initialState";
 window._base = document.getElementsByTagName("base")[0].getAttribute("href");
 console.info(`base URL ${window._base}`);
 
-const hist = createBrowserHistory();
+const hist = createBrowserHistory({ basename: window._base });
 const store = storeCreator(initialState);
 
 const renderComponent = () => {

@@ -13,6 +13,7 @@ import CardAvatar from "components/Card/CardAvatar.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
+import { getImgUrl } from "../../commons/commonFuncs";
 import avatar from "assets/img/faces/marc.jpg";
 
 const styles = {
@@ -153,7 +154,7 @@ function UserProfile(props) {
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={e => e.preventDefault()}>
-                <img src={avatar} alt="..." />
+                <img src={getImgUrl(avatar)} alt="..." />
               </a>
             </CardAvatar>
             <CardBody profile>
