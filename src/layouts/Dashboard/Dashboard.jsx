@@ -54,7 +54,6 @@ class App extends React.Component {
     }
   }
   render() {
-    debugger;
     const { classes, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>
