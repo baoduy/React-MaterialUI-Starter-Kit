@@ -3,13 +3,12 @@ const { resolve } = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
-//const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   resolve: {
     extensions: [".js", ".jsx"]
   },
-  context: resolve(__dirname, "../../src"),
+  context: resolve(__dirname, "../../../src"),
   module: {
     rules: [
       {
@@ -32,15 +31,6 @@ module.exports = {
           "postcss-loader"
         ]
       },
-      // {
-      //   test: /\.scss$/,
-      //   loaders: [
-      //     'style-loader',
-      //     {loader: 'css-loader', options: {importLoaders: 1}},
-      //     'postcss-loader',
-      //     'sass-loader',
-      //   ],
-      // },
       {
         rules: [
           {
@@ -87,25 +77,12 @@ module.exports = {
         test: /web.config/,
         loader: "file-loader?name=[name].[ext]"
       }
-
-      // {
-      //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      //   loader: "url-loader?mimetype=image/svg+xml"
-      // },
-      // {
-      //   test: /\.svg$/,
-      //   exclude: '/node_modules/',
-      //   loader: 'babel-loader!svg-react-loader'
-      // }
     ]
   },
   plugins: [
-    // new CopyWebpackPlugin([{
-    //   from: './assets/img',
-    //   to: __dirname + '/dist/assets/img'
-    // }]),
     new HtmlWebpackPlugin({
-      template: "index.html.ejs"
+      template: "index.html.ejs",
+      favicon: "favicon.ico"
     }),
     new webpack.ProvidePlugin({
       React: "react",

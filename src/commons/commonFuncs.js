@@ -1,8 +1,10 @@
 //correct URL for Reserved proxy
-export function getImgUrl(url) {
-  if(typeof url!=="string")
-    return url;
-  
+export function getImgSrc(url) {
+  if (typeof url !== "string") return url;
   const base = window._base;
-  return base && base!=="/" ? `${base}/${url}` : url;
+
+  if (!base || base === "/") return url;
+  if (url.indexOf(base) >= 0) return url;
+
+  return `${base}/${url}`;
 }

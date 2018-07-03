@@ -15,9 +15,9 @@ import Sidebar from "components/Sidebar/Sidebar.jsx";
 import dashboardRoutes from "routes/dashboard.jsx";
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
 
-import { getImgUrl } from "../../commons/commonFuncs";
+import { getImgSrc } from "../../commons/commonFuncs";
 //Import may not wokring with Reserved proxy so using require instead.
-const image = require("../../assets/img/sidebar-2.jpg");
+const image = getImgSrc(require("../../assets/img/sidebar-2.jpg"));
 const logo = require("../../assets/img/react_logo.svg");
 
 const switchRoutes = (
@@ -61,7 +61,7 @@ class App extends React.Component {
           routes={dashboardRoutes}
           logoText={"Creative Tim"}
           logo={logo}
-          image={getImgUrl(image)}
+          image={image}
           handleDrawerToggle={this.handleDrawerToggle}
           open={this.state.mobileOpen}
           color="blue"

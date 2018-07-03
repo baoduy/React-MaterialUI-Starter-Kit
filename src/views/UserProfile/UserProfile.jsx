@@ -13,8 +13,8 @@ import CardAvatar from "components/Card/CardAvatar.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
-import { getImgUrl } from "../../commons/commonFuncs";
-import avatar from "assets/img/faces/marc.jpg";
+import { getImgSrc } from "../../commons/commonFuncs";
+const avatar = getImgSrc(require("assets/img/faces/marc.jpg"));
 
 const styles = {
   cardCategoryWhite: {
@@ -154,7 +154,7 @@ function UserProfile(props) {
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={e => e.preventDefault()}>
-                <img src={getImgUrl(avatar)} alt="..." />
+                <img src={avatar} alt="..." />
               </a>
             </CardAvatar>
             <CardBody profile>
