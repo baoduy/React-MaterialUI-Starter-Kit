@@ -60,12 +60,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         use: ["file-loader?name=img/[name].[ext]", "img-loader"]
-        // loaders: [
-        //   "file-loader?hash=sha512&digest=hex&name=img/[name].[ext]",
-        //   "image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false"
-        // ]
+      },
+      {
+        test: /\.(svg)$/i,
+        use: ["url-loader?mimetype=image/svg+xml", "img-loader"]
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
