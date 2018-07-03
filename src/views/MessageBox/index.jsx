@@ -85,7 +85,7 @@ class MessageBoxPage extends React.Component {
   dialogHandler = event => {
     const target = event.currentTarget || event.target;
     this.props.actions.notify(
-      MessageBoxType.INFO,
+      MessageBoxType.WARNING,
       `The clicked button is ${target.value}`
     );
   };

@@ -1,5 +1,65 @@
 {
-   "cSpell.words": [
-      "labelledby"
-   ]
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "cSpell.userWords": [
+    "labelledby",
+    "Commentable",
+    "Hoang",
+    "Pluralsight",
+    "Schroders",
+    "Unmount",
+    "devtool",
+    "dropdown",
+    "gitattributes",
+    "gitignore",
+    "glyphicon",
+    "hammerjs",
+    "haspopup",
+    "linq",
+    "minification",
+    "polyfill",
+    "postbuild",
+    "prebuild",
+    "prestart",
+    "resizable",
+    "restructuredtext",
+    "selectpicker",
+    "toastr",
+    "toolbelt",
+    "webapi",
+    "welldone"
+  ],
+  "cSpell.language": "en",
+  "cSpell.enabledLanguageIds": [
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "go",
+    "handlebars",
+    "javascript",
+    "javascriptreact",
+    "latex",
+    "markdown",
+    "php",
+    "plaintext",
+    "python",
+    "restructuredtext",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yml"
+  ],
+  "editor.tabSize": 2,
+  "editor.autoIndent": false,
+  "typescript.check.npmIsInstalled": false,
+  "explorer.confirmDelete": true,
+  "explorer.confirmDragAndDrop": true,
+  "git.autofetch": true,
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "cSpell.words": [
+    "mimetype",
+    "woff"
+  ]
 }
