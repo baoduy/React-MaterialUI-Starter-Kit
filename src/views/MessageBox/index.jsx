@@ -11,7 +11,6 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
-import MessageBox from "components/MessageBox";
 import MessageBoxType from "components/MessageBox/MessageBoxType";
 
 const styles = {
@@ -46,11 +45,7 @@ const styles = {
 
 //Connect component to Redux store.
 @connect(
-  state => {
-    return {
-      messageBox: state.messageBox || {}
-    };
-  },
+  undefined,
   dispatch => {
     return { actions: bindActionCreators(actions, dispatch) };
   }
@@ -93,8 +88,6 @@ class MessageBoxPage extends React.Component {
 
     return (
       <div>
-        <MessageBox {...messageBox} open={messageBox.open || false} />
-
         <Card>
           <CardBody>
             <Grid container justify="center">

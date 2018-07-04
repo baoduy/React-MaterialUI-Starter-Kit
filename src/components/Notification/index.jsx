@@ -5,6 +5,7 @@ import Item from "./NotificationItem";
 export default function Notification({
   dataSource,
   displayIn = 6000,
+  subsequentDelay = 1000,
   closeNotification
 }) {
   let count = dataSource.length - 1 || 0;
@@ -15,7 +16,7 @@ export default function Notification({
           <Item
             key={p.id || i}
             {...p}
-            displayIn={displayIn + count-- * 2000}
+            displayIn={displayIn + count-- * subsequentDelay}
             autoClose={i === 0}
             closeNotification={() => {
               if (p.closeNotification) p.closeNotification();

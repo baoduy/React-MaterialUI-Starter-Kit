@@ -23,7 +23,7 @@ const store = storeCreator(initialState);
 const renderComponent = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <ExceptionHandler global>
+      <ExceptionHandler global disabled>
         <BrowserRouter basename={window._base || "/"}>
           <Router history={hist}>
             <Switch>
