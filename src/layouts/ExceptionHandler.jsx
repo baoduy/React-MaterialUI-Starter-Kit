@@ -8,6 +8,8 @@ import { getErrorMessage } from "../commons/exceptionService";
 import NotificationType from "../components/Notification/NotificationType";
 
 //Connect component to Redux store.
+//This one is a component however we are bot put it into components folder
+//Because it needs to connect to Redux actions to send the notification.
 @connect(
   undefined,
   dispatch => {
