@@ -1,8 +1,11 @@
+/* [eslint] no-console:off */
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
+import ExceptionHandler from "./layouts/Dashboard/ExceptionHandler";
+
 //Style-sheets
 import "./assets/less/material-dashboard-react.less";
 
@@ -20,17 +23,23 @@ const store = storeCreator(initialState);
 const renderComponent = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter basename={window._base || "/"}>
-        <Router history={hist}>
-          <Switch>
-            {indexRoutes.map((prop, key) => {
-              return (
-                <Route path={prop.path} component={prop.component} key={key} />
-              );
-            })}
-          </Switch>
-        </Router>
-      </BrowserRouter>
+      <ExceptionHandler global>
+        <BrowserRouter basename={window._base || "/"}>
+          <Router history={hist}>
+            <Switch>
+              {indexRoutes.map((prop, key) => {
+                return (
+                  <Route
+                    path={prop.path}
+                    component={prop.component}
+                    key={key}
+                  />
+                );
+              })}
+            </Switch>
+          </Router>
+        </BrowserRouter>
+      </ExceptionHandler>
     </Provider>,
     document.getElementById("root")
   );

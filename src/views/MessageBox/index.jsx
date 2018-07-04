@@ -13,7 +13,6 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import MessageBox from "components/MessageBox";
 import MessageBoxType from "components/MessageBox/MessageBoxType";
-import Notification from "components/Notification";
 
 const styles = {
   cardCategoryWhite: {
@@ -49,8 +48,7 @@ const styles = {
 @connect(
   state => {
     return {
-      messageBox: state.messageBox || {},
-      notifications: state.notifications || []
+      messageBox: state.messageBox || {}
     };
   },
   dispatch => {
@@ -96,7 +94,6 @@ class MessageBoxPage extends React.Component {
     return (
       <div>
         <MessageBox {...messageBox} open={messageBox.open || false} />
-        <Notification dataSource={notifications} />
 
         <Card>
           <CardBody>
@@ -114,6 +111,7 @@ class MessageBoxPage extends React.Component {
                 </h5>
               </GridItem>
             </Grid>
+
             <Grid container justify="center">
               <GridItem xs={12} sm={12} md={10} lg={8}>
                 <Grid container>
@@ -151,6 +149,7 @@ class MessageBoxPage extends React.Component {
                 </Grid>
               </GridItem>
             </Grid>
+
             <Grid container justify={"center"}>
               <GridItem xs={12} sm={12} md={10} lg={8}>
                 <Grid container>
@@ -188,6 +187,20 @@ class MessageBoxPage extends React.Component {
                     </Button>
                   </GridItem>
                 </Grid>
+              </GridItem>
+            </Grid>
+
+            <Grid container justify="center">
+              <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
+                <Button
+                  fullWidth
+                  color="danger"
+                  onClick={() => {
+                    throw "Exception from Message Box View";
+                  }}
+                >
+                  Throw Exception
+                </Button>
               </GridItem>
             </Grid>
           </CardBody>
