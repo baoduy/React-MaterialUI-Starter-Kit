@@ -5,11 +5,7 @@
       {
         "modules": false,
         "targets": {
-          "browsers": [
-            ">0.25%",
-            "not ie 10",
-            "not op_mini all"
-          ]
+          "browsers": [">0.25%", "not ie 10", "not op_mini all"]
         }
       }
     ],
@@ -24,28 +20,17 @@
     [
       "module-resolver",
       {
-        "root": [
-          "./src"
-        ]
+        "root": ["./src"]
       }
     ]
   ],
   "env": {
     "test": {
-      "presets": [
-        "env",
-        "react"
-      ],
-      "plugins": [
-        "transform-es2015-modules-commonjs"
-      ]
+      "presets": ["env", "react-latest"],
+      "plugins": ["transform-es2015-modules-commonjs"]
     },
     "production": {
-      "plugins": [
-        [
-          "babel-plugin-webpack-alias"
-        ]
-      ]
+      "plugins": [["babel-plugin-webpack-alias"]]
     }
   }
 }

@@ -1,9 +1,7 @@
-/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
-// creates a beautiful scrollbar
-import PerfectScrollbar from "perfect-scrollbar";
+
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -15,8 +13,10 @@ import Sidebar from "components/Sidebar/Sidebar.jsx";
 import dashboardRoutes from "routes/dashboard.jsx";
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
 
-import image from "assets/img/sidebar-2.jpg";
-import logo from "assets/img/react_logo.svg";
+import { getImgSrc } from "../commons/commonFuncs";
+//Import may not working with Reserved proxy so using require instead.
+const image = getImgSrc(require("../assets/img/sidebar-2.jpg"));
+const logo = require("../assets/img/react_logo.svg");
 
 const switchRoutes = (
   <Switch>
@@ -29,9 +29,14 @@ const switchRoutes = (
 );
 
 class App extends React.Component {
-  state = {
-    mobileOpen: false
-  };
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      mobileOpen: false
+    };
+  }
+
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
@@ -39,18 +44,15 @@ class App extends React.Component {
     return this.props.location.pathname !== "/maps";
   }
   componentDidMount() {
-    if (navigator.platform.indexOf("Win") > -1) {
-      const ps = new PerfectScrollbar(this.refs.mainPanel);
-    }
+    if (navigator.platform.indexOf("Win") <= -1) return;
   }
   componentDidUpdate(e) {
-    if (e.history.location.pathname !== e.location.pathname) {
-      this.refs.mainPanel.scrollTop = 0;
-      if (this.state.mobileOpen) {
-        this.setState({ mobileOpen: false });
-      }
-    }
+    if (e.history.location.pathname === e.location.pathname) return;
+
+    this.refs.mainPanel.scrollTop = 0;
+    if (this.state.mobileOpen) this.setState({ mobileOpen: false });
   }
+
   render() {
     const { classes, ...rest } = this.props;
     return (
@@ -77,8 +79,8 @@ class App extends React.Component {
               <div className={classes.container}>{switchRoutes}</div>
             </div>
           ) : (
-              <div className={classes.map}>{switchRoutes}</div>
-            )}
+            <div className={classes.map}>{switchRoutes}</div>
+          )}
           {this.getRoute() ? <Footer /> : null}
         </div>
       </div>

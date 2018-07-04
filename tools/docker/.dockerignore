@@ -7,3 +7,4 @@ tests
 .gitattributes
 .gitignore
 README.md
+tools/service-fabric

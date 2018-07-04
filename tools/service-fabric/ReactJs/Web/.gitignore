@@ -28,7 +28,7 @@ Obj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
-/wwwroot/dist/
+/wwwroot/*
 
 /yarn.lock
 
@@ -234,6 +234,3 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
-
-#Ignore all files in wwwroot
-wwwroot

@@ -78,8 +78,10 @@ async function getDataFromServer() {
 ### Docker Support
 
 1.  Build Image `docker build`.
-2.  Build and Tag the image `docker image build ../ -t [YOUR_ID]/react-materialui-started-kit:latest` exmple `docker image build ../ -t baoduy2412/react-materialui-started-kit:latest`.
-3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest` example `docker push baoduy2412/react-materialui-started-kit:latest`.
+2.  Build and Tag the image `docker image build . -f tools/docker/Dockerfile -t [YOUR_ID]/react-materialui-started-kit:latest`.
+    Example `docker image build . -f tools/docker/Dockerfile -t baoduy2412/react-materialui-started-kit:latest`.
+3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest`
+    Example `docker push baoduy2412/react-materialui-started-kit:latest`.
 
 The application will running port 3000 in Docker.
 The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
@@ -93,6 +95,7 @@ The `Web.config` file had been added for IIS hosting purpose. When build the app
 However if you are not hosting this app in IIS just simply delete this file.or leave if there. There is no impact to the application.
 
 ### Azure Service Fabric Support
+
 All stuffs in `service-fabric` folder are using for **[Azure Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)** hosting purpose.
 The project inside this folder will copy all files in dist folder and host as a static side in Azure Service Fabric.
 I'm using .Net Core 2.0 to make the project is flexible enough to host on any platforms.
@@ -101,7 +104,7 @@ When build the Service Fabric application it will copy all files in `dist` folde
 
 Defiantly, If you are not using **Azure Service Fabric**. This folder shall be deleted.
 
->**Please note that the Gzip had been enabled for all supports above**
+> **Please note that the Gzip had been enabled for all supports above**
 
 ### All commands
 

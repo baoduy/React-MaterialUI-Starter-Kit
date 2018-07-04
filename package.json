@@ -1,5 +1,5 @@
 {
-  "name": "React-MaterialUI-Started-Kit",
+  "name": "react-materialui-started-kit",
   "version": "0.0.1",
   "description": "Starter kit for React, Material-UI, Webpack (with Hot Module Replacement) and Babel.",
   "keywords": [
@@ -24,15 +24,15 @@
   },
   "homepage": "https://github.com/baoduy/React-MaterialUI-Started-Kit",
   "scripts": {
-    "build": "webpack -p --progress --config=configs/webpack/prod",
+    "build": "webpack -p --progress --config=tools/configs/webpack/prod",
     "clean-dist": "rm -f -r -d dist",
     "lint": "npm run lint:js && npm run lint:less",
     "lint:js": "jshint",
     "lint:less": "lesshint ./src/assets/less",
     "start": "npm run start-dev",
-    "start-dev": "webpack-dev-server --config=configs/webpack/dev",
+    "start-dev": "webpack-dev-server --config=tools/configs/webpack/dev",
     "start-prod": "npm run build && node express.js",
-    "test": "jest --watch --coverage --config=configs/jest.json"
+    "test": "jest --watch --coverage --config=tools/configs/jest.json"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.3",
@@ -56,7 +56,7 @@
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "imagemin": "^5.0.0",
+    "imagemin": "5.3.1",
     "img-loader": "^3.0.0",
     "jest": "^23.2.0",
     "less": "^3.0.4",
@@ -75,7 +75,7 @@
     "webpack-merge": "^4.1.3"
   },
   "dependencies": {
-    "@material-ui/core": "^1.2.3",
+    "@material-ui/core": "1.3.1",
     "@material-ui/icons": "1.1.0",
     "@types/googlemaps": "3.30.10",
     "@types/markerclustererplus": "2.1.33",

@@ -1,8 +1,10 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     commonjs: true,
-    es6: true
+    es6: true,
+    jest: true
   },
   extends: "eslint:recommended",
   parserOptions: {
@@ -14,9 +16,10 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    indent: "warn",
+    indent: "off",
     "linebreak-style": ["warn", "unix"],
     quotes: ["error", "double"],
-    semi: ["error", "always"]
+    semi: ["error", "always"],
+    "no-unused-vars": "off"
   }
 };
