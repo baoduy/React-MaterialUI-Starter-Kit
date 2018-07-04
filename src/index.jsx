@@ -21,25 +21,27 @@ console.info(`base URL ${window._base}`);
 const hist = createBrowserHistory({ basename: window._base });
 const store = storeCreator(initialState);
 
+const createRouter = () => {
+  return (
+    <BrowserRouter basename={window._base || "/"}>
+      <Router history={hist}>
+        <Switch>
+          {indexRoutes.map((prop, key) => {
+            return (
+              <Route path={prop.path} component={prop.component} key={key} />
+            );
+          })}
+        </Switch>
+      </Router>
+    </BrowserRouter>
+  );
+};
+
 const renderComponent = () => {
   ReactDOM.render(
     <Provider store={store}>
       <ExceptionHandler global disabled={false}>
-        <BrowserRouter basename={window._base || "/"}>
-          <Router history={hist}>
-            <Switch>
-              {indexRoutes.map((prop, key) => {
-                return (
-                  <Route
-                    path={prop.path}
-                    component={prop.component}
-                    key={key}
-                  />
-                );
-              })}
-            </Switch>
-          </Router>
-        </BrowserRouter>
+        {createRouter()}
         <MessageAndNotificationView />
       </ExceptionHandler>
     </Provider>,
