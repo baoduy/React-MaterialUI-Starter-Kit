@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-// creates a beautiful scrollbars
-import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -14,7 +12,6 @@ import Sidebar from "components/Sidebar/Sidebar.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
-import MessageAndNotificationView from ".MessageAndNotificationView";
 
 import { getImgSrc } from "../commons/commonFuncs";
 //Import may not working with Reserved proxy so using require instead.
@@ -86,7 +83,6 @@ class App extends React.Component {
           )}
           {this.getRoute() ? <Footer /> : null}
         </div>
-        <MessageAndNotificationView />
       </div>
     );
   }

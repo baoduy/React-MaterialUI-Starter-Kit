@@ -4,7 +4,8 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import ExceptionHandler from "./layouts/Dashboard/ExceptionHandler";
+import ExceptionHandler from "./layouts/ExceptionHandler";
+import MessageAndNotificationView from "./layouts/MessageAndNotificationView";
 
 //Style-sheets
 import "./assets/less/material-dashboard-react.less";
@@ -23,7 +24,7 @@ const store = storeCreator(initialState);
 const renderComponent = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <ExceptionHandler global disabled>
+      <ExceptionHandler global disabled={false}>
         <BrowserRouter basename={window._base || "/"}>
           <Router history={hist}>
             <Switch>
@@ -39,6 +40,7 @@ const renderComponent = () => {
             </Switch>
           </Router>
         </BrowserRouter>
+        <MessageAndNotificationView />
       </ExceptionHandler>
     </Provider>,
     document.getElementById("root")
@@ -49,7 +51,7 @@ renderComponent();
 
 // Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept("./layouts/Dashboard/Dashboard", () => {
+  module.hot.accept("./layouts/Dashboard", () => {
     renderComponent();
   });
 }
