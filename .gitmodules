@@ -1,3 +1,6 @@
 [submodule "sm-react-docker-nginx"]
 	path = sm-react-docker-nginx
 	url = https://github.com/baoduy/sm-react-docker-nginx
+[submodule "sm-react-service-fabric"]
+	path = sm-react-service-fabric
+	url = https://github.com/baoduy/sm-react-service-fabric
