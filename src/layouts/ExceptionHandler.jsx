@@ -1,3 +1,4 @@
+/*eslint no-console: ["error", { allow: ["warn", "error"] }] */
 import React from "react";
 import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";

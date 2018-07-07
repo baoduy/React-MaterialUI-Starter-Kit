@@ -18,11 +18,11 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 * Convert CSS to LESS: http://kronus.me/cn/css2less/
 
-# Original Source Code
+## Original Source Code
 
 The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
 
-# Support Features
+## Support Features
 
 ## 1. async/await
 
@@ -78,8 +78,8 @@ async function getDataFromServer() {
 ### Docker Support
 
 1.  Build Image `docker build`.
-2.  Build and Tag the image `docker image build . -f tools/docker/Dockerfile -t [YOUR_ID]/react-materialui-started-kit:latest`.
-    Example `docker image build . -f tools/docker/Dockerfile -t baoduy2412/react-materialui-started-kit:latest`.
+2.  Build and Tag the image `docker image build . -f sm-react-docker-nginx/Dockerfile -t [YOUR_ID]/react-materialui-started-kit:latest`.
+    Example `docker image build . -f sm-react-docker-nginx/Dockerfile -t baoduy2412/react-materialui-started-kit:latest`.
 3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest`
     Example `docker push baoduy2412/react-materialui-started-kit:latest`.
 
@@ -121,5 +121,4 @@ Defiantly, If you are not using **Azure Service Fabric**. This folder shall be d
 
 ## See also
 
-- [React Webpack Typescript Starter](https://github.com/vikpe/react-webpack-typescript-starter)
-- [Isomorphic Webapp Starter](https://github.com/vikpe/isomorphic-webapp-starter)
+- [React Bootstrap Started Kit](https://github.com/baoduy/React-Bootstrap-Started-Kit)
