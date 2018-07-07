@@ -1,0 +1,3 @@
+[submodule "sm-react-docker-nginx"]
+	path = sm-react-docker-nginx
+	url = https://github.com/baoduy/sm-react-docker-nginx
