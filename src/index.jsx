@@ -1,4 +1,5 @@
-/* [eslint] no-console:off */
+/*eslint no-console: ["off", { allow: ["warn", "error"] }] */
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";

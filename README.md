@@ -18,11 +18,11 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 * Convert CSS to LESS: http://kronus.me/cn/css2less/
 
-# Original Source Code
+## Original Source Code
 
 The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
 
-# Support Features
+## Support Features
 
 ## 1. async/await
 
