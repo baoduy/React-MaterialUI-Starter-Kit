@@ -4,3 +4,6 @@
 [submodule "sm-react-service-fabric"]
 	path = sm-react-service-fabric
 	url = https://github.com/baoduy/sm-react-service-fabric
+[submodule "sm-react-iis"]
+	path = sm-react-iis
+	url = https://github.com/baoduy/sm-react-iis
