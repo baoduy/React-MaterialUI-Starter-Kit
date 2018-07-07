@@ -13,6 +13,12 @@
     "stage-3"
   ],
   "plugins": [
+    ["transform-runtime", {
+      "helpers": true,
+      "polyfill": true,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }],
     "babel-plugin-transform-class-properties",
     "babel-plugin-transform-class",
     "babel-plugin-transform-async-to-generator",
@@ -30,7 +36,9 @@
       "plugins": ["transform-es2015-modules-commonjs"]
     },
     "production": {
-      "plugins": [["babel-plugin-webpack-alias"]]
+      "plugins": [
+        ["babel-plugin-webpack-alias"]
+      ]
     }
   }
 }
