@@ -78,8 +78,8 @@ async function getDataFromServer() {
 ### Docker Support
 
 1.  Build Image `docker build`.
-2.  Build and Tag the image `docker image build . -f tools/docker/Dockerfile -t [YOUR_ID]/react-materialui-started-kit:latest`.
-    Example `docker image build . -f tools/docker/Dockerfile -t baoduy2412/react-materialui-started-kit:latest`.
+2.  Build and Tag the image `docker image build . -f sm-react-docker-nginx/Dockerfile -t [YOUR_ID]/react-materialui-started-kit:latest`.
+    Example `docker image build . -f sm-react-docker-nginx/Dockerfile -t baoduy2412/react-materialui-started-kit:latest`.
 3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest`
     Example `docker push baoduy2412/react-materialui-started-kit:latest`.
 
