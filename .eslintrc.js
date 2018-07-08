@@ -7,6 +7,7 @@ module.exports = {
     jest: true
   },
   extends: "eslint:recommended",
+  parser: "babel-eslint",
   parserOptions: {
     ecmaVersion: 6,
     sourceType: "module",
@@ -20,6 +21,7 @@ module.exports = {
     "linebreak-style": ["warn", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    experimentalDecorators: true
   }
 };

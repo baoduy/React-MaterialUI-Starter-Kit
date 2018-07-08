@@ -1,0 +1,12 @@
+[submodule "sm-react-docker-nginx"]
+	path = sm-react-docker-nginx
+	url = https://github.com/baoduy/sm-react-docker-nginx
+[submodule "sm-react-service-fabric"]
+	path = sm-react-service-fabric
+	url = https://github.com/baoduy/sm-react-service-fabric
+[submodule "sm-react-iis"]
+	path = sm-react-iis
+	url = https://github.com/baoduy/sm-react-iis
+[submodule "sm-react-node-express"]
+	path = sm-react-node-express
+	url = https://github.com/baoduy/sm-react-node-express

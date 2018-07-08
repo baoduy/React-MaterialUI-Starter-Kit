@@ -1,5 +1,7 @@
 // shared config (dev and prod)
-const { resolve } = require("path");
+const {
+  resolve
+} = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
@@ -8,10 +10,9 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"]
   },
-  context: resolve(__dirname, "../../../src"),
+  context: resolve(__dirname, "../../src"),
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         use: {
           loader: "babel-loader"
@@ -32,22 +33,19 @@ module.exports = {
         ]
       },
       {
-        rules: [
-          {
-            test: /\.less$/,
-            use: [
-              {
-                loader: "style-loader" // creates style nodes from JS strings
-              },
-              {
-                loader: "css-loader" // translates CSS into CommonJS
-              },
-              {
-                loader: "less-loader" // compiles Less to CSS
-              }
-            ]
-          }
-        ]
+        rules: [{
+          test: /\.less$/,
+          use: [{
+              loader: "style-loader" // creates style nodes from JS strings
+            },
+            {
+              loader: "css-loader" // translates CSS into CommonJS
+            },
+            {
+              loader: "less-loader" // compiles Less to CSS
+            }
+          ]
+        }]
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
