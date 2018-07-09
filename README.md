@@ -18,11 +18,11 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 * Convert CSS to LESS: http://kronus.me/cn/css2less/
 
-## Original Source Code
+# Original Source Code
 
 The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
 
-## Support Features
+# Support Features
 
 ## 1. async/await
 
@@ -104,7 +104,7 @@ When build the Service Fabric application it will copy all files in `dist` folde
 
 Defiantly, If you are not using **Azure Service Fabric**. This folder shall be deleted.
 
-> **Please note that the Gzip had been enabled for all supports above**
+> **Please note that the Gzip and SSL (HTTPS) had been enabled for all above**
 
 ### All commands
 
@@ -121,4 +121,4 @@ Defiantly, If you are not using **Azure Service Fabric**. This folder shall be d
 
 ## See also
 
-- [React Bootstrap Started Kit](https://github.com/baoduy/React-Bootstrap-Started-Kit)
+- [React-Bootstrap-Started-Kit](https://github.com/baoduy/React-Bootstrap-Started-Kit)
