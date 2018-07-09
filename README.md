@@ -104,7 +104,7 @@ When build the Service Fabric application it will copy all files in `dist` folde
 
 Defiantly, If you are not using **Azure Service Fabric**. This folder shall be deleted.
 
-> **Please note that the Gzip had been enabled for all supports above**
+> **Please note that the Gzip and SSL (HTTPS) had been enabled for all above**
 
 ### All commands
 
