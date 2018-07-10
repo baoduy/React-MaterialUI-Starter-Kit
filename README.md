@@ -15,6 +15,7 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 - **[Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt)** A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
 - ESLINT for Javascript and ReactJs
 - JSHINT standard configuration.
+- This project also using **babel-runtime** and **babel-plugin-transform-runtime** to speperate the commonns functions to the other module so the size of the file will be reduced. For details please refer [here](babel-plugin-transform-runtime)
 
 * Convert CSS to LESS: http://kronus.me/cn/css2less/
 
