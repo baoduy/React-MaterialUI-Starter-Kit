@@ -1,3 +1,4 @@
+import React from "react";
 import NotificationType from "./NotificationType";
 import SvgIcon from "@material-ui/core/SvgIcon";
 

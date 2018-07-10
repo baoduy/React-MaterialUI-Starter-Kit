@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`WithStyles(NotificationItem) is display correctly 1`] = `<WithStyles(NotificationItem) />`;

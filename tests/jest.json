@@ -1,7 +1,10 @@
 {
   "rootDir": "..",
   "coverageDirectory": "<rootDir>/tests/__coverage__/",
-  "setupFiles": ["<rootDir>/tests/__mocks__/shim.js"],
+  "setupFiles": [
+    "<rootDir>/tests/enzymeSetup.js",
+    "<rootDir>/tests/__mocks__/shim.js"
+  ],
   "roots": ["<rootDir>/tests/"],
   "moduleNameMapper": {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
