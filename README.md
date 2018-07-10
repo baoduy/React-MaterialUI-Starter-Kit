@@ -20,7 +20,9 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 # Original Source Code
 
-The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
+Based on the best practises of the Single-Page-Application development with NodeJS. I added the nice font-end component [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux store integration.
+
+Beside of that I also developped some useful compoment as Message box, Notification to make the Started-kit to be a **Production ready** SPA.
 
 # Support Features
 
