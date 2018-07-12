@@ -58,10 +58,6 @@
   "explorer.confirmDragAndDrop": true,
   "git.autofetch": true,
   "javascript.implicitProjectConfig.experimentalDecorators": true,
-  "cSpell.words": [
-    "linebreak",
-    "mimetype",
-    "scrollbar",
-    "woff"
-  ]
+  "cSpell.words": ["linebreak", "mimetype", "scrollbar", "woff"],
+  "files.eol": "\n"
 }

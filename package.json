@@ -32,7 +32,8 @@
     "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm run build && node sm-react-node-express/express.js",
-    "test": "jest --watch --coverage --config=tests/jest.json"
+    "test": "jest --watch --coverage --config=tests/jest.json",
+    "test-ci": "jest --ci --config=tests/jest.json"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.3",
@@ -63,6 +64,7 @@
     "imagemin": "5.3.1",
     "img-loader": "^3.0.0",
     "jest": "^23.3.0",
+    "jshint": "^2.9.5",
     "less": "^3.5.3",
     "less-loader": "^4.1.0",
     "lesshint": "^5.1.0",

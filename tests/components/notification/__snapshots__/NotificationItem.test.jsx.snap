@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing WithStyles(NotificationItem) component WithStyles(NotificationItem) render confirm 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WithStyles(NotificationItem)
+    closeNotification={[Function]}
+    message="Notification"
+    type="confirm"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "autoClose": true,
+      "classes": Object {
+        "icon": "NotificationItem-icon-1",
+        "message": "NotificationItem-message-2",
+      },
+      "closeNotification": [Function],
+      "displayIn": 6000,
+      "message": "Notification",
+      "place": "tr",
+      "type": "confirm",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "autoClose": true,
+        "classes": Object {
+          "icon": "NotificationItem-icon-1",
+          "message": "NotificationItem-message-2",
+        },
+        "closeNotification": [Function],
+        "displayIn": 6000,
+        "message": "Notification",
+        "place": "tr",
+        "type": "confirm",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Testing WithStyles(NotificationItem) component WithStyles(NotificationItem) render danger 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WithStyles(NotificationItem)
+    closeNotification={[Function]}
+    message="Notification"
+    type="danger"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "autoClose": true,
+      "classes": Object {
+        "icon": "NotificationItem-icon-1",
+        "message": "NotificationItem-message-2",
+      },
+      "closeNotification": [Function],
+      "displayIn": 6000,
+      "message": "Notification",
+      "place": "tr",
+      "type": "danger",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "autoClose": true,
+        "classes": Object {
+          "icon": "NotificationItem-icon-1",
+          "message": "NotificationItem-message-2",
+        },
+        "closeNotification": [Function],
+        "displayIn": 6000,
+        "message": "Notification",
+        "place": "tr",
+        "type": "danger",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Testing WithStyles(NotificationItem) component WithStyles(NotificationItem) render info 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WithStyles(NotificationItem)
+    closeNotification={[Function]}
+    message="Notification"
+    type="info"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "autoClose": true,
+      "classes": Object {
+        "icon": "NotificationItem-icon-1",
+        "message": "NotificationItem-message-2",
+      },
+      "closeNotification": [Function],
+      "displayIn": 6000,
+      "message": "Notification",
+      "place": "tr",
+      "type": "info",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "autoClose": true,
+        "classes": Object {
+          "icon": "NotificationItem-icon-1",
+          "message": "NotificationItem-message-2",
+        },
+        "closeNotification": [Function],
+        "displayIn": 6000,
+        "message": "Notification",
+        "place": "tr",
+        "type": "info",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Testing WithStyles(NotificationItem) component WithStyles(NotificationItem) render success 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WithStyles(NotificationItem)
+    closeNotification={[Function]}
+    message="Notification"
+    type="success"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "autoClose": true,
+      "classes": Object {
+        "icon": "NotificationItem-icon-1",
+        "message": "NotificationItem-message-2",
+      },
+      "closeNotification": [Function],
+      "displayIn": 6000,
+      "message": "Notification",
+      "place": "tr",
+      "type": "success",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "autoClose": true,
+        "classes": Object {
+          "icon": "NotificationItem-icon-1",
+          "message": "NotificationItem-message-2",
+        },
+        "closeNotification": [Function],
+        "displayIn": 6000,
+        "message": "Notification",
+        "place": "tr",
+        "type": "success",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Testing WithStyles(NotificationItem) component WithStyles(NotificationItem) render warning 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WithStyles(NotificationItem)
+    closeNotification={[Function]}
+    message="Notification"
+    type="warning"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "autoClose": true,
+      "classes": Object {
+        "icon": "NotificationItem-icon-1",
+        "message": "NotificationItem-message-2",
+      },
+      "closeNotification": [Function],
+      "displayIn": 6000,
+      "message": "Notification",
+      "place": "tr",
+      "type": "warning",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "autoClose": true,
+        "classes": Object {
+          "icon": "NotificationItem-icon-1",
+          "message": "NotificationItem-message-2",
+        },
+        "closeNotification": [Function],
+        "displayIn": 6000,
+        "message": "Notification",
+        "place": "tr",
+        "type": "warning",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

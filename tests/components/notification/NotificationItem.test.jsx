@@ -21,7 +21,7 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
   });
 
   it(`${NotificationItem.displayName} render ${Type.INFO}`, () => {
-    const item = mount(
+    const item = shallow(
       <NotificationItem
         type={Type.INFO}
         message="Notification"
@@ -33,7 +33,7 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
   });
 
   it(`${NotificationItem.displayName} render ${Type.CONFIRM}`, () => {
-    const item = mount(
+    const item = shallow(
       <NotificationItem
         type={Type.CONFIRM}
         message="Notification"
@@ -45,7 +45,7 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
   });
 
   it(`${NotificationItem.displayName} render ${Type.DANGER}`, () => {
-    const item = mount(
+    const item = shallow(
       <NotificationItem
         type={Type.DANGER}
         message="Notification"
@@ -57,7 +57,7 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
   });
 
   it(`${NotificationItem.displayName} render ${Type.SUCCESS}`, () => {
-    const item = mount(
+    const item = shallow(
       <NotificationItem
         type={Type.SUCCESS}
         message="Notification"
@@ -69,7 +69,7 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
   });
 
   it(`${NotificationItem.displayName} render ${Type.WARNING}`, () => {
-    const item = mount(
+    const item = shallow(
       <NotificationItem
         type={Type.WARNING}
         message="Notification"
