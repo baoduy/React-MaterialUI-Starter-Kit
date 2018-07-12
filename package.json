@@ -33,7 +33,7 @@
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm run build && node sm-react-node-express/express.js",
     "test": "jest --watch --coverage --config=tests/jest.json",
-    "test-ci": "jest --ci --config=tests/jest.json"
+    "test-ci": "jest --ci --coverage --config=tests/jest.json"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.3",
