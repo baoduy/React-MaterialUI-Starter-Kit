@@ -6,24 +6,32 @@ import NotificationItemStyle from "./jss";
 import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
 
-class NotificationItem extends React.Component {
-  constructor(props) {
-    super(props);
+@withStyles(NotificationItemStyle)
+export default class NotificationItem extends React.Component {
+  constructor(props, context) {
+    super(props, context);
   }
 
-  setTimeout = props => {
+  setCallbackTimeout = props => {
     const { closeNotification, open, autoClose, displayIn } = props;
-    if (open === true && autoClose === true && displayIn > 0) {
-      this.timeout = setTimeout(closeNotification, displayIn);
-    }
+
+    if (
+      !closeNotification ||
+      open !== true ||
+      autoClose !== true ||
+      displayIn <= 0
+    )
+      return;
+
+    setTimeout(closeNotification, displayIn);
   };
 
   componentDidMount() {
-    this.setTimeout(this.props);
+    this.setCallbackTimeout(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setTimeout(nextProps);
+    this.setCallbackTimeout(nextProps);
   }
 
   render() {
@@ -37,14 +45,15 @@ class NotificationItem extends React.Component {
       ...other
     } = this.props;
 
-    let finalIcon;
-    if (icon === true || icon === undefined) finalIcon = helper.getIcon(type);
-    else if (icon) finalIcon = icon;
+    const color = helper.getColor(type);
+
+    let finalIcon = icon;
+    if (icon === true) finalIcon = helper.getIcon(type);
 
     return (
       <Snackbar
         {...other}
-        color={helper.getColor(type)}
+        color={color}
         close={close || true}
         message={
           <span id={id} className={classes.message}>
@@ -60,15 +69,22 @@ class NotificationItem extends React.Component {
 NotificationItem.defaultProps = {
   place: "tr", //Top right
   displayIn: 6000,
-  autoClose: true
+  autoClose: true,
+  open: true,
+  icon: true
 };
 
 NotificationItem.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.oneOf([
+    NotificationType.CONFIRM,
+    NotificationType.DANGER,
+    NotificationType.INFO,
+    NotificationType.SUCCESS,
+    NotificationType.WARNING
+  ]),
   displayIn: PropTypes.number,
   autoClose: PropTypes.bool,
   message: PropTypes.string.isRequired,
-  closeNotification: PropTypes.func.isRequired
+  closeNotification: PropTypes.func.isRequired,
+  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.bool])
 };
-
-export default withStyles(NotificationItemStyle)(NotificationItem);
