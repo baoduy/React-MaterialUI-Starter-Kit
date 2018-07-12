@@ -1,5 +1,7 @@
 # React Webpack Babel Starter
 
+[![CircleCI](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit.svg?style=svg)](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit)
+
 Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 - **[React](https://facebook.github.io/react/)** (16.x)
