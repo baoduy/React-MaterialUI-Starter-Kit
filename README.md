@@ -57,10 +57,8 @@ async function getDataFromServer() {
 
 1.  Clone/download repo
 2.  `npm install`
-
-## New Compoments
-
-1.  **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
+3.  Replace the CodeCov.io token to your one in the `package.json` file.
+4.  Run `npm start` to run the project.
 
 ## Usage
 
@@ -80,6 +78,10 @@ async function getDataFromServer() {
 
 ---
 
+## New Compoments
+
+1.  **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
+
 ### Docker Support
 
 1.  Build Image `docker build`.
@@ -92,6 +94,8 @@ The application will running port 3000 in Docker.
 The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
 
 **If you are using Docker the `Docker` folder in this project can be deleted without any impact.**
+
+---
 
 ### IIS Support
 
@@ -113,6 +117,8 @@ Defiantly, If you are not using **Azure Service Fabric**. This folder shall be d
 
 The **GZIP** and **SSL** had been applied for all hosting environments above.
 
+---
+
 ### All commands
 
 | Command              | Description                                                              |
@@ -125,6 +131,7 @@ The **GZIP** and **SSL** had been applied for all hosting environments above.
 | `npm run lint:js`    | Run JavaScript linter                                                    |
 | `npm run lint:less`  | Run LESS linter                                                          |
 | `npm run start`      | (alias of `npm run start-dev`)                                           |
+| `npm rum test-ci`    | Run Jest test and upload code to CodeCov.io                              |
 
 ## See also
 

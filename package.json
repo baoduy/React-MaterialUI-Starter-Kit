@@ -33,7 +33,7 @@
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm run build && node sm-react-node-express/express.js",
     "test": "jest --watch --coverage --config=tests/jest.json",
-    "test-ci": "jest --ci --coverage --config=tests/jest.json"
+    "test-ci": "jest --ci --coverage --config=tests/jest.json && codecov -t 75b11d17-22d7-4b30-81b1-4c39fa2f7582"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.3",
@@ -106,5 +106,9 @@
     "redux-toolbelt": "2.1.5",
     "redux-toolbelt-thunk": "^2.0.3"
   },
-  "postcss": {}
+  "postcss": {},
+  "jest": {
+    "coverageDirectory": "./tests/coverage/",
+    "collectCoverage": true
+  }
 }
