@@ -74,7 +74,7 @@ describe(`Render ${Notification.displayName} tests`, () => {
           closeNotification: () => true
         }
       ],
-      displayIn: 10,
+      displayIn: 2,
       subsequentDelay: 1
     });
 
