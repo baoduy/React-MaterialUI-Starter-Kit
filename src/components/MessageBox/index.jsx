@@ -6,27 +6,25 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@material-ui/core/styles";
 import MessageBoxStyle from "./jss";
 import MessageBoxType from "./MessageBoxType";
 import * as helper from "./helper";
 
 function MessageBox({
-  type = MessageBoxType.INFO,
+  type,
   open,
   title,
   message,
-  handler,
+  actionHandler,
   icon,
   okText,
   cancelText,
   classes,
   ...other
 }) {
-  let finalIcon = undefined;
-  if (icon === true || icon === undefined)
-    finalIcon = helper.getIcon(type, classes);
-  else if (icon) finalIcon = icon;
+  let finalIcon = icon;
+  if (icon === true) finalIcon = helper.getIcon(type, classes);
 
   return (
     <Dialog
@@ -64,20 +62,43 @@ function MessageBox({
         </Grid>
       </DialogContent>
       <DialogActions>
-        {helper.getActions(type, handler, classes, okText, cancelText)}
+        {helper.getActions(type, actionHandler, classes, okText, cancelText)}
       </DialogActions>
     </Dialog>
   );
 }
 
+MessageBox.defaultProps = {
+  type: MessageBoxType.INFO,
+  okText: "Ok",
+  cancelText: "Cancel",
+  open: true,
+  icon: true
+};
+
 MessageBox.propTypes = {
-  type: PropTypes.string,
+  //The type of Message box
+  type: PropTypes.oneOf([
+    MessageBoxType.CONFIRM,
+    MessageBoxType.DANGER,
+    MessageBoxType.INFO,
+    MessageBoxType.SUCCESS,
+    MessageBoxType.WARNING
+  ]),
+  //The title of message box
   title: PropTypes.string,
-  open: PropTypes.bool,
+  //show/hide message box
+  open: PropTypes.bool.isRequired,
+  //the message
   message: PropTypes.string,
+  //the text of Ok button
   okText: PropTypes.string,
+  //the text of cancel button
   cancelText: PropTypes.string,
-  handler: PropTypes.func
+  //buttons action handler.
+  actionHandler: PropTypes.func,
+  //The icon of notification. set to false to hide the default icon.
+  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
 };
 
 export default withStyles(MessageBoxStyle)(MessageBox);

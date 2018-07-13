@@ -3,7 +3,6 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import SvgIcon from "@material-ui/core/SvgIcon";
 import NotificationItem from "../../../src/components/Notification/NotificationItem";
 import Type from "../../../src/components/Notification/NotificationType";
 
