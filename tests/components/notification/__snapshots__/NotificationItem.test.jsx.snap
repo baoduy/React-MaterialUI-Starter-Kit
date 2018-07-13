@@ -520,16 +520,11 @@ exports[`Testing WithStyles(NotificationItem) component render warning with cust
           <span
             className="NotificationItem-message-2"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <div
+              id="icon"
             >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-              />
-            </svg>
+              Duy
+            </div>
              Test Notification Item
           </span>
         </span>

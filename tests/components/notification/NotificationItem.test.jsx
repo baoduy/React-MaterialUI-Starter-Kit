@@ -1,15 +1,16 @@
+/*eslint no-console: ["off", { allow: ["warn", "error"] }] */
+
 import React from "react";
-import ReactTestUtils from "react-dom/test-utils";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import SvgIcon from "@material-ui/core/SvgIcon";
 import NotificationItem from "../../../src/components/Notification/NotificationItem";
 import Type from "../../../src/components/Notification/NotificationType";
 
-const render = (renderMethod, { callBack, ...rest } = {}) => {
+const render = ({ callBack, ...rest } = {}) => {
   if (!callBack) callBack = () => true;
 
-  const item = renderMethod(
+  const item = mount(
     <NotificationItem
       {...rest}
       closeNotification={callBack}
@@ -21,14 +22,11 @@ const render = (renderMethod, { callBack, ...rest } = {}) => {
   return item;
 };
 
-const mountComponent = props => render(mount, props);
-const shallowComponent = props => render(shallow, props);
-
 const promiseComponent = ({ displayIn, ...rest }) =>
   new Promise((resolve, reject) => {
     let called = false;
 
-    const item = mountComponent({
+    const item = render({
       ...rest,
       displayIn: displayIn,
       callBack: () => {
@@ -53,51 +51,79 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
     return expect(pm).rejects.toBe(false);
   });
 
-  test("update displayIn from 0 to 5 the closeNotification will be called", () => {
-    // const item = mountComponent({ displayIn: 0 });
-    // expect(item.instance().timeout).toBe(undefined);
-    // item.setProps({ displayIn: 5 });
-    // expect(item.instance().timeout).toBeDefined();
+  test("update displayIn from 0 to 5 the closeNotification will be called", async () => {
+    const item = render({ displayIn: 0 });
+
+    //DisplayIn = 0
+    const p1 = new Promise((resolve, reject) => {
+      item.setProps({ closeNotification: () => resolve(true) });
+      setTimeout(() => reject(false), 10);
+    });
+    //closeNotification called
+    await expect(p1).rejects.toBe(false);
+
+    //DisplayIn = 10
+    const p2 = new Promise((resolve, reject) => {
+      item.setProps({ displayIn: 10, closeNotification: () => resolve(true) });
+    });
+
+    //closeNotification called
+    await expect(p2).resolves.toBe(true);
+  });
+
+  test("throw exception when set unknown Type", () => {
+    const original = console.error;
+    console.error = jest.fn();
+    render({ type: "Hello" });
+
+    expect(console.error).toHaveBeenCalled();
+    console.error = original;
+  });
+
+  test("throw exception when set icon Type", () => {
+    const original = console.error;
+    console.error = jest.fn();
+    render({ icon: "Hello" });
+
+    expect(console.error).toHaveBeenCalled();
+    console.error = original;
   });
 
   test(`render ${Type.INFO}`, () => {
-    const item = mountComponent({ type: Type.INFO });
+    const item = render({ type: Type.INFO });
     expect(item).toMatchSnapshot();
   });
 
   test(`render ${Type.CONFIRM}`, () => {
-    const item = mountComponent({ type: Type.CONFIRM });
+    const item = render({ type: Type.CONFIRM });
     expect(item).toMatchSnapshot();
   });
 
   test(`render ${Type.DANGER}`, () => {
-    const item = mountComponent({ type: Type.DANGER });
+    const item = render({ type: Type.DANGER });
     expect(item).toMatchSnapshot();
   });
 
   test(`render ${Type.SUCCESS}`, () => {
-    const item = mountComponent({ type: Type.SUCCESS });
+    const item = render({ type: Type.SUCCESS });
     expect(item).toMatchSnapshot();
   });
 
   test(`render ${Type.WARNING}`, () => {
-    const item = mountComponent({ type: Type.WARNING });
+    const item = render({ type: Type.WARNING });
     expect(item).toMatchSnapshot();
   });
 
   test(`render ${Type.WARNING} with custom Icon`, () => {
-    const icon = (
-      <SvgIcon>
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
-      </SvgIcon>
-    );
+    const icon = <div id="icon">Duy</div>;
+    const item = render({ type: Type.WARNING, icon });
 
-    const item = mountComponent({ type: Type.WARNING, icon });
+    expect(item.find("#icon").length).toBe(1);
     expect(item).toMatchSnapshot();
   });
 
   test(`render ${Type.WARNING} with Icon is undefined`, () => {
-    const item = mountComponent({ type: Type.WARNING, icon: undefined });
+    const item = render({ type: Type.WARNING, icon: undefined });
     expect(item).toMatchSnapshot();
   });
 });

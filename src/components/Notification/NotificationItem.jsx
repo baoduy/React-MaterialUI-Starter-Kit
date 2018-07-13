@@ -35,15 +35,7 @@ export default class NotificationItem extends React.Component {
   }
 
   render() {
-    const {
-      id,
-      type = NotificationType.INFO,
-      message,
-      icon,
-      close,
-      classes,
-      ...other
-    } = this.props;
+    const { id, type, message, icon, close, classes, ...other } = this.props;
 
     const color = helper.getColor(type);
 
@@ -70,11 +62,13 @@ NotificationItem.defaultProps = {
   place: "tr", //Top right
   displayIn: 6000,
   autoClose: true,
+  type: NotificationType.INFO,
   open: true,
   icon: true
 };
 
 NotificationItem.propTypes = {
+  //The Tye of notification
   type: PropTypes.oneOf([
     NotificationType.CONFIRM,
     NotificationType.DANGER,
@@ -82,9 +76,14 @@ NotificationItem.propTypes = {
     NotificationType.SUCCESS,
     NotificationType.WARNING
   ]),
+  //The number of second will be displayed.
   displayIn: PropTypes.number,
+  //Enable timeout to call closeNotification after displayIn second automatically.
   autoClose: PropTypes.bool,
+  //The message of notification
   message: PropTypes.string.isRequired,
-  closeNotification: PropTypes.func.isRequired,
-  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.bool])
+  //Close handler.
+  closeNotification: PropTypes.func,
+  //The icon of notification. set to false to hide the default icon.
+  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
 };

@@ -1,16 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Item from "./NotificationItem";
+import NotificationItem from "./NotificationItem";
 
 export default function Notification({
   dataSource,
-  displayIn = 6000,
-  subsequentDelay = 1000,
+  displayIn,
+  subsequentDelay,
   closeNotification
 }) {
-  let count = dataSource.length - 1 || 0;
+  if (!dataSource) return <React.Fragment />;
+  let count = dataSource.length - 1;
+
   return (
-    <div>
+    <React.Fragment>
       {dataSource.map((p, i) => {
         return (
           <Item
@@ -25,12 +28,18 @@ export default function Notification({
           />
         );
       })}
-    </div>
+    </React.Fragment>
   );
 }
 
+Notification.defaultProps = {
+  displayIn: 6000,
+  subsequentDelay: 1000
+};
+
 Notification.propTypes = {
-  dataSource: PropTypes.array.isRequired,
+  dataSource: PropTypes.arrayOf(PropTypes.shape(NotificationItem.propTypes))
+    .isRequired,
   displayIn: PropTypes.number,
   closeNotification: PropTypes.func
 };
