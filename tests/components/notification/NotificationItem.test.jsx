@@ -56,7 +56,7 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
     //DisplayIn = 0
     const p1 = new Promise((resolve, reject) => {
       item.setProps({ closeNotification: () => resolve(true) });
-      setTimeout(() => reject(false), 10);
+      setTimeout(() => reject(false), 5);
     });
     //closeNotification called
     await expect(p1).rejects.toBe(false);
