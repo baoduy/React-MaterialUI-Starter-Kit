@@ -102,6 +102,7 @@
     "react-router-redux": "^4.0.8",
     "react-swipeable-views": "0.12.14",
     "redux": "4.0.0",
+    "redux-form": "^7.4.2",
     "redux-thunk": "2.3.0",
     "redux-toolbelt": "2.1.5",
     "redux-toolbelt-thunk": "^2.0.3"
