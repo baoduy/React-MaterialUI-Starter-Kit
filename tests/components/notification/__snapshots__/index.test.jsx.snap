@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render undefined tests Render 3 items 1`] = `
+Array [
+  <div
+    className="MuiSnackbar-root-23 MuiSnackbar-anchorOriginTopRight-26"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="MuiTypography-root-60 MuiTypography-body1-69 MuiPaper-root-33 MuiPaper-elevation6-41 MuiSnackbarContent-root-30 Snackbar-root-3 Snackbar-primary-10"
+      direction="down"
+      role="alertdialog"
+      style={Object {}}
+    >
+      <div
+        className="MuiSnackbarContent-message-31 Snackbar-message-12"
+      >
+        <div>
+          <span
+            className=""
+          >
+            <span
+              className="NotificationItem-message-2"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-84"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                />
+              </svg>
+               Hello
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        className="MuiSnackbarContent-action-32"
+      >
+        <button
+          aria-label="Close"
+          className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-96"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-84 Snackbar-close-13"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <g>
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </g>
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-100"
+          />
+        </button>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="MuiSnackbar-root-23 MuiSnackbar-anchorOriginTopRight-26"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="MuiTypography-root-60 MuiTypography-body1-69 MuiPaper-root-33 MuiPaper-elevation6-41 MuiSnackbarContent-root-30 Snackbar-root-3 Snackbar-info-6"
+      direction="down"
+      role="alertdialog"
+      style={Object {}}
+    >
+      <div
+        className="MuiSnackbarContent-message-31 Snackbar-message-12"
+      >
+        <div>
+          <span
+            className=""
+          >
+            <span
+              className="NotificationItem-message-2"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-84"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+               Hello
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        className="MuiSnackbarContent-action-32"
+      >
+        <button
+          aria-label="Close"
+          className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-96"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-84 Snackbar-close-13"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <g>
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </g>
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-100"
+          />
+        </button>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="MuiSnackbar-root-23 MuiSnackbar-anchorOriginTopRight-26"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="MuiTypography-root-60 MuiTypography-body1-69 MuiPaper-root-33 MuiPaper-elevation6-41 MuiSnackbarContent-root-30 Snackbar-root-3 Snackbar-danger-9"
+      direction="down"
+      role="alertdialog"
+      style={Object {}}
+    >
+      <div
+        className="MuiSnackbarContent-message-31 Snackbar-message-12"
+      >
+        <div>
+          <span
+            className=""
+          >
+            <span
+              className="NotificationItem-message-2"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-84"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                />
+              </svg>
+               Hello
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        className="MuiSnackbarContent-action-32"
+      >
+        <button
+          aria-label="Close"
+          className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-96"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-84 Snackbar-close-13"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <g>
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </g>
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-100"
+          />
+        </button>
+      </div>
+    </div>
+  </div>,
+]
+`;

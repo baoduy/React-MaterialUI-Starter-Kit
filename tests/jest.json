@@ -1,6 +1,7 @@
 {
   "rootDir": "..",
   "coverageDirectory": "<rootDir>/tests/__coverage__/",
+  "setupTestFrameworkScriptFile": "<rootDir>/tests/testSetup.js",
   "setupFiles": ["<rootDir>/tests/__mocks__/shim.js"],
   "roots": ["<rootDir>/tests/"],
   "moduleNameMapper": {

@@ -32,7 +32,8 @@
     "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm run build && node sm-react-node-express/express.js",
-    "test": "jest --watch --coverage --config=configs/jest.json"
+    "test": "jest --watch --coverage --config=tests/jest.json",
+    "test-ci": "jest --ci --coverage --config=tests/jest.json && codecov -t 75b11d17-22d7-4b30-81b1-4c39fa2f7582"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.3",
@@ -52,6 +53,9 @@
     "compression": "^1.7.2",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.0.1",
     "eslint-plugin-react": "^7.10.0",
     "express": "^4.16.3",
@@ -61,6 +65,7 @@
     "imagemin": "5.3.1",
     "img-loader": "^3.0.0",
     "jest": "^23.3.0",
+    "jshint": "^2.9.5",
     "less": "^3.5.3",
     "less-loader": "^4.1.0",
     "lesshint": "^5.1.0",
@@ -82,7 +87,6 @@
     "@types/googlemaps": "3.30.11",
     "@types/markerclustererplus": "2.1.33",
     "ajv": "6.5.2",
-    "babel-regenerator-runtime": "^6.5.0",
     "babel-runtime": "^6.26.0",
     "chartist": "0.11.0",
     "classnames": "2.2.6",
@@ -102,5 +106,9 @@
     "redux-toolbelt": "2.1.5",
     "redux-toolbelt-thunk": "^2.0.3"
   },
-  "postcss": {}
+  "postcss": {},
+  "jest": {
+    "coverageDirectory": "<rootDir>/tests/__coverage__/",
+    "collectCoverage": true
+  }
 }

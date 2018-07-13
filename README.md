@@ -1,5 +1,8 @@
 # React Webpack Babel Starter
 
+[![CircleCI](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit.svg?style=svg)](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit)
+[![codecov](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit/branch/develop/graph/badge.svg)](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit)
+
 Minimal starter kit with hot module replacement (HMR) for rapid development.
 
 - **[React](https://facebook.github.io/react/)** (16.x)
@@ -15,12 +18,15 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 - **[Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt)** A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
 - ESLINT for Javascript and ReactJs
 - JSHINT standard configuration.
+- This project also using **babel-runtime** and **babel-plugin-transform-runtime** to speperate the commonns functions to the other module so the size of the file will be reduced. For details please refer [here](babel-plugin-transform-runtime)
 
 * Convert CSS to LESS: http://kronus.me/cn/css2less/
 
 # Original Source Code
 
-The source had been clone from [vikpe/react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter) and on top of that I added some useful packages includes the Finished the [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux integration
+Based on the best practises of the Single-Page-Application development with NodeJS. I added the nice font-end component [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux store integration.
+
+Beside of that I also developped some useful compoment as Message box, Notification to make the Started-kit to be a **Production ready** SPA.
 
 # Support Features
 
@@ -52,10 +58,8 @@ async function getDataFromServer() {
 
 1.  Clone/download repo
 2.  `npm install`
-
-## New Compoments
-
-1.  **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
+3.  Replace the CodeCov.io token to your one in the `package.json` file.
+4.  Run `npm start` to run the project.
 
 ## Usage
 
@@ -75,6 +79,10 @@ async function getDataFromServer() {
 
 ---
 
+## New Compoments
+
+1.  **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
+
 ### Docker Support
 
 1.  Build Image `docker build`.
@@ -87,6 +95,8 @@ The application will running port 3000 in Docker.
 The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
 
 **If you are using Docker the `Docker` folder in this project can be deleted without any impact.**
+
+---
 
 ### IIS Support
 
@@ -104,7 +114,11 @@ When build the Service Fabric application it will copy all files in `dist` folde
 
 Defiantly, If you are not using **Azure Service Fabric**. This folder shall be deleted.
 
-> **Please note that the Gzip and SSL (HTTPS) had been enabled for all above**
+### GZIP and SSL
+
+The **GZIP** and **SSL** had been applied for all hosting environments above.
+
+---
 
 ### All commands
 
@@ -118,6 +132,7 @@ Defiantly, If you are not using **Azure Service Fabric**. This folder shall be d
 | `npm run lint:js`    | Run JavaScript linter                                                    |
 | `npm run lint:less`  | Run LESS linter                                                          |
 | `npm run start`      | (alias of `npm run start-dev`)                                           |
+| `npm rum test-ci`    | Run Jest test and upload code to CodeCov.io                              |
 
 ## See also
 
