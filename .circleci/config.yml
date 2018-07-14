@@ -42,6 +42,6 @@ jobs:
       # run tests
       - run: npm run test-ci
        # run Check
-      - run: npm-check
+      - run: npm run npm-check
 
 
