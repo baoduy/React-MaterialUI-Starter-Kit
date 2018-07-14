@@ -35,29 +35,36 @@ import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
-import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
+import dashboardStyle from "./dashboardStyle.jsx";
 
 //Connect component to Redux store.
-@connect(state => {
-  return {
-    charts: state.charts.data || {},
-    general: state.general.data || {},
-    loading: state.general.loading || state.charts.loading
-  };
-}, dispatch => {
-  return { actions: bindActionCreators(actions, dispatch) };
-})
+@connect(
+  state => {
+    return {
+      charts: state.charts.data || {},
+      general: state.general.data || {},
+      loading: state.general.loading || state.charts.loading
+    };
+  },
+  dispatch => {
+    return { actions: bindActionCreators(actions, dispatch) };
+  }
+)
 class Dashboard extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.state = {
-      value: 0,
+      value: 0
     };
   }
 
   async componentDidMount() {
-    const { dailySalesChart, emailsSubscriptionChart, completedTasksChart } = this.props.charts;
+    const {
+      dailySalesChart,
+      emailsSubscriptionChart,
+      completedTasksChart
+    } = this.props.charts;
     const { bugs, website, server } = this.props.general;
 
     //Check and load data from Server
@@ -65,8 +72,7 @@ class Dashboard extends React.Component {
       await this.props.actions.getChartData();
 
     //Check and load data from Server
-    if (!bugs || !website || !server)
-      await this.props.actions.getGeneral();
+    if (!bugs || !website || !server) await this.props.actions.getGeneral();
   }
 
   handleChange = (_, value) => {
@@ -79,7 +85,11 @@ class Dashboard extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { dailySalesChart, emailsSubscriptionChart, completedTasksChart } = this.props.charts;
+    const {
+      dailySalesChart,
+      emailsSubscriptionChart,
+      completedTasksChart
+    } = this.props.charts;
     const { bugs, website, server } = this.props.general;
     const loading = this.props.loading;
 
@@ -165,13 +175,15 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="success">
-                {dailySalesChart && <ChartistGraph
-                  className="ct-chart"
-                  data={dailySalesChart.data}
-                  type="Line"
-                  options={dailySalesChart.options}
-                  listener={dailySalesChart.animation}
-                />}
+                {dailySalesChart && (
+                  <ChartistGraph
+                    className="ct-chart"
+                    data={dailySalesChart.data}
+                    type="Line"
+                    options={dailySalesChart.options}
+                    listener={dailySalesChart.animation}
+                  />
+                )}
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>Daily Sales</h4>
@@ -192,14 +204,18 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="warning">
-                {emailsSubscriptionChart && <ChartistGraph
-                  className="ct-chart"
-                  data={emailsSubscriptionChart.data}
-                  type="Bar"
-                  options={emailsSubscriptionChart.options}
-                  responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                  listener={emailsSubscriptionChart.animation}
-                />}
+                {emailsSubscriptionChart && (
+                  <ChartistGraph
+                    className="ct-chart"
+                    data={emailsSubscriptionChart.data}
+                    type="Bar"
+                    options={emailsSubscriptionChart.options}
+                    responsiveOptions={
+                      emailsSubscriptionChart.responsiveOptions
+                    }
+                    listener={emailsSubscriptionChart.animation}
+                  />
+                )}
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>Email Subscriptions</h4>
@@ -217,13 +233,15 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="danger">
-                {completedTasksChart && <ChartistGraph
-                  className="ct-chart"
-                  data={completedTasksChart.data}
-                  type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
-                />}
+                {completedTasksChart && (
+                  <ChartistGraph
+                    className="ct-chart"
+                    data={completedTasksChart.data}
+                    type="Line"
+                    options={completedTasksChart.options}
+                    listener={completedTasksChart.animation}
+                  />
+                )}
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>Completed Tasks</h4>
@@ -249,34 +267,40 @@ class Dashboard extends React.Component {
                 {
                   tabName: "Bugs",
                   tabIcon: BugReport,
-                  tabContent: (
-                    bugs ? <Tasks
+                  tabContent: bugs ? (
+                    <Tasks
                       checkedIndexes={[0, 3]}
                       tasksIndexes={[0, 1, 2, 3]}
                       tasks={bugs}
-                    /> : <p>No data</p>
+                    />
+                  ) : (
+                    <p>No data</p>
                   )
                 },
                 {
                   tabName: "Website",
                   tabIcon: Code,
-                  tabContent: (
-                    website ? <Tasks
+                  tabContent: website ? (
+                    <Tasks
                       checkedIndexes={[0]}
                       tasksIndexes={[0, 1]}
                       tasks={website}
-                    /> : <p>No data</p>
+                    />
+                  ) : (
+                    <p>No data</p>
                   )
                 },
                 {
                   tabName: "Server",
                   tabIcon: Cloud,
-                  tabContent: (
-                    server ? <Tasks
+                  tabContent: server ? (
+                    <Tasks
                       checkedIndexes={[1]}
                       tasksIndexes={[0, 1, 2]}
                       tasks={server}
-                    /> : <p>No data</p>
+                    />
+                  ) : (
+                    <p>No data</p>
                   )
                 }
               ]}
