@@ -19,9 +19,9 @@ jobs:
     steps:
       #Check out code
       - checkout
-      #Download sub modules
-      - run: git submodule update --init --recursive
-      
+      #Download 'configs' sub modules
+      - run: git submodule update --init 'configs'
+
       # Download and cache dependencies
       - restore_cache:
           keys:
