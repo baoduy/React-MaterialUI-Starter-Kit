@@ -41,7 +41,5 @@ jobs:
       - run: npm run lint
       # run tests
       - run: npm run test-ci
-       # run Check
-      - run: npm run npm-check
 
 
