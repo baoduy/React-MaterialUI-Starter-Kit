@@ -1,9 +1,9 @@
 import {
   defaultFont,
-  dangerColor,
-} from "assets/jss/material-dashboard-react.jsx";
+  dangerColor
+} from "../../assets/jss/material-dashboard-react";
 
-import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx";
+import dropdownStyle from "../../assets/jss/material-dashboard-react/dropdownStyle";
 
 const headerLinksStyle = theme => ({
   ...dropdownStyle(theme),
@@ -94,7 +94,7 @@ const headerLinksStyle = theme => ({
   searchWrapper: {
     [theme.breakpoints.down("sm")]: {
       width: "-webkit-fill-available",
-      margin: "10px 15px 0",
+      margin: "10px 15px 0"
     },
     display: "inline-block"
   }

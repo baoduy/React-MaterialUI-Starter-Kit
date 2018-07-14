@@ -1,4 +1,4 @@
-import { primaryColor } from "assets/jss/material-dashboard-react.jsx";
+import { primaryColor } from "../material-dashboard-react.jsx";
 
 const checkboxAdnRadioStyle = {
   checked: {
@@ -18,7 +18,7 @@ const checkboxAdnRadioStyle = {
     borderRadius: "3px"
   },
   radio: {
-    color: primaryColor + "!important",
+    color: primaryColor + "!important"
   },
   radioChecked: {
     width: "20px",

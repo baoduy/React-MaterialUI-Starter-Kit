@@ -9,7 +9,7 @@ import {
   successColor,
   warningColor,
   dangerColor
-} from "assets/jss/material-dashboard-react.jsx";
+} from "../../assets/jss/material-dashboard-react.jsx";
 
 const sidebarStyle = theme => ({
   drawerPaper: {
@@ -218,8 +218,8 @@ const sidebarStyle = theme => ({
     [theme.breakpoints.up("md")]: {
       position: "absolute",
       width: "100%",
-      bottom: "13px",
-    },
+      bottom: "13px"
+    }
   }
 });
 
