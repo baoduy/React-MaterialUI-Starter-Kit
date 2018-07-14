@@ -11,7 +11,7 @@ import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
-import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
+import dashboardStyle from "./dashboardStyle.jsx";
 
 import { getImgSrc } from "../commons/commonFuncs";
 //Import may not working with Reserved proxy so using require instead.

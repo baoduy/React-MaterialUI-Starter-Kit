@@ -16,7 +16,7 @@ import indexRoutes from "routes/index.jsx";
 
 //Update for Reserved proxy
 window._base = document.getElementsByTagName("base")[0].getAttribute("href");
-console.info(`base URL ${window._base}`);
+console.log(`base URL ${window._base}`);
 
 const hist = createBrowserHistory({ basename: window._base });
 

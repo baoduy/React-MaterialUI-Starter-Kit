@@ -36,12 +36,12 @@ const promiseComponent = ({ displayIn, ...rest }) =>
 
     setTimeout(() => {
       if (!called) reject(called);
-    }, displayIn + 10);
+    }, displayIn + 2);
   });
 
 describe(`Testing ${NotificationItem.displayName} component`, () => {
   test("closeNotification will be called", () => {
-    const pm = promiseComponent({ displayIn: 200 });
+    const pm = promiseComponent({ displayIn: 5 });
     return expect(pm).resolves.toBe(true);
   });
 
@@ -56,14 +56,14 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
     //DisplayIn = 0
     const p1 = new Promise((resolve, reject) => {
       item.setProps({ closeNotification: () => resolve(true) });
-      setTimeout(() => reject(false), 10);
+      setTimeout(() => reject(false), 5);
     });
     //closeNotification called
     await expect(p1).rejects.toBe(false);
 
-    //DisplayIn = 10
+    //DisplayIn = 5ms
     const p2 = new Promise((resolve, reject) => {
-      item.setProps({ displayIn: 10, closeNotification: () => resolve(true) });
+      item.setProps({ displayIn: 5, closeNotification: () => resolve(true) });
     });
 
     //closeNotification called
