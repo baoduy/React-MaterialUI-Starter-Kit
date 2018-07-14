@@ -332,4 +332,4 @@ ASALocalRun/
 .idea/
 dist/
 node_modules/
-tests/__coverage__/
+**/__coverage__/
