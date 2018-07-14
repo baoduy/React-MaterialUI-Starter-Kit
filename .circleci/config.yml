@@ -20,7 +20,8 @@ jobs:
       #Check out code
       - checkout
       #Download sub modules
-      - git submodule update --init --recursive
+      - run: git submodule update --init --recursive
+      
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -28,6 +29,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+ 
       - run: npm install
       - run: npm install codecov
       - run: npm install npm-check
