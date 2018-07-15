@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Snackbar from "../Snackbar/Snackbar";
 import NotificationType from "./NotificationType";
 import NotificationItemStyle from "./jss";
+import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
 
@@ -10,20 +11,17 @@ import * as helper from "./helper";
 export default class NotificationItem extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this._timeout = undefined;
   }
 
   setCallbackTimeout = props => {
-    const { closeNotification, open, autoClose, displayIn } = props;
+    const { onClose, open, autoClose, displayIn } = props;
 
-    if (
-      !closeNotification ||
-      open !== true ||
-      autoClose !== true ||
-      displayIn <= 0
-    )
+    if (!onClose || open !== true || autoClose !== true || displayIn <= 0)
       return;
 
-    setTimeout(closeNotification, displayIn);
+    if (this._timeout) return;
+    this._timeout = setTimeout(this.onClosing, displayIn);
   };
 
   componentDidMount() {
@@ -34,8 +32,25 @@ export default class NotificationItem extends React.Component {
     this.setCallbackTimeout(nextProps);
   }
 
+  //Handling the internail closing event and call onClose with id
+  onClosing = () => {
+    const { onClose, id } = this.props;
+    onClose({ id });
+    this._timeout = undefined;
+  };
+
   render() {
-    const { id, type, message, icon, close, classes, ...other } = this.props;
+    const {
+      id,
+      type,
+      message,
+      icon,
+      classes,
+      displayIn,
+      autoClose,
+      onClick,
+      ...others
+    } = this.props;
 
     const color = helper.getColor(type);
 
@@ -44,14 +59,16 @@ export default class NotificationItem extends React.Component {
 
     return (
       <Snackbar
-        {...other}
+        {...others}
+        key={id}
+        onClose={this.onClosing}
         color={color}
-        close={close || true}
+        close={true}
         message={
-          <span id={id} className={classes.message}>
+          <Button onClick={onclick} className={classes.message}>
             {finalIcon}
             {" " + message}
-          </span>
+          </Button>
         }
       />
     );
@@ -60,7 +77,7 @@ export default class NotificationItem extends React.Component {
 
 NotificationItem.defaultProps = {
   place: "tr", //Top right
-  displayIn: 6000,
+  displayIn: 4000,
   autoClose: true,
   type: NotificationType.INFO,
   open: true,
@@ -78,12 +95,14 @@ NotificationItem.propTypes = {
   ]),
   //The number of second will be displayed.
   displayIn: PropTypes.number,
-  //Enable timeout to call closeNotification after displayIn second automatically.
+  //Enable timeout to call onClose after displayIn second automatically.
   autoClose: PropTypes.bool,
   //The message of notification
   message: PropTypes.string.isRequired,
   //Close handler.
-  closeNotification: PropTypes.func,
+  onClose: PropTypes.func,
+  //click event handler.
+  onClick: PropTypes.func,
   //The icon of notification. set to false to hide the default icon.
   icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
 };

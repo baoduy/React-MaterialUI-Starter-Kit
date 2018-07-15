@@ -1,5 +1,6 @@
 import * as actionTypes from "./ActionTypes";
 import linq from "linq";
+import * as guard from "../../commons/guard";
 
 export function MessageBoxReducer(state = {}, action) {
   switch (action.type) {
@@ -21,10 +22,11 @@ export function MessageBoxReducer(state = {}, action) {
 export function NotificationReducer(state = [], action) {
   switch (action.type) {
     case actionTypes.SHOW_NOTIFICATION: {
-      //filter out the closed notification and add new item on top
+      const item = action.payload;
+      guard.argumentNotEmpty(item.id, "id");
 
       return [
-        Object.assign(action.payload, {
+        Object.assign(item, {
           open: true
         }),
         ...state
@@ -32,12 +34,12 @@ export function NotificationReducer(state = [], action) {
     }
     case actionTypes.HIDE_NOTIFICATION: {
       //set open to false
-      const item = linq.from(state).first(i => i.id === action.payload.id);
+      const { id } = action.payload;
+      guard.argumentNotEmpty(id, "id");
 
-      const items = linq
-        .from(state)
-        .where(i => i.id != action.payload.id)
-        .toArray();
+      const query = linq.from(state);
+      const item = query.first(i => i.id === id);
+      const items = query.where(i => i.id != id).toArray();
 
       return [
         ...items,

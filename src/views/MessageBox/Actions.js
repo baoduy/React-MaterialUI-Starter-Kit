@@ -33,30 +33,27 @@ export function showMessage(type, message, handler) {
 }
 
 //The action for notification centor.
-function newNotify(id, type, message, callback) {
-  guard.argumentNotEmpty(id, "id");
+function newNotify(type, message, callback) {
   guard.argumentNotEmpty(type, "type");
   guard.argumentNotEmpty(message, "message");
   guard.argumentIsFunc(callback, "callback");
 
-  if (!id) id = createMessageId();
-  return { id, type, message, closeNotification: callback };
+  const id = createMessageId();
+  return { id, type, message, onClose: callback };
 }
 
 export function notify(type, message) {
   return function(dispatch) {
-    const id = createMessageId();
-
-    const callback = () => {
+    const callback = item => {
       dispatch({
         type: actionTypes.HIDE_NOTIFICATION,
-        payload: { id }
+        payload: item
       });
     };
 
     dispatch({
       type: actionTypes.SHOW_NOTIFICATION,
-      payload: newNotify(id, type, message, callback)
+      payload: newNotify(type, message, callback)
     });
   };
 }

@@ -56,7 +56,7 @@ class CustomTabs extends React.Component {
             scrollButtons="auto"
           >
             {tabs.map((prop, key) => {
-              var icon = {};
+              let icon = {};
               if (prop.tabIcon) {
                 icon = {
                   icon: <prop.tabIcon />

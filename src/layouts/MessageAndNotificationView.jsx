@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Notification from "../components/Notification";
+import Notification from "../components/Notification/NotificationPopup";
 import MessageBox from "../components/MessageBox";
 
 //Connect component to Redux store.

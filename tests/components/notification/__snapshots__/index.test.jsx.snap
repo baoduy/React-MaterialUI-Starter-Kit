@@ -22,6 +22,7 @@ Array [
           >
             <span
               className="NotificationItem-message-2"
+              onClick={null}
             >
               <svg
                 aria-hidden="true"
@@ -102,6 +103,7 @@ Array [
           >
             <span
               className="NotificationItem-message-2"
+              onClick={null}
             >
               <svg
                 aria-hidden="true"
@@ -182,6 +184,7 @@ Array [
           >
             <span
               className="NotificationItem-message-2"
+              onClick={null}
             >
               <svg
                 aria-hidden="true"

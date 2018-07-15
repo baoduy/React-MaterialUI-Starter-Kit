@@ -10,11 +10,19 @@ import Close from "@material-ui/icons/Close";
 // core components
 import snackbarContentStyle from "./snackbarContentStyle";
 
-function Snackbar({ ...props }) {
-  const { classes, message, color, close, icon, place, open } = props;
-  var action = [];
+function Snackbar({
+  classes,
+  message,
+  color,
+  close,
+  place,
+  open,
+  onClose,
+  ...others
+}) {
+  let action = [];
   const messageClasses = classNames({
-    [classes.iconMessage]: icon !== undefined
+    [classes.iconMessage]: others.icon !== undefined
   });
   if (close !== undefined) {
     action = [
@@ -23,7 +31,7 @@ function Snackbar({ ...props }) {
         key="close"
         aria-label="Close"
         color="inherit"
-        onClick={() => props.closeNotification()}
+        onClick={onClose}
       >
         <Close className={classes.close} />
       </IconButton>
@@ -43,7 +51,9 @@ function Snackbar({ ...props }) {
       open={open}
       message={
         <div>
-          {icon !== undefined ? <props.icon className={classes.icon} /> : null}
+          {others.icon !== undefined ? (
+            <others.icon className={classes.icon} />
+          ) : null}
           <span className={messageClasses}>{message}</span>
         </div>
       }
@@ -61,11 +71,15 @@ function Snackbar({ ...props }) {
 Snackbar.propTypes = {
   classes: PropTypes.object.isRequired,
   message: PropTypes.node.isRequired,
+  //The color of the Snackbar
   color: PropTypes.oneOf(["info", "success", "warning", "danger", "primary"]),
+  //Show/Hide close button
   close: PropTypes.bool,
   icon: PropTypes.func,
+  //The position the Snackbar:top-left, top-right, top-center, buttom-right, buttom-left,buttom-center.
   place: PropTypes.oneOf(["tl", "tr", "tc", "br", "bl", "bc"]),
-  open: PropTypes.bool
+  open: PropTypes.bool,
+  onClose: PropTypes.func
 };
 
 export default withStyles(snackbarContentStyle)(Snackbar);

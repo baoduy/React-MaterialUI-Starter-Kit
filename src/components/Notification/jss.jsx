@@ -4,9 +4,11 @@ const NotificationItemStyle = theme => ({
   },
 
   message: {
+    color: "white",
     display: "flex",
     alignItems: "center",
-    whiteSpace: "pre"
+    whiteSpace: "pre",
+    textTransform: "none"
   }
 });
 

@@ -12,7 +12,7 @@ import snackbarContentStyle from "./snackbarContentStyle.jsx";
 
 function SnackbarContent({ ...props }) {
   const { classes, message, color, close, icon } = props;
-  var action = [];
+  let action = [];
   const messageClasses = classNames({
     [classes.iconMessage]: icon !== undefined
   });

@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { Manager, Target, Popper } from "react-popper";
+import { Manager, Reference as Target, Popper } from "react-popper";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -64,7 +64,7 @@ class HeaderLinks extends React.Component {
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
         </Button>
-        <Manager className={classes.manager}>
+        {/* <Manager className={classes.manager}>
           <Target>
             <Button
               color={window.innerWidth > 959 ? "transparent" : "white"}
@@ -137,7 +137,7 @@ class HeaderLinks extends React.Component {
               </Grow>
             </ClickAwayListener>
           </Popper>
-        </Manager>
+        </Manager> */}
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}

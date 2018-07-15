@@ -6,13 +6,13 @@ import { mount } from "enzyme";
 import NotificationItem from "../../../src/components/Notification/NotificationItem";
 import Type from "../../../src/components/Notification/NotificationType";
 
-const render = ({ callBack, ...rest } = {}) => {
-  if (!callBack) callBack = () => true;
+const render = ({ onClose, ...rest } = {}) => {
+  if (!onClose) onClose = () => true;
 
   const item = mount(
     <NotificationItem
       {...rest}
-      closeNotification={callBack}
+      onClose={onClose}
       message="Test Notification Item"
     />
   );
@@ -28,7 +28,7 @@ const promiseComponent = ({ displayIn, ...rest }) =>
     const item = render({
       ...rest,
       displayIn: displayIn,
-      callBack: () => {
+      onClose: () => {
         called = true;
         resolve(called);
       }
@@ -40,33 +40,33 @@ const promiseComponent = ({ displayIn, ...rest }) =>
   });
 
 describe(`Testing ${NotificationItem.displayName} component`, () => {
-  test("closeNotification will be called", () => {
-    const pm = promiseComponent({ displayIn: 5 });
+  test("onClose will be called", () => {
+    const pm = promiseComponent({ displayIn: 2 });
     return expect(pm).resolves.toBe(true);
   });
 
-  test("if displayIn is 0 the closeNotification wont be called", () => {
+  test("if displayIn is 0 the onClose wont be called", () => {
     const pm = promiseComponent({ displayIn: 0 });
     return expect(pm).rejects.toBe(false);
   });
 
-  test("update displayIn from 0 to 5 the closeNotification will be called", async () => {
+  test("update displayIn from 0 to 5 the onClose will be called", async () => {
     const item = render({ displayIn: 0 });
 
     //DisplayIn = 0
     const p1 = new Promise((resolve, reject) => {
-      item.setProps({ closeNotification: () => resolve(true) });
-      setTimeout(() => reject(false), 5);
+      item.setProps({ onClose: () => resolve(true) });
+      setTimeout(() => reject(false), 2);
     });
-    //closeNotification called
+    //onClose called
     await expect(p1).rejects.toBe(false);
 
     //DisplayIn = 5ms
     const p2 = new Promise((resolve, reject) => {
-      item.setProps({ displayIn: 5, closeNotification: () => resolve(true) });
+      item.setProps({ displayIn: 2, onClose: () => resolve(true) });
     });
 
-    //closeNotification called
+    //onClose called
     await expect(p2).resolves.toBe(true);
   });
 
@@ -86,6 +86,35 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
 
     expect(console.error).toHaveBeenCalled();
     console.error = original;
+  });
+
+  test("onClose must be a func", () => {
+    const original = console.error;
+    console.error = jest.fn();
+    render({ onClose: "Hello" });
+
+    expect(console.error).toHaveBeenCalled();
+    console.error = original;
+  });
+
+  test("onClick must be a func", () => {
+    const original = console.error;
+    console.error = jest.fn();
+    render({ onClick: "Hello" });
+
+    expect(console.error).toHaveBeenCalled();
+    console.error = original;
+  });
+
+  test("onClick test", () => {
+    var onClick = jest.fn();
+    const wrapper = render({ onClick });
+    console.log(
+      wrapper.findWhere(item => item.type() === "span" && item.onClick).length
+    );
+
+    expect(wrapper).toMatchSnapshot();
+    expect(onClick).toHaveBeenCalled();
   });
 
   test(`render ${Type.INFO}`, () => {
