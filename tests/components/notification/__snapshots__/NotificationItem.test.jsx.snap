@@ -19,22 +19,42 @@ exports[`Testing WithStyles(NotificationItem) component onClick test 1`] = `
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiButton-label-85"
             >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-              />
-            </svg>
-             Test Notification Item
-          </span>
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-111"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -43,7 +63,7 @@ exports[`Testing WithStyles(NotificationItem) component onClick test 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -60,11 +80,11 @@ exports[`Testing WithStyles(NotificationItem) component onClick test 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -76,7 +96,7 @@ exports[`Testing WithStyles(NotificationItem) component onClick test 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>
@@ -103,22 +123,42 @@ exports[`Testing WithStyles(NotificationItem) component render confirm 1`] = `
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiButton-label-85"
             >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-              />
-            </svg>
-             Test Notification Item
-          </span>
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-111"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                />
+              </svg>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -127,7 +167,7 @@ exports[`Testing WithStyles(NotificationItem) component render confirm 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -144,11 +184,11 @@ exports[`Testing WithStyles(NotificationItem) component render confirm 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -160,7 +200,7 @@ exports[`Testing WithStyles(NotificationItem) component render confirm 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>
@@ -187,22 +227,42 @@ exports[`Testing WithStyles(NotificationItem) component render danger 1`] = `
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiButton-label-85"
             >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
-              />
-            </svg>
-             Test Notification Item
-          </span>
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-111"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                />
+              </svg>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -211,7 +271,7 @@ exports[`Testing WithStyles(NotificationItem) component render danger 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -228,11 +288,11 @@ exports[`Testing WithStyles(NotificationItem) component render danger 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -244,7 +304,7 @@ exports[`Testing WithStyles(NotificationItem) component render danger 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>
@@ -271,22 +331,42 @@ exports[`Testing WithStyles(NotificationItem) component render info 1`] = `
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiButton-label-85"
             >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-              />
-            </svg>
-             Test Notification Item
-          </span>
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-111"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -295,7 +375,7 @@ exports[`Testing WithStyles(NotificationItem) component render info 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -312,11 +392,11 @@ exports[`Testing WithStyles(NotificationItem) component render info 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -328,7 +408,7 @@ exports[`Testing WithStyles(NotificationItem) component render info 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>
@@ -355,22 +435,42 @@ exports[`Testing WithStyles(NotificationItem) component render success 1`] = `
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiButton-label-85"
             >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-              />
-            </svg>
-             Test Notification Item
-          </span>
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-111"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -379,7 +479,7 @@ exports[`Testing WithStyles(NotificationItem) component render success 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -396,11 +496,11 @@ exports[`Testing WithStyles(NotificationItem) component render success 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -412,7 +512,7 @@ exports[`Testing WithStyles(NotificationItem) component render success 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>
@@ -439,22 +539,42 @@ exports[`Testing WithStyles(NotificationItem) component render warning 1`] = `
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiButton-label-85"
             >
-              <path
-                d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-              />
-            </svg>
-             Test Notification Item
-          </span>
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-111"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                />
+              </svg>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -463,7 +583,7 @@ exports[`Testing WithStyles(NotificationItem) component render warning 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -480,11 +600,11 @@ exports[`Testing WithStyles(NotificationItem) component render warning 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -496,7 +616,7 @@ exports[`Testing WithStyles(NotificationItem) component render warning 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>
@@ -523,22 +643,42 @@ exports[`Testing WithStyles(NotificationItem) component render warning with Icon
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-84"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiButton-label-85"
             >
-              <path
-                d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-              />
-            </svg>
-             Test Notification Item
-          </span>
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-111"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                />
+              </svg>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -547,7 +687,7 @@ exports[`Testing WithStyles(NotificationItem) component render warning with Icon
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -564,11 +704,11 @@ exports[`Testing WithStyles(NotificationItem) component render warning with Icon
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -580,7 +720,7 @@ exports[`Testing WithStyles(NotificationItem) component render warning with Icon
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>
@@ -607,17 +747,37 @@ exports[`Testing WithStyles(NotificationItem) component render warning with cust
         <span
           className=""
         >
-          <span
-            className="NotificationItem-message-2"
+          <button
+            className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
+            disabled={false}
+            onBlur={[Function]}
             onClick={null}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
           >
-            <div
-              id="icon"
+            <span
+              className="MuiButton-label-85"
             >
-              Duy
-            </div>
-             Test Notification Item
-          </span>
+              <div
+                id="icon"
+              >
+                Duy
+              </div>
+               Test Notification Item
+            </span>
+            <span
+              className="MuiTouchRipple-root-118"
+            />
+          </button>
         </span>
       </div>
     </div>
@@ -626,7 +786,7 @@ exports[`Testing WithStyles(NotificationItem) component render warning with cust
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-108 MuiIconButton-root-125 MuiIconButton-colorInherit-126 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -643,11 +803,11 @@ exports[`Testing WithStyles(NotificationItem) component render warning with cust
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-130"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-111 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -659,7 +819,7 @@ exports[`Testing WithStyles(NotificationItem) component render warning with cust
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-118"
         />
       </button>
     </div>

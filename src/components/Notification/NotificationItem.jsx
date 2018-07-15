@@ -65,7 +65,7 @@ export default class NotificationItem extends React.Component {
         color={color}
         close={true}
         message={
-          <Button onClick={onclick} className={classes.message}>
+          <Button onClick={onClick} className={classes.message}>
             {finalIcon}
             {" " + message}
           </Button>

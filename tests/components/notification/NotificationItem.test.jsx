@@ -109,9 +109,9 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
   test("onClick test", () => {
     var onClick = jest.fn();
     const wrapper = render({ onClick });
-    console.log(
-      wrapper.findWhere(item => item.type() === "span" && item.onClick).length
-    );
+    wrapper
+      .findWhere(item => item.type() === "span")
+      .forEach(i => i.simulate(""));
 
     expect(wrapper).toMatchSnapshot();
     expect(onClick).toHaveBeenCalled();

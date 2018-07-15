@@ -6,8 +6,7 @@ import NotificationItem from "./NotificationItem";
 export default function NotificationPopup({
   dataSource,
   displayIn,
-  subsequentDelay,
-  onClose
+  subsequentDelay
 }) {
   if (!dataSource) return <React.Fragment />;
   let count = dataSource.length - 1;
@@ -21,10 +20,6 @@ export default function NotificationPopup({
             {...p}
             displayIn={displayIn + count-- * subsequentDelay}
             autoClose={i === 0}
-            onClose={event => {
-              if (p.onClose) p.onClose(event);
-              if (onClose) onClose(event);
-            }}
           />
         );
       })}
@@ -40,6 +35,5 @@ NotificationPopup.defaultProps = {
 NotificationPopup.propTypes = {
   dataSource: PropTypes.arrayOf(PropTypes.shape(NotificationItem.propTypes))
     .isRequired,
-  displayIn: PropTypes.number,
-  onClose: PropTypes.func
+  displayIn: PropTypes.number
 };

@@ -33,16 +33,16 @@ export function showMessage(type, message, handler) {
 }
 
 //The action for notification centor.
-function newNotify(type, message, callback) {
+function newNotify(type, message, callback, onClick) {
   guard.argumentNotEmpty(type, "type");
   guard.argumentNotEmpty(message, "message");
   guard.argumentIsFunc(callback, "callback");
 
   const id = createMessageId();
-  return { id, type, message, onClose: callback };
+  return { id, type, message, onClose: callback, onClick };
 }
 
-export function notify(type, message) {
+export function notify(type, message, onClick) {
   return function(dispatch) {
     const callback = item => {
       dispatch({
@@ -53,7 +53,7 @@ export function notify(type, message) {
 
     dispatch({
       type: actionTypes.SHOW_NOTIFICATION,
-      payload: newNotify(type, message, callback)
+      payload: newNotify(type, message, callback, onClick)
     });
   };
 }
