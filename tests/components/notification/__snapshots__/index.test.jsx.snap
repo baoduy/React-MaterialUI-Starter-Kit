@@ -24,7 +24,6 @@ Array [
               className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
               disabled={false}
               onBlur={[Function]}
-              onClick={null}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -125,7 +124,6 @@ Array [
               className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
               disabled={false}
               onBlur={[Function]}
-              onClick={null}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -226,7 +224,6 @@ Array [
               className="MuiButtonBase-root-108 MuiButton-root-84 MuiButton-text-86 MuiButton-flat-89 NotificationItem-message-2"
               disabled={false}
               onBlur={[Function]}
-              onClick={null}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}

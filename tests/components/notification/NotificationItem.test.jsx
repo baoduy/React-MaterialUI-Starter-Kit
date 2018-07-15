@@ -109,12 +109,17 @@ describe(`Testing ${NotificationItem.displayName} component`, () => {
   test("onClick test", () => {
     var onClick = jest.fn();
     const wrapper = render({ onClick });
-    wrapper
-      .findWhere(item => item.type() === "span")
-      .forEach(i => i.simulate(""));
+
+    const btn = wrapper.findWhere(
+      b => b.type() === "button" && b.prop("onClick") === onClick
+    );
 
     expect(wrapper).toMatchSnapshot();
-    expect(onClick).toHaveBeenCalled();
+    //Message button and Close button
+    expect(btn.length).toBe(1);
+
+    btn.simulate("click");
+    expect(onClick).toBeCalled();
   });
 
   test(`render ${Type.INFO}`, () => {
