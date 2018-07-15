@@ -1,6 +1,9 @@
 import * as actionTypes from "./ActionTypes";
+import * as guard from "../../commons/guard";
 
-const createMessageId = () => new Date().getTime();
+function createMessageId() {
+  return new Date().getTime();
+}
 
 export function showMessage(type, message, handler) {
   return function(dispatch) {
@@ -12,10 +15,7 @@ export function showMessage(type, message, handler) {
       } finally {
         dispatch({
           type: actionTypes.HIDE_MESSAGE_BOX,
-          payload: {
-            id,
-            type
-          }
+          payload: undefined
         });
       }
     };
@@ -32,6 +32,17 @@ export function showMessage(type, message, handler) {
   };
 }
 
+//The action for notification centor.
+function newNotify(id, type, message, callback) {
+  guard.argumentNotEmpty(id, "id");
+  guard.argumentNotEmpty(type, "type");
+  guard.argumentNotEmpty(message, "message");
+  guard.argumentIsFunc(callback, "callback");
+
+  if (!id) id = createMessageId();
+  return { id, type, message, closeNotification: callback };
+}
+
 export function notify(type, message) {
   return function(dispatch) {
     const id = createMessageId();
@@ -39,21 +50,13 @@ export function notify(type, message) {
     const callback = () => {
       dispatch({
         type: actionTypes.HIDE_NOTIFICATION,
-        payload: {
-          id,
-          type
-        }
+        payload: { id }
       });
     };
 
     dispatch({
       type: actionTypes.SHOW_NOTIFICATION,
-      payload: {
-        id,
-        type,
-        message,
-        closeNotification: callback
-      }
+      payload: newNotify(id, type, message, callback)
     });
   };
 }

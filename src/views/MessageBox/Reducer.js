@@ -18,34 +18,35 @@ export function MessageBoxReducer(state = {}, action) {
   }
 }
 
-export function NotificationReducer(
-  state = [],
-  action
-) {
+export function NotificationReducer(state = [], action) {
   switch (action.type) {
-    case actionTypes.SHOW_NOTIFICATION:
-      {
-        //filter out the closed notification and add new item on top
-        const items = linq
-          .from(state)
-          .where(i => i.open)
-          .toArray();
-        return [Object.assign(action.payload, {
+    case actionTypes.SHOW_NOTIFICATION: {
+      //filter out the closed notification and add new item on top
+
+      return [
+        Object.assign(action.payload, {
           open: true
-        }), ...items];
-      }
-    case actionTypes.HIDE_NOTIFICATION:
-      {
-        //set open to false
-        const items = linq
-          .from(state)
-          .where(i => i.id != action.payload.id)
-          .toArray();
-        return [...items, Object.assign(action.payload, {
+        }),
+        ...state
+      ];
+    }
+    case actionTypes.HIDE_NOTIFICATION: {
+      //set open to false
+      const item = linq.from(state).first(i => i.id === action.payload.id);
+
+      const items = linq
+        .from(state)
+        .where(i => i.id != action.payload.id)
+        .toArray();
+
+      return [
+        ...items,
+        Object.assign({}, item, {
           message: "",
           open: false
-        })];
-      }
+        })
+      ];
+    }
     default:
       return state;
   }

@@ -3,23 +3,27 @@
 [![CircleCI](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit.svg?style=svg)](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit)
 [![codecov](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit/branch/develop/graph/badge.svg)](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit)
 
-Minimal starter kit with hot module replacement (HMR) for rapid development.
+The PRD really sttarted kit for **ReactJs** with hot module replacement (HMR) for rapid development.
 
 - **[React](https://facebook.github.io/react/)** (16.x)
 - **[Webpack](https://webpack.js.org/)** (4.x)
 - **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (4.x)
 - **[Babel](http://babeljs.io/)** (6.x)
-- **[LESS](http://lesscss.org/)**
-- [Jest](https://facebook.github.io/jest/) - Testing framework for React applications
-- **Image loading/minification using [Image Loader](https://github.com/vanwagonet/img-loader)**
-- Code quality (linting) for JavaScript and LESS/CSS.
+- **[JSS](http://cssinjs.org/?v=v9.8.7)** this is Css in Jss, the powerfull tool to develop Css using Js. The tool is using natively by Material UI.
+- **[LESS](http://lesscss.org/)** for style-sheet development. if you don't want to use Jss.
+- **[Jest](https://facebook.github.io/jest/)** - Testing framework for React applications
+- **[Image Loader](https://github.com/vanwagonet/img-loader)** to loading and minify the images.
 - **[Redux](https://redux.js.org/)** Manage the Component states.
 - **[Redux-Thunk](https://github.com/reduxjs/redux-thunk)** The middle-ware of Redux
 - **[Redux-toolbelt](https://github.com/welldone-software/redux-toolbelt)** A set of tools for quicker, easier, less verbose and safer Redux development by [welldone-software](http://welldone-software.com/).
-- ESLINT for Javascript and ReactJs.
-- This project also using **babel-runtime** and **babel-plugin-transform-runtime** to speperate the commonns functions to the other module so the size of the file will be reduced. For details please refer [here](babel-plugin-transform-runtime)
+- **[request-promise](https://github.com/request/request-promise)** and **[request](https://github.com/request/request)** for WebApi communication.
 
-* Convert CSS to LESS: http://kronus.me/cn/css2less/
+- **ESLINT** for Javascript and ReactJs coding best practises.
+- Code quality (linting) for JavaScript and LESS/CSS.
+
+- This project also using **babel-runtime** and **babel-plugin-transform-runtime** to speperate the commonns functions to the other modules to reduce the size of the js files. Refer [here](babel-plugin-transform-runtime) for details.
+
+* The tool to convert Css to Jss [here](https://github.com/cssinjs/cli) and to LESS [here](http://kronus.me/cn/css2less/) in case you don't like Jss.
 
 # Original Source Code
 

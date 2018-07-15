@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Snackbar from "../Snackbar/Snackbar.jsx";
+import Snackbar from "../Snackbar/Snackbar";
 import NotificationType from "./NotificationType";
 import NotificationItemStyle from "./jss";
 import { withStyles } from "@material-ui/core/styles";

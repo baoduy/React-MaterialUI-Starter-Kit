@@ -19,6 +19,8 @@ window._base = document.getElementsByTagName("base")[0].getAttribute("href");
 console.log(`base URL ${window._base}`);
 
 const hist = createBrowserHistory({ basename: window._base });
+//indicate whether application is running on PRD or not
+const isPrd = process.env.NODE_ENV === "production";
 
 const createRouter = () => {
   return (
@@ -36,10 +38,11 @@ const createRouter = () => {
   );
 };
 
+//The Global ExceptionHandler will be disabled when running on development mode.
 const renderComponent = () => {
   ReactDOM.render(
     <Provider reducers={reducers}>
-      <ExceptionHandler global disabled={false}>
+      <ExceptionHandler global disabled={!isPrd}>
         {createRouter()}
         <MessageAndNotificationView />
       </ExceptionHandler>
