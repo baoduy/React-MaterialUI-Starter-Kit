@@ -17,5 +17,10 @@ export function argumentIsFunc(func, name) {
 
 export function argumentIsString(object, name) {
   if (typeof object !== "string")
-    throw `${name || "Argument"} is must be a function.`;
+    throw `${name || "Argument"} is must be a string.`;
+}
+
+export function argumentIsStringAndNotEmpty(object, name) {
+  argumentNotEmpty(object, name);
+  argumentIsString(object.name);
 }

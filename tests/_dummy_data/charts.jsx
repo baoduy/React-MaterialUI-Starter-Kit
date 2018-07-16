@@ -1,7 +1,10 @@
 // ##############################
 // // // javascript library for creating charts
 // #############################
-import { Interpolation, Svg } from "chartist";
+import {
+  Interpolation,
+  Svg
+} from "../../../../Users/Steven/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/chartist";
 
 // ##############################
 // // // variables used to create animation on charts
@@ -35,7 +38,7 @@ const dailySalesChart = {
   },
   // for animation
   animation: {
-    draw: function (data) {
+    draw: function(data) {
       if (data.type === "line" || data.type === "area") {
         data.element.animate({
           d: {
@@ -106,7 +109,7 @@ const emailsSubscriptionChart = {
       {
         seriesBarDistance: 5,
         axisX: {
-          labelInterpolationFnc: function (value) {
+          labelInterpolationFnc: function(value) {
             return value[0];
           }
         }
@@ -114,7 +117,7 @@ const emailsSubscriptionChart = {
     ]
   ],
   animation: {
-    draw: function (data) {
+    draw: function(data) {
       if (data.type === "bar") {
         data.element.animate({
           opacity: {
@@ -153,7 +156,7 @@ const completedTasksChart = {
     }
   },
   animation: {
-    draw: function (data) {
+    draw: function(data) {
       if (data.type === "line" || data.type === "area") {
         data.element.animate({
           d: {

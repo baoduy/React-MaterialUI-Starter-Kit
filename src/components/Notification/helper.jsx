@@ -1,3 +1,5 @@
+import * as guard from "../../commons/guard";
+import { newGuid } from "../../commons/commonFuncs";
 import React from "react";
 import NotificationType from "./NotificationType";
 import SvgIcon from "@material-ui/core/SvgIcon";
@@ -52,4 +54,32 @@ export function getIcon(type) {
         </SvgIcon>
       );
   }
+}
+
+const NotificationStatus = {
+  NEW: "NEW",
+  NOTIFIED: "NOTIFIED",
+  READ: "READ",
+  DELETED: "DELETED"
+};
+
+/**
+ *
+ *
+ * @export create new Notification data
+ * @param {*} type
+ * @param {*} message
+ * @param {*} onClick
+ * @param {*} group
+ * @returns
+ */
+export function newNotify(type, message, onClick, group) {
+  guard.argumentIsStringAndNotEmpty(type, "type");
+  guard.argumentIsStringAndNotEmpty(message, "message");
+
+  if (onClick) guard.argumentIsFunc(onclick);
+  if (group) guard.argumentIsString(group);
+
+  const id = newGuid();
+  return { id, type, message, onClick, group };
 }
