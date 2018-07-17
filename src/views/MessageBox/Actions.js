@@ -1,5 +1,6 @@
 import * as actionTypes from "./ActionTypes";
 import * as guard from "../../commons/guard";
+import moment from "moment";
 
 function createMessageId() {
   return new Date().getTime();
@@ -42,7 +43,18 @@ function newNotify(type, message, title, group, callback, onClick) {
   // if (group) guard.argumentIsString(group, "group");
 
   const id = createMessageId();
-  return { id, type, message, title, group, onClose: callback, onClick };
+  const createdOn = moment();
+
+  return {
+    id,
+    type,
+    message,
+    title,
+    group,
+    createdOn,
+    onClose: callback,
+    onClick
+  };
 }
 
 export function notify(type, message, title, group, onClick) {
