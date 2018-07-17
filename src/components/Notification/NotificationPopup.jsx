@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import NotificationItem from "./NotificationItem";
+import NotificationPopupItem from "./NotificationPopupItem";
 
-//Render the Popup of the list notificationItem
+//Render the Popup of the list NotificationPopupItem
 export default function NotificationPopup({
   dataSource,
   displayIn,
@@ -15,7 +15,7 @@ export default function NotificationPopup({
     <React.Fragment>
       {dataSource.map((p, i) => {
         return (
-          <NotificationItem
+          <NotificationPopupItem
             key={p.id || i}
             {...p}
             displayIn={displayIn + count-- * subsequentDelay}
@@ -33,7 +33,8 @@ NotificationPopup.defaultProps = {
 };
 
 NotificationPopup.propTypes = {
-  dataSource: PropTypes.arrayOf(PropTypes.shape(NotificationItem.propTypes))
-    .isRequired,
+  dataSource: PropTypes.arrayOf(
+    PropTypes.shape(NotificationPopupItem.propTypes)
+  ).isRequired,
   displayIn: PropTypes.number
 };

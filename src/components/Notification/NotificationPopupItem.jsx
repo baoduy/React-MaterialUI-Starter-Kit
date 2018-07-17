@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
 
 @withStyles(NotificationItemStyle)
-export default class NotificationItem extends React.Component {
+export default class NotificationPopupItem extends React.Component {
   constructor(props, context) {
     super(props, context);
     this._timeout = undefined;
@@ -32,7 +32,7 @@ export default class NotificationItem extends React.Component {
     this.setCallbackTimeout(nextProps);
   }
 
-  //Handling the internail closing event and call onClose with id
+  //Handling the internal closing event and call onClose with id
   onClosing = () => {
     const { onClose, id } = this.props;
     onClose({ id });
@@ -48,7 +48,6 @@ export default class NotificationItem extends React.Component {
       classes,
       displayIn,
       autoClose,
-      onClick,
       ...others
     } = this.props;
 
@@ -64,18 +63,14 @@ export default class NotificationItem extends React.Component {
         onClose={this.onClosing}
         color={color}
         close={true}
-        message={
-          <Button onClick={onClick} className={classes.message}>
-            {finalIcon}
-            {" " + message}
-          </Button>
-        }
+        icon={finalIcon}
+        message={message}
       />
     );
   }
 }
 
-NotificationItem.defaultProps = {
+NotificationPopupItem.defaultProps = {
   place: "tr", //Top right
   displayIn: 4000,
   autoClose: true,
@@ -84,7 +79,7 @@ NotificationItem.defaultProps = {
   icon: true
 };
 
-NotificationItem.propTypes = {
+NotificationPopupItem.propTypes = {
   //The Tye of notification
   type: PropTypes.oneOf([
     NotificationType.CONFIRM,

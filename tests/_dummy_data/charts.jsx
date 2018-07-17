@@ -1,10 +1,7 @@
 // ##############################
 // // // javascript library for creating charts
 // #############################
-import {
-  Interpolation,
-  Svg
-} from "../../../../Users/Steven/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/chartist";
+import { Interpolation, Svg } from "chartist";
 
 // ##############################
 // // // variables used to create animation on charts

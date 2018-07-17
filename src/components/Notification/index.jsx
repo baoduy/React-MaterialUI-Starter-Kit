@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Item from "./NotificationItem";
-import NotificationItem from "./NotificationItem";
+import NotificationPopupItem from "./NotificationPopupItem";
 
 export default function NotificationCenter({
   dataSource,
@@ -16,7 +15,7 @@ export default function NotificationCenter({
     <React.Fragment>
       {dataSource.map((p, i) => {
         return (
-          <Item
+          <NotificationPopupItem
             key={p.id || i}
             {...p}
             displayIn={displayIn + count-- * subsequentDelay}

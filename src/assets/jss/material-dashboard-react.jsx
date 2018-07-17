@@ -173,6 +173,9 @@ const cardLink = {
   }
 };
 
+const pointer = {
+  cursor: "pointer"
+};
 export {
   //variables
   drawerWidth,
@@ -206,5 +209,6 @@ export {
   title,
   cardTitle,
   cardSubtitle,
-  cardLink
+  cardLink,
+  pointer
 };

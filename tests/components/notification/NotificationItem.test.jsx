@@ -3,14 +3,14 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import NotificationItem from "../../../src/components/Notification/NotificationItem";
+import NotificationPopupItem from "../../../src/components/Notification/NotificationPopupItem";
 import Type from "../../../src/components/Notification/NotificationType";
 
 const render = ({ onClose, ...rest } = {}) => {
   if (!onClose) onClose = () => true;
 
   const item = mount(
-    <NotificationItem
+    <NotificationPopupItem
       {...rest}
       onClose={onClose}
       message="Test Notification Item"
@@ -39,7 +39,7 @@ const promiseComponent = ({ displayIn, ...rest }) =>
     }, displayIn + 2);
   });
 
-describe(`Testing ${NotificationItem.displayName} component`, () => {
+describe(`Testing ${NotificationPopupItem.displayName} component`, () => {
   test("onClose will be called", () => {
     const pm = promiseComponent({ displayIn: 2 });
     return expect(pm).resolves.toBe(true);

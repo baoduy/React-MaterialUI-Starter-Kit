@@ -1,6 +1,6 @@
 import uuidv4 from "uuid/v4";
 //correct URL for Reserved proxy
-//Get the minisecond of current time.
+//Get the millisecond of current time.
 
 export function newGuid() {
   return uuidv4();
