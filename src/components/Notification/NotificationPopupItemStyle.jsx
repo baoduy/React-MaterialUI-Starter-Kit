@@ -1,4 +1,5 @@
 const NotificationItemStyle = theme => ({
+  title: { fontWeight: "bold" }
   // icon: {
   //   fontSize: 20
   // },

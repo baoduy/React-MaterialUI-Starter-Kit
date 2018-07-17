@@ -39,7 +39,7 @@ const promiseComponent = ({ displayIn, ...rest }) =>
     }, displayIn + 2);
   });
 
-describe(`Testing ${NotificationPopupItem.displayName} component`, () => {
+describe("Testing NotificationPopupItem component", () => {
   test("onClose will be called", () => {
     const pm = promiseComponent({ displayIn: 2 });
     return expect(pm).resolves.toBe(true);
@@ -111,7 +111,7 @@ describe(`Testing ${NotificationPopupItem.displayName} component`, () => {
     const wrapper = render({ onClick });
 
     const btn = wrapper.findWhere(
-      b => b.type() === "button" && b.prop("onClick") === onClick
+      b => b.type() === "div" && b.prop("onClick") === onClick
     );
 
     expect(wrapper).toMatchSnapshot();

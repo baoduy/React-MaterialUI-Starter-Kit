@@ -76,12 +76,25 @@ class MessageBoxPage extends React.Component {
   };
 
   dialogHandler = event => {
+    if (!this.count) this.count = 0;
+
     const target = event.currentTarget || event.target;
-    this.props.actions.notify(
-      MessageBoxType.WARNING,
-      `The clicked button is ${target.value}`,
-      () => alert("Notification Clicked")
-    );
+
+    if (this.count % 2 === 0) {
+      this.props.actions.notify(
+        MessageBoxType.WARNING,
+        `The clicked button is ${target.value}`,
+        () => alert("Notification Clicked")
+      );
+    } else {
+      this.props.actions.notify(
+        MessageBoxType.DANGER,
+        `The clicked button is ${target.value}`,
+        "Notification with Title",
+        () => alert("Notification Clicked")
+      );
+    }
+    this.count++;
   };
 
   render() {

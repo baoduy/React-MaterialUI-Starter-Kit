@@ -32,17 +32,30 @@ export function showMessage(type, message, handler) {
   };
 }
 
-//The action for notification centor.
-function newNotify(type, message, callback, onClick) {
-  guard.argumentNotEmpty(type, "type");
-  guard.argumentNotEmpty(message, "message");
-  guard.argumentIsFunc(callback, "callback");
+//The action for notification center.
+function newNotify(type, message, title, group, callback, onClick) {
+  // guard.argumentNotEmpty(type, "type");
+  // guard.argumentNotEmpty(message, "message");
+  // guard.argumentIsFunc(callback, "callback");
+
+  // if (title) guard.argumentIsString(title, "title");
+  // if (group) guard.argumentIsString(group, "group");
 
   const id = createMessageId();
-  return { id, type, message, onClose: callback, onClick };
+  return { id, type, message, title, group, onClose: callback, onClick };
 }
 
-export function notify(type, message, onClick) {
+export function notify(type, message, title, group, onClick) {
+  if (typeof title === "function" && !onClick) {
+    onClick = title;
+    title = "";
+  }
+
+  if (typeof group === "function" && !onClick) {
+    onClick = group;
+    group = "";
+  }
+
   return function(dispatch) {
     const callback = item => {
       dispatch({
@@ -53,7 +66,7 @@ export function notify(type, message, onClick) {
 
     dispatch({
       type: actionTypes.SHOW_NOTIFICATION,
-      payload: newNotify(type, message, callback, onClick)
+      payload: newNotify(type, message, title, group, callback, onClick)
     });
   };
 }

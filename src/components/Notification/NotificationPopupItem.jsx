@@ -2,12 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Snackbar from "../Snackbar/Snackbar";
 import NotificationType from "./NotificationType";
-import NotificationItemStyle from "./jss";
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
+import NotificationPopupItemStyle from "./NotificationPopupItemStyle";
+import withStyles from "@material-ui/core/styles/withStyles";
 import * as helper from "./helper";
 
-@withStyles(NotificationItemStyle)
+@withStyles(NotificationPopupItemStyle)
 export default class NotificationPopupItem extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -43,28 +42,29 @@ export default class NotificationPopupItem extends React.Component {
     const {
       id,
       type,
-      message,
       icon,
-      classes,
       displayIn,
       autoClose,
+      title,
+      message,
+      classes,
       ...others
     } = this.props;
-
-    const color = helper.getColor(type);
-
-    let finalIcon = icon;
-    if (icon === true) finalIcon = helper.getIcon(type);
 
     return (
       <Snackbar
         {...others}
         key={id}
         onClose={this.onClosing}
-        color={color}
-        close={true}
-        icon={finalIcon}
-        message={message}
+        color={helper.getColor(type)}
+        close
+        icon={icon === true ? helper.getIcon(type) : icon}
+        message={
+          <React.Fragment>
+            {title && <div className={classes.title}>{title}</div>}
+            {message}
+          </React.Fragment>
+        }
       />
     );
   }
@@ -94,6 +94,8 @@ NotificationPopupItem.propTypes = {
   autoClose: PropTypes.bool,
   //The message of notification
   message: PropTypes.string.isRequired,
+  //the title of notification
+  title: PropTypes.string,
   //Close handler.
   onClose: PropTypes.func,
   //click event handler.
