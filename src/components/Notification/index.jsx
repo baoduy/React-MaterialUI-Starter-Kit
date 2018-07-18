@@ -1,44 +1,65 @@
 import React from "react";
 import PropTypes from "prop-types";
-import NotificationPopupItem from "./NotificationPopupItem";
+import NotificationPanel from "./NotificationPanel";
+import { Notifications, NotificationsActive } from "@material-ui/icons";
+import { IconButton, withStyles } from "@material-ui/core";
+import Badge from "@material-ui/core/Badge";
+import NotificationCenterStyle from "./jss";
 
-export default function NotificationCenter({
-  dataSource,
-  displayIn,
-  subsequentDelay,
-  onClose
-}) {
-  if (!dataSource) return <React.Fragment />;
-  let count = dataSource.length - 1;
+@withStyles(NotificationCenterStyle)
+export default class NotificationCenter extends React.Component {
+  constructor(props, context) {
+    super(props, context);
 
-  return (
-    <React.Fragment>
-      {dataSource.map((p, i) => {
-        return (
-          <NotificationPopupItem
-            key={p.id || i}
-            {...p}
-            displayIn={displayIn + count-- * subsequentDelay}
-            autoClose={i === 0}
-            onClose={() => {
-              if (p.onClose) p.onClose();
-              if (onClose) onClose(p);
-            }}
-          />
-        );
-      })}
-    </React.Fragment>
-  );
+    this.state = { panelOpen: false };
+  }
+
+  onClick = () => {
+    this.setState({ panelOpen: !this.state.panelOpen });
+  };
+
+  onPanelOpen = () => {};
+
+  onPanelClose = () => {
+    this.setState({ panelOpen: false });
+  };
+
+  render() {
+    const { dataSource, classes, badgeColor, ...others } = this.props;
+    return (
+      <React.Fragment>
+        <IconButton onClick={this.onClick}>
+          {dataSource.length > 0 && (
+            <Badge badgeContent={dataSource.length} color={badgeColor}>
+              <NotificationsActive className={classes.iconActive} />
+            </Badge>
+          )}
+          {dataSource.length <= 0 && <Notifications className={classes.icon} />}
+        </IconButton>
+        <NotificationPanel
+          dataSource={dataSource}
+          open={this.state.panelOpen}
+          onOpen={this.onPanelOpen}
+          onClose={this.onPanelClose}
+        />
+      </React.Fragment>
+    );
+  }
 }
 
 NotificationCenter.defaultProps = {
-  displayIn: 6000,
-  subsequentDelay: 1000
+  badgeColor: "secondary"
 };
 
 NotificationCenter.propTypes = {
-  dataSource: PropTypes.arrayOf(PropTypes.shape(NotificationItem.propTypes))
-    .isRequired,
+  dataSource: PropTypes.array.isRequired,
   displayIn: PropTypes.number,
-  onClose: PropTypes.func
+  onChange: PropTypes.func,
+  badgeColor: PropTypes.oneOf([
+    "inherit",
+    "primary",
+    "secondary",
+    "default",
+    "error"
+  ])
 };

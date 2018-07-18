@@ -79,16 +79,18 @@ class MessageBoxPage extends React.Component {
     if (!this.count) this.count = 0;
 
     const target = event.currentTarget || event.target;
+    const index = Math.floor(Math.random() * 5);
+    let type = MessageBoxType[Object.keys(MessageBoxType)[index]];
 
     if (this.count % 2 === 0) {
       this.props.actions.notify(
-        MessageBoxType.WARNING,
+        type,
         `The clicked button is ${target.value}`,
         () => alert("Notification Clicked")
       );
     } else {
       this.props.actions.notify(
-        MessageBoxType.DANGER,
+        type,
         `The clicked button is ${target.value}`,
         "Notification with Title",
         () => alert("Notification Clicked")
