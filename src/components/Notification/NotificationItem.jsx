@@ -1,24 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import red from "@material-ui/core/colors/red";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ClearIcon from "@material-ui/icons/Clear";
 import NotificationType from "./NotificationType";
 import NotificationItemStyle from "./NotificationItemStyle";
 import moment from "moment";
+import {
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListItemSecondaryAction,
+  IconButton
+} from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
+import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
-import { WithStyles } from "@material-ui/core";
 
 function defaultFormatDate(date) {
   //convert Date to moment
@@ -45,26 +39,35 @@ function defaultFormatDate(date) {
 
 function NotificationItem({
   title,
-  createdOn,
   message,
-  formatDate,
   type,
-  classes
+  classes,
+  onClose,
+  onClick,
+  ...others
 }) {
+  const Icon = helper.getIcon(type);
   return (
-    <Card>
-      <CardHeader
-        className={classes[type]}
-        avatar={<Avatar aria-label="Recipe">{helper.getIcon(type)}</Avatar>}
-        action={
-          <IconButton>
-            <ClearIcon />
-          </IconButton>
-        }
-        title={title}
-        subheader={formatDate(createdOn)}
+    <ListItem
+      className={classes.root}
+      onClick={onClick}
+      button={onClick !== undefined}
+    >
+      <ListItemIcon className={classes[type]}>
+        <Icon />
+      </ListItemIcon>
+      <ListItemText
+        primaryTypographyProps={{ className: classes.title }}
+        primary={title}
+        secondaryTypographyProps={{ className: classes.message }}
+        secondary={message}
       />
-    </Card>
+      <ListItemSecondaryAction>
+        <IconButton className={classes.iconButton} onClick={onClose}>
+          <CloseIcon className={classes.close} />
+        </IconButton>
+      </ListItemSecondaryAction>
+    </ListItem>
   );
 }
 
@@ -99,4 +102,4 @@ NotificationItem.propTypes = {
   icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
 };
 
-export default WithStyles(NotificationItemStyle)(NotificationItem);
+export default withStyles(NotificationItemStyle)(NotificationItem);

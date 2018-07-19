@@ -65,7 +65,40 @@ class HeaderLinks extends React.Component {
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
         </Button>
-        <NotificationCenter dataSource={[]} />
+        <NotificationCenter
+          items={[
+            {
+              type: "info",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "danger",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "warning",
+              group: "Notification",
+              title: "Hello",
+              onClick: () => true,
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "confirm",
+              group: "Notification",
+              title: "Hello",
+              onClick: () => true,
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            }
+          ]}
+        />
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}

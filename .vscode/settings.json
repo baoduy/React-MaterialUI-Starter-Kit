@@ -60,6 +60,7 @@
   "javascript.implicitProjectConfig.experimentalDecorators": true,
   "cSpell.words": [
     "Snackbar",
+    "Swipeable",
     "linebreak",
     "mimetype",
     "scrollbar",

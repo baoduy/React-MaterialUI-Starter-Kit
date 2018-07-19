@@ -4,6 +4,8 @@ import MomentPropTypes from "react-moment-proptypes";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import NotificationPanelStyle from "./NotificationPanelStyle";
 import { withStyles } from "@material-ui/core";
+import NotificationGroup from "./NotificationGroup";
+import linq from "linq";
 
 function NotificationPanel({
   position,
@@ -11,8 +13,15 @@ function NotificationPanel({
   onClose,
   onOpen,
   classes,
+  items,
   ...others
 }) {
+  const groups = linq
+    .from(items)
+    .groupBy(i => i.group)
+    .select(g => ({ title: g.key(), items: g.toArray() }))
+    .toArray();
+
   return (
     <SwipeableDrawer
       anchor={position}
@@ -20,7 +29,9 @@ function NotificationPanel({
       onClose={onClose}
       onOpen={onOpen}
     >
-      <div className={classes.contain}>notification here</div>
+      <div className={classes.contain}>
+        {groups.map((g, i) => <NotificationGroup key={i} {...g} />)}
+      </div>
     </SwipeableDrawer>
   );
 }
@@ -31,7 +42,7 @@ NotificationPanel.defaultProps = {
 };
 
 NotificationPanel.propTypes = {
-  dataSource: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
       createdOn: MomentPropTypes.momentObj,

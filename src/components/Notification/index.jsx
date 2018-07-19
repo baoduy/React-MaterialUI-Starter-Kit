@@ -25,19 +25,19 @@ export default class NotificationCenter extends React.Component {
   };
 
   render() {
-    const { dataSource, classes, badgeColor, ...others } = this.props;
+    const { items, classes, badgeColor, ...others } = this.props;
     return (
       <React.Fragment>
         <IconButton onClick={this.onClick}>
-          {dataSource.length > 0 && (
-            <Badge badgeContent={dataSource.length} color={badgeColor}>
+          {items.length > 0 && (
+            <Badge badgeContent={items.length} color={badgeColor}>
               <NotificationsActive className={classes.iconActive} />
             </Badge>
           )}
-          {dataSource.length <= 0 && <Notifications className={classes.icon} />}
+          {items.length <= 0 && <Notifications className={classes.icon} />}
         </IconButton>
         <NotificationPanel
-          dataSource={dataSource}
+          items={items}
           open={this.state.panelOpen}
           onOpen={this.onPanelOpen}
           onClose={this.onPanelClose}
@@ -52,7 +52,7 @@ NotificationCenter.defaultProps = {
 };
 
 NotificationCenter.propTypes = {
-  dataSource: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
   displayIn: PropTypes.number,
   onChange: PropTypes.func,
   badgeColor: PropTypes.oneOf([
