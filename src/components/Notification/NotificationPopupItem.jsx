@@ -5,6 +5,7 @@ import NotificationType from "./NotificationType";
 import NotificationPopupItemStyle from "./NotificationPopupItemStyle";
 import withStyles from "@material-ui/core/styles/withStyles";
 import * as helper from "./helper";
+import NotificationItemPropTypes from "./NotificationItemPropTypes";
 
 @withStyles(NotificationPopupItemStyle)
 export default class NotificationPopupItem extends React.Component {
@@ -80,26 +81,9 @@ NotificationPopupItem.defaultProps = {
 };
 
 NotificationPopupItem.propTypes = {
-  //The Tye of notification
-  type: PropTypes.oneOf([
-    NotificationType.CONFIRM,
-    NotificationType.DANGER,
-    NotificationType.INFO,
-    NotificationType.SUCCESS,
-    NotificationType.WARNING
-  ]),
+  ...NotificationItemPropTypes,
   //The number of second will be displayed.
   displayIn: PropTypes.number,
   //Enable timeout to call onClose after displayIn second automatically.
-  autoClose: PropTypes.bool,
-  //The message of notification
-  message: PropTypes.string.isRequired,
-  //the title of notification
-  title: PropTypes.string,
-  //Close handler.
-  onClose: PropTypes.func,
-  //click event handler.
-  onClick: PropTypes.func,
-  //The icon of notification. set to false to hide the default icon.
-  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
+  autoClose: PropTypes.bool
 };

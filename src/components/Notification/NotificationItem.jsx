@@ -14,6 +14,7 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
+import NotificationItemPropTypes from "./NotificationItemPropTypes";
 
 function defaultFormatDate(date) {
   //convert Date to moment
@@ -85,28 +86,9 @@ NotificationItem.defaultProps = {
 };
 
 NotificationItem.propTypes = {
-  //The Tye of notification
-  type: PropTypes.oneOf([
-    NotificationType.CONFIRM,
-    NotificationType.DANGER,
-    NotificationType.INFO,
-    NotificationType.SUCCESS,
-    NotificationType.WARNING
-  ]),
-  //The message of notification
-  message: PropTypes.string.isRequired,
-  //the title of notification
-  title: PropTypes.string,
-  //This should be a moment object
-  createdOn: PropTypes.object,
+  ...NotificationItemPropTypes,
   //The function to format moment object to string
-  formatDate: PropTypes.func,
-  //Close handler.
-  onClose: PropTypes.func,
-  //click event handler.
-  onClick: PropTypes.func,
-  //The icon of notification. set to false to hide the default icon.
-  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
+  formatDate: PropTypes.func
 };
 
 export default withStyles(NotificationItemStyle)(NotificationItem);

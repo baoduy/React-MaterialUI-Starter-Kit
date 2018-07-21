@@ -1,6 +1,6 @@
 import * as actionTypes from "./ActionTypes";
 import moment from "moment";
-import status from "../../components/Notification/NotificationStatus";
+import { NotificationStatus } from "../../components/Notification";
 
 function createMessageId() {
   return new Date().getTime();
@@ -53,7 +53,8 @@ function newNotify(type, message, title, group, callback, onClick) {
     group,
     createdOn,
     onClose: callback,
-    onClick
+    onClick,
+    status: NotificationStatus.NEW
   };
 }
 

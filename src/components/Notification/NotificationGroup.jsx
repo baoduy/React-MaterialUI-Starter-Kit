@@ -8,7 +8,6 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
-  ListItemSecondaryAction,
   Divider,
   IconButton,
   Tooltip
@@ -18,8 +17,10 @@ import classnames from "classnames";
 
 import NotificationGroupStyle from "./NotificationGroupStyle";
 import NotificationItem from "./NotificationItem";
+import NotificationItemPropTypes from "./NotificationItemPropTypes";
 
-class NotificationGroup extends React.Component {
+@withStyles(NotificationGroupStyle)
+export default class NotificationGroup extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -33,7 +34,7 @@ class NotificationGroup extends React.Component {
     if (onClose) onClose([item]);
   };
 
-  onClose = event => {
+  onClose = () => {
     const { onClose, items } = this.props;
     if (onClose) onClose(items);
   };
@@ -94,7 +95,8 @@ NotificationGroup.defaultProps = {
 NotificationGroup.propTypes = {
   //the title of notification
   title: PropTypes.string,
-  items: PropTypes.any,
+  items: PropTypes.arrayOf(PropTypes.shape(NotificationItemPropTypes))
+    .isRequired,
   //Close handler.
   onClose: PropTypes.func,
   badgeColor: PropTypes.oneOf([
@@ -105,5 +107,3 @@ NotificationGroup.propTypes = {
     "error"
   ])
 };
-
-export default withStyles(NotificationGroupStyle)(NotificationGroup);

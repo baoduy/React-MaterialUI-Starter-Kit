@@ -1,12 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MomentPropTypes from "react-moment-proptypes";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import NotificationPanelStyle from "./NotificationPanelStyle";
-import { withStyles, List, ListSubheader } from "@material-ui/core";
+import { withStyles, List } from "@material-ui/core";
 import NotificationGroup from "./NotificationGroup";
 import linq from "linq";
+import NotificationItemPropTypes from "./NotificationItemPropTypes";
 
+function defaultGroupComponent({ classes, onClose, items, ...others }) {
+  return (
+    <List className={classes.list} {...others}>
+      {items.map((g, i) => (
+        <NotificationGroup key={i} {...g} onClose={onClose} />
+      ))}
+    </List>
+  );
+}
 function NotificationPanel({
   position,
   open,
@@ -15,6 +24,7 @@ function NotificationPanel({
   onItemClose,
   classes,
   items,
+  GroupComponent,
   ...others
 }) {
   const groups = linq
@@ -30,29 +40,21 @@ function NotificationPanel({
       onClose={onPanelClose}
       onOpen={onPanelOpen}
     >
-      <List className={classes.list}>
-        {groups.map((g, i) => (
-          <NotificationGroup key={i} {...g} onClose={onItemClose} />
-        ))}
-      </List>
+      <GroupComponent classes={classes} items={groups} onClose={onItemClose} />
     </SwipeableDrawer>
   );
 }
 
 NotificationPanel.defaultProps = {
+  GroupComponent: defaultGroupComponent,
   position: "right",
   open: false
 };
 
 NotificationPanel.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      createdOn: MomentPropTypes.momentObj,
-      message: PropTypes.string,
-      group: PropTypes.string
-    })
-  ).isRequired,
+  GroupComponent: PropTypes.func,
+  items: PropTypes.arrayOf(PropTypes.shape(NotificationItemPropTypes))
+    .isRequired,
   position: PropTypes.oneOf(["left", "top", "right", "bottom"]),
   open: PropTypes.bool,
   onPanelClose: PropTypes.func.isRequired,
