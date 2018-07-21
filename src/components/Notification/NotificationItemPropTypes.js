@@ -4,6 +4,7 @@ import NotificationType from "./NotificationType";
 import NotificationStatus from "./NotificationStatus";
 
 const NotificationItemPropTypes = {
+  id: PropTypes.any.isRequired,
   //The Tye of notification
   type: PropTypes.oneOf([
     NotificationType.CONFIRM,

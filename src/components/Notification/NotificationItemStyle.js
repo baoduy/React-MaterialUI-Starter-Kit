@@ -14,9 +14,7 @@ const NotificationItemStyle = theme => ({
     padding: "6px",
     paddingRight: "15px"
   },
-  tooltip: {
-    ...tooltip(theme)
-  },
+  ...tooltip(theme),
   title: { fontSize: theme.typography.pxToRem(13) },
   message: {
     fontSize: theme.typography.pxToRem(12),

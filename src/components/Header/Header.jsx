@@ -18,6 +18,7 @@ function Header({
   classes,
   color,
   notifications,
+  onNotificationChange,
   routes,
   location,
   path,
@@ -46,7 +47,11 @@ function Header({
           <span className={classes.title}>{makeBrand()}</span>
         </div>
         <Hidden smDown implementation="css">
-          <HeaderLinks {...others} notifications={notifications} />
+          <HeaderLinks
+            {...others}
+            notifications={notifications}
+            onNotificationChange={onNotificationChange}
+          />
         </Hidden>
         <Hidden mdUp>
           <IconButton

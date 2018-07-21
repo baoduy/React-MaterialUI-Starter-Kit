@@ -9,18 +9,17 @@ function defaultPopupItemComponent(props) {
 //Render the Popup of the list NotificationPopupItem
 export default function NotificationPopup({
   PopupItemComponent,
-  dataSource,
+  items,
   displayIn,
   subsequentDelay,
   onClose,
   ...others
 }) {
-  if (!dataSource) return <React.Fragment />;
-  let count = dataSource.length - 1;
+  let count = items.length - 1;
 
   return (
     <React.Fragment>
-      {dataSource.map((p, i) => {
+      {items.map((p, i) => {
         return (
           <PopupItemComponent
             {...others}
@@ -43,15 +42,15 @@ NotificationPopup.defaultProps = {
   //Using default defaultPopupItemComponent render
   PopupItemComponent: defaultPopupItemComponent,
   displayIn: 3000,
-  subsequentDelay: 1000
+  subsequentDelay: 1000,
+  items: []
 };
 
 NotificationPopup.propTypes = {
   //This property allow to customize the NotificationPopupItem.
   PopupItemComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  dataSource: PropTypes.arrayOf(
-    PropTypes.shape(NotificationPopupItem.propTypes)
-  ).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(NotificationPopupItem.propTypes)),
   displayIn: PropTypes.number,
+  subsequentDelay: PropTypes.number,
   onClose: PropTypes.func
 };

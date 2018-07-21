@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import NotificationPanel from "./NotificationPanel";
+import NotificationPopup from "./NotificationPopup";
 import { Notifications, NotificationsActive } from "@material-ui/icons";
 import { withStyles, Badge, Tooltip } from "@material-ui/core";
-import classnames from "classnames";
 import Button from "../CustomButtons/Button";
 import NotificationCenterStyle from "./jss";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
+import NotificationStatus from "./NotificationStatus";
 
 function defaultButtonComponent({
   onClick,
@@ -38,23 +39,51 @@ export default class NotificationCenter extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = { panelOpen: false };
+    this.state = { panelOpen: false, arrowRef: null };
   }
 
   onClick = () => {
     this.setState({ panelOpen: !this.state.panelOpen });
   };
 
+  //Panel Open NoAction
   onPanelOpen = () => {};
 
-  onPanelClose = () => {
+  //Changes status to READ when Panel closed.
+  onPanelClose = items => {
     this.setState({ panelOpen: false });
     //Changes status to READ.
+    const finalItems = items.map(i => ({
+      ...i,
+      status: NotificationStatus.READ
+    }));
+    this.updateStatus(finalItems);
   };
 
+  //changes status to DELETE when the close button clicked
   onItemClose = items => {
-    //Changes status to DELETE.
-    alert(items.length);
+    const finalItems = items.map(i => ({
+      ...i,
+      status: NotificationStatus.DELETED
+    }));
+    this.updateStatus(finalItems);
+  };
+
+  //changes status to Notified when Popup closed
+  onPopupClose = item =>
+    this.updateStatus([{ ...item, status: NotificationStatus.NOTIFIED }]);
+
+  updateStatus = items => {
+    if (!items || items.length <= 0) return;
+
+    const { onChange } = this.props;
+    if (onChange) onChange(items);
+  };
+
+  handleArrowRef = node => {
+    this.setState({
+      arrowRef: node
+    });
   };
 
   render() {
@@ -66,15 +95,32 @@ export default class NotificationCenter extends React.Component {
       NotificationPanelProps,
       items,
       title,
-      badgeColor
+      badgeColor,
+      displayIn,
+      subsequentDelay
     } = this.props;
 
     return (
       <React.Fragment>
         <Tooltip
-          classes={{ tooltip: classes.tooltip }}
-          title={title}
+          classes={{ tooltip: classes.tooltip, popper: classes.arrowPopper }}
+          title={
+            <React.Fragment>
+              {title}
+              <span className={classes.arrowArrow} ref={this.handleArrowRef} />
+            </React.Fragment>
+          }
           placement="bottom"
+          PopperProps={{
+            popperOptions: {
+              modifiers: {
+                arrow: {
+                  enabled: Boolean(this.state.arrowRef),
+                  element: this.state.arrowRef
+                }
+              }
+            }
+          }}
         >
           <ButtonComponent
             {...ButtonProps}
@@ -96,6 +142,11 @@ export default class NotificationCenter extends React.Component {
           onPanelClose={this.onPanelClose}
           onItemClose={this.onItemClose}
         />
+        <NotificationPopup
+          displayIn={displayIn}
+          subsequentDelay={subsequentDelay}
+          onClose={this.onPopupClose}
+        />
       </React.Fragment>
     );
   }
@@ -108,7 +159,9 @@ NotificationCenter.defaultProps = {
   items: [],
   title: "Notification Center",
   ButtonProps: {},
-  NotificationPanelProps: {}
+  NotificationPanelProps: {},
+  displayIn: 3000,
+  subsequentDelay: 1000
 };
 
 NotificationCenter.propTypes = {
@@ -124,7 +177,8 @@ NotificationCenter.propTypes = {
   title: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape(NotificationItemPropTypes)),
   displayIn: PropTypes.number,
-  onChange: PropTypes.func,
+  subsequentDelay: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
   badgeColor: PropTypes.oneOf([
     "inherit",
     "primary",

@@ -14,7 +14,12 @@ import Button from "../CustomButtons/Button.jsx";
 import NotificationCenter from "../../components/Notification";
 import headerLinksStyle from "./headerLinksStyle";
 
-function HeaderLinks({ classes, notifications, ...others }) {
+function HeaderLinks({
+  classes,
+  notifications,
+  onNotificationChange,
+  ...others
+}) {
   return (
     <div>
       <div className={classes.searchWrapper}>
@@ -56,6 +61,7 @@ function HeaderLinks({ classes, notifications, ...others }) {
           }
         }}
         items={notifications}
+        onChange={onNotificationChange}
         {...others}
       />
       <Button

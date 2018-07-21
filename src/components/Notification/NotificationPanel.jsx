@@ -37,7 +37,7 @@ function NotificationPanel({
     <SwipeableDrawer
       anchor={position}
       open={open}
-      onClose={onPanelClose}
+      onClose={() => onPanelClose(items)}
       onOpen={onPanelOpen}
     >
       <GroupComponent

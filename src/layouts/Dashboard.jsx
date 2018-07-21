@@ -61,6 +61,10 @@ class App extends React.Component {
     if (this.state.mobileOpen) this.setState({ mobileOpen: false });
   }
 
+  onNotificationChange = items => {
+    alert("onNotificationChange");
+  };
+
   render() {
     const { classes, notifications, messageBox, ...rest } = this.props;
     return (
@@ -82,6 +86,7 @@ class App extends React.Component {
             routes={dashboardRoutes}
             handleDrawerToggle={this.handleDrawerToggle}
             notifications={notifications}
+            onNotificationChange={this.onNotificationChange}
             {...rest}
           />
           {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
