@@ -3,7 +3,8 @@ import {
   infoColor,
   successColor,
   warningColor,
-  dangerColor
+  dangerColor,
+  grayColor
 } from "../../assets/jss/material-dashboard-react";
 import { closeButton, tooltip } from "./jss";
 
@@ -15,7 +16,9 @@ const NotificationItemStyle = theme => ({
     paddingRight: "15px"
   },
   ...tooltip(theme),
-  title: { fontSize: theme.typography.pxToRem(13) },
+  title: {
+    fontSize: theme.typography.pxToRem(13)
+  },
   message: {
     fontSize: theme.typography.pxToRem(12),
     textAlign: "justify"

@@ -73,6 +73,7 @@ class App extends React.Component {
   }
 
   onNotificationChange = items => {
+    console.log(items);
     this.props.actions.changeNotificationStatus(items);
   };
 

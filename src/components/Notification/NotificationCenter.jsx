@@ -20,7 +20,14 @@ function defaultButtonComponent({
   return (
     <Button className={classes.button} onClick={onClick} {...others}>
       {items.length > 0 && (
-        <Badge badgeContent={items.length} color={badgeColor}>
+        <Badge
+          classes={{
+            badge: classes.badge,
+            colorSecondary: classes.colorSecondary
+          }}
+          badgeContent={items.length > 99 ? 99 : items.length}
+          color={badgeColor}
+        >
           <NotificationsActive
             className={classes.icon + " " + classes.iconActive}
           />
@@ -50,29 +57,33 @@ export default class NotificationCenter extends React.Component {
   //Panel Open NoAction
   onPanelOpen = () => {};
 
-  //Changes status to READ when Panel closed.
+  //Changes status from NOTIFIED to READ when Panel closed.
   onPanelClose = items => {
     this.setState({ panelOpen: false });
     //Changes status to READ.
-    const finalItems = items.map(i => ({
-      ...i,
-      status: NotificationStatus.READ
-    }));
+    const finalItems = linq
+      .from(items)
+      .where(i => i.status !== NotificationStatus.READ)
+      .select(i => ({
+        id: i.id,
+        status: NotificationStatus.READ
+      }))
+      .toArray();
     this.updateStatus(finalItems);
   };
 
   //changes status to DELETE when the close button clicked
   onItemClose = items => {
     const finalItems = items.map(i => ({
-      ...i,
+      id: i.id,
       status: NotificationStatus.DELETED
     }));
     this.updateStatus(finalItems);
   };
 
-  //changes status to Notified when Popup closed
+  //changes status from NEW to NOTIFIED when Popup closed
   onPopupClose = item => {
-    this.updateStatus([{ ...item, status: NotificationStatus.NOTIFIED }]);
+    this.updateStatus([{ id: item.id, status: NotificationStatus.NOTIFIED }]);
   };
 
   updateStatus = items => {
@@ -98,13 +109,28 @@ export default class NotificationCenter extends React.Component {
       items,
       title,
       badgeColor,
+      unReadBadgeColor,
       displayIn,
       subsequentDelay
     } = this.props;
 
     const query = linq.from(items);
+    const unReadItems = linq
+      .from(items)
+      .where(
+        i =>
+          i.status === NotificationStatus.NEW ||
+          i.status === NotificationStatus.NOTIFIED
+      )
+      .toArray();
     const popupItems = query
-      .where(i => i.status === NotificationStatus.NEW)
+      .where(
+        i =>
+          i.status === NotificationStatus.NEW ||
+          i.status === NotificationStatus.NOTIFIED
+      )
+      .orderByDescending(i => i.createdOn)
+      //Tell the popup that only show the NEW status once.
       .select(i => ({ ...i, open: i.status === NotificationStatus.NEW }))
       .toArray();
 
@@ -136,11 +162,12 @@ export default class NotificationCenter extends React.Component {
               ...classes,
               ...ButtonProps.classes
             }}
-            badgeColor={badgeColor}
-            items={items}
+            badgeColor={unReadItems.length > 0 ? unReadBadgeColor : badgeColor}
+            items={unReadItems.length > 0 ? unReadItems : items}
             onClick={this.onClick}
           />
         </Tooltip>
+
         <NotificationPanelComponent
           {...NotificationPanelProps}
           items={items}
@@ -165,6 +192,7 @@ NotificationCenter.defaultProps = {
   ButtonComponent: defaultButtonComponent,
   NotificationPanelComponent: defaultNotificationPanelComponent,
   badgeColor: "secondary",
+  unReadBadgeColor: "error",
   items: [],
   title: "Notification Center",
   ButtonProps: {},
@@ -188,11 +216,6 @@ NotificationCenter.propTypes = {
   displayIn: PropTypes.number,
   subsequentDelay: PropTypes.number,
   onChange: PropTypes.func.isRequired,
-  badgeColor: PropTypes.oneOf([
-    "inherit",
-    "primary",
-    "secondary",
-    "default",
-    "error"
-  ])
+  badgeColor: PropTypes.oneOf(["primary", "secondary", "error"]),
+  unReadBadgeColor: PropTypes.oneOf(["primary", "secondary", "error"])
 };

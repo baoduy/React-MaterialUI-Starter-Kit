@@ -15,6 +15,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
+import NotificationStatus from "./NotificationStatus";
 
 function defaultFormatDate(date) {
   //convert Date to moment
@@ -39,8 +40,20 @@ function defaultFormatDate(date) {
   return date.format("dd.MM.yy HH:mm");
 }
 
-function NotificationItem({ title, message, type, classes, onClose, onClick }) {
+function NotificationItem({
+  title,
+  message,
+  type,
+  classes,
+  status,
+  onClose,
+  onClick
+}) {
   const Icon = helper.getIcon(type);
+  const color =
+    status === NotificationStatus.NEW || status === NotificationStatus.NOTIFIED
+      ? "primary"
+      : "textSecondary";
   return (
     <ListItem
       className={classes.root}
@@ -51,9 +64,12 @@ function NotificationItem({ title, message, type, classes, onClose, onClick }) {
         <Icon />
       </ListItemIcon>
       <ListItemText
-        primaryTypographyProps={{ className: classes.title }}
+        primaryTypographyProps={{
+          className: classes.title,
+          color: color
+        }}
         primary={title}
-        secondaryTypographyProps={{ className: classes.message }}
+        secondaryTypographyProps={{ className: classes.message, color: color }}
         secondary={message}
       />
       <ListItemSecondaryAction>

@@ -11,7 +11,7 @@ function defaultGroupComponent({ classes, onClose, items }) {
   return (
     <List className={classes.list}>
       {items.map((g, i) => (
-        <NotificationGroup key={i} {...g} onClose={onClose} />
+        <NotificationGroup key={i} {...g} onClose={onClose} open={i === 0} />
       ))}
     </List>
   );
@@ -29,7 +29,8 @@ function NotificationPanel({
 }) {
   const groups = linq
     .from(items)
-    .groupBy(i => i.group)
+    .orderByDescending(i => i.createdOn)
+    .groupBy(i => i.group || "")
     .select(g => ({ title: g.key(), items: g.toArray() }))
     .toArray();
 

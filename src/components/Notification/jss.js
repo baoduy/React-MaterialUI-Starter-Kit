@@ -1,4 +1,7 @@
-import { primaryColor } from "../../assets/jss/material-dashboard-react";
+import {
+  primaryColor,
+  grayColor
+} from "../../assets/jss/material-dashboard-react";
 
 const closeButton = {
   iconButton: {
@@ -89,6 +92,14 @@ const tooltip = theme => ({
 const NotificationCenterStyle = theme => ({
   iconActive: {
     color: primaryColor
+  },
+  badge: {
+    width: "20px",
+    height: "20px",
+    fontSize: theme.typography.pxToRem(10)
+  },
+  colorSecondary: {
+    backgroundColor: grayColor
   },
   ...tooltip(theme)
 });

@@ -24,7 +24,7 @@ export default class NotificationGroup extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = { open: false };
+    this.state = { open: props.open };
   }
 
   onClick = () => this.setState(p => ({ open: !p.open }));
@@ -76,7 +76,7 @@ export default class NotificationGroup extends React.Component {
           <List className={classes.details} component="div" disablePadding>
             {items.map((n, i) => (
               <React.Fragment key={i}>
-                <NotificationItem {...n} onClose={this.onItemClose} />
+                <NotificationItem {...n} onClose={() => this.onItemClose(n)} />
                 <Divider />
               </React.Fragment>
             ))}
@@ -89,7 +89,8 @@ export default class NotificationGroup extends React.Component {
 }
 
 NotificationGroup.defaultProps = {
-  badgeColor: "primary"
+  badgeColor: "primary",
+  open: false
 };
 
 NotificationGroup.propTypes = {
@@ -99,6 +100,7 @@ NotificationGroup.propTypes = {
     .isRequired,
   //Close handler.
   onClose: PropTypes.func,
+  open: PropTypes.bool,
   badgeColor: PropTypes.oneOf([
     "inherit",
     "primary",
