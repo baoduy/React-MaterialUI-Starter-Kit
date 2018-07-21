@@ -34,7 +34,7 @@
     "start-dev": "npm run git:config && webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm rum git:config && npm run build && node sm-react-node-express/express.js",
     "test": "jest --watch --coverage --config=configs/jest/jest.json",
-    "test-ci": "jest --ci --coverage --config=configs/jest/jest.json && codecov -t 75b11d17-22d7-4b30-81b1-4c39fa2f7582",
+    "test:ci": "jest --ci --coverage --config=configs/jest/jest.json && codecov -t 75b11d17-22d7-4b30-81b1-4c39fa2f7582",
     "check": "npm-check ignores='eslint,babel-*'"
   },
   "devDependencies": {
