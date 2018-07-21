@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
@@ -13,6 +14,9 @@ import MessageBox from "../components/MessageBox";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 import dashboardStyle from "./dashboardStyle.jsx";
+
+//Actions
+import { NotificationActions } from "../actions/notifications";
 
 import { getImgSrc } from "../commons/commonFuncs";
 //Import may not working with Reserved proxy so using require instead.
@@ -30,12 +34,19 @@ const switchRoutes = (
 );
 
 //Connect component to Redux store.
-@connect(state => {
-  return {
-    messageBox: state.messageBox || {},
-    notifications: state.notifications || []
-  };
-})
+@connect(
+  state => {
+    return {
+      messageBox: state.messageBox || {},
+      notifications: state.notifications || []
+    };
+  },
+  dispatch => {
+    return {
+      actions: bindActionCreators(NotificationActions, dispatch)
+    };
+  }
+)
 class App extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -62,7 +73,7 @@ class App extends React.Component {
   }
 
   onNotificationChange = items => {
-    alert("onNotificationChange");
+    this.props.actions.changeNotificationStatus(items);
   };
 
   render() {

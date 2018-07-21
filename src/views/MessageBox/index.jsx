@@ -3,6 +3,7 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "./Actions";
+import { NotificationActions } from "../../actions/notifications";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
@@ -47,7 +48,12 @@ const styles = {
 @connect(
   undefined,
   dispatch => {
-    return { actions: bindActionCreators(actions, dispatch) };
+    return {
+      actions: bindActionCreators(
+        { ...actions, ...NotificationActions },
+        dispatch
+      )
+    };
   }
 )
 class MessageBoxPage extends React.Component {

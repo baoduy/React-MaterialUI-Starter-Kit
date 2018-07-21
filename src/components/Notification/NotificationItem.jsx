@@ -39,15 +39,7 @@ function defaultFormatDate(date) {
   return date.format("dd.MM.yy HH:mm");
 }
 
-function NotificationItem({
-  title,
-  message,
-  type,
-  classes,
-  onClose,
-  onClick,
-  ...others
-}) {
+function NotificationItem({ title, message, type, classes, onClose, onClick }) {
   const Icon = helper.getIcon(type);
   return (
     <ListItem

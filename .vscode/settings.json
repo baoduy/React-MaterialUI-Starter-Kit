@@ -59,6 +59,7 @@
   "git.autofetch": true,
   "javascript.implicitProjectConfig.experimentalDecorators": true,
   "cSpell.words": [
+    "Guid",
     "Snackbar",
     "Swipeable",
     "linebreak",

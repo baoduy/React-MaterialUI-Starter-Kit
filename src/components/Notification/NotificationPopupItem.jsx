@@ -40,12 +40,14 @@ export default class NotificationPopupItem extends React.Component {
   };
 
   render() {
-    const { id, type, icon, title, message, classes } = this.props;
+    const { id, type, icon, title, message, classes, place, open } = this.props;
 
     return (
       <Snackbar
         key={id}
+        place={place}
         onClose={this.onClosing}
+        open={open}
         color={helper.getColor(type)}
         close
         icon={icon === true ? helper.getIcon(type) : icon}
@@ -62,7 +64,6 @@ export default class NotificationPopupItem extends React.Component {
 
 NotificationPopupItem.defaultProps = {
   place: "tr", //Top right
-  displayIn: 4000,
   autoClose: true,
   type: NotificationType.INFO,
   open: true,

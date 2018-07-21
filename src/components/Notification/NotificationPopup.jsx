@@ -48,7 +48,7 @@ NotificationPopup.defaultProps = {
 
 NotificationPopup.propTypes = {
   //This property allow to customize the NotificationPopupItem.
-  PopupItemComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  PopupItemComponent: PropTypes.func,
   items: PropTypes.arrayOf(PropTypes.shape(NotificationPopupItem.propTypes)),
   displayIn: PropTypes.number,
   subsequentDelay: PropTypes.number,

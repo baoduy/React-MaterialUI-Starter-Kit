@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import NotificationPanel from "./NotificationPanel";
 import NotificationPopup from "./NotificationPopup";
+import NotificationStatus from "./NotificationStatus";
 import { Notifications, NotificationsActive } from "@material-ui/icons";
 import { withStyles, Badge, Tooltip } from "@material-ui/core";
 import Button from "../CustomButtons/Button";
 import NotificationCenterStyle from "./jss";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
-import NotificationStatus from "./NotificationStatus";
+import linq from "linq";
 
 function defaultButtonComponent({
   onClick,
@@ -70,8 +71,9 @@ export default class NotificationCenter extends React.Component {
   };
 
   //changes status to Notified when Popup closed
-  onPopupClose = item =>
+  onPopupClose = item => {
     this.updateStatus([{ ...item, status: NotificationStatus.NOTIFIED }]);
+  };
 
   updateStatus = items => {
     if (!items || items.length <= 0) return;
@@ -99,6 +101,12 @@ export default class NotificationCenter extends React.Component {
       displayIn,
       subsequentDelay
     } = this.props;
+
+    const query = linq.from(items);
+    const popupItems = query
+      .where(i => i.status === NotificationStatus.NEW)
+      .select(i => ({ ...i, open: i.status === NotificationStatus.NEW }))
+      .toArray();
 
     return (
       <React.Fragment>
@@ -143,6 +151,7 @@ export default class NotificationCenter extends React.Component {
           onItemClose={this.onItemClose}
         />
         <NotificationPopup
+          items={popupItems}
           displayIn={displayIn}
           subsequentDelay={subsequentDelay}
           onClose={this.onPopupClose}
@@ -161,7 +170,7 @@ NotificationCenter.defaultProps = {
   ButtonProps: {},
   NotificationPanelProps: {},
   displayIn: 3000,
-  subsequentDelay: 1000
+  subsequentDelay: 600
 };
 
 NotificationCenter.propTypes = {
