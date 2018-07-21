@@ -1,9 +1,8 @@
 const NotificationPanelStyle = {
-  contain: {
+  list: {
     minWidth: 300,
     maxWidth: 350,
-    width: "auto",
-    backGroundColor: "gray"
+    width: 350
   }
 };
 

@@ -1,6 +1,6 @@
 import * as actionTypes from "./ActionTypes";
-import * as guard from "../../commons/guard";
 import moment from "moment";
+import status from "../../components/Notification/NotificationStatus";
 
 function createMessageId() {
   return new Date().getTime();

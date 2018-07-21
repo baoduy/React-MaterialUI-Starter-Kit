@@ -8,7 +8,8 @@ import {
   ListItemIcon,
   ListItemText,
   ListItemSecondaryAction,
-  IconButton
+  IconButton,
+  Tooltip
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { withStyles } from "@material-ui/core/styles";
@@ -63,9 +64,15 @@ function NotificationItem({
         secondary={message}
       />
       <ListItemSecondaryAction>
-        <IconButton className={classes.iconButton} onClick={onClose}>
-          <CloseIcon className={classes.close} />
-        </IconButton>
+        <Tooltip
+          classes={{ tooltip: classes.tooltip }}
+          title={"close"}
+          placement="top"
+        >
+          <IconButton className={classes.iconButton} onClick={onClose}>
+            <CloseIcon className={classes.close} />
+          </IconButton>
+        </Tooltip>
       </ListItemSecondaryAction>
     </ListItem>
   );

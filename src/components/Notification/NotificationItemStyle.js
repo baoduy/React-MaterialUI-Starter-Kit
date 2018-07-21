@@ -5,21 +5,24 @@ import {
   warningColor,
   dangerColor
 } from "../../assets/jss/material-dashboard-react";
+import { closeButton, tooltip } from "./jss";
 
 const marginRight = 0;
 
 const NotificationItemStyle = theme => ({
-  root: { padding: "6px" },
-  title: { fontSize: theme.typography.pxToRem(14) },
-  message: { fontSize: theme.typography.pxToRem(12) },
-  iconButton: {
-    width: "24px",
-    height: "24px"
+  root: {
+    padding: "6px",
+    paddingRight: "15px"
   },
-  close: {
-    width: "11px",
-    height: "11px"
+  tooltip: {
+    ...tooltip(theme)
   },
+  title: { fontSize: theme.typography.pxToRem(13) },
+  message: {
+    fontSize: theme.typography.pxToRem(12),
+    textAlign: "justify"
+  },
+  ...closeButton,
   success: {
     color: successColor,
     marginRight

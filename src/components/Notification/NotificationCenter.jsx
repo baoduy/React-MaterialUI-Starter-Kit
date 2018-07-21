@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import NotificationPanel from "./NotificationPanel";
 import { Notifications, NotificationsActive } from "@material-ui/icons";
-import { IconButton, withStyles } from "@material-ui/core";
-import Badge from "@material-ui/core/Badge";
+import { IconButton, withStyles, Badge } from "@material-ui/core";
 import NotificationCenterStyle from "./jss";
 
 @withStyles(NotificationCenterStyle)
@@ -22,10 +21,16 @@ export default class NotificationCenter extends React.Component {
 
   onPanelClose = () => {
     this.setState({ panelOpen: false });
+    //Changes status to READ.
+  };
+
+  onItemClose = items => {
+    //Changes status to DELETE.
+    alert(items.length);
   };
 
   render() {
-    const { items, classes, badgeColor, ...others } = this.props;
+    const { items, classes, badgeColor } = this.props;
     return (
       <React.Fragment>
         <IconButton onClick={this.onClick}>
@@ -39,8 +44,9 @@ export default class NotificationCenter extends React.Component {
         <NotificationPanel
           items={items}
           open={this.state.panelOpen}
-          onOpen={this.onPanelOpen}
-          onClose={this.onPanelClose}
+          onPanelOpen={this.onPanelOpen}
+          onPanelClose={this.onPanelClose}
+          onItemClose={this.onItemClose}
         />
       </React.Fragment>
     );

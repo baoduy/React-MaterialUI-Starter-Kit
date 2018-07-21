@@ -1,5 +1,3 @@
-import * as guard from "../../commons/guard";
-import { newGuid } from "../../commons/commonFuncs";
 import NotificationType from "./NotificationType";
 import confirmIcon from "@material-ui/icons/Help";
 import errorIcon from "@material-ui/icons/Error";
@@ -37,25 +35,4 @@ export function getIcon(type) {
     default:
       return infoIcon;
   }
-}
-
-/**
- *
- *
- * @export create new Notification data
- * @param {*} type
- * @param {*} message
- * @param {*} onClick
- * @param {*} group
- * @returns
- */
-export function newNotify(type, message, onClick, group) {
-  guard.argumentIsStringAndNotEmpty(type, "type");
-  guard.argumentIsStringAndNotEmpty(message, "message");
-
-  if (onClick) guard.argumentIsFunc(onclick);
-  if (group) guard.argumentIsString(group);
-
-  const id = newGuid();
-  return { id, type, message, onClick, group };
 }

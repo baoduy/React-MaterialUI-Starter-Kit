@@ -3,15 +3,16 @@ import PropTypes from "prop-types";
 import MomentPropTypes from "react-moment-proptypes";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import NotificationPanelStyle from "./NotificationPanelStyle";
-import { withStyles } from "@material-ui/core";
+import { withStyles, List, ListSubheader } from "@material-ui/core";
 import NotificationGroup from "./NotificationGroup";
 import linq from "linq";
 
 function NotificationPanel({
   position,
   open,
-  onClose,
-  onOpen,
+  onPanelClose,
+  onPanelOpen,
+  onItemClose,
   classes,
   items,
   ...others
@@ -26,12 +27,14 @@ function NotificationPanel({
     <SwipeableDrawer
       anchor={position}
       open={open}
-      onClose={onClose}
-      onOpen={onOpen}
+      onClose={onPanelClose}
+      onOpen={onPanelOpen}
     >
-      <div className={classes.contain}>
-        {groups.map((g, i) => <NotificationGroup key={i} {...g} />)}
-      </div>
+      <List className={classes.list}>
+        {groups.map((g, i) => (
+          <NotificationGroup key={i} {...g} onClose={onItemClose} />
+        ))}
+      </List>
     </SwipeableDrawer>
   );
 }
@@ -52,8 +55,9 @@ NotificationPanel.propTypes = {
   ).isRequired,
   position: PropTypes.oneOf(["left", "top", "right", "bottom"]),
   open: PropTypes.bool,
-  onClose: PropTypes.func,
-  onOpen: PropTypes.func
+  onPanelClose: PropTypes.func.isRequired,
+  onPanelOpen: PropTypes.func.isRequired,
+  onItemClose: PropTypes.func.isRequired
 };
 
 export default withStyles(NotificationPanelStyle)(NotificationPanel);

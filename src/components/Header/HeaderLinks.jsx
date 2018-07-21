@@ -75,6 +75,13 @@ class HeaderLinks extends React.Component {
                 "Lists are continuous, vertical indexes of text or images"
             },
             {
+              type: "info",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
               type: "danger",
               group: "Hello",
               title: "Hello",
@@ -83,6 +90,95 @@ class HeaderLinks extends React.Component {
             },
             {
               type: "warning",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "confirm",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "info",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "info",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "info",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "info",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "info",
+              group: "Hello",
+              title: "Hello",
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "warning",
+              group: "Notification",
+              title: "Hello",
+              onClick: () => true,
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "confirm",
+              group: "Notification",
+              title: "Hello",
+              onClick: () => true,
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "confirm",
+              group: "Notification",
+              title: "Hello",
+              onClick: () => true,
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "confirm",
+              group: "Notification",
+              title: "Hello",
+              onClick: () => true,
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "confirm",
+              group: "Notification",
+              title: "Hello",
+              onClick: () => true,
+              message:
+                "Lists are continuous, vertical indexes of text or images"
+            },
+            {
+              type: "confirm",
               group: "Notification",
               title: "Hello",
               onClick: () => true,
