@@ -2,20 +2,30 @@ import React from "react";
 import PropTypes from "prop-types";
 import NotificationPanel from "./NotificationPanel";
 import { Notifications, NotificationsActive } from "@material-ui/icons";
-import { IconButton, withStyles, Badge } from "@material-ui/core";
+import { withStyles, Badge, Tooltip } from "@material-ui/core";
+import classnames from "classnames";
+import Button from "../CustomButtons/Button";
 import NotificationCenterStyle from "./jss";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
 
-function defaultButtonComponent({ onClick, items, color, classes, ...others }) {
+function defaultButtonComponent({
+  onClick,
+  items,
+  classes,
+  badgeColor,
+  ...others
+}) {
   return (
-    <IconButton {...others} onClick={onClick}>
+    <Button className={classes.button} onClick={onClick} {...others}>
       {items.length > 0 && (
-        <Badge badgeContent={items.length} color={color}>
-          <NotificationsActive className={classes.iconActive} />
+        <Badge badgeContent={items.length} color={badgeColor}>
+          <NotificationsActive
+            className={classes.icon + " " + classes.iconActive}
+          />
         </Badge>
       )}
       {items.length <= 0 && <Notifications className={classes.icon} />}
-    </IconButton>
+    </Button>
   );
 }
 
@@ -49,26 +59,38 @@ export default class NotificationCenter extends React.Component {
 
   render() {
     const {
-      items,
       classes,
-      badgeColor,
       ButtonComponent,
+      ButtonProps,
       NotificationPanelComponent,
-      ...others
+      NotificationPanelProps,
+      items,
+      title,
+      badgeColor
     } = this.props;
 
     return (
       <React.Fragment>
-        <ButtonComponent
-          {...others}
-          onClick={this.onClick}
-          items={items}
-          classes={classes}
-          color={badgeColor}
-        />
+        <Tooltip
+          classes={{ tooltip: classes.tooltip }}
+          title={title}
+          placement="bottom"
+        >
+          <ButtonComponent
+            {...ButtonProps}
+            classes={{
+              ...classes,
+              ...ButtonProps.classes
+            }}
+            badgeColor={badgeColor}
+            items={items}
+            onClick={this.onClick}
+          />
+        </Tooltip>
         <NotificationPanelComponent
-          {...others}
+          {...NotificationPanelProps}
           items={items}
+          title={title}
           open={this.state.panelOpen}
           onPanelOpen={this.onPanelOpen}
           onPanelClose={this.onPanelClose}
@@ -82,16 +104,25 @@ export default class NotificationCenter extends React.Component {
 NotificationCenter.defaultProps = {
   ButtonComponent: defaultButtonComponent,
   NotificationPanelComponent: defaultNotificationPanelComponent,
-  badgeColor: "secondary"
+  badgeColor: "secondary",
+  items: [],
+  title: "Notification Center",
+  ButtonProps: {},
+  NotificationPanelProps: {}
 };
 
 NotificationCenter.propTypes = {
-  //The Button render
+  //The custom Button render
   ButtonComponent: PropTypes.func,
+  //the custom Props of Button
+  ButtonProps: PropTypes.object,
+  //The custom Panel render
   NotificationPanelComponent: PropTypes.func,
+  //The custom Props of NotificationPanelComponent
+  NotificationPanelProps: PropTypes.object,
 
-  items: PropTypes.arrayOf(PropTypes.shape(NotificationItemPropTypes))
-    .isRequired,
+  title: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.shape(NotificationItemPropTypes)),
   displayIn: PropTypes.number,
   onChange: PropTypes.func,
   badgeColor: PropTypes.oneOf([

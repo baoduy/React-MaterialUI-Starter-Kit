@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
-
+import { connect } from "react-redux";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -9,6 +9,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "../components/Header/Header.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 import Sidebar from "../components/Sidebar/Sidebar.jsx";
+import MessageBox from "../components/MessageBox";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 import dashboardStyle from "./dashboardStyle.jsx";
@@ -28,6 +29,13 @@ const switchRoutes = (
   </Switch>
 );
 
+//Connect component to Redux store.
+@connect(state => {
+  return {
+    messageBox: state.messageBox || {},
+    notifications: state.notifications || []
+  };
+})
 class App extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -54,9 +62,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes, notifications, messageBox, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>
+        <MessageBox {...messageBox} open={messageBox.open || false} />
+
         <Sidebar
           routes={dashboardRoutes}
           logoText={"Creative Tim"}
@@ -71,6 +81,7 @@ class App extends React.Component {
           <Header
             routes={dashboardRoutes}
             handleDrawerToggle={this.handleDrawerToggle}
+            notifications={notifications}
             {...rest}
           />
           {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}

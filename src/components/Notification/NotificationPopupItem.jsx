@@ -40,21 +40,10 @@ export default class NotificationPopupItem extends React.Component {
   };
 
   render() {
-    const {
-      id,
-      type,
-      icon,
-      displayIn,
-      autoClose,
-      title,
-      message,
-      classes,
-      ...others
-    } = this.props;
+    const { id, type, icon, title, message, classes } = this.props;
 
     return (
       <Snackbar
-        {...others}
         key={id}
         onClose={this.onClosing}
         color={helper.getColor(type)}

@@ -11,22 +11,30 @@ import Hidden from "@material-ui/core/Hidden";
 import Menu from "@material-ui/icons/Menu";
 // core components
 import HeaderLinks from "./HeaderLinks";
-import Button from "../CustomButtons/Button";
 
 import headerStyle from "./headerStyle.jsx";
 
-function Header({ ...props }) {
+function Header({
+  classes,
+  color,
+  notifications,
+  routes,
+  location,
+  path,
+  handleDrawerToggle,
+  ...others
+}) {
   function makeBrand() {
     let name;
-    props.routes.map((prop, key) => {
-      if (prop.path === props.location.pathname) {
+    routes.map(prop => {
+      if (path === location.pathname) {
         name = prop.navbarName;
       }
       return null;
     });
     return name;
   }
-  const { classes, color } = props;
+
   const appBarClasses = classNames({
     [" " + classes[color]]: color
   });
@@ -38,14 +46,14 @@ function Header({ ...props }) {
           <span className={classes.title}>{makeBrand()}</span>
         </div>
         <Hidden smDown implementation="css">
-          <HeaderLinks />
+          <HeaderLinks {...others} notifications={notifications} />
         </Hidden>
         <Hidden mdUp>
           <IconButton
             className={classes.appResponsive}
             color="inherit"
             aria-label="open drawer"
-            onClick={props.handleDrawerToggle}
+            onClick={handleDrawerToggle}
           >
             <Menu />
           </IconButton>

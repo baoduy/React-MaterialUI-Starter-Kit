@@ -30,7 +30,7 @@ const NotificationItemPropTypes = {
     NotificationStatus.DELETED,
     NotificationStatus.NOTIFIED,
     NotificationStatus.READ
-  ])
+  ]).isRequired
 };
 
 export default NotificationItemPropTypes;

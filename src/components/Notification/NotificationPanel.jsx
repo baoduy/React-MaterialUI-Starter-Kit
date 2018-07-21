@@ -7,9 +7,9 @@ import NotificationGroup from "./NotificationGroup";
 import linq from "linq";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
 
-function defaultGroupComponent({ classes, onClose, items, ...others }) {
+function defaultGroupComponent({ classes, onClose, items }) {
   return (
-    <List className={classes.list} {...others}>
+    <List className={classes.list}>
       {items.map((g, i) => (
         <NotificationGroup key={i} {...g} onClose={onClose} />
       ))}
@@ -40,7 +40,12 @@ function NotificationPanel({
       onClose={onPanelClose}
       onOpen={onPanelOpen}
     >
-      <GroupComponent classes={classes} items={groups} onClose={onItemClose} />
+      <GroupComponent
+        {...others}
+        classes={classes}
+        items={groups}
+        onClose={onItemClose}
+      />
     </SwipeableDrawer>
   );
 }

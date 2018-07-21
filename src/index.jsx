@@ -6,7 +6,6 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import Provider from "react-redux-thunk-store";
 import ExceptionHandler from "./layouts/ExceptionHandler";
-import MessageAndNotificationView from "./layouts/MessageAndNotificationView";
 
 //Style-sheets
 import "./assets/less/material-dashboard-react.less";
@@ -44,7 +43,6 @@ const renderComponent = () => {
     <Provider reducers={reducers}>
       <ExceptionHandler global disabled={!isPrd}>
         {createRouter()}
-        <MessageAndNotificationView />
       </ExceptionHandler>
     </Provider>,
     document.getElementById("root")

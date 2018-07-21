@@ -12,7 +12,8 @@ export default function NotificationPopup({
   dataSource,
   displayIn,
   subsequentDelay,
-  onClose
+  onClose,
+  ...others
 }) {
   if (!dataSource) return <React.Fragment />;
   let count = dataSource.length - 1;
@@ -22,6 +23,7 @@ export default function NotificationPopup({
       {dataSource.map((p, i) => {
         return (
           <PopupItemComponent
+            {...others}
             key={p.id || i}
             {...p}
             onClose={e => {
