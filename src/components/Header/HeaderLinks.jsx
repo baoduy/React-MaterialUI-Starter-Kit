@@ -18,6 +18,7 @@ function HeaderLinks({
   classes,
   notifications,
   onNotificationChange,
+  notificationBackgroundImage,
   ...others
 }) {
   return (
@@ -51,6 +52,7 @@ function HeaderLinks({
         </Hidden>
       </Button>
       <NotificationCenter
+        {...others}
         ButtonProps={{
           color: window.innerWidth > 959 ? "transparent" : "white",
           justIcon: window.innerWidth > 959,
@@ -62,7 +64,7 @@ function HeaderLinks({
         }}
         items={notifications}
         onChange={onNotificationChange}
-        {...others}
+        image={notificationBackgroundImage}
       />
       <Button
         color={window.innerWidth > 959 ? "transparent" : "white"}

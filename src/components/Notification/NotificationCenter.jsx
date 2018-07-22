@@ -113,7 +113,8 @@ export default class NotificationCenter extends React.Component {
       badgeColor,
       unReadBadgeColor,
       displayIn,
-      subsequentDelay
+      subsequentDelay,
+      image
     } = this.props;
 
     const unReadItems = getUnreadItems(items);
@@ -155,6 +156,7 @@ export default class NotificationCenter extends React.Component {
 
         <NotificationPanelComponent
           {...NotificationPanelProps}
+          image={image}
           items={items}
           title={title}
           open={this.state.panelOpen}
@@ -202,5 +204,7 @@ NotificationCenter.propTypes = {
   subsequentDelay: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   badgeColor: PropTypes.oneOf(["primary", "secondary", "error"]),
-  unReadBadgeColor: PropTypes.oneOf(["primary", "secondary", "error"])
+  unReadBadgeColor: PropTypes.oneOf(["primary", "secondary", "error"]),
+  //The background image of Notification Panel
+  image: PropTypes.string
 };

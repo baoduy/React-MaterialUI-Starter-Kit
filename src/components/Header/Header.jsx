@@ -23,6 +23,7 @@ function Header({
   location,
   path,
   handleDrawerToggle,
+  notificationBackgroundImage,
   ...others
 }) {
   function makeBrand() {
@@ -51,6 +52,7 @@ function Header({
             {...others}
             notifications={notifications}
             onNotificationChange={onNotificationChange}
+            notificationBackgroundImage={notificationBackgroundImage}
           />
         </Hidden>
         <Hidden mdUp>
@@ -70,7 +72,8 @@ function Header({
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"])
+  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
+  notificationBackgroundImage: PropTypes.string
 };
 
 export default withStyles(headerStyle)(Header);

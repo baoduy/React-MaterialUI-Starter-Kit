@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import { Drawer } from "@material-ui/core";
 import NotificationPanelStyle from "./NotificationPanelStyle";
-import { withStyles, List } from "@material-ui/core";
+import { withStyles, List, Avatar } from "@material-ui/core";
+import MessageIcon from "@material-ui/icons/Message";
 import NotificationGroup from "./NotificationGroup";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
+import classnames from "classnames";
 //helper
 import { getGroupItems } from "./helper";
 
@@ -17,7 +19,32 @@ function defaultGroupComponent({ classes, onClose, items }) {
     </List>
   );
 }
+
+function defaultBackgroundComponent({ image, classes }) {
+  if (!image) return null;
+  return (
+    <div
+      className={classes.background}
+      style={{ backgroundImage: "url(" + image + ")" }}
+    />
+  );
+}
+
+function defaultTitleComponent({ classes, title }) {
+  if (!title) return null;
+
+  return (
+    <div className={classes.logo}>
+      <MessageIcon className={classes.icon} />
+      <span className={classes.logoText}>{title}</span>
+    </div>
+  );
+}
+
 function NotificationPanel({
+  GroupComponent,
+  BackgroundComponent,
+  TitleComponent,
   position,
   open,
   onPanelClose,
@@ -25,43 +52,60 @@ function NotificationPanel({
   onItemClose,
   classes,
   items,
-  GroupComponent,
   ...others
 }) {
   const groups = getGroupItems(items);
 
   return (
-    <SwipeableDrawer
+    <Drawer
+      variant="temporary"
       anchor={position}
       open={open}
       onClose={() => onPanelClose(items)}
-      onOpen={onPanelOpen}
+      //onOpen={onPanelOpen}
+      classes={{
+        paper: classes.drawerPaper
+      }}
+      ModalProps={{
+        keepMounted: true // Better open performance on mobile.
+      }}
     >
-      <GroupComponent
-        {...others}
-        classes={classes}
-        items={groups}
-        onClose={onItemClose}
-      />
-    </SwipeableDrawer>
+      <BackgroundComponent classes={classes} {...others} />
+      <div className={classes.containWrapper}>
+        <TitleComponent classes={classes} {...others} />
+        <GroupComponent
+          {...others}
+          classes={classes}
+          items={groups}
+          onClose={onItemClose}
+        />
+      </div>
+    </Drawer>
   );
 }
 
 NotificationPanel.defaultProps = {
   GroupComponent: defaultGroupComponent,
+  BackgroundComponent: defaultBackgroundComponent,
+  TitleComponent: defaultTitleComponent,
   position: "right",
   open: false
 };
 
 NotificationPanel.propTypes = {
   GroupComponent: PropTypes.func,
+  BackgroundComponent: PropTypes.func,
+  TitleComponent: PropTypes.func,
   items: PropTypes.arrayOf(PropTypes.shape(NotificationItemPropTypes))
     .isRequired,
   position: PropTypes.oneOf(["left", "top", "right", "bottom"]),
   open: PropTypes.bool,
   onPanelClose: PropTypes.func.isRequired,
   onPanelOpen: PropTypes.func.isRequired,
-  onItemClose: PropTypes.func.isRequired
+  onItemClose: PropTypes.func.isRequired,
+  //The background image of Notification Panel
+  image: PropTypes.string,
+  title: PropTypes.string
 };
 
 export default withStyles(NotificationPanelStyle)(NotificationPanel);

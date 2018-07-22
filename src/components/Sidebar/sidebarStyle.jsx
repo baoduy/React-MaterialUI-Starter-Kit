@@ -51,7 +51,7 @@ const sidebarStyle = theme => ({
     padding: "15px 15px",
     zIndex: "4",
     "&:after": {
-      content: '""',
+      content: "''",
       position: "absolute",
       bottom: "0",
 
@@ -105,7 +105,7 @@ const sidebarStyle = theme => ({
       zIndex: "3",
       width: "100%",
       height: "100%",
-      content: '""',
+      content: "''",
       display: "block",
       background: "#000",
       opacity: ".8"
