@@ -18,6 +18,8 @@ import classnames from "classnames";
 import NotificationGroupStyle from "./NotificationGroupStyle";
 import NotificationItem from "./NotificationItem";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
+//helper
+import { getUnreadItems } from "./helper";
 
 @withStyles(NotificationGroupStyle)
 export default class NotificationGroup extends React.Component {
@@ -41,6 +43,7 @@ export default class NotificationGroup extends React.Component {
 
   render() {
     const { title, items, classes } = this.props;
+    const unReadItems = getUnreadItems(items);
 
     return (
       <React.Fragment>
@@ -49,10 +52,10 @@ export default class NotificationGroup extends React.Component {
             <Avatar
               className={classnames(
                 classes.avatar,
-                this.state.open ? classes.avatarOpen : ""
+                unReadItems.length > 0 ? classes.avatarOpen : ""
               )}
             >
-              {items.length}
+              {unReadItems.length > 0 ? unReadItems.length : items.length}
             </Avatar>
           </ListItemAvatar>
           <ListItemText

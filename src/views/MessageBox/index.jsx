@@ -92,6 +92,8 @@ class MessageBoxPage extends React.Component {
       this.props.actions.notify(
         type,
         `The clicked button is ${target.value}`,
+        null,
+        "Group 1",
         () => alert("Notification Clicked")
       );
     } else {
@@ -99,6 +101,7 @@ class MessageBoxPage extends React.Component {
         type,
         `The clicked button is ${target.value}`,
         "Notification with Title",
+        "Group 2",
         () => alert("Notification Clicked")
       );
     }

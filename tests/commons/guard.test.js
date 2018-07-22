@@ -34,4 +34,19 @@ describe("Testing Guard common functions", () => {
     expect(() => guard.argumentIsString("")).not.toThrowError();
     expect(() => guard.argumentIsString("Duy")).not.toThrowError();
   });
+
+  test("Array Test", () => {
+    expect(() => guard.argumentIsArray(null)).toThrowError();
+    expect(() => guard.argumentIsArray(undefined)).toThrowError();
+    expect(() => guard.argumentIsArray(123)).toThrowError();
+    expect(() => guard.argumentIsArray(true)).toThrowError();
+
+    expect(() => guard.argumentIsArray([])).not.toThrowError();
+    expect(() => guard.argumentIsArray([1, 2, 3])).not.toThrowError();
+  });
+
+  test("Array Not Empty Test", () => {
+    expect(() => guard.argumentIsArrayAndNotEmpty([])).toThrowError();
+    expect(() => guard.argumentIsArray([1, 2, 3])).not.toThrowError();
+  });
 });

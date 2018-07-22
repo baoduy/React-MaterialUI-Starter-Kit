@@ -4,8 +4,9 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import NotificationPanelStyle from "./NotificationPanelStyle";
 import { withStyles, List } from "@material-ui/core";
 import NotificationGroup from "./NotificationGroup";
-import linq from "linq";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
+//helper
+import { getGroupItems } from "./helper";
 
 function defaultGroupComponent({ classes, onClose, items }) {
   return (
@@ -27,12 +28,7 @@ function NotificationPanel({
   GroupComponent,
   ...others
 }) {
-  const groups = linq
-    .from(items)
-    .orderByDescending(i => i.createdOn)
-    .groupBy(i => i.group || "")
-    .select(g => ({ title: g.key(), items: g.toArray() }))
-    .toArray();
+  const groups = getGroupItems(items);
 
   return (
     <SwipeableDrawer

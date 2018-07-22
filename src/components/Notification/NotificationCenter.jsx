@@ -9,6 +9,8 @@ import Button from "../CustomButtons/Button";
 import NotificationCenterStyle from "./jss";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
 import linq from "linq";
+//helper
+import { getUnreadItems, getItemsForPopup } from "./helper";
 
 function defaultButtonComponent({
   onClick,
@@ -114,25 +116,8 @@ export default class NotificationCenter extends React.Component {
       subsequentDelay
     } = this.props;
 
-    const query = linq.from(items);
-    const unReadItems = linq
-      .from(items)
-      .where(
-        i =>
-          i.status === NotificationStatus.NEW ||
-          i.status === NotificationStatus.NOTIFIED
-      )
-      .toArray();
-    const popupItems = query
-      .where(
-        i =>
-          i.status === NotificationStatus.NEW ||
-          i.status === NotificationStatus.NOTIFIED
-      )
-      .orderByDescending(i => i.createdOn)
-      //Tell the popup that only show the NEW status once.
-      .select(i => ({ ...i, open: i.status === NotificationStatus.NEW }))
-      .toArray();
+    const unReadItems = getUnreadItems(items);
+    const popupItems = getItemsForPopup(items);
 
     return (
       <React.Fragment>
