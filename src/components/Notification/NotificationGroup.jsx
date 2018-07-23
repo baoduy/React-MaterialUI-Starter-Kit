@@ -47,12 +47,21 @@ export default class NotificationGroup extends React.Component {
 
     return (
       <React.Fragment>
-        <ListItem className={classes.root} button onClick={this.onClick}>
+        <ListItem
+          className={classnames(
+            classes.root,
+            this.state.open ? classes.blue : ""
+          )}
+          button
+          onClick={this.onClick}
+        >
           <ListItemAvatar>
             <Avatar
               className={classnames(
                 classes.avatar,
-                unReadItems.length > 0 ? classes.avatarOpen : ""
+                this.state.open || unReadItems.length > 0
+                  ? classes.avatarOpen
+                  : ""
               )}
             >
               {unReadItems.length > 0 ? unReadItems.length : items.length}

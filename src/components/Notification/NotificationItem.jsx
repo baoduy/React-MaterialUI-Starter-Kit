@@ -3,19 +3,13 @@ import PropTypes from "prop-types";
 import NotificationType from "./NotificationType";
 import NotificationItemStyle from "./NotificationItemStyle";
 import moment from "moment";
-import {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ListItemSecondaryAction,
-  IconButton,
-  Tooltip
-} from "@material-ui/core";
+import { ListItem, IconButton, Tooltip, Grid } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
 import NotificationStatus from "./NotificationStatus";
+import classnames from "classnames";
 
 function defaultFormatDate(date) {
   //convert Date to moment
@@ -25,19 +19,19 @@ function defaultFormatDate(date) {
   const now = moment();
 
   //Less than 1 minutes => now
-  if (date.diff(now, "minutes") <= 1) return "now";
+  if (now.diff(date, "minutes") <= 1) return "now";
 
   //Less than 5hours => hours ago
-  if (date.diff(now, "hours") <= 5) return date.format("h") + "s ago";
+  if (now.diff(date, "hours") <= 5) return date.format("h") + " ago";
 
   //If today then => Today hh:mm
-  if (date.diff(now, "days") <= 1) return "today " + date.format("HH:mm");
+  if (now.diff(date, "days") <= 1) return "today " + date.format("HH:mm");
 
-  //If Yesterday then => yesterday hh:mm
-  if (date.diff(now, "days") <= 2) return "yesterday " + date.format("HH:mm");
+  //If Yesterday then => yesterday
+  const diff = now.diff(date, "days");
+  if (diff > 1 && diff <= 2) return "yesterday";
 
-  //else => dd MM yy hh:mm
-  return date.format("dd.MM.yy HH:mm");
+  return `${diff} days`;
 }
 
 function NotificationItem({
@@ -47,42 +41,45 @@ function NotificationItem({
   classes,
   status,
   onClose,
-  onClick
+  onClick,
+  formatDate,
+  createdOn
 }) {
   const Icon = helper.getIcon(type);
-  const color =
-    status === NotificationStatus.NEW || status === NotificationStatus.NOTIFIED
-      ? "primary"
-      : "textSecondary";
+  const isNew =
+    status === NotificationStatus.NEW || status === NotificationStatus.NOTIFIED;
+
   return (
     <ListItem
-      className={classes.root}
+      className={classnames(classes.root, isNew ? classes.highlight : "")}
       onClick={onClick}
       button={onClick !== undefined}
     >
-      <ListItemIcon className={classes[type]}>
-        <Icon />
-      </ListItemIcon>
-      <ListItemText
-        primaryTypographyProps={{
-          className: classes.title,
-          color: color
-        }}
-        primary={title}
-        secondaryTypographyProps={{ className: classes.message, color: color }}
-        secondary={message}
-      />
-      <ListItemSecondaryAction>
-        <Tooltip
-          classes={{ tooltip: classes.tooltip }}
-          title={"close"}
-          placement="top"
-        >
-          <IconButton className={classes.iconButton} onClick={onClose}>
-            <CloseIcon className={classes.close} />
-          </IconButton>
-        </Tooltip>
-      </ListItemSecondaryAction>
+      <Grid container spacing={0}>
+        <Grid item xs={1} className={classes[type]}>
+          <Icon />
+        </Grid>
+        <Grid item xs={8} className={classes.title}>
+          {title}
+        </Grid>
+        <Grid item xs={3} className={classes.date}>
+          {formatDate(createdOn)}
+        </Grid>
+        <Grid item xs={11} className={classes.message}>
+          {message}
+        </Grid>
+        <Grid item xs={1}>
+          <Tooltip
+            classes={{ tooltip: classes.tooltip }}
+            title={"close"}
+            placement="top"
+          >
+            <IconButton className={classes.iconButton} onClick={onClose}>
+              <CloseIcon className={classes.close} />
+            </IconButton>
+          </Tooltip>
+        </Grid>
+      </Grid>
     </ListItem>
   );
 }

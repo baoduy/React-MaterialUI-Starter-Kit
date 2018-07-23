@@ -48,7 +48,6 @@ function NotificationPanel({
   position,
   open,
   onPanelClose,
-  onPanelOpen,
   onItemClose,
   classes,
   items,
@@ -62,12 +61,14 @@ function NotificationPanel({
       anchor={position}
       open={open}
       onClose={() => onPanelClose(items)}
-      //onOpen={onPanelOpen}
       classes={{
         paper: classes.drawerPaper
       }}
       ModalProps={{
-        keepMounted: true // Better open performance on mobile.
+        //keepMounted: true // Better open performance on mobile.
+        BackdropProps: {
+          invisible: true
+        }
       }}
     >
       <BackgroundComponent classes={classes} {...others} />
@@ -101,7 +102,6 @@ NotificationPanel.propTypes = {
   position: PropTypes.oneOf(["left", "top", "right", "bottom"]),
   open: PropTypes.bool,
   onPanelClose: PropTypes.func.isRequired,
-  onPanelOpen: PropTypes.func.isRequired,
   onItemClose: PropTypes.func.isRequired,
   //The background image of Notification Panel
   image: PropTypes.string,

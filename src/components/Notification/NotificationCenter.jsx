@@ -56,9 +56,6 @@ export default class NotificationCenter extends React.Component {
     this.setState({ panelOpen: !this.state.panelOpen });
   };
 
-  //Panel Open NoAction
-  onPanelOpen = () => {};
-
   //Changes status from NOTIFIED to READ when Panel closed.
   onPanelClose = items => {
     this.setState({ panelOpen: false });
@@ -160,7 +157,6 @@ export default class NotificationCenter extends React.Component {
           items={items}
           title={title}
           open={this.state.panelOpen}
-          onPanelOpen={this.onPanelOpen}
           onPanelClose={this.onPanelClose}
           onItemClose={this.onItemClose}
         />

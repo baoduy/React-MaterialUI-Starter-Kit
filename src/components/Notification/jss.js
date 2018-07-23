@@ -10,7 +10,8 @@ const closeButton = {
   },
   close: {
     width: "11px",
-    height: "11px"
+    height: "11px",
+    color: "white"
   }
 };
 
