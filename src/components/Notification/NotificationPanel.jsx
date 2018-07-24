@@ -1,12 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Drawer } from "@material-ui/core";
+import { Drawer, withStyles, List } from "@material-ui/core";
 import NotificationPanelStyle from "./NotificationPanelStyle";
-import { withStyles, List, Avatar } from "@material-ui/core";
 import MessageIcon from "@material-ui/icons/Message";
 import NotificationGroup from "./NotificationGroup";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
-import classnames from "classnames";
 //helper
 import { getGroupItems } from "./helper";
 

@@ -3,9 +3,14 @@ import PropTypes from "prop-types";
 import NotificationType from "./NotificationType";
 import NotificationItemStyle from "./NotificationItemStyle";
 import moment from "moment";
-import { ListItem, IconButton, Tooltip, Grid } from "@material-ui/core";
+import {
+  withStyles,
+  ListItem,
+  IconButton,
+  Tooltip,
+  Grid
+} from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-import { withStyles } from "@material-ui/core/styles";
 import * as helper from "./helper";
 import NotificationItemPropTypes from "./NotificationItemPropTypes";
 import NotificationStatus from "./NotificationStatus";
