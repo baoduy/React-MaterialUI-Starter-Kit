@@ -95,8 +95,11 @@ export function getGroupItems(items) {
 
   return linq
     .from(items)
-    .orderByDescending(i => i.createdOn)
     .groupBy(i => i.group || "")
-    .select(g => ({ title: g.key(), items: g.toArray() }))
+    .select(g => ({
+      title: g.key(),
+      items: g.orderByDescending(i => i.createdOn.valueOf()).toArray()
+    }))
+    .orderBy(i => i.title)
     .toArray();
 }

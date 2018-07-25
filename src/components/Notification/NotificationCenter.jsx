@@ -73,11 +73,8 @@ export default class NotificationCenter extends React.Component {
 
   //changes status to DELETE when the close button clicked
   onItemClose = items => {
-    const finalItems = items.map(i => ({
-      id: i.id,
-      status: NotificationStatus.DELETED
-    }));
-    this.updateStatus(finalItems);
+    const { onDelete } = this.props;
+    if (onDelete) onDelete(items);
   };
 
   //changes status from NEW to NOTIFIED when Popup closed
@@ -199,6 +196,7 @@ NotificationCenter.propTypes = {
   displayIn: PropTypes.number,
   subsequentDelay: PropTypes.number,
   onChange: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
   badgeColor: PropTypes.oneOf(["primary", "secondary", "error"]),
   unReadBadgeColor: PropTypes.oneOf(["primary", "secondary", "error"]),
   //The background image of Notification Panel

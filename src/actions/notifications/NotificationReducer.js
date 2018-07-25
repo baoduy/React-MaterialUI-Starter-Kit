@@ -6,23 +6,20 @@ export default function(state = [], action) {
   switch (action.type) {
     case Actions.NOTIFICATION_NEW:
       return [...state, ...action.payload];
+    case Actions.NOTIFICATION_DELETE: {
+      const deleteItems = action.payload;
+      return linq
+        .from(state)
+        .where(i => !deleteItems.find(n => n.id === i.id))
+        .toArray();
+    }
     case Actions.NOTIFICATION_UPDATE_STATUS: {
-      const query = linq.from(action.payload);
-
-      const deleteItems = query
-        .where(i => i.status === NotificationStatus.DELETED)
-        .select(i => i.id)
-        .toArray();
-
-      const otherStatus = query
-        .where(i => i.status !== NotificationStatus.DELETED)
-        .toArray();
+      const changes = action.payload;
 
       return linq
         .from(state)
-        .where(i => deleteItems.indexOf(i.id) < 0)
         .select(i => {
-          const found = otherStatus.find(n => n.id === i.id);
+          const found = changes.find(n => n.id === i.id);
           return found ? { ...i, status: found.status } : i;
         })
         .toArray();

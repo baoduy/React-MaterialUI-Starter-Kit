@@ -63,6 +63,24 @@ export function changeNotificationStatus(items) {
     });
   };
 }
+/**
+ * Delete the Notitications
+ *
+ * @export deleteNotifications
+ * @param {Array of NotificationItemPropTypes} items
+ * @returns
+ */
+export function deleteNotifications(items) {
+  return dispatch => {
+    //TODO: Call Api to delete at Server side.
+
+    //Then update back the new status to Store.
+    dispatch({
+      type: Actions.NOTIFICATION_DELETE,
+      payload: items
+    });
+  };
+}
 
 /**
  * Notify the message.

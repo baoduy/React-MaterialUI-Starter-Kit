@@ -18,6 +18,7 @@ function HeaderLinks({
   classes,
   notifications,
   onNotificationChange,
+  onNotificationDelete,
   notificationBackgroundImage,
   ...others
 }) {
@@ -64,6 +65,7 @@ function HeaderLinks({
         }}
         items={notifications}
         onChange={onNotificationChange}
+        onDelete={onNotificationDelete}
         image={notificationBackgroundImage}
       />
       <Button

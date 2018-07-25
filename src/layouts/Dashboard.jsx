@@ -73,8 +73,11 @@ class App extends React.Component {
   }
 
   onNotificationChange = items => {
-    console.log(items);
     this.props.actions.changeNotificationStatus(items);
+  };
+
+  onNotificationDelete = items => {
+    this.props.actions.deleteNotifications(items);
   };
 
   render() {
@@ -99,6 +102,7 @@ class App extends React.Component {
             handleDrawerToggle={this.handleDrawerToggle}
             notifications={notifications}
             onNotificationChange={this.onNotificationChange}
+            onNotificationDelete={this.onNotificationDelete}
             notificationBackgroundImage={image}
             {...rest}
           />

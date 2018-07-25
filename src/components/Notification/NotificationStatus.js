@@ -1,8 +1,7 @@
 const NotificationStatus = {
   NEW: "NEW",
   NOTIFIED: "NOTIFIED",
-  READ: "READ",
-  DELETED: "DELETED"
+  READ: "READ"
 };
 
 export default NotificationStatus;

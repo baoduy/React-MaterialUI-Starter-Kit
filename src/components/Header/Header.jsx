@@ -17,13 +17,10 @@ import headerStyle from "./headerStyle.jsx";
 function Header({
   classes,
   color,
-  notifications,
-  onNotificationChange,
   routes,
   location,
   path,
   handleDrawerToggle,
-  notificationBackgroundImage,
   ...others
 }) {
   function makeBrand() {
@@ -48,12 +45,7 @@ function Header({
           <span className={classes.title}>{makeBrand()}</span>
         </div>
         <Hidden smDown implementation="css">
-          <HeaderLinks
-            {...others}
-            notifications={notifications}
-            onNotificationChange={onNotificationChange}
-            notificationBackgroundImage={notificationBackgroundImage}
-          />
+          <HeaderLinks {...others} />
         </Hidden>
         <Hidden mdUp>
           <IconButton
@@ -73,7 +65,10 @@ function Header({
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
   color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
-  notificationBackgroundImage: PropTypes.string
+  notificationBackgroundImage: PropTypes.string,
+  notifications: PropTypes.array,
+  onNotificationChange: PropTypes.func.isRequired,
+  onNotificationDelete: PropTypes.func.isRequired
 };
 
 export default withStyles(headerStyle)(Header);

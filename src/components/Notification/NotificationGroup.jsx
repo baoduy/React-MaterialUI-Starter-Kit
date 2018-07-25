@@ -88,7 +88,16 @@ export default class NotificationGroup extends React.Component {
           <List className={classes.details} component="div" disablePadding>
             {items.map((n, i) => (
               <React.Fragment key={i}>
-                <NotificationItem {...n} onClose={() => this.onItemClose(n)} />
+                <NotificationItem
+                  {...n}
+                  onClose={e => {
+                    this.onItemClose(n);
+                    //stop event bubbling on click
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                  }}
+                />
                 <Divider />
               </React.Fragment>
             ))}
