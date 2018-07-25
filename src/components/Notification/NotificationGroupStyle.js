@@ -1,6 +1,7 @@
 import {
   primaryColor,
-  infoColor
+  infoColor,
+  warningColor
 } from "../../assets/jss/material-dashboard-react";
 
 import { closeButton, tooltip } from "./jss";
@@ -30,8 +31,11 @@ const NotificationGroupStyle = theme => ({
     backgroundColor: "transparent",
     border: "1px solid rgba(180, 180, 180, 0.3)"
   },
-  avatarOpen: {
+  avatarHighlight: {
     backgroundColor: primaryColor
+  },
+  avatarNew: {
+    backgroundColor: warningColor
   },
   summary: {
     paddingRight: 0

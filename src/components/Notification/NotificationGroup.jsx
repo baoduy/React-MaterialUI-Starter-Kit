@@ -59,9 +59,11 @@ export default class NotificationGroup extends React.Component {
             <Avatar
               className={classnames(
                 classes.avatar,
-                this.state.open || unReadItems.length > 0
-                  ? classes.avatarOpen
-                  : ""
+                unReadItems.length > 0
+                  ? classes.avatarNew
+                  : this.state.open
+                    ? classes.avatarHighlight
+                    : ""
               )}
             >
               {unReadItems.length > 0 ? unReadItems.length : items.length}

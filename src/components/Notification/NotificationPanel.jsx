@@ -12,7 +12,12 @@ function defaultGroupComponent({ classes, onClose, items }) {
   return (
     <List className={classes.list}>
       {items.map((g, i) => (
-        <NotificationGroup key={i} {...g} onClose={onClose} open={i === 0} />
+        <NotificationGroup
+          key={i}
+          {...g}
+          onClose={onClose}
+          open={items.length <= 1 && i === 0}
+        />
       ))}
     </List>
   );
