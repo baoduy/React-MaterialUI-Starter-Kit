@@ -9,9 +9,9 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 // core components
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
+import Card from "../Card/Card.jsx";
+import CardBody from "../Card/CardBody.jsx";
+import CardHeader from "../Card/CardHeader.jsx";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
 import customTabsStyle from "./customTabsStyle.jsx";
@@ -56,7 +56,7 @@ class CustomTabs extends React.Component {
             scrollButtons="auto"
           >
             {tabs.map((prop, key) => {
-              var icon = {};
+              let icon = {};
               if (prop.tabIcon) {
                 icon = {
                   icon: <prop.tabIcon />

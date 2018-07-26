@@ -1,11 +1,12 @@
 import dashBoardReducers from "../views/Dashboard/Reducer";
-import * as messageReducers from "../views/MessageBox/Reducer";
+import messageReducers from "../views/MessageBox/Reducer";
+import { NotificationReducer } from "../actions/notifications";
 
 const reducers = {
   charts: dashBoardReducers.chartsReducer,
   general: dashBoardReducers.generalReducer,
-  messageBox: messageReducers.MessageBoxReducer,
-  notifications: messageReducers.NotificationReducer
+  messageBox: messageReducers,
+  notifications: NotificationReducer
 };
 
 export default reducers;

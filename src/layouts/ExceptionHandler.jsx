@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import * as actions from "../views/MessageBox/Actions";
+import { NotificationActions } from "../actions/notifications";
 import { getErrorMessage } from "../commons/exceptionService";
 import NotificationType from "../components/Notification/NotificationType";
 
@@ -14,7 +14,7 @@ import NotificationType from "../components/Notification/NotificationType";
 @connect(
   undefined,
   dispatch => {
-    return { actions: bindActionCreators(actions, dispatch) };
+    return { actions: bindActionCreators(NotificationActions, dispatch) };
   }
 )
 export default class ExceptionHandler extends React.Component {

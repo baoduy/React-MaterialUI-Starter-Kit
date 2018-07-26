@@ -1,89 +1,104 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Snackbar from "components/Snackbar/Snackbar.jsx";
 import NotificationType from "./NotificationType";
-import NotificationItemStyle from "./jss";
-import { withStyles } from "@material-ui/core/styles";
+import NotificationItemStyle from "./NotificationItemStyle";
+import moment from "moment";
+import {
+  withStyles,
+  ListItem,
+  IconButton,
+  Tooltip,
+  Grid
+} from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
 import * as helper from "./helper";
+import NotificationItemPropTypes from "./NotificationItemPropTypes";
+import NotificationStatus from "./NotificationStatus";
+import classnames from "classnames";
 
-@withStyles(NotificationItemStyle)
-export default class NotificationItem extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-  }
+function defaultFormatDate(date) {
+  //convert Date to moment
+  if (date instanceof Date) date = moment(date);
+  //Check if it is nothing then just return out
+  if (!date || !moment.isMoment(date)) return date;
+  const now = moment();
 
-  setCallbackTimeout = props => {
-    const { closeNotification, open, autoClose, displayIn } = props;
+  //Less than 1 minutes => now
+  if (now.diff(date, "minutes") <= 1) return "now";
 
-    if (
-      !closeNotification ||
-      open !== true ||
-      autoClose !== true ||
-      displayIn <= 0
-    )
-      return;
+  //Less than 5hours => hours ago
+  if (now.diff(date, "hours") <= 5) return date.format("h") + " ago";
 
-    setTimeout(closeNotification, displayIn);
-  };
+  //If today then => Today hh:mm
+  if (now.diff(date, "days") <= 1) return "today " + date.format("HH:mm");
 
-  componentDidMount() {
-    this.setCallbackTimeout(this.props);
-  }
+  //If Yesterday then => yesterday
+  const diff = now.diff(date, "days");
+  if (diff > 1 && diff <= 2) return "yesterday";
 
-  componentWillReceiveProps(nextProps) {
-    this.setCallbackTimeout(nextProps);
-  }
+  return `${diff} days`;
+}
 
-  render() {
-    const { id, type, message, icon, close, classes, ...other } = this.props;
+function NotificationItem({
+  title,
+  message,
+  type,
+  classes,
+  status,
+  onClose,
+  onClick,
+  formatDate,
+  createdOn
+}) {
+  const Icon = helper.getIcon(type);
+  const isNew =
+    status === NotificationStatus.NEW || status === NotificationStatus.NOTIFIED;
 
-    const color = helper.getColor(type);
-
-    let finalIcon = icon;
-    if (icon === true) finalIcon = helper.getIcon(type);
-
-    return (
-      <Snackbar
-        {...other}
-        color={color}
-        close={close || true}
-        message={
-          <span id={id} className={classes.message}>
-            {finalIcon}
-            {" " + message}
-          </span>
-        }
-      />
-    );
-  }
+  return (
+    <ListItem
+      className={classnames(classes.root, isNew ? classes.highlight : "")}
+      onClick={onClick}
+      button={onClick !== undefined}
+    >
+      <Grid container spacing={0}>
+        <Grid item xs={1} className={classes[type]}>
+          <Icon />
+        </Grid>
+        <Grid item xs={8} className={classes.title}>
+          {title}
+        </Grid>
+        <Grid item xs={3} className={classes.date}>
+          {formatDate(createdOn)}
+        </Grid>
+        <Grid item xs={11} className={classes.message}>
+          {message}
+        </Grid>
+        <Grid item xs={1}>
+          <Tooltip
+            classes={{ tooltip: classes.tooltip }}
+            title={"close"}
+            placement="top"
+          >
+            <IconButton className={classes.iconButton} onClick={onClose}>
+              <CloseIcon className={classes.close} />
+            </IconButton>
+          </Tooltip>
+        </Grid>
+      </Grid>
+    </ListItem>
+  );
 }
 
 NotificationItem.defaultProps = {
-  place: "tr", //Top right
-  displayIn: 6000,
-  autoClose: true,
   type: NotificationType.INFO,
-  open: true,
-  icon: true
+  icon: true,
+  formatDate: defaultFormatDate
 };
 
 NotificationItem.propTypes = {
-  //The Tye of notification
-  type: PropTypes.oneOf([
-    NotificationType.CONFIRM,
-    NotificationType.DANGER,
-    NotificationType.INFO,
-    NotificationType.SUCCESS,
-    NotificationType.WARNING
-  ]),
-  //The number of second will be displayed.
-  displayIn: PropTypes.number,
-  //Enable timeout to call closeNotification after displayIn second automatically.
-  autoClose: PropTypes.bool,
-  //The message of notification
-  message: PropTypes.string.isRequired,
-  //Close handler.
-  closeNotification: PropTypes.func,
-  //The icon of notification. set to false to hide the default icon.
-  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
+  ...NotificationItemPropTypes,
+  //The function to format moment object to string
+  formatDate: PropTypes.func
 };
+
+export default withStyles(NotificationItemStyle)(NotificationItem);

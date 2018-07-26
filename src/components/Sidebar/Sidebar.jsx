@@ -11,7 +11,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 // core components
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import HeaderLinks from "../Header/HeaderLinks.jsx";
 
 import sidebarStyle from "./sidebarStyle.jsx";
 
@@ -21,12 +21,12 @@ const Sidebar = ({ ...props }) => {
     return props.location.pathname.indexOf(routeName) > -1 ? true : false;
   }
   const { classes, color, logo, image, logoText, routes } = props;
-  var links = (
+  const links = (
     <List className={classes.list}>
       {routes.map((prop, key) => {
         if (prop.redirect) return null;
-        var activePro = " ";
-        var listItemClasses;
+        let activePro = " ";
+        let listItemClasses;
         if (prop.path === "/upgrade-to-pro") {
           activePro = classes.activePro + " ";
           listItemClasses = classNames({
@@ -62,7 +62,7 @@ const Sidebar = ({ ...props }) => {
       })}
     </List>
   );
-  var brand = (
+  const brand = (
     <div className={classes.logo}>
       <a href="https://www.creative-tim.com" className={classes.logoLink}>
         <div className={classes.logoImage}>

@@ -6,13 +6,13 @@ import Grid from "@material-ui/core/Grid";
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
-import Snackbar from "components/Snackbar/Snackbar.jsx";
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+import GridItem from "../../components/Grid/GridItem.jsx";
+import Button from "../../components/CustomButtons/Button.jsx";
+import SnackbarContent from "../../components/Snackbar/SnackbarContent.jsx";
+import Snackbar from "../../components/Snackbar/Snackbar.jsx";
+import Card from "../../components/Card/Card.jsx";
+import CardHeader from "../../components/Card/CardHeader.jsx";
+import CardBody from "../../components/Card/CardBody.jsx";
 
 const styles = {
   cardCategoryWhite: {
@@ -57,7 +57,7 @@ class Notifications extends React.Component {
     };
   }
   showNotification(place) {
-    var x = [];
+    let x = [];
     x[place] = true;
     this.setState(x);
     setTimeout(
@@ -178,7 +178,7 @@ class Notifications extends React.Component {
                     icon={AddAlert}
                     message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.tl}
-                    closeNotification={() => this.setState({ tl: false })}
+                    onClose={() => this.setState({ tl: false })}
                     close
                   />
                 </GridItem>
@@ -196,7 +196,7 @@ class Notifications extends React.Component {
                     icon={AddAlert}
                     message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.tc}
-                    closeNotification={() => this.setState({ tc: false })}
+                    onClose={() => this.setState({ tc: false })}
                     close
                   />
                 </GridItem>
@@ -214,7 +214,7 @@ class Notifications extends React.Component {
                     icon={AddAlert}
                     message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.tr}
-                    closeNotification={() => this.setState({ tr: false })}
+                    onClose={() => this.setState({ tr: false })}
                     close
                   />
                 </GridItem>
@@ -238,7 +238,7 @@ class Notifications extends React.Component {
                     icon={AddAlert}
                     message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.bl}
-                    closeNotification={() => this.setState({ bl: false })}
+                    onClose={() => this.setState({ bl: false })}
                     close
                   />
                 </GridItem>
@@ -256,7 +256,7 @@ class Notifications extends React.Component {
                     icon={AddAlert}
                     message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.bc}
-                    closeNotification={() => this.setState({ bc: false })}
+                    onClose={() => this.setState({ bc: false })}
                     close
                   />
                 </GridItem>
@@ -274,7 +274,7 @@ class Notifications extends React.Component {
                     icon={AddAlert}
                     message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.br}
-                    closeNotification={() => this.setState({ br: false })}
+                    onClose={() => this.setState({ br: false })}
                     close
                   />
                 </GridItem>

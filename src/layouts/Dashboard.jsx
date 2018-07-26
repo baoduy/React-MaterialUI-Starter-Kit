@@ -1,17 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
-
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
-import Sidebar from "components/Sidebar/Sidebar.jsx";
+import Header from "../components/Header/Header.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+import Sidebar from "../components/Sidebar/Sidebar.jsx";
+import MessageBox from "../components/MessageBox";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 import dashboardStyle from "./dashboardStyle.jsx";
+
+//Actions
+import { NotificationActions } from "../actions/notifications";
 
 import { getImgSrc } from "../commons/commonFuncs";
 //Import may not working with Reserved proxy so using require instead.
@@ -28,6 +33,20 @@ const switchRoutes = (
   </Switch>
 );
 
+//Connect component to Redux store.
+@connect(
+  state => {
+    return {
+      messageBox: state.messageBox || {},
+      notifications: state.notifications || []
+    };
+  },
+  dispatch => {
+    return {
+      actions: bindActionCreators(NotificationActions, dispatch)
+    };
+  }
+)
 class App extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -53,10 +72,20 @@ class App extends React.Component {
     if (this.state.mobileOpen) this.setState({ mobileOpen: false });
   }
 
+  onNotificationChange = items => {
+    this.props.actions.changeNotificationStatus(items);
+  };
+
+  onNotificationDelete = items => {
+    this.props.actions.deleteNotifications(items);
+  };
+
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes, notifications, messageBox, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>
+        <MessageBox {...messageBox} open={messageBox.open || false} />
+
         <Sidebar
           routes={dashboardRoutes}
           logoText={"Creative Tim"}
@@ -71,6 +100,10 @@ class App extends React.Component {
           <Header
             routes={dashboardRoutes}
             handleDrawerToggle={this.handleDrawerToggle}
+            notifications={notifications}
+            onNotificationChange={this.onNotificationChange}
+            onNotificationDelete={this.onNotificationDelete}
+            notificationBackgroundImage={image}
             {...rest}
           />
           {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}

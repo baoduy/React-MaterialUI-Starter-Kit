@@ -1,10 +1,9 @@
 import * as actionTypes from "./ActionTypes";
-
-const createMessageId = () => new Date().getTime();
+import { newGuid } from "../../commons/commonFuncs";
 
 export function showMessage(type, message, handler) {
   return function(dispatch) {
-    const id = createMessageId();
+    const id = newGuid();
 
     const callback = event => {
       try {
@@ -12,10 +11,7 @@ export function showMessage(type, message, handler) {
       } finally {
         dispatch({
           type: actionTypes.HIDE_MESSAGE_BOX,
-          payload: {
-            id,
-            type
-          }
+          payload: undefined
         });
       }
     };
@@ -27,32 +23,6 @@ export function showMessage(type, message, handler) {
         type,
         message,
         actionHandler: callback
-      }
-    });
-  };
-}
-
-export function notify(type, message) {
-  return function(dispatch) {
-    const id = createMessageId();
-
-    const callback = () => {
-      dispatch({
-        type: actionTypes.HIDE_NOTIFICATION,
-        payload: {
-          id,
-          type
-        }
-      });
-    };
-
-    dispatch({
-      type: actionTypes.SHOW_NOTIFICATION,
-      payload: {
-        id,
-        type,
-        message,
-        closeNotification: callback
       }
     });
   };

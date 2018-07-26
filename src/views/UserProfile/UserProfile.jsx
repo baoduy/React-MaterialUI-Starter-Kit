@@ -4,17 +4,18 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/InputLabel";
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
-import CustomInput from "components/CustomInput/CustomInput.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardAvatar from "components/Card/CardAvatar.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
+import GridItem from "../../components/Grid/GridItem.jsx";
+import CustomInput from "../../components/CustomInput/CustomInput.jsx";
+import Button from "../../components/CustomButtons/Button.jsx";
+import Card from "../../components/Card/Card.jsx";
+import CardHeader from "../../components/Card/CardHeader.jsx";
+import CardAvatar from "../../components/Card/CardAvatar.jsx";
+import CardBody from "../../components/Card/CardBody.jsx";
+import CardFooter from "../../components/Card/CardFooter.jsx";
 
 import { getImgSrc } from "../../commons/commonFuncs";
-const avatar = getImgSrc(require("assets/img/faces/marc.jpg"));
+
+const avatar = getImgSrc(require("../../assets/img/faces/marc.jpg"));
 
 const styles = {
   cardCategoryWhite: {

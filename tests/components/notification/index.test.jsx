@@ -10,7 +10,7 @@ import Type from "../../../src/components/Notification/NotificationType";
 const render = ({ callBack, ...rest } = {}) => {
   if (!callBack) callBack = () => true;
 
-  const item = mount(<Notification {...rest} closeNotification={callBack} />);
+  const item = mount(<Notification {...rest} onClose={callBack} />);
 
   if (item.mount) item.mount();
   return item;
@@ -57,7 +57,7 @@ describe(`Render ${Notification.displayName} tests`, () => {
     console.error = original;
   });
 
-  test("closeNotification called", () => {
+  test("onClose called", () => {
     const item = render({
       dataSource: [
         {
@@ -71,7 +71,7 @@ describe(`Render ${Notification.displayName} tests`, () => {
         {
           type: Type.DANGER,
           message: "Hello",
-          closeNotification: () => true
+          onClose: () => true
         }
       ],
       displayIn: 2,
@@ -79,7 +79,7 @@ describe(`Render ${Notification.displayName} tests`, () => {
     });
 
     const p = new Promise((r, j) => {
-      item.setProps({ closeNotification: () => r(true) });
+      item.setProps({ onClose: () => r(true) });
       setTimeout(() => j(false), 4000);
     });
 

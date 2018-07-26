@@ -3,15 +3,16 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actions from "./Actions";
+import { NotificationActions } from "../../actions/notifications";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import MessageBoxType from "components/MessageBox/MessageBoxType";
+import GridItem from "../../components/Grid/GridItem.jsx";
+import Button from "../../components/CustomButtons/Button.jsx";
+import Card from "../../components/Card/Card.jsx";
+import CardBody from "../../components/Card/CardBody.jsx";
+import MessageBoxType from "../../components/MessageBox/MessageBoxType";
 
 const styles = {
   cardCategoryWhite: {
@@ -47,7 +48,12 @@ const styles = {
 @connect(
   undefined,
   dispatch => {
-    return { actions: bindActionCreators(actions, dispatch) };
+    return {
+      actions: bindActionCreators(
+        { ...actions, ...NotificationActions },
+        dispatch
+      )
+    };
   }
 )
 class MessageBoxPage extends React.Component {
@@ -76,11 +82,30 @@ class MessageBoxPage extends React.Component {
   };
 
   dialogHandler = event => {
+    if (!this.count) this.count = 0;
+
     const target = event.currentTarget || event.target;
-    this.props.actions.notify(
-      MessageBoxType.WARNING,
-      `The clicked button is ${target.value}`
-    );
+    const index = Math.floor(Math.random() * 5);
+    let type = MessageBoxType[Object.keys(MessageBoxType)[index]];
+
+    if (this.count % 2 === 0) {
+      this.props.actions.notify(
+        type,
+        `The clicked button is ${target.value}`,
+        null,
+        "Group 1",
+        () => alert("Notification Clicked")
+      );
+    } else {
+      this.props.actions.notify(
+        type,
+        `The clicked button is ${target.value}`,
+        "Notification with Title",
+        "Group 2",
+        () => alert("Notification Clicked")
+      );
+    }
+    this.count++;
   };
 
   render() {

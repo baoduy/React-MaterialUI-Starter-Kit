@@ -58,7 +58,16 @@
   "explorer.confirmDragAndDrop": true,
   "git.autofetch": true,
   "javascript.implicitProjectConfig.experimentalDecorators": true,
-  "cSpell.words": ["linebreak", "mimetype", "scrollbar", "woff"],
+  "cSpell.words": [
+    "Guid",
+    "Snackbar",
+    "Swipeable",
+    "linebreak",
+    "mimetype",
+    "scrollbar",
+    "subheader",
+    "woff"
+  ],
   "files.eol": "\n",
   "files.exclude": {
     "sm-react-service-fabric\\Web/Properties/launchSettings.json": true,
