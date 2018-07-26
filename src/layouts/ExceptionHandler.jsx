@@ -29,11 +29,14 @@ export default class ExceptionHandler extends React.Component {
   }
 
   componentWillUnmount() {
-    const { global, disabled } = this.props;
-    if (global !== true || disabled === true) return;
     window.removeEventListener("error", this.globalErrorHandler);
   }
 
+  /**
+   * Exceptio handling for any error throw by any children control.
+   *
+   * @memberof ExceptionHandler
+   */
   globalErrorHandler = event => {
     event.preventDefault();
     event.cancelBubble = true; //Stop the Bubble up
@@ -42,9 +45,15 @@ export default class ExceptionHandler extends React.Component {
     this.props.actions.notify(NotificationType.DANGER, msg);
   };
 
-  //From 16 onward all exception from children components
-  //will be catch by parent component which implemented the componentDidCatch(error, info)
-  //More details here https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
+  /**
+   * From 16 onward all exception from children components
+   * will be catch by parent component which implemented the componentDidCatch(error, info)
+   * More details here https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
+   *
+   * @param {*} error
+   * @param {*} info
+   * @memberof ExceptionHandler
+   */
   componentDidCatch(error, info) {
     const { disabled } = this.props;
     if (disabled === true) {

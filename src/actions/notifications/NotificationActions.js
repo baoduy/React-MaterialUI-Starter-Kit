@@ -31,8 +31,6 @@ export function loadNotifications() {
  * @returns {NotificationItemPropTypes}
  */
 export function newNotification(type, message, title, group, onClick) {
-  //TODO: Call Api to send the new Notification item to server if needed.
-
   return {
     id: newGuid(),
     type,
