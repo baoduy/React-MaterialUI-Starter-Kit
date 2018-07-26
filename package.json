@@ -66,7 +66,7 @@
     "img-loader": "^3.0.0",
     "jest": "23.4.1",
     "jshint": "^2.9.5",
-    "less": "3.7.1",
+    "less": "3.8.0",
     "less-loader": "^4.1.0",
     "lesshint": "^5.1.0",
     "postcss-loader": "2.1.6",
