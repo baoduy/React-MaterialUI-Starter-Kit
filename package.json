@@ -1,6 +1,7 @@
 {
   "name": "react-materialui-started-kit",
   "version": "0.0.1",
+  "main": "src/index.jsx",
   "description": "Starter kit for React, Material-UI, Webpack (with Hot Module Replacement) and Babel.",
   "keywords": [
     "react",
