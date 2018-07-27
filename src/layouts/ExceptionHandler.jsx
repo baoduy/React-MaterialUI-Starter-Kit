@@ -1,12 +1,12 @@
 /*eslint no-console: ["error", { allow: ["warn", "error"] }] */
-import React from "react";
-import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import { NotificationActions } from "../actions/notifications";
-import { getErrorMessage } from "../commons/exceptionService";
-import NotificationType from "../components/Notification/NotificationType";
+import { NotificationActions } from '../actions/notifications';
+import { getErrorMessage } from '../commons/exceptionService';
+import NotificationType from '../components/Notification/NotificationType';
 
 //Connect component to Redux store.
 //This one is a component however we are bot put it into components folder
@@ -25,11 +25,11 @@ export default class ExceptionHandler extends React.Component {
   componentWillMount() {
     const { global, disabled } = this.props;
     if (global !== true || disabled === true) return;
-    window.addEventListener("error", this.globalErrorHandler);
+    window.addEventListener('error', this.globalErrorHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("error", this.globalErrorHandler);
+    window.removeEventListener('error', this.globalErrorHandler);
   }
 
   /**
