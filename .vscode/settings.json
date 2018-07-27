@@ -2,6 +2,7 @@
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
+  "prettier.singleQuote":true,
   "cSpell.userWords": [
     "labelledby",
     "Commentable",
