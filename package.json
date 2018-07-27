@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/baoduy/React-MaterialUI-Started-Kit",
   "scripts": {
-    "git:jest": "git submodule update --init configs/jest",
-    "git:webpack": "git submodule update --init configs/webpack",
+    "git:jest": "git submodule update --init --remote configs/jest",
+    "git:webpack": "git submodule update --init --remote configs/webpack",
     "git-sm": "npm-run-all -s -p git:**",
     "build": "webpack -p --progress --config=configs/webpack/prod",
     "clean-dist": "rm -f -r -d dist",
