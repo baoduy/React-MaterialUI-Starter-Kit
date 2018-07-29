@@ -1,11 +1,10 @@
-import Actions from "./NotificationActionTypes";
-import { NotificationStatus } from "../../components/Notification";
-import linq from "linq";
+import Actions from './NotificationActionTypes';
+import linq from 'linq';
+import { Merge } from '../../commons/commonFuncs';
 
 export default function(state = [], action) {
   switch (action.type) {
-    case Actions.NOTIFICATION_NEW:
-      return [...state, ...action.payload];
+    //DELETE
     case Actions.NOTIFICATION_DELETE: {
       const deleteItems = action.payload;
       return linq
@@ -13,16 +12,9 @@ export default function(state = [], action) {
         .where(i => !deleteItems.find(n => n.id === i.id))
         .toArray();
     }
-    case Actions.NOTIFICATION_UPDATE_STATUS: {
-      const changes = action.payload;
-
-      return linq
-        .from(state)
-        .select(i => {
-          const found = changes.find(n => n.id === i.id);
-          return found ? { ...i, status: found.status } : i;
-        })
-        .toArray();
+    //ADD ro UPDATE
+    case Actions.NOTIFICATION_ADD_UPDATE: {
+      return Merge(state, action.payload);
     }
   }
 

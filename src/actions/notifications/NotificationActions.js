@@ -1,24 +1,8 @@
-import moment from "moment";
-import { NotificationStatus } from "../../components/Notification";
-import { newGuid } from "../../commons/commonFuncs";
-import Actions from "./NotificationActionTypes";
-
-/**
- * Load notification from server
- *
- * @export loadNotifications
- * @returns
- */
-export function loadNotifications() {
-  return dispatch => {
-    //TODO: call Web Api to load the notifications from server.
-
-    dispatch({
-      type: Actions.NOTIFICATION_NEW,
-      payload: []
-    });
-  };
-}
+import moment from 'moment';
+import { NotificationStatus } from '../../components/Notification';
+import { newGuid } from '../../commons/commonFuncs';
+import Actions from './NotificationActionTypes';
+import * as checks from '../../commons/checks';
 /**
  * Create new notification item
  *
@@ -31,6 +15,16 @@ export function loadNotifications() {
  * @returns {NotificationItemPropTypes}
  */
 export function newNotification(type, message, title, group, onClick) {
+  if (typeof title === 'function' && !onClick) {
+    onClick = title;
+    title = '';
+  }
+
+  if (typeof group === 'function' && !onClick) {
+    onClick = group;
+    group = '';
+  }
+
   return {
     id: newGuid(),
     type,
@@ -44,20 +38,20 @@ export function newNotification(type, message, title, group, onClick) {
 }
 
 /**
- * Update the status of existing notifications
+ * Add or Update Notifications to Redux Store.
  *
- * @export changeStatus
+ * @export addOrUpdateNotification
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export function changeNotificationStatus(items) {
+export function addOrUpdateNotification(items) {
   return dispatch => {
-    //TODO: Call Api to update the status at Server side.
+    //TODO: Call Resful API to update status at Server side.
 
     //Then update back the new status to Store.
     dispatch({
-      type: Actions.NOTIFICATION_UPDATE_STATUS,
-      payload: items
+      type: Actions.NOTIFICATION_ADD_UPDATE,
+      payload: checks.IsArray(items) ? items : [items]
     });
   };
 }
@@ -81,7 +75,7 @@ export function deleteNotifications(items) {
 }
 
 /**
- * Notify the message.
+ * Create notification Item by calling newNotification and then call addOrUpdateNotification to add to Redux Store.
  *
  * @export notify
  * @param {NotificationType} type
@@ -92,20 +86,7 @@ export function deleteNotifications(items) {
  * @returns
  */
 export function notify(type, message, title, group, onClick) {
-  if (typeof title === "function" && !onClick) {
-    onClick = title;
-    title = "";
-  }
-
-  if (typeof group === "function" && !onClick) {
-    onClick = group;
-    group = "";
-  }
-
-  return dispatch => {
-    dispatch({
-      type: Actions.NOTIFICATION_NEW,
-      payload: [newNotification(type, message, title, group, onClick)]
-    });
-  };
+  return addOrUpdateNotification(
+    newNotification(type, message, title, group, onClick)
+  );
 }

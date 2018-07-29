@@ -1,4 +1,6 @@
-import uuidv4 from "uuid/v4";
+import * as guard from './guard';
+import linq from 'linq';
+import uuidv4 from 'uuid/v4';
 //correct URL for Reserved proxy
 //Get the millisecond of current time.
 
@@ -7,11 +9,39 @@ export function newGuid() {
 }
 
 export function getImgSrc(url) {
-  if (typeof url !== "string") return url;
+  if (typeof url !== 'string') return url;
   const base = window._base;
 
-  if (!base || base === "/") return url;
+  if (!base || base === '/') return url;
   if (url.indexOf(base) >= 0) return url;
 
   return `${base}/${url}`;
+}
+/**
+ *Merge second array to first array if existed then update.
+ *
+ * @export
+ * @param {Array} [fistArray=[]]
+ * @param {Array} [secondArray=[]]
+ * @param {Function} [selector=i => i.id]
+ */
+export function Merge(fistArray = [], secondArray = [], selector = i => i.id) {
+  const firstQuery = linq.from(fistArray);
+  const secondQuery = linq.from(secondArray);
+
+  const news = secondQuery
+    .where(i => firstQuery.all(f => selector(f) !== selector(i)))
+    .toArray();
+
+  const exists = secondQuery
+    .where(i => firstQuery.all(f => selector(f) === selector(i)))
+    .toArray();
+
+  return [
+    ...fistArray.map(i => {
+      const found = exists.find(e => selector(e) === selector(i));
+      return found ? Object.assign({}, i, found) : i;
+    }),
+    ...news
+  ];
 }
