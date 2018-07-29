@@ -1,41 +1,41 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import actions from "./Actions";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import actions from './Actions';
 
 // react plugin for creating charts
-import ChartistGraph from "react-chartist";
+import ChartistGraph from 'react-chartist';
 // @material-ui/core
-import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Grid from '@material-ui/core/Grid';
 // @material-ui/icons
-import ContentCopy from "@material-ui/icons/ContentCopy";
-import Store from "@material-ui/icons/Store";
-import InfoOutline from "@material-ui/icons/InfoOutline";
-import Warning from "@material-ui/icons/Warning";
-import DateRange from "@material-ui/icons/DateRange";
-import LocalOffer from "@material-ui/icons/LocalOffer";
-import Update from "@material-ui/icons/Update";
-import ArrowUpward from "@material-ui/icons/ArrowUpward";
-import AccessTime from "@material-ui/icons/AccessTime";
-import Accessibility from "@material-ui/icons/Accessibility";
-import BugReport from "@material-ui/icons/BugReport";
-import Code from "@material-ui/icons/Code";
-import Cloud from "@material-ui/icons/Cloud";
+import ContentCopy from '@material-ui/icons/FileCopy';
+import Store from '@material-ui/icons/Store';
+import InfoOutline from '@material-ui/icons/InfoOutlined';
+import Warning from '@material-ui/icons/Warning';
+import DateRange from '@material-ui/icons/DateRange';
+import LocalOffer from '@material-ui/icons/LocalOffer';
+import Update from '@material-ui/icons/Update';
+import ArrowUpward from '@material-ui/icons/ArrowUpward';
+import AccessTime from '@material-ui/icons/AccessTime';
+import Accessibility from '@material-ui/icons/Accessibility';
+import BugReport from '@material-ui/icons/BugReport';
+import Code from '@material-ui/icons/Code';
+import Cloud from '@material-ui/icons/Cloud';
 // core components
-import GridItem from "../../components/Grid/GridItem.jsx";
-import Table from "../../components/Table/Table.jsx";
-import Tasks from "../../components/Tasks/Tasks.jsx";
-import CustomTabs from "../../components/CustomTabs/CustomTabs.jsx";
-import Danger from "../../components/Typography/Danger.jsx";
-import Card from "../../components/Card/Card.jsx";
-import CardHeader from "../../components/Card/CardHeader.jsx";
-import CardIcon from "../../components/Card/CardIcon.jsx";
-import CardBody from "../../components/Card/CardBody.jsx";
-import CardFooter from "../../components/Card/CardFooter.jsx";
+import GridItem from '../../components/Grid/GridItem.jsx';
+import Table from '../../components/Table/Table.jsx';
+import Tasks from '../../components/Tasks/Tasks.jsx';
+import CustomTabs from '../../components/CustomTabs/CustomTabs.jsx';
+import Danger from '../../components/Typography/Danger.jsx';
+import Card from '../../components/Card/Card.jsx';
+import CardHeader from '../../components/Card/CardHeader.jsx';
+import CardIcon from '../../components/Card/CardIcon.jsx';
+import CardBody from '../../components/Card/CardBody.jsx';
+import CardFooter from '../../components/Card/CardFooter.jsx';
 
-import dashboardStyle from "./dashboardStyle.jsx";
+import dashboardStyle from './dashboardStyle.jsx';
 
 //Connect component to Redux store.
 @connect(
@@ -190,7 +190,7 @@ class Dashboard extends React.Component {
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
                     <ArrowUpward className={classes.upArrowCardCategory} /> 55%
-                  </span>{" "}
+                  </span>{' '}
                   increase in today sales.
                 </p>
               </CardBody>
@@ -265,7 +265,7 @@ class Dashboard extends React.Component {
               loading={loading}
               tabs={[
                 {
-                  tabName: "Bugs",
+                  tabName: 'Bugs',
                   tabIcon: BugReport,
                   tabContent: bugs ? (
                     <Tasks
@@ -278,7 +278,7 @@ class Dashboard extends React.Component {
                   )
                 },
                 {
-                  tabName: "Website",
+                  tabName: 'Website',
                   tabIcon: Code,
                   tabContent: website ? (
                     <Tasks
@@ -291,7 +291,7 @@ class Dashboard extends React.Component {
                   )
                 },
                 {
-                  tabName: "Server",
+                  tabName: 'Server',
                   tabIcon: Cloud,
                   tabContent: server ? (
                     <Tasks
@@ -317,12 +317,12 @@ class Dashboard extends React.Component {
               <CardBody>
                 <Table
                   tableHeaderColor="warning"
-                  tableHead={["ID", "Name", "Salary", "Country"]}
+                  tableHead={['ID', 'Name', 'Salary', 'Country']}
                   tableData={[
-                    ["1", "Dakota Rice", "$36,738", "Niger"],
-                    ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                    ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                    ["4", "Philip Chaney", "$38,735", "Korea, South"]
+                    ['1', 'Dakota Rice', '$36,738', 'Niger'],
+                    ['2', 'Minerva Hooper', '$23,789', 'Curaçao'],
+                    ['3', 'Sage Rodriguez', '$56,142', 'Netherlands'],
+                    ['4', 'Philip Chaney', '$38,735', 'Korea, South']
                   ]}
                 />
               </CardBody>
