@@ -29,19 +29,19 @@ export function Merge(fistArray = [], secondArray = [], selector = i => i.id) {
   const firstQuery = linq.from(fistArray);
   const secondQuery = linq.from(secondArray);
 
-  const news = secondQuery
-    .where(i => firstQuery.all(f => selector(f) !== selector(i)))
-    .toArray();
+  const news = secondQuery.where(i =>
+    firstQuery.all(f => selector(f) !== selector(i))
+  );
 
-  const exists = secondQuery
-    .where(i => firstQuery.all(f => selector(f) === selector(i)))
-    .toArray();
+  const exists = secondQuery.where(i =>
+    firstQuery.any(f => selector(f) === selector(i))
+  );
 
-  return [
-    ...fistArray.map(i => {
-      const found = exists.find(e => selector(e) === selector(i));
+  return firstQuery
+    .select(i => {
+      const found = exists.firstOrDefault(e => selector(e) === selector(i));
       return found ? Object.assign({}, i, found) : i;
-    }),
-    ...news
-  ];
+    })
+    .union(news)
+    .toArray();
 }

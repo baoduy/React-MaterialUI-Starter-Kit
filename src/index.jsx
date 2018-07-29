@@ -1,29 +1,29 @@
 /*eslint no-console: ["off", { allow: ["warn", "error"] }] */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
-import Provider from "react-redux-thunk-store";
-import ExceptionHandler from "./layouts/ExceptionHandler";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createBrowserHistory } from 'history';
+import { Router, Route, Switch, BrowserRouter } from 'react-router-dom';
+import Provider from 'react-redux-thunk-store';
+import ExceptionHandler from './layouts/ExceptionHandler';
 
 //Style-sheets
-import "./assets/less/material-dashboard-react.less";
+import './assets/less/material-dashboard-react.less';
 
-import reducers from "./reducers";
-import indexRoutes from "routes/index.jsx";
+import reducers from './reducers';
+import indexRoutes from 'routes/index.jsx';
 
 //Update for Reserved proxy
-window._base = document.getElementsByTagName("base")[0].getAttribute("href");
+window._base = document.getElementsByTagName('base')[0].getAttribute('href');
 console.log(`base URL ${window._base}`);
 
 const hist = createBrowserHistory({ basename: window._base });
 //indicate whether application is running on PRD or not
-const isPrd = process.env.NODE_ENV === "production";
+const isPrd = process.env.NODE_ENV === 'production';
 
 const createRouter = () => {
   return (
-    <BrowserRouter basename={window._base || "/"}>
+    <BrowserRouter basename={window._base || '/'}>
       <Router history={hist}>
         <Switch>
           {indexRoutes.map((prop, key) => {
@@ -45,7 +45,7 @@ const renderComponent = () => {
         {createRouter()}
       </ExceptionHandler>
     </Provider>,
-    document.getElementById("root")
+    document.getElementById('root')
   );
 };
 
@@ -53,7 +53,7 @@ renderComponent();
 
 // Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept("./layouts/Dashboard", () => {
+  module.hot.accept('./layouts/Dashboard', () => {
     renderComponent();
   });
 }
