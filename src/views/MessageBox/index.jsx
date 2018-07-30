@@ -1,45 +1,45 @@
 /* eslint-disable */
-import React from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import * as actions from "./Actions";
-import { NotificationActions } from "../../actions/notifications";
+import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as messageBoxActions from './Actions';
+import { NotificationActions } from '../../actions/notifications';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Grid from '@material-ui/core/Grid';
 // core components
-import GridItem from "../../components/Grid/GridItem.jsx";
-import Button from "../../components/CustomButtons/Button.jsx";
-import Card from "../../components/Card/Card.jsx";
-import CardBody from "../../components/Card/CardBody.jsx";
-import MessageBoxType from "../../components/MessageBox/MessageBoxType";
+import GridItem from '../../components/Grid/GridItem.jsx';
+import Button from '../../components/CustomButtons/Button.jsx';
+import Card from '../../components/Card/Card.jsx';
+import CardBody from '../../components/Card/CardBody.jsx';
+import MessageBoxType from '../../components/MessageBox/MessageBoxType';
 
 const styles = {
   cardCategoryWhite: {
-    "&,& a,& a:hover,& a:focus": {
-      color: "rgba(255,255,255,.62)",
-      margin: "0",
-      fontSize: "14px",
-      marginTop: "0",
-      marginBottom: "0"
+    '&,& a,& a:hover,& a:focus': {
+      color: 'rgba(255,255,255,.62)',
+      margin: '0',
+      fontSize: '14px',
+      marginTop: '0',
+      marginBottom: '0'
     },
-    "& a,& a:hover,& a:focus": {
-      color: "#FFFFFF"
+    '& a,& a:hover,& a:focus': {
+      color: '#FFFFFF'
     }
   },
   cardTitleWhite: {
-    color: "#FFFFFF",
-    marginTop: "0px",
-    minHeight: "auto",
-    fontWeight: "300",
+    color: '#FFFFFF',
+    marginTop: '0px',
+    minHeight: 'auto',
+    fontWeight: '300',
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
-    textDecoration: "none",
-    "& small": {
-      color: "#777",
-      fontSize: "65%",
-      fontWeight: "400",
-      lineHeight: "1"
+    marginBottom: '3px',
+    textDecoration: 'none',
+    '& small': {
+      color: '#777',
+      fontSize: '65%',
+      fontWeight: '400',
+      lineHeight: '1'
     }
   }
 };
@@ -47,14 +47,13 @@ const styles = {
 //Connect component to Redux store.
 @connect(
   undefined,
-  dispatch => {
-    return {
-      actions: bindActionCreators(
-        { ...actions, ...NotificationActions },
-        dispatch
-      )
-    };
-  }
+  dispatch => ({
+    actions: bindActionCreators(
+      //Combined both messageBoxActions and NotificationActions into 1 object
+      { ...messageBoxActions, ...NotificationActions },
+      dispatch
+    )
+  })
 )
 class MessageBoxPage extends React.Component {
   constructor(props) {
@@ -93,16 +92,16 @@ class MessageBoxPage extends React.Component {
         type,
         `The clicked button is ${target.value}`,
         null,
-        "Group 1",
-        () => alert("Notification Clicked")
+        'Group 1',
+        () => alert('Notification Clicked')
       );
     } else {
       this.props.actions.notify(
         type,
         `The clicked button is ${target.value}`,
-        "Notification with Title",
-        "Group 2",
-        () => alert("Notification Clicked")
+        'Notification with Title',
+        'Group 2',
+        () => alert('Notification Clicked')
       );
     }
     this.count++;
@@ -116,7 +115,7 @@ class MessageBoxPage extends React.Component {
         <Card>
           <CardBody>
             <Grid container justify="center">
-              <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
+              <GridItem xs={12} sm={12} md={6} style={{ textAlign: 'center' }}>
                 <h5>
                   <small>
                     Click to view Message Box. This demo is using Redux store to
@@ -168,7 +167,7 @@ class MessageBoxPage extends React.Component {
               </GridItem>
             </Grid>
 
-            <Grid container justify={"center"}>
+            <Grid container justify={'center'}>
               <GridItem xs={12} sm={12} md={10} lg={8}>
                 <Grid container>
                   <GridItem xs={12} sm={12} md={4}>
@@ -197,7 +196,7 @@ class MessageBoxPage extends React.Component {
                       color="danger"
                       onClick={() =>
                         this.dialogHandler({
-                          target: { value: "Notification" }
+                          target: { value: 'Notification' }
                         })
                       }
                     >
@@ -209,12 +208,12 @@ class MessageBoxPage extends React.Component {
             </Grid>
 
             <Grid container justify="center">
-              <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
+              <GridItem xs={12} sm={12} md={6} style={{ textAlign: 'center' }}>
                 <Button
                   fullWidth
                   color="danger"
                   onClick={() => {
-                    throw "Exception from Message Box View";
+                    throw 'Exception from Message Box View';
                   }}
                 >
                   Throw Exception
