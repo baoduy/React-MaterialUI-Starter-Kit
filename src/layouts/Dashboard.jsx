@@ -73,7 +73,7 @@ class App extends React.Component {
   }
 
   onNotificationChange = items => {
-    this.props.actions.addOrUpdateNotification(items);
+    this.props.actions.addOrUpdateNotifications(items);
   };
 
   onNotificationDelete = items => {

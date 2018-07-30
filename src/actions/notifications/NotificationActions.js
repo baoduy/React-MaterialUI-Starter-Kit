@@ -1,8 +1,9 @@
+import { makeActionCreator } from 'redux-toolbelt';
+//import { makeThunkAsyncActionCreator } from 'redux-toolbelt-thunk';
 import moment from 'moment';
 import { NotificationStatus } from '../../components/Notification';
 import { newGuid } from '../../commons/commonFuncs';
-import Actions from './NotificationActionTypes';
-import * as checks from '../../commons/checks';
+
 /**
  * Create new notification item
  *
@@ -44,17 +45,10 @@ export function newNotification(type, message, title, group, onClick) {
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export function addOrUpdateNotification(items) {
-  return dispatch => {
-    //TODO: Call Resful API to update status at Server side.
+export const addOrUpdateNotifications = makeActionCreator(
+  'NOTIFICATION_ADD_UPDATE'
+);
 
-    //Then update back the new status to Store.
-    dispatch({
-      type: Actions.NOTIFICATION_ADD_UPDATE,
-      payload: checks.IsArray(items) ? items : [items]
-    });
-  };
-}
 /**
  * Delete the Notitications
  *
@@ -62,17 +56,7 @@ export function addOrUpdateNotification(items) {
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export function deleteNotifications(items) {
-  return dispatch => {
-    //TODO: Call Api to delete at Server side.
-
-    //Then update back the new status to Store.
-    dispatch({
-      type: Actions.NOTIFICATION_DELETE,
-      payload: items
-    });
-  };
-}
+export const deleteNotifications = makeActionCreator('NOTIFICATION_DELETE');
 
 /**
  * Create notification Item by calling newNotification and then call addOrUpdateNotification to add to Redux Store.
@@ -86,7 +70,7 @@ export function deleteNotifications(items) {
  * @returns
  */
 export function notify(type, message, title, group, onClick) {
-  return addOrUpdateNotification(
+  return addOrUpdateNotifications(
     newNotification(type, message, title, group, onClick)
   );
 }
