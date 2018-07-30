@@ -35,13 +35,13 @@ exports[`Testing WithStyles(MessageBox) component render confirm 1`] = `
       Confirmation
     </h2>
     <div
-      className="MuiDialogContent-root-81 MessageBox-dialogContent-2"
+      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
     >
       <div
-        className="MuiGrid-container-82 MuiGrid-align-items-xs-baseline-93 MessageBox-content-3"
+        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
       >
         <div
-          className="MuiGrid-item-83 MuiGrid-grid-xs-4-113 MuiGrid-grid-sm-2-125 MuiGrid-grid-md-2-139 GridItem-grid-178"
+          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
           style={
             Object {
               "padding": "0px",
@@ -50,7 +50,7 @@ exports[`Testing WithStyles(MessageBox) component render confirm 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-179 MessageBox-confirmIcon-6"
+            className="MuiSvgIcon-root-181 MessageBox-confirmIcon-6"
             focusable="false"
             style={
               Object {
@@ -67,7 +67,7 @@ exports[`Testing WithStyles(MessageBox) component render confirm 1`] = `
           </svg>
         </div>
         <div
-          className="MuiGrid-item-83 GridItem-grid-178"
+          className="MuiGrid-item-84 GridItem-grid-180"
         >
           <p>
             Hello
@@ -76,10 +76,10 @@ exports[`Testing WithStyles(MessageBox) component render confirm 1`] = `
       </div>
     </div>
     <div
-      className="MuiDialogActions-root-186"
+      className="MuiDialogActions-root-188"
     >
       <button
-        className="MuiButtonBase-root-212 MuiButton-root-188 MuiButton-contained-197 MuiButton-raised-200 MessageBox-button-4 MuiDialogActions-action-187"
+        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-raised-202 MessageBox-button-4 MuiDialogActions-action-189"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -97,17 +97,17 @@ exports[`Testing WithStyles(MessageBox) component render confirm 1`] = `
         value="CANCEL"
       >
         <span
-          className="MuiButton-label-189"
+          className="MuiButton-label-191"
         >
           Cancel
         </span>
         <span
-          className="MuiTouchRipple-root-215"
+          className="MuiTouchRipple-root-217"
         />
       </button>
       <button
         autoFocus={true}
-        className="MuiButtonBase-root-212 MuiButton-root-188 MuiButton-contained-197 MuiButton-containedPrimary-198 MuiButton-raised-200 MuiButton-raisedPrimary-201 MessageBox-button-4 MuiDialogActions-action-187"
+        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -125,12 +125,12 @@ exports[`Testing WithStyles(MessageBox) component render confirm 1`] = `
         value="OK"
       >
         <span
-          className="MuiButton-label-189"
+          className="MuiButton-label-191"
         >
           Ok
         </span>
         <span
-          className="MuiTouchRipple-root-215"
+          className="MuiTouchRipple-root-217"
         />
       </button>
     </div>
@@ -173,13 +173,13 @@ exports[`Testing WithStyles(MessageBox) component render danger 1`] = `
       Error
     </h2>
     <div
-      className="MuiDialogContent-root-81 MessageBox-dialogContent-2"
+      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
     >
       <div
-        className="MuiGrid-container-82 MuiGrid-align-items-xs-baseline-93 MessageBox-content-3"
+        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
       >
         <div
-          className="MuiGrid-item-83 MuiGrid-grid-xs-4-113 MuiGrid-grid-sm-2-125 MuiGrid-grid-md-2-139 GridItem-grid-178"
+          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
           style={
             Object {
               "padding": "0px",
@@ -188,7 +188,7 @@ exports[`Testing WithStyles(MessageBox) component render danger 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-179 MessageBox-dangerIcon-14"
+            className="MuiSvgIcon-root-181 MessageBox-dangerIcon-14"
             focusable="false"
             style={
               Object {
@@ -205,7 +205,7 @@ exports[`Testing WithStyles(MessageBox) component render danger 1`] = `
           </svg>
         </div>
         <div
-          className="MuiGrid-item-83 GridItem-grid-178"
+          className="MuiGrid-item-84 GridItem-grid-180"
         >
           <p>
             Hello
@@ -214,11 +214,11 @@ exports[`Testing WithStyles(MessageBox) component render danger 1`] = `
       </div>
     </div>
     <div
-      className="MuiDialogActions-root-186"
+      className="MuiDialogActions-root-188"
     >
       <button
         autoFocus={true}
-        className="MuiButtonBase-root-212 MuiButton-root-188 MuiButton-contained-197 MuiButton-containedPrimary-198 MuiButton-raised-200 MuiButton-raisedPrimary-201 MessageBox-button-4 MuiDialogActions-action-187"
+        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -236,12 +236,12 @@ exports[`Testing WithStyles(MessageBox) component render danger 1`] = `
         value="OK"
       >
         <span
-          className="MuiButton-label-189"
+          className="MuiButton-label-191"
         >
           Ok
         </span>
         <span
-          className="MuiTouchRipple-root-215"
+          className="MuiTouchRipple-root-217"
         />
       </button>
     </div>
@@ -284,13 +284,13 @@ exports[`Testing WithStyles(MessageBox) component render info 1`] = `
       Information
     </h2>
     <div
-      className="MuiDialogContent-root-81 MessageBox-dialogContent-2"
+      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
     >
       <div
-        className="MuiGrid-container-82 MuiGrid-align-items-xs-baseline-93 MessageBox-content-3"
+        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
       >
         <div
-          className="MuiGrid-item-83 MuiGrid-grid-xs-4-113 MuiGrid-grid-sm-2-125 MuiGrid-grid-md-2-139 GridItem-grid-178"
+          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
           style={
             Object {
               "padding": "0px",
@@ -299,7 +299,7 @@ exports[`Testing WithStyles(MessageBox) component render info 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-179 MessageBox-infoIcon-8"
+            className="MuiSvgIcon-root-181 MessageBox-infoIcon-8"
             focusable="false"
             style={
               Object {
@@ -316,7 +316,7 @@ exports[`Testing WithStyles(MessageBox) component render info 1`] = `
           </svg>
         </div>
         <div
-          className="MuiGrid-item-83 GridItem-grid-178"
+          className="MuiGrid-item-84 GridItem-grid-180"
         >
           <p>
             Hello
@@ -325,11 +325,11 @@ exports[`Testing WithStyles(MessageBox) component render info 1`] = `
       </div>
     </div>
     <div
-      className="MuiDialogActions-root-186"
+      className="MuiDialogActions-root-188"
     >
       <button
         autoFocus={true}
-        className="MuiButtonBase-root-212 MuiButton-root-188 MuiButton-contained-197 MuiButton-containedPrimary-198 MuiButton-raised-200 MuiButton-raisedPrimary-201 MessageBox-button-4 MuiDialogActions-action-187"
+        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -347,12 +347,12 @@ exports[`Testing WithStyles(MessageBox) component render info 1`] = `
         value="OK"
       >
         <span
-          className="MuiButton-label-189"
+          className="MuiButton-label-191"
         >
           Ok
         </span>
         <span
-          className="MuiTouchRipple-root-215"
+          className="MuiTouchRipple-root-217"
         />
       </button>
     </div>
@@ -395,13 +395,13 @@ exports[`Testing WithStyles(MessageBox) component render success 1`] = `
       Successfully
     </h2>
     <div
-      className="MuiDialogContent-root-81 MessageBox-dialogContent-2"
+      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
     >
       <div
-        className="MuiGrid-container-82 MuiGrid-align-items-xs-baseline-93 MessageBox-content-3"
+        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
       >
         <div
-          className="MuiGrid-item-83 MuiGrid-grid-xs-4-113 MuiGrid-grid-sm-2-125 MuiGrid-grid-md-2-139 GridItem-grid-178"
+          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
           style={
             Object {
               "padding": "0px",
@@ -410,7 +410,7 @@ exports[`Testing WithStyles(MessageBox) component render success 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-179 MessageBox-successIcon-10"
+            className="MuiSvgIcon-root-181 MessageBox-successIcon-10"
             focusable="false"
             style={
               Object {
@@ -427,7 +427,7 @@ exports[`Testing WithStyles(MessageBox) component render success 1`] = `
           </svg>
         </div>
         <div
-          className="MuiGrid-item-83 GridItem-grid-178"
+          className="MuiGrid-item-84 GridItem-grid-180"
         >
           <p>
             Hello
@@ -436,11 +436,11 @@ exports[`Testing WithStyles(MessageBox) component render success 1`] = `
       </div>
     </div>
     <div
-      className="MuiDialogActions-root-186"
+      className="MuiDialogActions-root-188"
     >
       <button
         autoFocus={true}
-        className="MuiButtonBase-root-212 MuiButton-root-188 MuiButton-contained-197 MuiButton-containedPrimary-198 MuiButton-raised-200 MuiButton-raisedPrimary-201 MessageBox-button-4 MuiDialogActions-action-187"
+        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -458,12 +458,12 @@ exports[`Testing WithStyles(MessageBox) component render success 1`] = `
         value="OK"
       >
         <span
-          className="MuiButton-label-189"
+          className="MuiButton-label-191"
         >
           Ok
         </span>
         <span
-          className="MuiTouchRipple-root-215"
+          className="MuiTouchRipple-root-217"
         />
       </button>
     </div>
@@ -506,13 +506,13 @@ exports[`Testing WithStyles(MessageBox) component render warning 1`] = `
       Warning
     </h2>
     <div
-      className="MuiDialogContent-root-81 MessageBox-dialogContent-2"
+      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
     >
       <div
-        className="MuiGrid-container-82 MuiGrid-align-items-xs-baseline-93 MessageBox-content-3"
+        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
       >
         <div
-          className="MuiGrid-item-83 MuiGrid-grid-xs-4-113 MuiGrid-grid-sm-2-125 MuiGrid-grid-md-2-139 GridItem-grid-178"
+          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
           style={
             Object {
               "padding": "0px",
@@ -521,7 +521,7 @@ exports[`Testing WithStyles(MessageBox) component render warning 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-179 MessageBox-warningIcon-12"
+            className="MuiSvgIcon-root-181 MessageBox-warningIcon-12"
             focusable="false"
             style={
               Object {
@@ -538,7 +538,7 @@ exports[`Testing WithStyles(MessageBox) component render warning 1`] = `
           </svg>
         </div>
         <div
-          className="MuiGrid-item-83 GridItem-grid-178"
+          className="MuiGrid-item-84 GridItem-grid-180"
         >
           <p>
             Hello
@@ -547,11 +547,11 @@ exports[`Testing WithStyles(MessageBox) component render warning 1`] = `
       </div>
     </div>
     <div
-      className="MuiDialogActions-root-186"
+      className="MuiDialogActions-root-188"
     >
       <button
         autoFocus={true}
-        className="MuiButtonBase-root-212 MuiButton-root-188 MuiButton-contained-197 MuiButton-containedPrimary-198 MuiButton-raised-200 MuiButton-raisedPrimary-201 MessageBox-button-4 MuiDialogActions-action-187"
+        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -569,12 +569,12 @@ exports[`Testing WithStyles(MessageBox) component render warning 1`] = `
         value="OK"
       >
         <span
-          className="MuiButton-label-189"
+          className="MuiButton-label-191"
         >
           Ok
         </span>
         <span
-          className="MuiTouchRipple-root-215"
+          className="MuiTouchRipple-root-217"
         />
       </button>
     </div>
@@ -617,13 +617,13 @@ exports[`Testing WithStyles(MessageBox) component render without error 1`] = `
       Information
     </h2>
     <div
-      className="MuiDialogContent-root-81 MessageBox-dialogContent-2"
+      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
     >
       <div
-        className="MuiGrid-container-82 MuiGrid-align-items-xs-baseline-93 MessageBox-content-3"
+        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
       >
         <div
-          className="MuiGrid-item-83 MuiGrid-grid-xs-4-113 MuiGrid-grid-sm-2-125 MuiGrid-grid-md-2-139 GridItem-grid-178"
+          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
           style={
             Object {
               "padding": "0px",
@@ -632,7 +632,7 @@ exports[`Testing WithStyles(MessageBox) component render without error 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-179 MessageBox-infoIcon-8"
+            className="MuiSvgIcon-root-181 MessageBox-infoIcon-8"
             focusable="false"
             style={
               Object {
@@ -649,7 +649,7 @@ exports[`Testing WithStyles(MessageBox) component render without error 1`] = `
           </svg>
         </div>
         <div
-          className="MuiGrid-item-83 GridItem-grid-178"
+          className="MuiGrid-item-84 GridItem-grid-180"
         >
           <p>
             Hello
@@ -658,11 +658,11 @@ exports[`Testing WithStyles(MessageBox) component render without error 1`] = `
       </div>
     </div>
     <div
-      className="MuiDialogActions-root-186"
+      className="MuiDialogActions-root-188"
     >
       <button
         autoFocus={true}
-        className="MuiButtonBase-root-212 MuiButton-root-188 MuiButton-contained-197 MuiButton-containedPrimary-198 MuiButton-raised-200 MuiButton-raisedPrimary-201 MessageBox-button-4 MuiDialogActions-action-187"
+        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -680,12 +680,12 @@ exports[`Testing WithStyles(MessageBox) component render without error 1`] = `
         value="OK"
       >
         <span
-          className="MuiButton-label-189"
+          className="MuiButton-label-191"
         >
           Ok
         </span>
         <span
-          className="MuiTouchRipple-root-215"
+          className="MuiTouchRipple-root-217"
         />
       </button>
     </div>
