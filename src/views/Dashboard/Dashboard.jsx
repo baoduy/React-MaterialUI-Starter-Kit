@@ -10,9 +10,9 @@ import ChartistGraph from 'react-chartist';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
 // @material-ui/icons
-import ContentCopy from '@material-ui/icons/ContentCopy';
+import ContentCopy from '@material-ui/icons/FileCopy';
 import Store from '@material-ui/icons/Store';
-import InfoOutline from '@material-ui/icons/InfoOutline';
+import InfoOutline from '@material-ui/icons/InfoOutlined';
 import Warning from '@material-ui/icons/Warning';
 import DateRange from '@material-ui/icons/DateRange';
 import LocalOffer from '@material-ui/icons/LocalOffer';
