@@ -4,6 +4,12 @@ import moment from 'moment';
 import { NotificationStatus } from '../../components/Notification';
 import { newGuid } from '../../commons/commonFuncs';
 
+//Moved the type of all actions on top so it will be eaiser if need refectoring the names.
+const TYPES={
+  AddedOrUpdated:'@Notification/AddedOrUpdated',
+  Deleted:'@Notification/Deleted'
+}
+
 /**
  * Create new notification item
  *
@@ -45,9 +51,7 @@ export function newNotification(type, message, title, group, onClick) {
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export const addOrUpdateNotifications = makeActionCreator(
-  '@Notification/AddOrUpdate'
-);
+export const addOrUpdateNotifications = makeActionCreator(TYPES.AddedOrUpdated);
 
 /**
  * Delete the Notitications
@@ -56,7 +60,7 @@ export const addOrUpdateNotifications = makeActionCreator(
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export const deleteNotifications = makeActionCreator('@Notification/Delete');
+export const deleteNotifications = makeActionCreator(TYPES.Deleted);
 
 /**
  * Create notification Item by calling newNotification and then call addOrUpdateNotification to add to Redux Store.
