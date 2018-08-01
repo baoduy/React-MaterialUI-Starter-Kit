@@ -46,7 +46,7 @@ export function newNotification(type, message, title, group, onClick) {
  * @returns
  */
 export const addOrUpdateNotifications = makeActionCreator(
-  'NOTIFICATION_ADD_UPDATE'
+  '@Notification/AddOrUpdate'
 );
 
 /**
@@ -56,7 +56,7 @@ export const addOrUpdateNotifications = makeActionCreator(
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export const deleteNotifications = makeActionCreator('NOTIFICATION_DELETE');
+export const deleteNotifications = makeActionCreator('@Notification/Delete');
 
 /**
  * Create notification Item by calling newNotification and then call addOrUpdateNotification to add to Redux Store.
