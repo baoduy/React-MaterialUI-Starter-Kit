@@ -1,27 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import "perfect-scrollbar/css/perfect-scrollbar.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 // core components
-import Header from "../components/Header/Header.jsx";
-import Footer from "../components/Footer/Footer.jsx";
-import Sidebar from "../components/Sidebar/Sidebar.jsx";
-import MessageBox from "../components/MessageBox";
+import Header from '../components/Header/Header.jsx';
+import Footer from '../components/Footer/Footer.jsx';
+import Sidebar from '../components/Sidebar/Sidebar.jsx';
+import MessageBox from '../components/MessageBox';
 
-import dashboardRoutes from "routes/dashboard.jsx";
-import dashboardStyle from "./dashboardStyle.jsx";
+import dashboardRoutes from 'routes/dashboard.jsx';
+import dashboardStyle from './dashboardStyle.jsx';
 
 //Actions
-import { NotificationActions } from "../actions/notifications";
+import { NotificationActions } from '../actions/notifications';
 
-import { getImgSrc } from "../commons/commonFuncs";
+import { getImgSrc } from '../commons/commonFuncs';
 //Import may not working with Reserved proxy so using require instead.
-const image = getImgSrc(require("../assets/img/sidebar-2.jpg"));
-const logo = require("../assets/img/react_logo.svg");
+const image = getImgSrc(require('../assets/img/sidebar-2.jpg'));
+const logo = require('../assets/img/react_logo.svg');
 
 const switchRoutes = (
   <Switch>
@@ -60,10 +60,10 @@ class App extends React.Component {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
   getRoute() {
-    return this.props.location.pathname !== "/maps";
+    return this.props.location.pathname !== '/maps';
   }
   componentDidMount() {
-    if (navigator.platform.indexOf("Win") <= -1) return;
+    if (navigator.platform.indexOf('Win') <= -1) return;
   }
   componentDidUpdate(e) {
     if (e.history.location.pathname === e.location.pathname) return;
@@ -73,7 +73,7 @@ class App extends React.Component {
   }
 
   onNotificationChange = items => {
-    this.props.actions.changeNotificationStatus(items);
+    this.props.actions.addOrUpdateNotifications(items);
   };
 
   onNotificationDelete = items => {
@@ -88,7 +88,7 @@ class App extends React.Component {
 
         <Sidebar
           routes={dashboardRoutes}
-          logoText={"Creative Tim"}
+          logoText={'Creative Tim'}
           logo={logo}
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}

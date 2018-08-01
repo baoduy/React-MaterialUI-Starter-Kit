@@ -1,30 +1,25 @@
-import Actions from "./NotificationActionTypes";
-import { NotificationStatus } from "../../components/Notification";
-import linq from "linq";
+import { makeReducer } from 'redux-toolbelt';
+import { isArray } from 'lodash';
+import {
+  addOrUpdateNotifications,
+  deleteNotifications
+} from './NotificationActions';
+import linq from 'linq';
+import { Merge } from '../../commons/commonFuncs';
 
-export default function(state = [], action) {
-  switch (action.type) {
-    case Actions.NOTIFICATION_NEW:
-      return [...state, ...action.payload];
-    case Actions.NOTIFICATION_DELETE: {
-      const deleteItems = action.payload;
+export default makeReducer(
+  {
+    [addOrUpdateNotifications]: (state, { payload }) => {
+      return Merge(state, isArray(payload) ? payload : [payload]);
+    },
+    [deleteNotifications]: (state, { payload }) => {
+      const deleteItems = isArray(payload) ? payload : [payload];
+
       return linq
         .from(state)
         .where(i => !deleteItems.find(n => n.id === i.id))
         .toArray();
     }
-    case Actions.NOTIFICATION_UPDATE_STATUS: {
-      const changes = action.payload;
-
-      return linq
-        .from(state)
-        .select(i => {
-          const found = changes.find(n => n.id === i.id);
-          return found ? { ...i, status: found.status } : i;
-        })
-        .toArray();
-    }
-  }
-
-  return state;
-}
+  },
+  { defaultState: [] }
+);

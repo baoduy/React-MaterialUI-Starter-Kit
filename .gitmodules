@@ -10,6 +10,9 @@
 [submodule "sm-react-node-express"]
 	path = sm-react-node-express
 	url = https://github.com/baoduy/sm-react-node-express
-[submodule "configs"]
-	path = configs
+[submodule "configs/webpack"]
+	path = configs/webpack
 	url = https://github.com/baoduy/sm-webpack-config
+[submodule "configs/jest"]
+	path = configs/jest
+	url = https://github.com/baoduy/sm-jest-config

@@ -1,12 +1,12 @@
 /*eslint no-console: ["error", { allow: ["warn", "error"] }] */
-import React from "react";
-import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import { NotificationActions } from "../actions/notifications";
-import { getErrorMessage } from "../commons/exceptionService";
-import NotificationType from "../components/Notification/NotificationType";
+import { NotificationActions } from '../actions/notifications';
+import { getErrorMessage } from '../commons/exceptionService';
+import NotificationType from '../components/Notification/NotificationType';
 
 //Connect component to Redux store.
 //This one is a component however we are bot put it into components folder
@@ -25,15 +25,18 @@ export default class ExceptionHandler extends React.Component {
   componentWillMount() {
     const { global, disabled } = this.props;
     if (global !== true || disabled === true) return;
-    window.addEventListener("error", this.globalErrorHandler);
+    window.addEventListener('error', this.globalErrorHandler);
   }
 
   componentWillUnmount() {
-    const { global, disabled } = this.props;
-    if (global !== true || disabled === true) return;
-    window.removeEventListener("error", this.globalErrorHandler);
+    window.removeEventListener('error', this.globalErrorHandler);
   }
 
+  /**
+   * Exceptio handling for any error throw by any children control.
+   *
+   * @memberof ExceptionHandler
+   */
   globalErrorHandler = event => {
     event.preventDefault();
     event.cancelBubble = true; //Stop the Bubble up
@@ -42,9 +45,15 @@ export default class ExceptionHandler extends React.Component {
     this.props.actions.notify(NotificationType.DANGER, msg);
   };
 
-  //From 16 onward all exception from children components
-  //will be catch by parent component which implemented the componentDidCatch(error, info)
-  //More details here https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
+  /**
+   * From 16 onward all exception from children components
+   * will be catch by parent component which implemented the componentDidCatch(error, info)
+   * More details here https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html
+   *
+   * @param {*} error
+   * @param {*} info
+   * @memberof ExceptionHandler
+   */
   componentDidCatch(error, info) {
     const { disabled } = this.props;
     if (disabled === true) {

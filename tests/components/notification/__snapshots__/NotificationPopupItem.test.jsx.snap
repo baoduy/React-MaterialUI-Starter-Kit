@@ -20,15 +20,17 @@ exports[`Testing NotificationPopupItem component onClick test 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-84 Snackbar-icon-15"
+          className="MuiSvgIcon-root-85 Snackbar-icon-15"
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <g>
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-            />
-          </g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+          />
         </svg>
         <span
           className="Snackbar-iconMessage-22"
@@ -42,7 +44,7 @@ exports[`Testing NotificationPopupItem component onClick test 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -59,23 +61,25 @@ exports[`Testing NotificationPopupItem component onClick test 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>
@@ -103,15 +107,17 @@ exports[`Testing NotificationPopupItem component render confirm 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-84 Snackbar-icon-15"
+          className="MuiSvgIcon-root-85 Snackbar-icon-15"
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <g>
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-            />
-          </g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+          />
         </svg>
         <span
           className="Snackbar-iconMessage-22"
@@ -125,7 +131,7 @@ exports[`Testing NotificationPopupItem component render confirm 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -142,23 +148,25 @@ exports[`Testing NotificationPopupItem component render confirm 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>
@@ -186,15 +194,17 @@ exports[`Testing NotificationPopupItem component render danger 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-84 Snackbar-icon-15"
+          className="MuiSvgIcon-root-85 Snackbar-icon-15"
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <g>
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
-            />
-          </g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+          />
         </svg>
         <span
           className="Snackbar-iconMessage-22"
@@ -208,7 +218,7 @@ exports[`Testing NotificationPopupItem component render danger 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -225,23 +235,25 @@ exports[`Testing NotificationPopupItem component render danger 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>
@@ -269,15 +281,17 @@ exports[`Testing NotificationPopupItem component render info 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-84 Snackbar-icon-15"
+          className="MuiSvgIcon-root-85 Snackbar-icon-15"
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <g>
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-            />
-          </g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+          />
         </svg>
         <span
           className="Snackbar-iconMessage-22"
@@ -291,7 +305,7 @@ exports[`Testing NotificationPopupItem component render info 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -308,23 +322,25 @@ exports[`Testing NotificationPopupItem component render info 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>
@@ -352,15 +368,17 @@ exports[`Testing NotificationPopupItem component render success 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-84 Snackbar-icon-15"
+          className="MuiSvgIcon-root-85 Snackbar-icon-15"
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <g>
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-            />
-          </g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+          />
         </svg>
         <span
           className="Snackbar-iconMessage-22"
@@ -374,7 +392,7 @@ exports[`Testing NotificationPopupItem component render success 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -391,23 +409,25 @@ exports[`Testing NotificationPopupItem component render success 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>
@@ -435,15 +455,17 @@ exports[`Testing NotificationPopupItem component render warning 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-84 Snackbar-icon-15"
+          className="MuiSvgIcon-root-85 Snackbar-icon-15"
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <g>
-            <path
-              d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-            />
-          </g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
         </svg>
         <span
           className="Snackbar-iconMessage-22"
@@ -457,7 +479,7 @@ exports[`Testing NotificationPopupItem component render warning 1`] = `
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -474,23 +496,25 @@ exports[`Testing NotificationPopupItem component render warning 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>
@@ -518,15 +542,17 @@ exports[`Testing NotificationPopupItem component render warning with Icon is und
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-84 Snackbar-icon-15"
+          className="MuiSvgIcon-root-85 Snackbar-icon-15"
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <g>
-            <path
-              d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-            />
-          </g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
         </svg>
         <span
           className="Snackbar-iconMessage-22"
@@ -540,7 +566,7 @@ exports[`Testing NotificationPopupItem component render warning with Icon is und
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -557,23 +583,25 @@ exports[`Testing NotificationPopupItem component render warning with Icon is und
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>
@@ -620,7 +648,7 @@ exports[`Testing NotificationPopupItem component render warning with custom Icon
     >
       <button
         aria-label="Close"
-        className="MuiButtonBase-root-97 MuiIconButton-root-91 MuiIconButton-colorInherit-92 Snackbar-iconButton-14"
+        className="MuiButtonBase-root-98 MuiIconButton-root-92 MuiIconButton-colorInherit-93 Snackbar-iconButton-14"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -637,23 +665,25 @@ exports[`Testing NotificationPopupItem component render warning with custom Icon
         type="button"
       >
         <span
-          className="MuiIconButton-label-96"
+          className="MuiIconButton-label-97"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-84 Snackbar-close-13"
+            className="MuiSvgIcon-root-85 Snackbar-close-13"
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </g>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-100"
+          className="MuiTouchRipple-root-101"
         />
       </button>
     </div>

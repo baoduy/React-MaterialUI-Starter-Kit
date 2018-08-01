@@ -1,24 +1,9 @@
-import moment from "moment";
-import { NotificationStatus } from "../../components/Notification";
-import { newGuid } from "../../commons/commonFuncs";
-import Actions from "./NotificationActionTypes";
+import { makeActionCreator } from 'redux-toolbelt';
+//import { makeThunkAsyncActionCreator } from 'redux-toolbelt-thunk';
+import moment from 'moment';
+import { NotificationStatus } from '../../components/Notification';
+import { newGuid } from '../../commons/commonFuncs';
 
-/**
- * Load notification from server
- *
- * @export loadNotifications
- * @returns
- */
-export function loadNotifications() {
-  return dispatch => {
-    //TODO: call Web Api to load the notifications from server.
-
-    dispatch({
-      type: Actions.NOTIFICATION_NEW,
-      payload: []
-    });
-  };
-}
 /**
  * Create new notification item
  *
@@ -31,7 +16,15 @@ export function loadNotifications() {
  * @returns {NotificationItemPropTypes}
  */
 export function newNotification(type, message, title, group, onClick) {
-  //TODO: Call Api to send the new Notification item to server if needed.
+  if (typeof title === 'function' && !onClick) {
+    onClick = title;
+    title = '';
+  }
+
+  if (typeof group === 'function' && !onClick) {
+    onClick = group;
+    group = '';
+  }
 
   return {
     id: newGuid(),
@@ -46,23 +39,16 @@ export function newNotification(type, message, title, group, onClick) {
 }
 
 /**
- * Update the status of existing notifications
+ * Add or Update Notifications to Redux Store.
  *
- * @export changeStatus
+ * @export addOrUpdateNotification
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export function changeNotificationStatus(items) {
-  return dispatch => {
-    //TODO: Call Api to update the status at Server side.
+export const addOrUpdateNotifications = makeActionCreator(
+  'NOTIFICATION_ADD_UPDATE'
+);
 
-    //Then update back the new status to Store.
-    dispatch({
-      type: Actions.NOTIFICATION_UPDATE_STATUS,
-      payload: items
-    });
-  };
-}
 /**
  * Delete the Notitications
  *
@@ -70,20 +56,10 @@ export function changeNotificationStatus(items) {
  * @param {Array of NotificationItemPropTypes} items
  * @returns
  */
-export function deleteNotifications(items) {
-  return dispatch => {
-    //TODO: Call Api to delete at Server side.
-
-    //Then update back the new status to Store.
-    dispatch({
-      type: Actions.NOTIFICATION_DELETE,
-      payload: items
-    });
-  };
-}
+export const deleteNotifications = makeActionCreator('NOTIFICATION_DELETE');
 
 /**
- * Notify the message.
+ * Create notification Item by calling newNotification and then call addOrUpdateNotification to add to Redux Store.
  *
  * @export notify
  * @param {NotificationType} type
@@ -94,20 +70,7 @@ export function deleteNotifications(items) {
  * @returns
  */
 export function notify(type, message, title, group, onClick) {
-  if (typeof title === "function" && !onClick) {
-    onClick = title;
-    title = "";
-  }
-
-  if (typeof group === "function" && !onClick) {
-    onClick = group;
-    group = "";
-  }
-
-  return dispatch => {
-    dispatch({
-      type: Actions.NOTIFICATION_NEW,
-      payload: [newNotification(type, message, title, group, onClick)]
-    });
-  };
+  return addOrUpdateNotifications(
+    newNotification(type, message, title, group, onClick)
+  );
 }
