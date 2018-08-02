@@ -29,7 +29,7 @@
     "git:webpack": "git submodule update --init --remote configs/webpack",
     "build": "webpack -p --progress --config=configs/webpack/prod",
     "clean-dist": "rm -f -r -d dist",
-    "lint": "npm-run-all lint:js && lint:less",
+    "lint": "npm-run-all lint:js lint:less",
     "lint:js": "jshint",
     "lint:less": "lesshint ./src/assets/less",
     "dev-sv": "webpack-dev-server --config=configs/webpack/dev",
