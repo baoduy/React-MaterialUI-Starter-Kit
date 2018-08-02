@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { NotificationActions } from '../actions/notifications';
+import NotificationActions from '../actions/notifications';
 import { getErrorMessage } from '../commons/exceptionService';
 import NotificationType from '../components/Notification/NotificationType';
 

@@ -16,7 +16,7 @@ import dashboardRoutes from 'routes/dashboard.jsx';
 import dashboardStyle from './dashboardStyle.jsx';
 
 //Actions
-import { NotificationActions } from '../actions/notifications';
+import NotificationActions from '../actions/notifications';
 
 import { getImgSrc } from '../commons/commonFuncs';
 //Import may not working with Reserved proxy so using require instead.
