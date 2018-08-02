@@ -1,5 +1,5 @@
 import { makeAsyncReducer } from 'redux-toolbelt';
-import actions from './Actions';
+import * as actions from './DashboardActions';
 
 const chartsReducer = makeAsyncReducer(actions.getChartData);
 const generalReducer = makeAsyncReducer(actions.getGeneral);
