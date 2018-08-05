@@ -4,9 +4,7 @@
       "@babel/env",
       {
         "modules": false,
-        "targets": {
-          "browsers": [">0.25%", "not ie 10", "not op_mini all"]
-        }
+        "useBuiltIns": "entry"
       }
     ],
     "@babel/react"
