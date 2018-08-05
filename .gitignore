@@ -331,5 +331,6 @@ ASALocalRun/
 
 .idea/
 dist/
+analysis/
 node_modules/
 **/__coverage__/
