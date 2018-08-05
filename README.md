@@ -125,17 +125,17 @@ The **GZIP** and **SSL** had been applied for all hosting environments above.
 
 ### All commands
 
-| Command              | Description                                                              |
-| -------------------- | ------------------------------------------------------------------------ |
-| `npm run start-dev`  | Build app continuously (HMR enabled) and serve @ `http://localhost:8080` |
-| `npm run start-prod` | Build app once (HMR disabled) and serve @ `http://localhost:3000`        |
-| `npm run build`      | Build app to `/dist/`                                                    |
-| `npm run test`       | Run tests                                                                |
-| `npm run lint`       | Run JavaScript and LESS linter                                           |
-| `npm run lint:js`    | Run JavaScript linter                                                    |
-| `npm run lint:less`  | Run LESS linter                                                          |
-| `npm run start`      | (alias of `npm run start-dev`)                                           |
-| `npm rum test-ci`    | Run Jest test and upload code to CodeCov.io                              |
+| Command                  | Description                                                              |
+| ------------------------ | ------------------------------------------------------------------------ |
+| `npm run start`          | Build app continuously (HMR enabled) and serve @ `http://localhost:8080` |
+| `npm run start-prod`     | Build app once (HMR disabled) and serve @ `http://localhost:3000`        |
+| `npm run start-analysis` | Build and start Webpack Bundle Analyser @ `http://localhost:8888`        |
+| `npm run build`          | Build app to `/dist/`                                                    |
+| `npm run test`           | Run tests                                                                |
+| `npm run lint`           | Run JavaScript and LESS linter                                           |
+| `npm run lint:js`        | Run JavaScript linter                                                    |
+| `npm run lint:less`      | Run LESS linter                                                          |
+| `npm rum test-ci`        | Run Jest test and upload code to CodeCov.io                              |
 
 ## See also
 
