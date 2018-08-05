@@ -13,6 +13,3 @@
 [submodule "configs/webpack"]
 	path = configs/webpack
 	url = https://github.com/baoduy/sm-webpack-config
-[submodule "configs/jest"]
-	path = configs/jest
-	url = https://github.com/baoduy/sm-jest-config
