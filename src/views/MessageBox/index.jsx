@@ -2,8 +2,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as messageBoxActions from './Actions';
-import { NotificationActions } from '../../actions/notifications';
+import messageBoxActions from '../../actions/MessageBox';
+import NotificationActions from '../../actions/Notifications';
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';

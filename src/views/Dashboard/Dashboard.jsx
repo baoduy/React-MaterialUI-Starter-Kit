@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import actions from './Actions';
+import actions from '../../actions/Dashboard';
 
 // react plugin for creating charts
 import ChartistGraph from 'react-chartist';

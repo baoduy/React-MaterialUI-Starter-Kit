@@ -1,14 +1,14 @@
-import * as actionTypes from "./ActionTypes";
+import { TYPES } from './MessageBoxActions';
 
 export default function MessageBoxReducer(state = {}, action) {
   switch (action.type) {
-    case actionTypes.SHOW_MESSAGE_BOX:
+    case TYPES.Shown:
       return Object.assign(action.payload, {
         open: true
       });
-    case actionTypes.HIDE_MESSAGE_BOX:
+    case TYPES.Hided:
       return Object.assign({}, state, {
-        message: "",
+        message: '',
         handler: undefined,
         open: false
       });
