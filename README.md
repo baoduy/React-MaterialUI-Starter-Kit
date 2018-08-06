@@ -8,7 +8,7 @@ The PRD really sttarted kit for **ReactJs** with hot module replacement (HMR) fo
 - **[React](https://facebook.github.io/react/)** (16.x)
 - **[Webpack](https://webpack.js.org/)** (4.x)
 - **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (4.x)
-- **[Babel](http://babeljs.io/)** (6.x)
+- **[Babel](http://babeljs.io/)** (7.x)
 - **[JSS](http://cssinjs.org/?v=v9.8.7)** this is Css in Jss, the powerfull tool to develop Css using Js. The tool is using natively by Material UI.
 - **[LESS](http://lesscss.org/)** for style-sheet development. if you don't want to use Jss.
 - **[Jest](https://facebook.github.io/jest/)** - Testing framework for React applications
