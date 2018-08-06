@@ -330,7 +330,8 @@ ASALocalRun/
 .mfractor/
 
 .idea/
-dist/
-analysis/
-node_modules/
+**/dist/
+**/analysis/
+**/node_modules/
 **/__coverage__/
+package-lock.json
