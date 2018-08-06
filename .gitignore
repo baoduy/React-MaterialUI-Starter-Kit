@@ -334,4 +334,4 @@ ASALocalRun/
 **/analysis/
 **/node_modules/
 **/__coverage__/
-package-lock.json
+**/package-lock.json
