@@ -64,6 +64,8 @@ async function getDataFromServer() {
 3.  Replace the CodeCov.io token to your one in the `package.json` file.
 4.  Run `npm start` to run the project.
 
+---
+
 ## Usage
 
 ### Development
@@ -80,12 +82,12 @@ async function getDataFromServer() {
 - Build app once (HMR disabled)
 - App served @ `http://localhost:3000`
 
----
-
 ### Webpack Bundle Analysis
 `npm run start-analysis`
 
 - Analysis served @ `http://localhost:8888`
+
+---
 
 ## New Compoments
 
