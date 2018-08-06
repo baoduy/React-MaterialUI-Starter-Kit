@@ -83,6 +83,7 @@ async function getDataFromServer() {
 - App served @ `http://localhost:3000`
 
 ### Webpack Bundle Analysis
+
 `npm run start-analysis`
 
 - Analysis served @ `http://localhost:8888`
