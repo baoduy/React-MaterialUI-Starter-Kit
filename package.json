@@ -35,7 +35,7 @@
     "lint": "npm-run-all lint:js lint:less",
     "lint:js": "jshint",
     "lint:less": "lesshint ./src/assets/less",
-    "start": "npm run git:webpack build-dev",
+    "start": "npm-run-all git:webpack build-dev",
     "start-prod": "npm-run-all git:webpack build prod-server",
     "start-analysis": "npm run build-analysis",
     "test": "npm-run-all git:jest && jest --watch --coverage --config=configs/jest/jest.json",
