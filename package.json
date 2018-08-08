@@ -92,7 +92,7 @@
     "react-moment-proptypes": "^1.6.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-immutable-state-invariant": "^2.1.0",
-    "style-loader": "^0.21.0",
+    "style-loader": "^0.22.0",
     "url-loader": "^1.0.1",
     "webpack": "4.16.4",
     "webpack-bundle-analyzer": "^2.13.1",
