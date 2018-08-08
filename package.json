@@ -79,6 +79,7 @@
     "imagemin": "6.0.0",
     "img-loader": "^3.0.0",
     "jest": "23.4.2",
+    "jest-html-reporter": "^2.4.2",
     "jsdom-global": "^3.0.2",
     "jshint": "2.9.6",
     "less": "3.8.0",
