@@ -81,7 +81,7 @@
     "jest": "23.4.2",
     "jsdom-global": "^3.0.2",
     "jshint": "2.9.6",
-    "less": "3.8.0",
+    "less": "3.8.1",
     "less-loader": "^4.1.0",
     "lesshint": "^5.1.0",
     "npm-run-all": "^4.1.3",
