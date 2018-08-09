@@ -1,33 +1,53 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
 // core components
-import tableStyle from "./tableStyle";
+import tableStyle from './tableStyle';
+import ActionCell from './ActionCell';
 
 function CustomTable({ ...props }) {
-  const { classes, tableHead, tableData, tableHeaderColor } = props;
+  const {
+    classes,
+    tableHead,
+    tableData,
+    tableHeaderColor,
+    actionColumns
+  } = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
         {tableHead !== undefined ? (
-          <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
+          <TableHead className={classes[tableHeaderColor + 'TableHeader']}>
             <TableRow>
               {tableHead.map((prop, key) => {
                 return (
                   <TableCell
-                    className={classes.tableCell + " " + classes.tableHeadCell}
+                    className={classes.tableCell + ' ' + classes.tableHeadCell}
                     key={key}
                   >
                     {prop}
                   </TableCell>
                 );
               })}
+              {actionColumns.length > 0 && (
+                <TableCell
+                  className={
+                    classes.tableCell +
+                    ' ' +
+                    classes.tableHeadCell +
+                    ' ' +
+                    classes.alignCenter
+                  }
+                >
+                  Action
+                </TableCell>
+              )}
             </TableRow>
           </TableHead>
         ) : null}
@@ -42,6 +62,7 @@ function CustomTable({ ...props }) {
                     </TableCell>
                   );
                 })}
+                <ActionCell actionColumns={actionColumns} rowData={prop} />
               </TableRow>
             );
           })}
@@ -52,19 +73,20 @@ function CustomTable({ ...props }) {
 }
 
 CustomTable.defaultProps = {
-  tableHeaderColor: "gray"
+  tableHeaderColor: 'gray',
+  actionColumns: []
 };
 
 CustomTable.propTypes = {
   classes: PropTypes.object.isRequired,
   tableHeaderColor: PropTypes.oneOf([
-    "warning",
-    "primary",
-    "danger",
-    "success",
-    "info",
-    "rose",
-    "gray"
+    'warning',
+    'primary',
+    'danger',
+    'success',
+    'info',
+    'rose',
+    'gray'
   ]),
   tableHead: PropTypes.arrayOf(PropTypes.string),
   tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
