@@ -58,7 +58,7 @@
     "@babel/register": "^7.0.0-beta.56",
     "@types/googlemaps": "3.30.11",
     "@types/markerclustererplus": "2.1.33",
-    "@types/prop-types": "15.5.4",
+    "@types/prop-types": "15.5.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "8.2.6",
     "babel-jest": "^23.4.2",
