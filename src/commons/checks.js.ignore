@@ -1,0 +1,6 @@
+export const isNull = item => item === null;
+export const isUndefined = item => item === undefined;
+export const isEmpty = item => item === '' || item === {} || item === [];
+export const isFunction = item => typeof item === 'function';
+export const isString = item => typeof item === 'string';
+export const isArray = item => Array.isArray(item);
