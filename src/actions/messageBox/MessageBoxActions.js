@@ -1,6 +1,6 @@
 import { makeActionCreator } from 'redux-toolbelt';
 //import { makeThunkAsyncActionCreator } from 'redux-toolbelt-thunk';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { NotificationStatus } from '../../components/Notification';
 import { newGuid } from '../../commons/commonFuncs';
 

@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
-import MomentPropTypes from "react-moment-proptypes";
-import NotificationType from "./NotificationType";
-import NotificationStatus from "./NotificationStatus";
+import PropTypes from 'prop-types';
+import NotificationType from './NotificationType';
+import NotificationStatus from './NotificationStatus';
 
 const NotificationItemPropTypes = {
   id: PropTypes.any.isRequired,
@@ -24,7 +23,7 @@ const NotificationItemPropTypes = {
   //The icon of notification. set to false to hide the default icon.
   icon: PropTypes.oneOfType([PropTypes.element, PropTypes.bool]),
   //Created date of Notification
-  createdOn: MomentPropTypes.momentObj,
+  createdOn: PropTypes.object,
   //status of notification
   status: PropTypes.oneOf([
     NotificationStatus.NEW,

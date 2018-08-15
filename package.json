@@ -69,6 +69,7 @@
     "compression": "1.7.3",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
+    "cssnano": "^4.0.5",
     "enzyme": "^3.4.0",
     "enzyme-adapter-react-16": "^1.2.0",
     "enzyme-to-json": "^3.3.4",
@@ -92,7 +93,6 @@
     "postcss-loader": "3.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-hot-loader": "4.3.4",
-    "react-moment-proptypes": "^1.6.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-immutable-state-invariant": "^2.1.0",
     "regenerator-runtime": "^0.12.1",
@@ -112,9 +112,9 @@
     "axios": "^0.18.0",
     "chartist": "0.11.0",
     "classnames": "2.2.6",
+    "dayjs": "^1.7.5",
     "linq": "^3.1.0",
     "lodash": "^4.17.10",
-    "moment": "^2.22.2",
     "perfect-scrollbar": "1.4.0",
     "react": "16.4.2",
     "react-chartist": "0.13.1",
@@ -129,7 +129,6 @@
     "url-join": "^4.0.0",
     "uuid": "^3.3.2"
   },
-  "postcss": {},
   "jest": {
     "coverageDirectory": "<rootDir>/tests/__coverage__/",
     "collectCoverage": true
