@@ -1,1 +1,1 @@
-export const webSerrvice = 'http://abc/api';
+export const webService = 'http://abc/api';
