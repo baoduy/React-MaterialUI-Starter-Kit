@@ -141,7 +141,12 @@
     {
       "path": "./dist/*.*",
       "compression": "gzip",
-      "maxSize": "200 kB"
+      "maxSize": "100 kB"
+    },
+    {
+      "path": "./dist/*.*",
+      "compression": "none",
+      "maxSize": "300 kB"
     }
   ]
 }
