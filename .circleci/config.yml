@@ -35,7 +35,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Build
-      - run: npm run build
+      - run: npm run git-webpack && npm run build
         # run test bundle size
       - run:
           name: run test-bundle
