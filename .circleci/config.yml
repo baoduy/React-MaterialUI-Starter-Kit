@@ -41,6 +41,6 @@ jobs:
           name: run test-bundle
           command: npm run test-bundle
           environment:
-            BUNDLESIZE_GITHUB_TOKEN: db653f709087e90a090a40510044830499543f62
+            BUNDLESIZE_GITHUB_TOKEN: dca74b5808660e8e1b09dccbe38b3b79b21bef6c
       # run tests
       - run: npm run test-ci
