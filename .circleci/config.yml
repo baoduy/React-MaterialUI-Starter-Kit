@@ -4,8 +4,6 @@
 #
 version: 2
 jobs:
-  environment:
-    BUNDLESIZE_GITHUB_TOKEN: db653f709087e90a090a40510044830499543f62
   build:
     docker:
       # specify the version you desire here
@@ -42,6 +40,10 @@ jobs:
       # Build
       - run: npm run build
         # run test bundle size
-      - run: npm run test-bundle
+      - run:
+          name: run test-bundle
+          command: npm run test-bundle
+          environment:
+            BUNDLESIZE_GITHUB_TOKEN: db653f709087e90a090a40510044830499543f62
       # run tests
       - run: npm run test-ci
