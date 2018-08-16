@@ -2,13 +2,17 @@
 
 [![CircleCI](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit.svg?style=svg)](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit)
 [![codecov](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit/branch/develop/graph/badge.svg)](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit) [![Greenkeeper badge](https://badges.greenkeeper.io/baoduy/React-MaterialUI-Started-Kit.svg)](https://greenkeeper.io/)
+[![Open Source Helpers](https://www.codetriage.com/baoduy/react-materialui-started-kit/badges/users.svg)](https://www.codetriage.com/baoduy/react-materialui-started-kit)
+[![PeerDependencies](https://img.shields.io/david/peer/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit?type=peer)
+[![Dependencies](https://img.shields.io/david/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit)
+[![DevDependencies](https://img.shields.io/david/dev/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit?type=develop)
 
 The PRD really sttarted kit for **ReactJs** with hot module replacement (HMR) for rapid development.
 
 - **[React](https://facebook.github.io/react/)** (16.x)
 - **[Webpack](https://webpack.js.org/)** (4.x)
 - **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (4.x)
-- **[Babel](http://babeljs.io/)** (6.x)
+- **[Babel](http://babeljs.io/)** (7.x)
 - **[JSS](http://cssinjs.org/?v=v9.8.7)** this is Css in Jss, the powerfull tool to develop Css using Js. The tool is using natively by Material UI.
 - **[LESS](http://lesscss.org/)** for style-sheet development. if you don't want to use Jss.
 - **[Jest](https://facebook.github.io/jest/)** - Testing framework for React applications
@@ -25,15 +29,15 @@ The PRD really sttarted kit for **ReactJs** with hot module replacement (HMR) fo
 
 * The tool to convert Css to Jss [here](https://github.com/cssinjs/cli) and to LESS [here](http://kronus.me/cn/css2less/) in case you don't like Jss.
 
-# Original Source Code
+## Original Source Code
 
 Based on the best practises of the Single-Page-Application development with NodeJS. I added the nice font-end component [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux store integration.
 
 Beside of that I also developped some useful compoment as Message box, Notification to make the Started-kit to be a **Production ready** SPA.
 
-# Support Features
+## Support Features
 
-## 1. async/await
+### 1. async/await
 
 It is using `babel-regenerator-runtime` to transform the async and await functions to Promise.
 
@@ -57,12 +61,14 @@ async function getDataFromServer() {
 }
 ```
 
-## Installation
+### Installation
 
 1.  Clone/download repo
 2.  `npm install`
 3.  Replace the CodeCov.io token to your one in the `package.json` file.
 4.  Run `npm start` to run the project.
+
+---
 
 ## Usage
 
@@ -79,6 +85,12 @@ async function getDataFromServer() {
 
 - Build app once (HMR disabled)
 - App served @ `http://localhost:3000`
+
+### Webpack Bundle Analysis
+
+`npm run start-analysis`
+
+- Analysis served @ `http://localhost:8888`
 
 ---
 
@@ -125,17 +137,17 @@ The **GZIP** and **SSL** had been applied for all hosting environments above.
 
 ### All commands
 
-| Command              | Description                                                              |
-| -------------------- | ------------------------------------------------------------------------ |
-| `npm run start-dev`  | Build app continuously (HMR enabled) and serve @ `http://localhost:8080` |
-| `npm run start-prod` | Build app once (HMR disabled) and serve @ `http://localhost:3000`        |
-| `npm run build`      | Build app to `/dist/`                                                    |
-| `npm run test`       | Run tests                                                                |
-| `npm run lint`       | Run JavaScript and LESS linter                                           |
-| `npm run lint:js`    | Run JavaScript linter                                                    |
-| `npm run lint:less`  | Run LESS linter                                                          |
-| `npm run start`      | (alias of `npm run start-dev`)                                           |
-| `npm rum test-ci`    | Run Jest test and upload code to CodeCov.io                              |
+| Command                  | Description                                                              |
+| ------------------------ | ------------------------------------------------------------------------ |
+| `npm run start`          | Build app continuously (HMR enabled) and serve @ `http://localhost:8080` |
+| `npm run start-prod`     | Build app once (HMR disabled) and serve @ `http://localhost:3000`        |
+| `npm run start-analysis` | Build and start Webpack Bundle Analyser @ `http://localhost:8888`        |
+| `npm run build`          | Build app to `/dist/`                                                    |
+| `npm run test`           | Run tests                                                                |
+| `npm run lint`           | Run JavaScript and LESS linter                                           |
+| `npm run lint:js`        | Run JavaScript linter                                                    |
+| `npm run lint:less`      | Run LESS linter                                                          |
+| `npm rum test-ci`        | Run Jest test and upload code to CodeCov.io                              |
 
 ## See also
 

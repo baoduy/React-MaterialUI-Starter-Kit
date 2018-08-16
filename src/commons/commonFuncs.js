@@ -1,4 +1,3 @@
-import * as guard from './guard';
 import linq from 'linq';
 import uuidv4 from 'uuid/v4';
 //correct URL for Reserved proxy

@@ -1,40 +1,40 @@
-import React from "react";
-import PropTypes from "prop-types";
-import NotificationType from "./NotificationType";
-import NotificationItemStyle from "./NotificationItemStyle";
-import moment from "moment";
+import React from 'react';
+import PropTypes from 'prop-types';
+import NotificationType from './NotificationType';
+import NotificationItemStyle from './NotificationItemStyle';
+import dayjs from 'dayjs';
 import {
   withStyles,
   ListItem,
   IconButton,
   Tooltip,
   Grid
-} from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
-import * as helper from "./helper";
-import NotificationItemPropTypes from "./NotificationItemPropTypes";
-import NotificationStatus from "./NotificationStatus";
-import classnames from "classnames";
+} from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import * as helper from './helper';
+import NotificationItemPropTypes from './NotificationItemPropTypes';
+import NotificationStatus from './NotificationStatus';
+import classnames from 'classnames';
 
 function defaultFormatDate(date) {
-  //convert Date to moment
-  if (date instanceof Date) date = moment(date);
+  //convert Date to dayjs
+  if (date instanceof Date) date = dayjs(date);
   //Check if it is nothing then just return out
-  if (!date || !moment.isMoment(date)) return date;
-  const now = moment();
+  if (!date || !dayjs.isdayjs(date)) return date;
+  const now = dayjs();
 
   //Less than 1 minutes => now
-  if (now.diff(date, "minutes") <= 1) return "now";
+  if (now.diff(date, 'minutes') <= 1) return 'now';
 
   //Less than 5hours => hours ago
-  if (now.diff(date, "hours") <= 5) return date.format("h") + " ago";
+  if (now.diff(date, 'hours') <= 5) return date.format('h') + ' ago';
 
   //If today then => Today hh:mm
-  if (now.diff(date, "days") <= 1) return "today " + date.format("HH:mm");
+  if (now.diff(date, 'days') <= 1) return 'today ' + date.format('HH:mm');
 
   //If Yesterday then => yesterday
-  const diff = now.diff(date, "days");
-  if (diff > 1 && diff <= 2) return "yesterday";
+  const diff = now.diff(date, 'days');
+  if (diff > 1 && diff <= 2) return 'yesterday';
 
   return `${diff} days`;
 }
@@ -56,7 +56,7 @@ function NotificationItem({
 
   return (
     <ListItem
-      className={classnames(classes.root, isNew ? classes.highlight : "")}
+      className={classnames(classes.root, isNew ? classes.highlight : '')}
       onClick={onClick}
       button={onClick !== undefined}
     >
@@ -76,7 +76,7 @@ function NotificationItem({
         <Grid item xs={1}>
           <Tooltip
             classes={{ tooltip: classes.tooltip }}
-            title={"close"}
+            title={'close'}
             placement="top"
           >
             <IconButton className={classes.iconButton} onClick={onClose}>
@@ -97,7 +97,7 @@ NotificationItem.defaultProps = {
 
 NotificationItem.propTypes = {
   ...NotificationItemPropTypes,
-  //The function to format moment object to string
+  //The function to format dayjs object to string
   formatDate: PropTypes.func
 };
 

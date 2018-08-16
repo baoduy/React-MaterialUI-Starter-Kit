@@ -1,14 +1,14 @@
 import { makeActionCreator } from 'redux-toolbelt';
 //import { makeThunkAsyncActionCreator } from 'redux-toolbelt-thunk';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { NotificationStatus } from '../../components/Notification';
 import { newGuid } from '../../commons/commonFuncs';
 
 //Moved the type of all actions on top so it will be eaiser if need refectoring the names.
-const TYPES={
-  AddedOrUpdated:'@Notification/AddedOrUpdated',
-  Deleted:'@Notification/Deleted'
-}
+const TYPES = {
+  AddedOrUpdated: '@Notification/AddedOrUpdated',
+  Deleted: '@Notification/Deleted'
+};
 
 /**
  * Create new notification item
@@ -38,7 +38,7 @@ export function newNotification(type, message, title, group, onClick) {
     message,
     title,
     group,
-    createdOn: moment(),
+    createdOn: dayjs(),
     onClick,
     status: NotificationStatus.NEW
   };
