@@ -33,7 +33,7 @@ The PRD really sttarted kit for **ReactJs** with hot module replacement (HMR) fo
 
 Based on the best practises of the Single-Page-Application development with NodeJS. I added the nice font-end component [Material-Dashboard-React](https://github.com/creativetimofficial/material-dashboard-react) and Redux store integration.
 
-Beside of that I also developped some useful compoment as Message box, Notification to make the Started-kit to be a **Production ready** SPA.
+Beside of that I also developped some useful compoment as Message box, Notification to make the Started-kit to be a **Production ready** SPA kit.
 
 ## Support Features
 
