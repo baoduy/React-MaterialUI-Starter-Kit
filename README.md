@@ -106,28 +106,42 @@ async function getDataFromServer() {
 3.  Push inage to Docker hub `docker push [YOUR_ID]/react-materialui-started-kit:latest`
     Example `docker push baoduy2412/react-materialui-started-kit:latest`.
 
-The application will running port 3000 in Docker.
+The application will running port 80 and 443 in Docker.
 The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
 
-**If you are using Docker the `Docker` folder in this project can be deleted without any impact.**
+However if you are not using Docker just simply remove the submodule **sm-react-docker-nginx** There is no impact to the application.
 
 ---
 
 ### IIS Support
 
-The `Web.config` file had been added for IIS hosting purpose. When build the application this file will be copied to dist folder automatically and make the package ready for IIS.
+The `Web.config` file in **sm-react-iis** had been added for IIS hosting purpose. This file should be copy along with all files in dist folder when hosting in IIS.
 
-However if you are not hosting this app in IIS just simply delete this file.or leave if there. There is no impact to the application.
+However if you are not hosting this app in IIS just simply remove the submodule **sm-react-iis** There is no impact to the application.
+
+---
 
 ### Azure Service Fabric Support
 
-All stuffs in `service-fabric` folder are using for **[Azure Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)** hosting purpose.
-The project inside this folder will copy all files in dist folder and host as a static side in Azure Service Fabric.
-I'm using .Net Core 2.0 to make the project is flexible enough to host on any platforms.
+All stuffs in `sm-react-service-fabric` folder are using for **[Azure Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)** hosting purpose.
+
+The C# project inside this folder will copy all files from dist folder to wwwroot folder and host them as a static side in Azure Service Fabric.
+
+Currently, I'm using .Net Core 2.1 to make the project is flexible enough to host on any platforms.
 
 When build the Service Fabric application it will copy all files in `dist` folder to `wwwroot` folder. So ensure you run the `npm build` before deploy the Service Fabric app.
 
-Defiantly, If you are not using **Azure Service Fabric**. This folder shall be deleted.
+However if you are not using Service Fabric just simply remove the submodule **sm-react-service-fabric** There is no impact to the application.
+
+---
+
+### Node Js Hosting
+
+There is a sub module contains the Express.js configuration to host the application in the Node Js environment.
+The application will running port 3000 and 3001 in NodeJs and the port is configurable in the Js file.
+
+If you are not using Node Js hosting just simply remove the submodule **sm-react-node-express** There is no impact to the application.
+But, please note that the `npm run start-prod` is using this submodule to hosting the dist folder as a static side. Please be considered before removing this module.
 
 ### GZIP and SSL
 
