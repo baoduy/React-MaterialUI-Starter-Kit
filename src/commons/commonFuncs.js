@@ -1,7 +1,23 @@
+/*eslint no-console: ["off", { allow: ["warn", "error"] }] */
+
 import linq from 'linq';
 import uuidv4 from 'uuid/v4';
 //correct URL for Reserved proxy
 //Get the millisecond of current time.
+
+export function GetBaseUrl() {
+  const key = 'BASE_URL';
+  let base = window.sessionStorage.getItem(key);
+
+  if (base === undefined || base === null) {
+    base = document.getElementsByTagName('base')[0].getAttribute('href');
+    window.sessionStorage.setItem(key, base);
+
+    console.log(`base URL is ${base}`);
+  }
+
+  return base;
+}
 
 export function newGuid() {
   return uuidv4();
@@ -9,9 +25,10 @@ export function newGuid() {
 
 export function getImgSrc(url) {
   if (typeof url !== 'string') return url;
-  const base = window._base;
+  const base = GetBaseUrl();
 
   if (!base || base === '/') return url;
+
   if (url.indexOf(base) >= 0) return url;
 
   return `${base}/${url}`;
