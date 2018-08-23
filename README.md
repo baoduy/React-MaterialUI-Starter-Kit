@@ -98,7 +98,7 @@ async function getDataFromServer() {
 
 1.  **Message Box and Notification**: Allow to show Info, Confirm, Success and Error message and notification. Refer to the MessageBox in Views folder so sample that using Redux store to manage the state.
 
----
+## Environment Supports
 
 ### Docker Support
 
@@ -113,15 +113,11 @@ The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/
 
 However if you are not using Docker just simply remove the submodule **sm-react-docker-nginx** There is no impact to the application.
 
----
-
 ### IIS Support
 
 The `Web.config` file in **sm-react-iis** had been added for IIS hosting purpose. This file should be copy along with all files in dist folder when hosting in IIS.
 
 However if you are not hosting this app in IIS just simply remove the submodule **sm-react-iis** There is no impact to the application.
-
----
 
 ### Azure Service Fabric Support
 
@@ -135,8 +131,6 @@ When build the Service Fabric application it will copy all files in `dist` folde
 
 However if you are not using Service Fabric just simply remove the submodule **sm-react-service-fabric** There is no impact to the application.
 
----
-
 ### Node Js Hosting
 
 There is a sub module contains the Express.js configuration to host the application in the Node Js environment.
@@ -145,15 +139,11 @@ The application will running port 3000 and 3001 in NodeJs and the port is config
 If you are not using Node Js hosting just simply remove the submodule **sm-react-node-express** There is no impact to the application.
 But, please note that the `npm run start-prod` is using this submodule to hosting the dist folder as a static side. Please be considered before removing this module.
 
----
-
 ### GZIP and SSL
 
 The **GZIP** and **SSL** had been applied for all hosting environments above.
 
----
-
-### All commands
+## All commands
 
 | Command                  | Description                                                              |
 | ------------------------ | ------------------------------------------------------------------------ |
