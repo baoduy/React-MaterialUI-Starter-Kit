@@ -145,6 +145,8 @@ The application will running port 3000 and 3001 in NodeJs and the port is config
 If you are not using Node Js hosting just simply remove the submodule **sm-react-node-express** There is no impact to the application.
 But, please note that the `npm run start-prod` is using this submodule to hosting the dist folder as a static side. Please be considered before removing this module.
 
+---
+
 ### GZIP and SSL
 
 The **GZIP** and **SSL** had been applied for all hosting environments above.
