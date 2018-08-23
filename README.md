@@ -61,14 +61,12 @@ async function getDataFromServer() {
 }
 ```
 
-### Installation
+## Installation
 
 1.  Clone/download repo
 2.  `npm install`
 3.  Replace the CodeCov.io token to your one in the `package.json` file.
 4.  Run `npm start` to run the project.
-
----
 
 ## Usage
 
