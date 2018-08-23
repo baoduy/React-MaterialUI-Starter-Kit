@@ -4,8 +4,6 @@
 #
 version: 2
 jobs:
-  environment:
-    BUNDLESIZE_GITHUB_TOKEN: db653f709087e90a090a40510044830499543f62
   build:
     docker:
       # specify the version you desire here
@@ -21,8 +19,6 @@ jobs:
     steps:
       #Check out code
       - checkout
-      #Download 'configs' sub modules
-      - run: git submodule update --init 'configs'
 
       # Download and cache dependencies
       - restore_cache:
@@ -32,7 +28,7 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
-      - run: npm install codecov
+      - run: npm install codecov bundlesize
 
       - save_cache:
           paths:
@@ -40,8 +36,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Build
-      - run: npm run build
+      - run: npm run git-webpack && npm run build
         # run test bundle size
-      - run: npm run test-bundle
+      - run:
+          name: run test-bundle
+          command: npm run test-bundle
+          #environment:
+          #  BUNDLESIZE_GITHUB_TOKEN: dca74b5808660e8e1b09dccbe38b3b79b21bef6c
       # run tests
-      - run: npm run test-ci
+      #- run: npm run git-jest && npm run test-ci
