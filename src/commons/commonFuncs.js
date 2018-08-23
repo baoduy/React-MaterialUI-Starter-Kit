@@ -22,17 +22,22 @@ export function GetBaseUrl() {
 export function newGuid() {
   return uuidv4();
 }
-
+/**
+ *getImgSrc for both normal hosting and Reverse proxy
+ *
+ * @export
+ * @param {string} url the relative image url
+ * @returns real url
+ */
 export function getImgSrc(url) {
   if (typeof url !== 'string') return url;
   const base = GetBaseUrl();
 
-  if (!base || base === '/') return url;
-
-  if (url.indexOf(base) >= 0) return url;
-
-  return `${base}/${url}`;
+  return !base || base === '/' || url.indexOf(base) >= 0
+    ? url
+    : `${base}/${url}`;
 }
+
 /**
  *Merge second array to first array if existed then update.
  *
