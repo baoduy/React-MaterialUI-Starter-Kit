@@ -1,5 +1,5 @@
 {
-  "name": "react-materialui-started-kit",
+  "name": "react-materialui-starter-kit",
   "version": "0.0.1",
   "main": "src/index.jsx",
   "description": "Starter kit for React, Material-UI, Webpack (with Hot Module Replacement) and Babel.",
@@ -18,12 +18,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/baoduy/React-MaterialUI-Started-Kit.git"
+    "url": "git+https://github.com/baoduy/React-MaterialUI-Starter-Kit.git"
   },
   "bugs": {
-    "url": "https://github.com/baoduy/React-MaterialUI-Started-Kit/issues"
+    "url": "https://github.com/baoduy/React-MaterialUI-Starter-Kit/issues"
   },
-  "homepage": "https://github.com/baoduy/React-MaterialUI-Started-Kit",
+  "homepage": "https://github.com/baoduy/React-MaterialUI-Starter-Kit",
   "scripts": {
     "git-jest": "git submodule update --init --remote configs/jest",
     "git-webpack": "git submodule update --init --remote configs/webpack",

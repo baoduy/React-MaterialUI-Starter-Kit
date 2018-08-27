@@ -1,4 +1,4 @@
-# React Webpack Babel Starter
+# React Material Starter Kit
 
 [![CircleCI](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit.svg?style=svg)](https://circleci.com/gh/baoduy/React-MaterialUI-Started-Kit)
 [![codecov](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit/branch/develop/graph/badge.svg)](https://codecov.io/gh/baoduy/React-MaterialUI-Started-Kit) [![Greenkeeper badge](https://badges.greenkeeper.io/baoduy/React-MaterialUI-Started-Kit.svg)](https://greenkeeper.io/)
