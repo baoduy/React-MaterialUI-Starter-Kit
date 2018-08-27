@@ -99,6 +99,7 @@
     "redux-immutable-state-invariant": "^2.1.0",
     "regenerator-runtime": "^0.12.1",
     "rimraf": "^2.6.2",
+    "size-plugin": "^1.0.0",
     "style-loader": "^0.22.1",
     "url-loader": "^1.1.0",
     "webpack": "^4.16.5",
