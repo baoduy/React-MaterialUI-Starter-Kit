@@ -55,10 +55,10 @@ function CustomTable({ ...props }) {
           {tableData.map((prop, key) => {
             return (
               <TableRow key={key}>
-                {prop.map((prop, key) => {
+                {prop.map((item, key) => {
                   return (
                     <TableCell className={classes.tableCell} key={key}>
-                      {prop}
+                      {item}
                     </TableCell>
                   );
                 })}

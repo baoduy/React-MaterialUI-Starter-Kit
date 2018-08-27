@@ -1,1 +1,1 @@
-export const webSerrvice = 'http://abc/api';
+export const webSerrvice = 'http://localhost:5000/api';

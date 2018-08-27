@@ -61,6 +61,9 @@ const tableStyle = theme => ({
   },
   alignCenter: {
     textAlign: 'center'
+  },
+  cellHidden: {
+    display: 'none'
   }
 });
 
