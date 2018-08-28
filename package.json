@@ -35,7 +35,7 @@
     "lint": "npm-run-all lint-js lint-less",
     "lint-js": "jshint",
     "lint-less": "lesshint ./src/assets/less",
-    "start": "build-dev",
+    "start": "npm run build-dev",
     "start-prod": "npm-run-all build prod-server",
     "start-analysis": "npm run build-analysis",
     "test-bundle": "bundlesize",
