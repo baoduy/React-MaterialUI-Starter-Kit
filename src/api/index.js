@@ -1,5 +1,5 @@
-import * as GeneralApi from "./generalApi";
-import * as ChartApi from "./chartApi";
+import * as GeneralApi from './generalApi';
+import * as ChartApi from './chartApi';
 
 export default {
   GeneralApi,
