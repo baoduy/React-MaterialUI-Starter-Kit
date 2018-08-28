@@ -1,23 +1,25 @@
-import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '../CustomButtons/Button';
-import Grid from '@material-ui/core/Grid';
-import GridItem from '../Grid/GridItem';
-import Card from '../Card/Card';
-import CardHeader from '../Card/CardHeader';
-import CustomInput from '../CustomInput/CustomInput';
-import CardBody from '../Card/CardBody';
-import Typography from '@material-ui/core/Typography';
-import CloseIcon from '@material-ui/icons/Close';
-import Avatar from '@material-ui/core/Avatar';
-import { getAvatar } from '../../commons/commonFuncs';
-import Badge from '@material-ui/core/Badge';
-import Update from '@material-ui/icons/CloudUpload';
-import withStyles from '@material-ui/core/styles/withStyles';
-import userStyles from './userFormStyles';
-import PropTypes from 'prop-types';
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Button from "../CustomButtons/Button";
+import Grid from "@material-ui/core/Grid";
+import GridItem from "../Grid/GridItem";
+import Card from "../Card/Card";
+import CardHeader from "../Card/CardHeader";
+import CustomInput from "../CustomInput/CustomInput";
+import CardBody from "../Card/CardBody";
+import Typography from "@material-ui/core/Typography";
+import CloseIcon from "@material-ui/icons/Close";
+import Avatar from "@material-ui/core/Avatar";
+import { getAvatar } from "../../commons/commonFuncs";
+import Badge from "@material-ui/core/Badge";
+import Update from "@material-ui/icons/CloudUpload";
+import withStyles from "@material-ui/core/styles/withStyles";
+import userStyles from "./userFormStyles";
+import PropTypes from "prop-types";
+import { Field } from "redux-form";
+import { renderTextField } from "../../commons/commonControlRenderers";
 function UserForm({ user, onSave, onClose, onChangeInput, classes }) {
   let inputFile = React.createRef();
 
@@ -76,56 +78,48 @@ function UserForm({ user, onSave, onClose, onChangeInput, classes }) {
                 <GridItem xs={12} sm={12} md={12}>
                   <Grid container>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.username,
-                          onChange: onChangeInput,
-                          name: 'username'
-                        }}
-                        labelText="Username"
+                      <Field
+                        component={renderTextField}
+                        name="username"
+                        label="Username"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.email,
-                          onChange: onChangeInput,
-                          name: 'email'
-                        }}
-                        labelText="Email address"
+                      <Field
+                        component={renderTextField}
+                        name="email"
+                        label="Email address"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
                   </Grid>
                   <Grid container>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.firstName,
-                          onChange: onChangeInput,
-                          name: 'firstName'
-                        }}
-                        labelText="First Name"
+                      <Field
+                        component={renderTextField}
+                        name="firstName"
+                        label="First Name"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.lastName,
-                          onChange: onChangeInput,
-                          name: 'lastName'
-                        }}
-                        labelText="Last Name"
+                      <Field
+                        component={renderTextField}
+                        name="lastName"
+                        label="Last Name"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
@@ -143,6 +137,7 @@ function UserForm({ user, onSave, onClose, onChangeInput, classes }) {
 UserForm.propTypes = {
   user: PropTypes.object,
   onClose: PropTypes.func,
-  onSave: PropTypes.func
+  onSave: PropTypes.func,
+  onChangeInput: PropTypes.func
 };
 export default withStyles(userStyles)(UserForm);

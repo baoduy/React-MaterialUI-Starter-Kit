@@ -11,6 +11,7 @@ import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 // core components
 import customInputStyle from "./customInputStyle";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 function CustomInput({ ...props }) {
   const {
@@ -21,6 +22,7 @@ function CustomInput({ ...props }) {
     labelProps,
     inputProps,
     error,
+    errorText,
     success
   } = props;
 
@@ -60,7 +62,10 @@ function CustomInput({ ...props }) {
         {...inputProps}
       />
       {error ? (
-        <Clear className={classes.feedback + " " + classes.labelRootError} />
+        <div>
+          <Clear className={classes.feedback + " " + classes.labelRootError} />
+          <FormHelperText error={error}>{errorText}</FormHelperText>
+        </div>
       ) : success ? (
         <Check className={classes.feedback + " " + classes.labelRootSuccess} />
       ) : null}

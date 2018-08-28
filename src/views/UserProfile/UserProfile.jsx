@@ -1,17 +1,35 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import UserActions from '../../actions/Users';
-import Dialog from '@material-ui/core/Dialog';
-import UserEditTransition from './UserEditTransition';
-import UserForm from '../../components/User/UserForm';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import UserActions from "../../actions/Users";
+import Dialog from "@material-ui/core/Dialog";
+import UserEditTransition from "./UserEditTransition";
+import UserForm from "../../components/User/UserForm";
+import { reduxForm } from "redux-form";
 
+const validate = values => {
+  const errors = {};
+  const requiredFields = ["username", "email", "firstName", "lastName"];
+  requiredFields.forEach(field => {
+    if (!values[field]) {
+      errors[field] = "Required";
+    }
+  });
+  if (
+    values.email &&
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+  ) {
+    errors.email = "Invalid email address";
+  }
+  return errors;
+};
 @connect(
   (state, props) => {
-    const id = props.match.params['id'];
+    const id = props.match.params["id"];
     let result = state.users.data.find(i => i.id == id);
     return {
-      user: result
+      user: result,
+      initialValues: result
     };
   },
   dispatch => {
@@ -20,24 +38,25 @@ import UserForm from '../../components/User/UserForm';
     };
   }
 )
+@reduxForm({ form: "UserProfile", validate })
 class UserProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       user: props.user || {
         id: 0,
-        username: '',
-        email: '',
-        firstName: '',
-        lastName: '',
+        username: "",
+        email: "",
+        firstName: "",
+        lastName: "",
         avatar: null
       },
-      open: props.match.params['id'] != undefined
+      open: props.match.params["id"] != undefined
     };
     this.handleClose = this.handleClose.bind(this);
   }
   handleClose = () => {
-    this.props.history.push('/users');
+    this.props.history.push("/users");
   };
   handleSubmit = e => {
     e.preventDefault();
@@ -56,7 +75,7 @@ class UserProfile extends Component {
     let val = e.target.value;
     const name = e.target.name;
     let _this = this;
-    if (e.target.type === 'file') {
+    if (e.target.type === "file") {
       let reader = new FileReader();
       reader.onload = function(pe) {
         val = pe.target.result;
