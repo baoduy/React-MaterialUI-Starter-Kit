@@ -2,6 +2,7 @@
 
 import linq from 'linq';
 import uuidv4 from 'uuid/v4';
+import Default from './constants';
 //correct URL for Reserved proxy
 //Get the millisecond of current time.
 
@@ -65,4 +66,8 @@ export function Merge(fistArray = [], secondArray = [], selector = i => i.id) {
     })
     .union(news)
     .toArray();
+}
+export function getAvatar(avatar) {
+  const tmp = avatar ? (avatar.includes('data:image') ? avatar : `data:image/png;base64,${avatar}`) : Default.DefaultAvatar;
+  return tmp;
 }
