@@ -11,6 +11,7 @@ import Unarchive from '@material-ui/icons/Unarchive';
 // core components/views
 import DashboardPage from '../views/Dashboard/Dashboard.jsx';
 import UserProfile from '../views/UserProfile/UserProfile.jsx';
+import UserListing from '../views/UserProfile/UserListing.jsx';
 import TableList from '../views/TableList/TableList.jsx';
 import Typography from '../views/Typography/Typography.jsx';
 import Icons from '../views/Icons/Icons.jsx';
@@ -28,11 +29,11 @@ const dashboardRoutes = [
     component: DashboardPage
   },
   {
-    path: '/user',
-    sidebarName: 'User Profile',
-    navbarName: 'Profile',
+    path: '/users',
+    sidebarName: 'User Listing',
+    navbarName: 'User Listing',
     icon: Person,
-    component: UserProfile
+    component: UserListing
   },
   {
     path: '/table',
