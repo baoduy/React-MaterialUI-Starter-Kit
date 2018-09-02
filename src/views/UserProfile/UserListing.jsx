@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
-import UserProfile from "./UserProfile";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import UserActions from "../../actions/Users";
-import urljoin from "url-join";
-import UserTable from "../../components/User/UserTable";
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import UserProfile from './UserProfile';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import UserActions from '../../actions/Users';
+import urljoin from 'url-join';
+import UserTable from '../../components/User/UserTable';
 
 @connect(
   state => {
@@ -23,9 +23,9 @@ import UserTable from "../../components/User/UserTable";
 class UserListing extends Component {
   constructor(props) {
     super(props);
-    this.onEditClick = this.onEditClick.bind(this);
-    this.onDeleteClick = this.onDeleteClick.bind(this);
-    this.onAddClick = this.onAddClick.bind(this);
+    // this.onEditClick = this.onEditClick.bind(this);
+    // this.onDeleteClick = this.onDeleteClick.bind(this);
+    // this.onAddClick = this.onAddClick.bind(this);
   }
   componentWillMount() {
     this.props.actions.getAllUsers();
@@ -39,29 +39,29 @@ class UserListing extends Component {
     this.props.actions.deleteUser(rowData.original.id);
   };
   onAddClick = () => {
-    this.props.history.push(urljoin(this.props.match.url, "0"));
+    this.props.history.push(urljoin(this.props.match.url, '0'));
   };
   render() {
     const columns = [
       {
-        Header: "Username",
-        accessor: "username"
+        Header: 'Username',
+        accessor: 'username'
       },
       {
-        Header: "First Name",
-        accessor: "firstName"
+        Header: 'First Name',
+        accessor: 'firstName'
       },
       {
-        Header: "Last Name",
-        accessor: "lastName"
+        Header: 'Last Name',
+        accessor: 'lastName'
       },
       {
-        Header: "Email",
-        accessor: "email"
+        Header: 'Email',
+        accessor: 'email'
       }
     ];
     return (
-      <div>
+      <React.Fragment>
         <UserTable
           columns={columns}
           data={this.props.users}
@@ -71,7 +71,7 @@ class UserListing extends Component {
           loading={this.props.isLoading}
         />
         <Route path={`${this.props.match.url}/:id`} component={UserProfile} />
-      </div>
+      </React.Fragment>
     );
   }
 }
