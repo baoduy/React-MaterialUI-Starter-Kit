@@ -1,25 +1,35 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import GridItem from '../Grid/GridItem';
-import Card from '../Card/Card.jsx';
-import CardHeader from '../Card/CardHeader.jsx';
-import CardBody from '../Card/CardBody.jsx';
-import Edit from '@material-ui/icons/Edit';
-import Delete from '@material-ui/icons/Delete';
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
-import ReactTable from 'react-table';
-import 'react-table/react-table.css';
-import PropTypes from 'prop-types';
-import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
+import React from "react";
+import Grid from "@material-ui/core/Grid";
+import GridItem from "../Grid/GridItem";
+import Card from "../Card/Card.jsx";
+import CardHeader from "../Card/CardHeader.jsx";
+import CardBody from "../Card/CardBody.jsx";
+import Edit from "@material-ui/icons/Edit";
+import Delete from "@material-ui/icons/Delete";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+import PropTypes from "prop-types";
+import Tooltip from "@material-ui/core/Tooltip";
+import IconButton from "@material-ui/core/IconButton";
+import withStyles from "@material-ui/core/styles/withStyles";
+import userStyles from "./userFormStyles.js";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
-function defaultTableComponent({ data, columns, defaultPageSize, rest }) {
+function defaultTableComponent({
+  data,
+  columns,
+  defaultPageSize,
+  loading,
+  rest
+}) {
   return (
     <ReactTable
       data={data}
       columns={columns}
       defaultPageSize={defaultPageSize}
+      loading={loading}
       {...rest}
     />
   );
@@ -32,7 +42,9 @@ function UserTable({
   onDeleteClick,
   columns,
   defaultPageSize,
-  rest
+  rest,
+  loading,
+  classes
 }) {
   const renderActionColumn = cellInfo => {
     return (
@@ -44,7 +56,7 @@ function UserTable({
             </IconButton>
           </Tooltip>
         ) : (
-          ''
+          ""
         )}
         {onDeleteClick !== undefined ? (
           <Tooltip placement="top" title="Delete">
@@ -53,26 +65,44 @@ function UserTable({
             </IconButton>
           </Tooltip>
         ) : (
-          ''
+          ""
         )}
       </div>
     );
   };
   if (onEditClick !== undefined || onDeleteClick !== undefined) {
     columns.push({
-      Header: 'Action',
+      Header: "Action",
       Cell: renderActionColumn
     });
   }
   return (
     <Grid>
       <GridItem>
+        <Grid container justify="flex-end">
+          {onAddClick !== undefined ? (
+            <Button
+              color="secondary"
+              variant="fab"
+              onClick={onAddClick}
+              aria-label="Add"
+            >
+              <AddIcon />
+            </Button>
+          ) : (
+            ""
+          )}
+        </Grid>
+      </GridItem>
+      <GridItem>
         <Card>
           <CardHeader color="primary">
-            <h4>Users</h4>
+            <h4 className={classes.cardTitleWhite}>Users</h4>
+            {loading && <LinearProgress color="secondary" />}
           </CardHeader>
           <CardBody>
             <TableComponent
+              loading={loading}
               data={data}
               columns={columns}
               defaultPageSize={defaultPageSize}
@@ -80,18 +110,6 @@ function UserTable({
             />
           </CardBody>
         </Card>
-        {onAddClick !== undefined ? (
-          <Button
-            color="secondary"
-            variant="fab"
-            onClick={onAddClick}
-            aria-label="Add"
-          >
-            <AddIcon />
-          </Button>
-        ) : (
-          ''
-        )}
       </GridItem>
     </Grid>
   );
@@ -112,4 +130,4 @@ UserTable.propTypes = {
   onAddClick: PropTypes.func,
   onDeleteClick: PropTypes.func
 };
-export default UserTable;
+export default withStyles(userStyles)(UserTable);

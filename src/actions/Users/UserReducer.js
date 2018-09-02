@@ -24,17 +24,25 @@ export default (state = {
   switch (action.type) {
     case TYPES.GetAllUsers:
       return { ...state,
-        data: [...action.payload]
+        data: [...action.payload],
+        isLoading: false
       };
     case TYPES.SaveUser:
       return { ...state,
-        data: Merge(state.data, isArray(action.payload) ? action.payload : [action.payload])
+        data: Merge(state.data, isArray(action.payload) ? action.payload : [action.payload]),
+        isLoading: false
       };
     case TYPES.DeleteUser:
       const oldUsers = [...state.data];
       return {
         ...state,
-        data: oldUsers.filter(i => i.id !== action.payload)
+        data: oldUsers.filter(i => i.id !== action.payload),
+        isLoading: false
+      };
+    case TYPES.Request:
+      return {
+        ...state,
+        isLoading: true
       };
     default:
       return state;
