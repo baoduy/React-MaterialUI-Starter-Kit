@@ -10,13 +10,17 @@ import {
 import {
   Reducer as UserReducer
 } from '../actions/Users';
+import {
+  reducer as formReducer
+} from 'redux-form';
 
 const reducers = {
   charts: dashBoardReducers.chartsReducer,
   general: dashBoardReducers.generalReducer,
   messageBox: MessageBoxReducer,
   notifications: NotificationReducer,
-  users: UserReducer
+  users: UserReducer,
+  form: formReducer
 };
 
 export default reducers;
