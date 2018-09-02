@@ -34,9 +34,9 @@ export function getImgSrc(url) {
   if (typeof url !== 'string') return url;
   const base = GetBaseUrl();
 
-  return !base || base === '/' || url.indexOf(base) >= 0
-    ? url
-    : `${base}/${url}`;
+  return !base || base === '/' || url.indexOf(base) >= 0 ?
+    url :
+    `${base}/${url}`;
 }
 
 /**
@@ -70,4 +70,24 @@ export function Merge(fistArray = [], secondArray = [], selector = i => i.id) {
 export function getAvatar(avatar) {
   const tmp = avatar ? (avatar.includes('data:image') ? avatar : `data:image/png;base64,${avatar}`) : Default.DefaultAvatar;
   return tmp;
+}
+
+export function isValidEmail(email) {
+  if (
+    email &&
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
+  ) {
+    return false;
+  }
+  return true;
+}
+
+export function convertToFormData(object) {
+  if (object) {
+    const formData = new FormData();
+    for (var key in object) {
+      formData.append(key, object[key]);
+    }
+    return formData;
+  }
 }
