@@ -4,34 +4,39 @@ import GridItem from "../Grid/GridItem";
 import Card from "../Card/Card.jsx";
 import CardHeader from "../Card/CardHeader.jsx";
 import CardBody from "../Card/CardBody.jsx";
-import Edit from "@material-ui/icons/Edit";
-import Delete from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
-import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import userStyles from "./userFormStyles.js";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import UserView from './UserView';
 
 function defaultTableComponent({
   data,
   columns,
   defaultPageSize,
   loading,
-  rest
+  rest,
+  onEditClick,
+  onDeleteClick
 }) {
   return (
     <ReactTable
+      SubComponent={row => {
+      return <UserView
+        user={row.original}
+        onEditClick={onEditClick}
+        onDeleteClick={onDeleteClick}/>
+    }}
       data={data}
       columns={columns}
       defaultPageSize={defaultPageSize}
       loading={loading}
-      {...rest}
-    />
+      {...rest}/>
   );
 }
 function UserTable({
@@ -46,59 +51,33 @@ function UserTable({
   loading,
   classes
 }) {
-  const renderActionColumn = cellInfo => {
-    return (
-      <div>
-        {onEditClick !== undefined ? (
-          <Tooltip placement="top" title="Edit">
-            <IconButton onClick={() => onEditClick(cellInfo)}>
-              <Edit />
-            </IconButton>
-          </Tooltip>
-        ) : (
-          ""
-        )}
-        {onDeleteClick !== undefined ? (
-          <Tooltip placement="top" title="Delete">
-            <IconButton onClick={() => onDeleteClick(cellInfo)}>
-              <Delete />
-            </IconButton>
-          </Tooltip>
-        ) : (
-          ""
-        )}
-      </div>
-    );
-  };
-  if (onEditClick !== undefined || onDeleteClick !== undefined) {
-    columns.push({
-      Header: "Action",
-      Cell: renderActionColumn
-    });
-  }
+
   return (
     <Grid>
       <GridItem>
-        <Grid container justify="flex-end">
-          {onAddClick !== undefined ? (
-            <Button
-              color="secondary"
-              variant="fab"
-              onClick={onAddClick}
-              aria-label="Add"
-            >
-              <AddIcon />
-            </Button>
-          ) : (
-            ""
-          )}
-        </Grid>
-      </GridItem>
-      <GridItem>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Users</h4>
-            {loading && <LinearProgress color="secondary" />}
+            <Grid container justify="space-between" alignItems="center">
+              <GridItem>
+                <h4 className={classes.cardTitleWhite}>Users</h4>
+              </GridItem>
+              <GridItem>
+                <Grid container>
+                  <GridItem>
+                    {onAddClick !== undefined
+                      ? (
+                        <Tooltip placement="top" title="Add">
+                          <Button color="secondary" variant="fab" onClick={onAddClick} aria-label="Add">
+                            <AddIcon/>
+                          </Button>
+                        </Tooltip>
+                      )
+                      : ("")}
+                  </GridItem>
+                </Grid>
+              </GridItem>
+            </Grid>
+            {loading && <LinearProgress color="secondary"/>}
           </CardHeader>
           <CardBody>
             <TableComponent
@@ -106,8 +85,9 @@ function UserTable({
               data={data}
               columns={columns}
               defaultPageSize={defaultPageSize}
-              {...rest}
-            />
+              onDeleteClick={onDeleteClick}
+              onEditClick={onEditClick}
+              {...rest}/>
           </CardBody>
         </Card>
       </GridItem>
