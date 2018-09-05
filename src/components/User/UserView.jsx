@@ -25,12 +25,18 @@ function UserView({user, onEditClick, onDeleteClick}) {
                         <Grid container>
                             <GridItem xs={12} sm={12} md={12}>
                                 <Grid container justify="center">
-                                    <Avatar
-                                        style={{
-                                        width: '100px',
-                                        height: '100px'
-                                    }}
-                                        src={getAvatar(user.avatar)}/>
+                                    <GridItem container justify="center">
+                                        <Avatar
+                                            style={{
+                                            width: '100px',
+                                            height: '100px'
+                                        }}
+                                            src={getAvatar(user.avatar)}/>
+                                    </GridItem>
+                                    <GridItem>
+                                        <h4>{`${user.firstName} ${user.lastName}`}</h4>
+                                    </GridItem>
+
                                 </Grid>
                             </GridItem>
                             <GridItem xs={12} sm={12} md={12}>
@@ -58,30 +64,7 @@ function UserView({user, onEditClick, onDeleteClick}) {
                                         }}/>
                                     </GridItem>
                                 </Grid>
-                                <Grid container>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <CustomInput
-                                            inputProps={{
-                                            value: user.firstName,
-                                            readOnly: true
-                                        }}
-                                            labelText="First Name"
-                                            formControlProps={{
-                                            fullWidth: true
-                                        }}/>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <CustomInput
-                                            inputProps={{
-                                            value: user.lastName,
-                                            readOnly: true
-                                        }}
-                                            labelText="Last Name"
-                                            formControlProps={{
-                                            fullWidth: true
-                                        }}/>
-                                    </GridItem>
-                                </Grid>
+
                             </GridItem>
                         </Grid>
                     </CardContent>
