@@ -58,6 +58,7 @@ function UserForm({
                   <Grid container>
                     <GridItem>
                       <Button
+                        mini={true}
                         color="primary"
                         type="submit"
                         variant="fab"
@@ -66,7 +67,12 @@ function UserForm({
                       </Button>
                     </GridItem>
                     <GridItem>
-                      <Button color="secondary" variant="fab" onClick={onClose} aria-label="Close">
+                      <Button
+                        mini={true}
+                        color="secondary"
+                        variant="fab"
+                        onClick={onClose}
+                        aria-label="Close">
                         <Close/>
                       </Button>
                     </GridItem>

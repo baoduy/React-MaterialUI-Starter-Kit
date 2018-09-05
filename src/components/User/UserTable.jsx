@@ -67,7 +67,12 @@ function UserTable({
                     {onAddClick !== undefined
                       ? (
                         <Tooltip placement="top" title="Add">
-                          <Button color="secondary" variant="fab" onClick={onAddClick} aria-label="Add">
+                          <Button
+                            mini={true}
+                            color="secondary"
+                            variant="fab"
+                            onClick={onAddClick}
+                            aria-label="Add">
                             <AddIcon/>
                           </Button>
                         </Tooltip>
