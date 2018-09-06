@@ -22,16 +22,23 @@ function defaultTableComponent({
   columns,
   defaultPageSize,
   loading,
+  onEditClick,
+  onDeleteClick
   ...rest
 }) {
   return (
     <ReactTable
+      SubComponent={row => {
+      return <UserView
+        user={row.original}
+        onEditClick={onEditClick}
+        onDeleteClick={onDeleteClick}/>
+    }}
       data={data}
       columns={columns}
       defaultPageSize={defaultPageSize}
       loading={loading}
-      {...rest}
-    />
+      {...rest}/>
   );
 }
 function UserTable({
@@ -97,8 +104,32 @@ function UserTable({
       <GridItem>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Users</h4>
-            {loading && <LinearProgress color="secondary" />}
+            <Grid container justify="space-between" alignItems="center">
+              <GridItem>
+                <h4 className={classes.cardTitleWhite}>Users</h4>
+              </GridItem>
+              <GridItem>
+                <Grid container>
+                  <GridItem>
+                    {onAddClick !== undefined
+                      ? (
+                        <Tooltip placement="top" title="Add">
+                          <Button
+                            mini={true}
+                            color="secondary"
+                            variant="fab"
+                            onClick={onAddClick}
+                            aria-label="Add">
+                            <AddIcon/>
+                          </Button>
+                        </Tooltip>
+                      )
+                      : ("")}
+                  </GridItem>
+                </Grid>
+              </GridItem>
+            </Grid>
+            {loading && <LinearProgress color="secondary"/>}
           </CardHeader>
           <CardBody>
             <TableComponent
@@ -106,8 +137,9 @@ function UserTable({
               data={data}
               columns={columns}
               defaultPageSize={defaultPageSize}
-              {...rest}
-            />
+              onDeleteClick={onDeleteClick}
+              onEditClick={onEditClick}
+              {...rest}/>
           </CardBody>
         </Card>
       </GridItem>
