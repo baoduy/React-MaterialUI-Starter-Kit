@@ -1,27 +1,21 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "../CustomButtons/Button";
+import Button from '@material-ui/core/Button';
 import Grid from "@material-ui/core/Grid";
 import GridItem from "../Grid/GridItem";
 import Card from "../Card/Card";
 import CardHeader from "../Card/CardHeader";
 import CardBody from "../Card/CardBody";
-import Typography from "@material-ui/core/Typography";
-import CloseIcon from "@material-ui/icons/Close";
+import Close from "@material-ui/icons/Close";
+import Save from "@material-ui/icons/Save";
 import Avatar from "@material-ui/core/Avatar";
-import { getAvatar } from "../../commons/commonFuncs";
+import {getAvatar} from "../../commons/commonFuncs";
 import Badge from "@material-ui/core/Badge";
 import Update from "@material-ui/icons/CloudUpload";
 import withStyles from "@material-ui/core/styles/withStyles";
 import userStyles from "./userFormStyles";
 import PropTypes from "prop-types";
-import { Field } from "redux-form";
-import {
-  renderTextField,
-  renderInputFile
-} from "../../commons/commonControlRenderers";
+import {Field} from "redux-form";
+import {renderTextField, renderInputFile} from "../../commons/commonControlRenderers";
 function UserForm({
   user,
   handleSubmit,
@@ -36,12 +30,14 @@ function UserForm({
   let inputFile = React.createRef();
 
   const handleAvatarClick = () => {
-    inputFile.current.click();
+    inputFile
+      .current
+      .click();
   };
 
   return (
     <form onSubmit={handleSubmit(onSave)}>
-      <input type="hidden" name="id" value={user.id} />
+      <input type="hidden" name="id" value={user.id}/>
       <Field
         name="a"
         component={renderInputFile}
@@ -49,26 +45,7 @@ function UserForm({
         accept="image/gif, image/jpeg, image/png"
         fileRef={inputFile}
         onChangeFile={onChangeAvatar}
-        className={classes.hiddenTag}
-      />
-      {/* <AppBar className={classes.appBar}>
-        <Toolbar>
-          <IconButton color="inherit" onClick={onClose} aria-label="Close">
-            <CloseIcon />
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Close
-          </Typography>
-          <Button
-            color="success"
-            type="submit"
-            variant="contained"
-            disabled={(pristine && !avatarChanged) || submitting}
-          >
-            Save
-          </Button>
-        </Toolbar>
-      </AppBar> */}
+        className={classes.hiddenTag}/>
       <Grid container>
         <GridItem xs={12} sm={12} md={12}>
           <Card>
@@ -81,21 +58,22 @@ function UserForm({
                   <Grid container>
                     <GridItem>
                       <Button
-                        color="success"
+                        mini={true}
+                        color="primary"
                         type="submit"
-                        variant="contained"
-                        disabled={(pristine && !avatarChanged) || submitting}
-                      >
-                        Save
+                        variant="fab"
+                        disabled={(pristine && !avatarChanged) || submitting}>
+                        <Save/>
                       </Button>
                     </GridItem>
                     <GridItem>
                       <Button
-                        color="primary"
-                        variant="contained"
+                        mini={true}
+                        color="secondary"
+                        variant="fab"
                         onClick={onClose}
-                      >
-                        Close
+                        aria-label="Close">
+                        <Close/>
                       </Button>
                     </GridItem>
                   </Grid>
@@ -107,16 +85,12 @@ function UserForm({
                 <GridItem xs={12} sm={12} md={12}>
                   <Grid container justify="center">
                     <Badge
-                      badgeContent={<Update />}
+                      badgeContent={< Update />}
                       className={classes.pointer}
                       onClick={handleAvatarClick}
                       color="primary"
-                      id="btnUpload"
-                    >
-                      <Avatar
-                        className={classes.avatar}
-                        src={getAvatar(user.avatar)}
-                      />
+                      id="btnUpload">
+                      <Avatar className={classes.avatar} src={getAvatar(user.avatar)}/>
                     </Badge>
                   </Grid>
                 </GridItem>
@@ -128,10 +102,9 @@ function UserForm({
                         name="username"
                         label="Username"
                         formControlProps={{
-                          fullWidth: true,
-                          className: classes.formControl
-                        }}
-                      />
+                        fullWidth: true,
+                        className: classes.formControl
+                      }}/>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
                       <Field
@@ -139,10 +112,9 @@ function UserForm({
                         name="email"
                         label="Email address"
                         formControlProps={{
-                          fullWidth: true,
-                          className: classes.formControl
-                        }}
-                      />
+                        fullWidth: true,
+                        className: classes.formControl
+                      }}/>
                     </GridItem>
                   </Grid>
                   <Grid container>
@@ -152,10 +124,9 @@ function UserForm({
                         name="firstName"
                         label="First Name"
                         formControlProps={{
-                          fullWidth: true,
-                          className: classes.formControl
-                        }}
-                      />
+                        fullWidth: true,
+                        className: classes.formControl
+                      }}/>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
                       <Field
@@ -163,10 +134,9 @@ function UserForm({
                         name="lastName"
                         label="Last Name"
                         formControlProps={{
-                          fullWidth: true,
-                          className: classes.formControl
-                        }}
-                      />
+                        fullWidth: true,
+                        className: classes.formControl
+                      }}/>
                     </GridItem>
                   </Grid>
                 </GridItem>
