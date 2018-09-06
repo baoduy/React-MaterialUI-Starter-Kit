@@ -7,7 +7,7 @@
 [![Dependencies](https://img.shields.io/david/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit)
 [![DevDependencies](https://img.shields.io/david/dev/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit?type=develop)
 
-The PRD really sttarted kit for **ReactJs** with hot module replacement (HMR) for rapid development.
+The PRD really starter kit for **ReactJs** with hot module replacement (HMR) for rapid development.
 
 - **[React](https://facebook.github.io/react/)** (16.x)
 - **[Webpack](https://webpack.js.org/)** (4.x)

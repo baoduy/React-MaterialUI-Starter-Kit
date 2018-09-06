@@ -1,28 +1,30 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import GridItem from "../Grid/GridItem";
-import Card from "../Card/Card.jsx";
-import CardHeader from "../Card/CardHeader.jsx";
-import CardBody from "../Card/CardBody.jsx";
-import Button from "@material-ui/core/Button";
-import AddIcon from "@material-ui/icons/Add";
-import ReactTable from "react-table";
-import "react-table/react-table.css";
-import PropTypes from "prop-types";
-import Tooltip from "@material-ui/core/Tooltip";
-import withStyles from "@material-ui/core/styles/withStyles";
-import userStyles from "./userFormStyles.js";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import UserView from './UserView';
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import GridItem from '../Grid/GridItem';
+import Card from '../Card/Card.jsx';
+import CardHeader from '../Card/CardHeader.jsx';
+import CardBody from '../Card/CardBody.jsx';
+import Edit from '@material-ui/icons/Edit';
+import Delete from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+import PropTypes from 'prop-types';
+import Tooltip from '@material-ui/core/Tooltip';
+import IconButton from '@material-ui/core/IconButton';
+import withStyles from '@material-ui/core/styles/withStyles';
+import userStyles from './userFormStyles.js';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 function defaultTableComponent({
   data,
   columns,
   defaultPageSize,
   loading,
-  rest,
   onEditClick,
   onDeleteClick
+  ...rest
 }) {
   return (
     <ReactTable
@@ -47,13 +49,58 @@ function UserTable({
   onDeleteClick,
   columns,
   defaultPageSize,
-  rest,
   loading,
-  classes
+  classes,
+  ...rest
 }) {
-
+  const renderActionColumn = cellInfo => {
+    return (
+      <div>
+        {onEditClick !== undefined ? (
+          <Tooltip placement="top" title="Edit">
+            <IconButton onClick={() => onEditClick(cellInfo)}>
+              <Edit />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          ''
+        )}
+        {onDeleteClick !== undefined ? (
+          <Tooltip placement="top" title="Delete">
+            <IconButton onClick={() => onDeleteClick(cellInfo)}>
+              <Delete />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          ''
+        )}
+      </div>
+    );
+  };
+  if (onEditClick !== undefined || onDeleteClick !== undefined) {
+    columns.push({
+      Header: 'Action',
+      Cell: renderActionColumn
+    });
+  }
   return (
     <Grid>
+      <GridItem>
+        <Grid container justify="flex-end">
+          {onAddClick !== undefined ? (
+            <Button
+              color="secondary"
+              variant="fab"
+              onClick={onAddClick}
+              aria-label="Add"
+            >
+              <AddIcon />
+            </Button>
+          ) : (
+            ''
+          )}
+        </Grid>
+      </GridItem>
       <GridItem>
         <Card>
           <CardHeader color="primary">
