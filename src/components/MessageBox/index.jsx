@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Grid from "@material-ui/core/Grid";
-import GridItem from "../Grid/GridItem.jsx";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
-import MessageBoxStyle from "./jss";
-import MessageBoxType from "./MessageBoxType";
-import * as helper from "./helper";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
+import GridItem from '../Grid/GridItem.jsx';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import MessageBoxStyle from './jss';
+import MessageBoxType from './MessageBoxType';
+import * as helper from './helper';
 
 function MessageBox({
   type,
@@ -51,7 +51,7 @@ function MessageBox({
           justify="flex-start"
         >
           {finalIcon && (
-            <GridItem xs={4} sm={2} md={2} style={{ padding: "0px" }}>
+            <GridItem xs={4} sm={2} md={2} style={{ padding: '0px' }}>
               {finalIcon}
             </GridItem>
           )}
@@ -70,8 +70,8 @@ function MessageBox({
 
 MessageBox.defaultProps = {
   type: MessageBoxType.INFO,
-  okText: "Ok",
-  cancelText: "Cancel",
+  okText: 'Ok',
+  cancelText: 'Cancel',
   open: true,
   icon: true
 };
