@@ -1,12 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Drawer, withStyles, List } from "@material-ui/core";
-import NotificationPanelStyle from "./NotificationPanelStyle";
-import MessageIcon from "@material-ui/icons/Message";
-import NotificationGroup from "./NotificationGroup";
-import NotificationItemPropTypes from "./NotificationItemPropTypes";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Drawer, List } from '@material-ui/core';
+import withStyles from '@material-ui/core/styles/withStyles';
+import NotificationPanelStyle from './NotificationPanelStyle';
+import MessageIcon from '@material-ui/icons/Message';
+import NotificationGroup from './NotificationGroup';
+import NotificationItemPropTypes from './NotificationItemPropTypes';
 //helper
-import { getGroupItems } from "./helper";
+import { getGroupItems } from './helper';
 
 function defaultGroupComponent({ classes, onClose, items }) {
   return (
@@ -28,7 +29,7 @@ function defaultBackgroundComponent({ image, classes }) {
   return (
     <div
       className={classes.background}
-      style={{ backgroundImage: "url(" + image + ")" }}
+      style={{ backgroundImage: 'url(' + image + ')' }}
     />
   );
 }
@@ -92,7 +93,7 @@ NotificationPanel.defaultProps = {
   GroupComponent: defaultGroupComponent,
   BackgroundComponent: defaultBackgroundComponent,
   TitleComponent: defaultTitleComponent,
-  position: "right",
+  position: 'right',
   open: false
 };
 
@@ -102,7 +103,7 @@ NotificationPanel.propTypes = {
   TitleComponent: PropTypes.func,
   items: PropTypes.arrayOf(PropTypes.shape(NotificationItemPropTypes))
     .isRequired,
-  position: PropTypes.oneOf(["left", "top", "right", "bottom"]),
+  position: PropTypes.oneOf(['left', 'top', 'right', 'bottom']),
   open: PropTypes.bool,
   onPanelClose: PropTypes.func.isRequired,
   onItemClose: PropTypes.func.isRequired,

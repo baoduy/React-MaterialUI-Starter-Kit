@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import NotificationPopupItem from "./NotificationPopupItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import NotificationPopupItem from './NotificationPopupItem';
 
 function defaultPopupItemComponent(props) {
   return <NotificationPopupItem {...props} />;

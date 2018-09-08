@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Snackbar from "../Snackbar/Snackbar";
-import NotificationType from "./NotificationType";
-import NotificationPopupItemStyle from "./NotificationPopupItemStyle";
-import withStyles from "@material-ui/core/styles/withStyles";
-import * as helper from "./helper";
-import NotificationItemPropTypes from "./NotificationItemPropTypes";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Snackbar from '../Snackbar/Snackbar';
+import NotificationType from './NotificationType';
+import NotificationPopupItemStyle from './NotificationPopupItemStyle';
+import withStyles from '@material-ui/core/styles/withStyles';
+import * as helper from './helper';
+import NotificationItemPropTypes from './NotificationItemPropTypes';
 
 @withStyles(NotificationPopupItemStyle)
 export default class NotificationPopupItem extends React.Component {
@@ -63,7 +63,7 @@ export default class NotificationPopupItem extends React.Component {
 }
 
 NotificationPopupItem.defaultProps = {
-  place: "tr", //Top right
+  place: 'tr', //Top right
   autoClose: true,
   type: NotificationType.INFO,
   open: true,

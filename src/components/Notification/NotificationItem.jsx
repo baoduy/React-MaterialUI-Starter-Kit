@@ -3,13 +3,8 @@ import PropTypes from 'prop-types';
 import NotificationType from './NotificationType';
 import NotificationItemStyle from './NotificationItemStyle';
 import dayjs from 'dayjs';
-import {
-  withStyles,
-  ListItem,
-  IconButton,
-  Tooltip,
-  Grid
-} from '@material-ui/core';
+import { ListItem, IconButton, Tooltip, Grid } from '@material-ui/core';
+import withStyles from '@material-ui/core/styles/withStyles';
 import CloseIcon from '@material-ui/icons/Close';
 import * as helper from './helper';
 import NotificationItemPropTypes from './NotificationItemPropTypes';
