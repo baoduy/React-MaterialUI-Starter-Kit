@@ -42,7 +42,7 @@
     "test-bundle": "bundlesize",
     "test": "jest --watch --coverage --config=configs/jest/jest.json",
     "test-ci": "jest --ci --coverage --config=configs/jest/jest.json && codecov -t 75b11d17-22d7-4b30-81b1-4c39fa2f7582",
-    "check": "npm-check",
+    "check": "npm-check -p",
     "cost": "cost-of-modules --no-install"
   },
   "devDependencies": {
@@ -116,7 +116,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@material-ui/core": "^3.0.0",
+    "@material-ui/core": "^3.0.2",
     "@material-ui/icons": "^3.0.0",
     "axios": "^0.18.0",
     "chartist": "^0.11.0",
@@ -125,9 +125,9 @@
     "linq": "^3.1.0",
     "lodash": "^4.17.10",
     "perfect-scrollbar": "^1.4.0",
-    "react": "^16.4.2",
+    "react": "^16.5.0",
     "react-chartist": "^0.13.1",
-    "react-dom": "^16.4.2",
+    "react-dom": "^16.5.0",
     "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
     "react-redux-thunk-store": "^0.0.7",
