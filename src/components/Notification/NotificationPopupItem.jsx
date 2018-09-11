@@ -8,7 +8,7 @@ import * as helper from './helper';
 import NotificationItemPropTypes from './NotificationItemPropTypes';
 
 @withStyles(NotificationPopupItemStyle)
-export default class NotificationPopupItem extends React.Component {
+export default class NotificationPopupItem extends React.PureComponent {
   constructor(props, context) {
     super(props, context);
     this._timeout = undefined;

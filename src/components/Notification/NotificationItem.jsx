@@ -15,7 +15,7 @@ function defaultFormatDate(date) {
   //convert Date to dayjs
   if (date instanceof Date) date = dayjs(date);
   //Check if it is nothing then just return out
-  if (!date || !dayjs.isdayjs(date)) return date;
+  if (!date || !dayjs.isDayjs(date)) return date;
   const now = dayjs();
 
   //Less than 1 minutes => now
