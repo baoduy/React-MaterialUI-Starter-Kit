@@ -52,9 +52,11 @@ const renderComponent = () => {
 
 renderComponent();
 
+/* develblock:start */
 // Hot Module Replacement API
 if (module.hot) {
   module.hot.accept('./layouts/Dashboard', () => {
     renderComponent();
   });
 }
+/* develblock:end */
