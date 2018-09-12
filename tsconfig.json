@@ -1,6 +1,42 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "allowJs": true
-  }
+    "baseUrl": ".",
+    "module": "es2015",
+    "target": "es5",
+    "lib": ["es6", "esnext", "dom"],
+    //"sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    //"noEmit": true,
+    "pretty": true,
+    "skipLibCheck": true,
+    "removeComments": false,
+    "forceConsistentCasingInFileNames": true,
+    //"emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    //"declaration": true,
+    "strict": true
+  },
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "tests/*.ts"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "tests",
+    "configs",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "sample"
+  ]
 }
