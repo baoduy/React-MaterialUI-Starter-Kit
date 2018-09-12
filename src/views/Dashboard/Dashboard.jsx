@@ -50,7 +50,7 @@ import dashboardStyle from './dashboardStyle.jsx';
     return { actions: bindActionCreators(actions, dispatch) };
   }
 )
-class Dashboard extends React.Component {
+class Dashboard extends React.PureComponent {
   constructor(props, context) {
     super(props, context);
 
