@@ -55,7 +55,7 @@ const styles = {
     )
   })
 )
-class MessageBoxPage extends React.Component {
+class MessageBoxPage extends React.PureComponent {
   constructor(props) {
     super(props);
 

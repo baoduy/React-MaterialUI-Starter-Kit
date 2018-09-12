@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Route } from 'react-router-dom';
 import UserProfile from './UserProfile';
 import { connect } from 'react-redux';
@@ -21,7 +21,7 @@ import UserTable from '../../components/User/UserTable';
     };
   }
 )
-class UserListing extends Component {
+class UserListing extends PureComponent {
   componentWillMount() {
     this.props.actions.getAllUsers();
   }
