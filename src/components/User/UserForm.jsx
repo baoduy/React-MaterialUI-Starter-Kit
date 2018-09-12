@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '../CustomButtons/Button';
+import React from 'react';
+import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import GridItem from '../Grid/GridItem';
 import Card from '../Card/Card';
 import CardHeader from '../Card/CardHeader';
-import CustomInput from '../CustomInput/CustomInput';
 import CardBody from '../Card/CardBody';
-import Typography from '@material-ui/core/Typography';
-import CloseIcon from '@material-ui/icons/Close';
+import Close from '@material-ui/icons/Close';
+import Save from '@material-ui/icons/Save';
 import Avatar from '@material-ui/core/Avatar';
 import { getAvatar } from '../../commons/commonFuncs';
 import Badge from '@material-ui/core/Badge';
@@ -18,42 +14,75 @@ import Update from '@material-ui/icons/CloudUpload';
 import withStyles from '@material-ui/core/styles/withStyles';
 import userStyles from './userFormStyles';
 import PropTypes from 'prop-types';
-function UserForm({ user, onSave, onClose, onChangeInput, classes }) {
+import { Field } from 'redux-form';
+import {
+  renderTextField,
+  renderInputFile
+} from '../../commons/commonControlRenderers';
+function UserForm({
+  user,
+  handleSubmit,
+  onClose,
+  onChangeAvatar,
+  classes,
+  pristine,
+  submitting,
+  onSave,
+  avatarChanged
+}) {
   let inputFile = React.createRef();
 
   const handleAvatarClick = () => {
     inputFile.current.click();
   };
+
   return (
-    <form onSubmit={onSave}>
+    <form onSubmit={handleSubmit(onSave)}>
       <input type="hidden" name="id" value={user.id} />
-      <input
-        name="avatar"
+      <Field
+        name="a"
+        component={renderInputFile}
         type="file"
-        ref={inputFile}
-        className={classes.hiddenTag}
         accept="image/gif, image/jpeg, image/png"
-        onChange={onChangeInput}
+        fileRef={inputFile}
+        onChangeFile={onChangeAvatar}
+        className={classes.hiddenTag}
       />
-      <AppBar className={classes.appBar}>
-        <Toolbar>
-          <IconButton color="inherit" onClick={onClose} aria-label="Close">
-            <CloseIcon />
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Close
-          </Typography>
-          <Button color="success" type="submit" variant="contained">
-            Save
-          </Button>
-        </Toolbar>
-      </AppBar>
       <Grid container>
         <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
+              <Grid container justify="space-between" alignItems="center">
+                <GridItem>
+                  <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
+                </GridItem>
+                <GridItem>
+                  <Grid container>
+                    <GridItem>
+                      <Button
+                        mini={true}
+                        color="primary"
+                        type="submit"
+                        variant="fab"
+                        disabled={(pristine && !avatarChanged) || submitting}
+                      >
+                        <Save />
+                      </Button>
+                    </GridItem>
+                    <GridItem>
+                      <Button
+                        mini={true}
+                        color="secondary"
+                        variant="fab"
+                        onClick={onClose}
+                        aria-label="Close"
+                      >
+                        <Close />
+                      </Button>
+                    </GridItem>
+                  </Grid>
+                </GridItem>
+              </Grid>
             </CardHeader>
             <CardBody>
               <Grid container>
@@ -76,56 +105,48 @@ function UserForm({ user, onSave, onClose, onChangeInput, classes }) {
                 <GridItem xs={12} sm={12} md={12}>
                   <Grid container>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.username,
-                          onChange: onChangeInput,
-                          name: 'username'
-                        }}
-                        labelText="Username"
+                      <Field
+                        component={renderTextField}
+                        name="username"
+                        label="Username"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.email,
-                          onChange: onChangeInput,
-                          name: 'email'
-                        }}
-                        labelText="Email address"
+                      <Field
+                        component={renderTextField}
+                        name="email"
+                        label="Email address"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
                   </Grid>
                   <Grid container>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.firstName,
-                          onChange: onChangeInput,
-                          name: 'firstName'
-                        }}
-                        labelText="First Name"
+                      <Field
+                        component={renderTextField}
+                        name="firstName"
+                        label="First Name"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
-                      <CustomInput
-                        inputProps={{
-                          value: user.lastName,
-                          onChange: onChangeInput,
-                          name: 'lastName'
-                        }}
-                        labelText="Last Name"
+                      <Field
+                        component={renderTextField}
+                        name="lastName"
+                        label="Last Name"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
+                          className: classes.formControl
                         }}
                       />
                     </GridItem>
@@ -143,6 +164,7 @@ function UserForm({ user, onSave, onClose, onChangeInput, classes }) {
 UserForm.propTypes = {
   user: PropTypes.object,
   onClose: PropTypes.func,
-  onSave: PropTypes.func
+  handleSubmit: PropTypes.func,
+  onChangeInput: PropTypes.func
 };
 export default withStyles(userStyles)(UserForm);

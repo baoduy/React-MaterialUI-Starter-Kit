@@ -4,10 +4,13 @@ import { createBrowserHistory } from 'history';
 import { Router, Route, Switch, BrowserRouter } from 'react-router-dom';
 import Provider from 'react-redux-thunk-store';
 import ExceptionHandler from './layouts/ExceptionHandler';
-
 import { GetBaseUrl } from './commons/commonFuncs';
+
+//Sample to import LESS or SCSS
 //Style-sheets
-import './assets/less/material-dashboard-react.less';
+import './assets/scss/material-dashboard-react.scss';
+//import './assets/less/material-dashboard-react.less';
+//Sample to import LESS or SCSS
 
 import reducers from './reducers';
 import indexRoutes from 'routes/index.jsx';

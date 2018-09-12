@@ -3,13 +3,8 @@ import PropTypes from 'prop-types';
 import NotificationType from './NotificationType';
 import NotificationItemStyle from './NotificationItemStyle';
 import dayjs from 'dayjs';
-import {
-  withStyles,
-  ListItem,
-  IconButton,
-  Tooltip,
-  Grid
-} from '@material-ui/core';
+import { ListItem, IconButton, Tooltip, Grid } from '@material-ui/core';
+import withStyles from '@material-ui/core/styles/withStyles';
 import CloseIcon from '@material-ui/icons/Close';
 import * as helper from './helper';
 import NotificationItemPropTypes from './NotificationItemPropTypes';
@@ -20,7 +15,7 @@ function defaultFormatDate(date) {
   //convert Date to dayjs
   if (date instanceof Date) date = dayjs(date);
   //Check if it is nothing then just return out
-  if (!date || !dayjs.isdayjs(date)) return date;
+  if (!date || !dayjs.isDayjs(date)) return date;
   const now = dayjs();
 
   //Less than 1 minutes => now

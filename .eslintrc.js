@@ -6,22 +6,23 @@ module.exports = {
     es6: true,
     jest: true
   },
-  extends: "eslint:recommended",
-  parser: "babel-eslint",
+  extends: 'eslint:recommended',
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module",
+    sourceType: 'module',
+    legacyDecotators: true,
     ecmaFeatures: {
       jsx: true
     }
   },
-  plugins: ["react"],
+  plugins: ['react'],
   rules: {
-    indent: "off",
-    "linebreak-style": ["warn", "unix"],
-    quotes: ["error", "single"],
-    semi: ["error", "always"],
-    "no-unused-vars": "off",
+    indent: 'off',
+    'linebreak-style': ['warn', 'unix'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
+    'no-unused-vars': 'off',
     experimentalDecorators: true
   }
 };

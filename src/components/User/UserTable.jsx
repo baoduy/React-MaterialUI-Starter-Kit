@@ -13,13 +13,35 @@ import 'react-table/react-table.css';
 import PropTypes from 'prop-types';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
+import withStyles from '@material-ui/core/styles/withStyles';
+import userStyles from './userFormStyles.js';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import UserView from './UserView';
 
-function defaultTableComponent({ data, columns, defaultPageSize, rest }) {
+function defaultTableComponent({
+  data,
+  columns,
+  defaultPageSize,
+  loading,
+  onEditClick,
+  onDeleteClick,
+  ...rest
+}) {
   return (
     <ReactTable
+      SubComponent={row => {
+        return (
+          <UserView
+            user={row.original}
+            onEditClick={onEditClick}
+            onDeleteClick={onDeleteClick}
+          />
+        );
+      }}
       data={data}
       columns={columns}
       defaultPageSize={defaultPageSize}
+      loading={loading}
       {...rest}
     />
   );
@@ -32,66 +54,85 @@ function UserTable({
   onDeleteClick,
   columns,
   defaultPageSize,
-  rest
+  loading,
+  classes,
+  ...rest
 }) {
-  const renderActionColumn = cellInfo => {
-    return (
-      <div>
-        {onEditClick !== undefined ? (
-          <Tooltip placement="top" title="Edit">
-            <IconButton onClick={() => onEditClick(cellInfo)}>
-              <Edit />
-            </IconButton>
-          </Tooltip>
-        ) : (
-          ''
-        )}
-        {onDeleteClick !== undefined ? (
-          <Tooltip placement="top" title="Delete">
-            <IconButton onClick={() => onDeleteClick(cellInfo)}>
-              <Delete />
-            </IconButton>
-          </Tooltip>
-        ) : (
-          ''
-        )}
-      </div>
-    );
-  };
-  if (onEditClick !== undefined || onDeleteClick !== undefined) {
-    columns.push({
-      Header: 'Action',
-      Cell: renderActionColumn
-    });
-  }
+  //   const renderActionColumn = cellInfo => {
+  //     return (
+  //       <div>
+  //         {onEditClick !== undefined ? (
+  //           <Tooltip placement="top" title="Edit">
+  //             <IconButton onClick={() => onEditClick(cellInfo)}>
+  //               <Edit />
+  //             </IconButton>
+  //           </Tooltip>
+  //         ) : (
+  //           ''
+  //         )}
+  //         {onDeleteClick !== undefined ? (
+  //           <Tooltip placement="top" title="Delete">
+  //             <IconButton onClick={() => onDeleteClick(cellInfo)}>
+  //               <Delete />
+  //             </IconButton>
+  //           </Tooltip>
+  //         ) : (
+  //           ''
+  //         )}
+  //       </div>
+  //     );
+  //   };
+  //   if (onEditClick !== undefined || onDeleteClick !== undefined) {
+  //     columns.push({
+  //       Header: 'Action',
+  //       Cell: renderActionColumn
+  //     });
+  //   }
   return (
     <Grid>
       <GridItem>
         <Card>
           <CardHeader color="primary">
-            <h4>Users</h4>
+            <Grid container justify="space-between" alignItems="center">
+              <GridItem>
+                <h4 className={classes.cardTitleWhite}>Users</h4>
+              </GridItem>
+              <GridItem>
+                <Grid container>
+                  <GridItem>
+                    {onAddClick !== undefined ? (
+                      <Tooltip placement="top" title="Add">
+                        <Button
+                          mini={true}
+                          color="secondary"
+                          variant="fab"
+                          onClick={onAddClick}
+                          aria-label="Add"
+                        >
+                          <AddIcon />
+                        </Button>
+                      </Tooltip>
+                    ) : (
+                      ''
+                    )}
+                  </GridItem>
+                </Grid>
+              </GridItem>
+            </Grid>
+            {loading && <LinearProgress color="secondary" />}
           </CardHeader>
           <CardBody>
             <TableComponent
+              loading={loading}
               data={data}
               columns={columns}
               defaultPageSize={defaultPageSize}
+              onDeleteClick={onDeleteClick}
+              onEditClick={onEditClick}
               {...rest}
             />
           </CardBody>
         </Card>
-        {onAddClick !== undefined ? (
-          <Button
-            color="secondary"
-            variant="fab"
-            onClick={onAddClick}
-            aria-label="Add"
-          >
-            <AddIcon />
-          </Button>
-        ) : (
-          ''
-        )}
       </GridItem>
     </Grid>
   );
@@ -112,4 +153,4 @@ UserTable.propTypes = {
   onAddClick: PropTypes.func,
   onDeleteClick: PropTypes.func
 };
-export default UserTable;
+export default withStyles(userStyles)(UserTable);

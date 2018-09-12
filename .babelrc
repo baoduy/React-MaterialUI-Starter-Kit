@@ -17,6 +17,33 @@
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-proposal-json-strings",
     "@babel/plugin-transform-async-to-generator",
+    [
+      "import",
+      {
+        "libraryName": "@material-ui/core",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      },
+      "material-core"
+    ],
+    [
+      "import",
+      {
+        "libraryName": "@material-ui/icons",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      },
+      "material-icon"
+    ],
+    [
+      "transform-imports",
+      {
+        "material-ui": {
+          "transform": "@material-ui/core/${member}",
+          "preventFullImport": true
+        }
+      }
+    ],
     "babel-plugin-lodash",
     "react-hot-loader/babel", //Enables React code to work with HMR.
     [

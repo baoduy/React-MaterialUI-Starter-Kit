@@ -1,26 +1,26 @@
-import NotificationType from "./NotificationType";
-import confirmIcon from "@material-ui/icons/Help";
-import errorIcon from "@material-ui/icons/Error";
-import infoIcon from "@material-ui/icons/Info";
-import warningIcon from "@material-ui/icons/Warning";
-import successIcon from "@material-ui/icons/CheckCircle";
-import linq from "linq";
-import NotificationStatus from "./NotificationStatus";
-import * as guard from "../../commons/guard";
+import NotificationType from './NotificationType';
+import confirmIcon from '@material-ui/icons/Help';
+import errorIcon from '@material-ui/icons/Error';
+import infoIcon from '@material-ui/icons/Info';
+import warningIcon from '@material-ui/icons/Warning';
+import successIcon from '@material-ui/icons/CheckCircle';
+import linq from 'linq';
+import NotificationStatus from './NotificationStatus';
+import * as guard from '../../commons/guard';
 
 export function getColor(type) {
   switch (type) {
     case NotificationType.CONFIRM:
-      return "primary";
+      return 'primary';
     case NotificationType.DANGER:
-      return "danger";
+      return 'danger';
     case NotificationType.WARNING:
-      return "warning";
+      return 'warning';
     case NotificationType.SUCCESS:
-      return "success";
+      return 'success';
     case NotificationType.INFO:
     default:
-      return "info";
+      return 'info';
   }
 }
 
@@ -49,7 +49,7 @@ export function getIcon(type) {
  */
 export function getUnreadItems(items) {
   if (!items) return items;
-  guard.argumentIsArray(items, "Notification Items");
+  guard.argumentIsArray(items, 'Notification Items');
   if (items.length <= 0) return items;
 
   return linq
@@ -90,12 +90,12 @@ export function getItemsForPopup(items) {
  */
 export function getGroupItems(items) {
   if (!items) return items;
-  guard.argumentIsArray(items, "Notification Items");
+  guard.argumentIsArray(items, 'Notification Items');
   if (items.length <= 0) return items;
 
   return linq
     .from(items)
-    .groupBy(i => i.group || "")
+    .groupBy(i => i.group || '')
     .select(g => ({
       title: g.key(),
       items: g.orderByDescending(i => i.createdOn.valueOf()).toArray()

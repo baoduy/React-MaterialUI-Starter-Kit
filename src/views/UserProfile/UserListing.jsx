@@ -4,38 +4,40 @@ import UserProfile from './UserProfile';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import UserActions from '../../actions/Users';
+import MessageBoxActions from '../../actions/MessageBox';
+import MessageBoxType from '../../components/MessageBox/MessageBoxType';
+
 import urljoin from 'url-join';
 import UserTable from '../../components/User/UserTable';
 
 @connect(
   state => {
-    return {
-      users: state.users.data
-    };
+    return { users: state.users.data, isLoading: state.users.isLoading };
   },
   dispatch => {
     return {
-      actions: bindActionCreators(UserActions, dispatch)
+      actions: bindActionCreators(UserActions, dispatch),
+      messageBoxActions: bindActionCreators(MessageBoxActions, dispatch)
     };
   }
 )
 class UserListing extends Component {
-  constructor(props) {
-    super(props);
-    this.onEditClick = this.onEditClick.bind(this);
-    this.onDeleteClick = this.onDeleteClick.bind(this);
-    this.onAddClick = this.onAddClick.bind(this);
-  }
   componentWillMount() {
     this.props.actions.getAllUsers();
   }
   onEditClick = rowData => {
-    this.props.history.push(
-      urljoin(this.props.match.url, `${rowData.original.id}`)
-    );
+    this.props.history.push(urljoin(this.props.match.url, `${rowData.id}`));
   };
   onDeleteClick = rowData => {
-    this.props.actions.deleteUser(rowData.original.id);
+    this.props.messageBoxActions.showMessage(
+      MessageBoxType.CONFIRM,
+      `User ${rowData.firstName} will be deleted, are you sure?`,
+      event => {
+        if (event.currentTarget.value === 'OK') {
+          this.props.actions.deleteUser(rowData.id);
+        }
+      }
+    );
   };
   onAddClick = () => {
     this.props.history.push(urljoin(this.props.match.url, '0'));
@@ -60,16 +62,17 @@ class UserListing extends Component {
       }
     ];
     return (
-      <div>
+      <React.Fragment>
         <UserTable
           columns={columns}
           data={this.props.users}
           onEditClick={this.onEditClick}
           onAddClick={this.onAddClick}
           onDeleteClick={this.onDeleteClick}
+          loading={this.props.isLoading}
         />
         <Route path={`${this.props.match.url}/:id`} component={UserProfile} />
-      </div>
+      </React.Fragment>
     );
   }
 }

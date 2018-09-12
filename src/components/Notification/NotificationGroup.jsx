@@ -1,7 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
-  withStyles,
   List,
   Collapse,
   ListItem,
@@ -11,18 +10,19 @@ import {
   Divider,
   IconButton,
   Tooltip
-} from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
-import classnames from "classnames";
+} from '@material-ui/core';
+import withStyles from '@material-ui/core/styles/withStyles';
+import CloseIcon from '@material-ui/icons/Close';
+import classnames from 'classnames';
 
-import NotificationGroupStyle from "./NotificationGroupStyle";
-import NotificationItem from "./NotificationItem";
-import NotificationItemPropTypes from "./NotificationItemPropTypes";
+import NotificationGroupStyle from './NotificationGroupStyle';
+import NotificationItem from './NotificationItem';
+import NotificationItemPropTypes from './NotificationItemPropTypes';
 //helper
-import { getUnreadItems } from "./helper";
+import { getUnreadItems } from './helper';
 
 @withStyles(NotificationGroupStyle)
-export default class NotificationGroup extends React.Component {
+export default class NotificationGroup extends React.PureComponent {
   constructor(props, context) {
     super(props, context);
 
@@ -50,7 +50,7 @@ export default class NotificationGroup extends React.Component {
         <ListItem
           className={classnames(
             classes.root,
-            this.state.open ? classes.blue : ""
+            this.state.open ? classes.blue : ''
           )}
           button
           onClick={this.onClick}
@@ -63,7 +63,7 @@ export default class NotificationGroup extends React.Component {
                   ? classes.avatarNew
                   : this.state.open
                     ? classes.avatarHighlight
-                    : ""
+                    : ''
               )}
             >
               {unReadItems.length > 0 ? unReadItems.length : items.length}
@@ -112,7 +112,7 @@ export default class NotificationGroup extends React.Component {
 }
 
 NotificationGroup.defaultProps = {
-  badgeColor: "primary",
+  badgeColor: 'primary',
   open: false
 };
 
@@ -125,10 +125,10 @@ NotificationGroup.propTypes = {
   onClose: PropTypes.func,
   open: PropTypes.bool,
   badgeColor: PropTypes.oneOf([
-    "inherit",
-    "primary",
-    "secondary",
-    "default",
-    "error"
+    'inherit',
+    'primary',
+    'secondary',
+    'default',
+    'error'
   ])
 };
