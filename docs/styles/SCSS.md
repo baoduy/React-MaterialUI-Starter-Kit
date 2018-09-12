@@ -9,6 +9,10 @@ before running below command ensure the sass-lint is installed globally ny comma
 
 run `npm run lint` or `npm run lint-scss`
 
+## Convert Tools
+
+- LESS to SCSS [here](http://less2scss.awk5.com/).
+
 ## Stylesheet Bundling
 
 When packaging the application for Production all stylesheet files _(css, LESS and SCSS)_ will be bundled to a single file named **style.css** by the Webpack and storing in the **dist** folder.
