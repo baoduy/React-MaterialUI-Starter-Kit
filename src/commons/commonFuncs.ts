@@ -2,27 +2,26 @@
 
 import linq from 'linq';
 import uuidv4 from 'uuid/v4';
-import Default from './constants';
+import Default from './constants.js';
 //correct URL for Reserved proxy
 //Get the millisecond of current time.
 
 export function GetBaseUrl() {
   const key = 'BASE_URL';
-  let base = window.sessionStorage.getItem(key);
 
-  if (base === undefined || base === null) {
-    base = document.getElementsByTagName('base')[0].getAttribute('href');
-    window.sessionStorage.setItem(key, base);
+  const base: string =
+    window.sessionStorage.getItem(key) ||
+    document.getElementsByTagName('base')[0].getAttribute('href') ||
+    '/';
 
-    console.log(`base URL is ${base}`);
-  }
+  window.sessionStorage.setItem(key, base);
+  console.log(`base URL is ${base}`);
 
   return base;
 }
 
-export function newGuid() {
-  return uuidv4();
-}
+export const newGuid = () => uuidv4();
+
 /**
  *getImgSrc for both normal hosting and Reverse proxy
  *
@@ -30,13 +29,13 @@ export function newGuid() {
  * @param {string} url the relative image url
  * @returns real url
  */
-export function getImgSrc(url) {
-  if (typeof url !== 'string') return url;
+export function getImgSrc(url: string) {
+  //if (typeof url !== 'string') return url;
   const base = GetBaseUrl();
 
-  return !base || base === '/' || url.indexOf(base) >= 0 ?
-    url :
-    `${base}/${url}`;
+  return !base || base === '/' || url.indexOf(base) >= 0
+    ? url
+    : `${base}/${url}`;
 }
 
 /**
@@ -47,7 +46,11 @@ export function getImgSrc(url) {
  * @param {Array} [secondArray=[]]
  * @param {Function} [selector=i => i.id]
  */
-export function Merge(fistArray = [], secondArray = [], selector = i => i.id) {
+export function Merge(
+  fistArray = [],
+  secondArray = [],
+  selector = (i: any) => i.id
+) {
   const firstQuery = linq.from(fistArray);
   const secondQuery = linq.from(secondArray);
 
@@ -67,27 +70,27 @@ export function Merge(fistArray = [], secondArray = [], selector = i => i.id) {
     .union(news)
     .toArray();
 }
-export function getAvatar(avatar) {
-  const tmp = avatar ? (avatar.includes('data:image') ? avatar : `data:image/png;base64,${avatar}`) : Default.DefaultAvatar;
+export function getAvatar(avatar: string): string {
+  const tmp = avatar
+    ? avatar.includes('data:image')
+      ? avatar
+      : `data:image/png;base64,${avatar}`
+    : Default.DefaultAvatar;
   return tmp;
 }
 
-export function isValidEmail(email) {
-  if (
-    email &&
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
-  ) {
+export function isValidEmail(email: string): boolean {
+  if (email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
     return false;
   }
   return true;
 }
 
-export function convertToFormData(object) {
-  if (object) {
-    const formData = new FormData();
-    for (var key in object) {
-      formData.append(key, object[key]);
-    }
-    return formData;
-  }
+export function convertToFormData(object: any): FormData | undefined {
+  if (!object) return undefined;
+
+  const formData = new FormData();
+  for (var key in object) formData.append(key, object[key]);
+
+  return formData;
 }
