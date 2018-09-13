@@ -22,28 +22,40 @@ import Unarchive from '@material-ui/icons/Unarchive';
 
 import Loader from '../views/loaders';
 
-const DashboardPage = Loader(() => import('../views/Dashboard/Dashboard.jsx'));
+const DashboardPage = Loader(() =>
+  import(/* webpackChunkName: "DashboardView" */ '../views/Dashboard/Dashboard.jsx')
+);
 
 const UserListing = Loader(() =>
-  import('../views/UserProfile/UserListing.jsx')
+  import(/* webpackChunkName: "UserListingView" */ '../views/UserProfile/UserListing.jsx')
 );
 
-const TableList = Loader(() => import('../views/TableList/TableList.jsx'));
+const TableList = Loader(() =>
+  import(/* webpackChunkName: "TableListView" */ '../views/TableList/TableList.jsx')
+);
 
-const Typography = Loader(() => import('../views/Typography/Typography.jsx'));
+const Typography = Loader(() =>
+  import(/* webpackChunkName: "TypographyView" */ '../views/Typography/Typography.jsx')
+);
 
-const Icons = Loader(() => import('../views/Icons/Icons.jsx'));
+const Icons = Loader(() =>
+  import(/* webpackChunkName: "IconsView" */ '../views/Icons/Icons.jsx')
+);
 
-const Maps = Loader(() => import('../views/Maps/Maps.jsx'));
+const Maps = Loader(() =>
+  import(/* webpackChunkName: "MapsView" */ '../views/Maps/Maps.jsx')
+);
 
 const NotificationsPage = Loader(() =>
-  import('../views/Notifications/Notifications.jsx')
+  import(/* webpackChunkName: "NotificationsView" */ '../views/Notifications/Notifications.jsx')
 );
 
-const MessageBoxPage = Loader(() => import('../views/MessageBox'));
+const MessageBoxPage = Loader(() =>
+  import(/* webpackChunkName: "MessageBoxView" */ '../views/MessageBox')
+);
 
 const UpgradeToPro = Loader(() =>
-  import('../views/UpgradeToPro/UpgradeToPro.jsx')
+  import(/* webpackChunkName: "UpgradeToProView" */ '../views/UpgradeToPro/UpgradeToPro.jsx')
 );
 
 export default [
