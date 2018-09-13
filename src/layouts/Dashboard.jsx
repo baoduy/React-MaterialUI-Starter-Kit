@@ -25,27 +25,26 @@ const logo = require('../assets/img/react_logo.svg');
 
 const switchRoutes = (
   <Switch>
-    {dashboardRoutes.map((prop, key) => {
-      if (prop.redirect)
-        return <Redirect from={prop.path} to={prop.to} key={key} />;
-      return <Route path={prop.path} component={prop.component} key={key} />;
-    })}
+    {dashboardRoutes.map(
+      (prop, key) =>
+        prop.redirect ? (
+          <Redirect from={prop.path} to={prop.to} key={key} />
+        ) : (
+          <Route path={prop.path} component={prop.component} key={key} />
+        )
+    )}
   </Switch>
 );
 
 //Connect component to Redux store.
 @connect(
-  state => {
-    return {
-      messageBox: state.messageBox || {},
-      notifications: state.notifications || []
-    };
-  },
-  dispatch => {
-    return {
-      actions: bindActionCreators(NotificationActions, dispatch)
-    };
-  }
+  state => ({
+    messageBox: state.messageBox || {},
+    notifications: state.notifications || []
+  }),
+  dispatch => ({
+    actions: bindActionCreators(NotificationActions, dispatch)
+  })
 )
 class App extends React.Component {
   constructor(props, context) {

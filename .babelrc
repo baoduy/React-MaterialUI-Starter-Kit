@@ -17,6 +17,7 @@
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-proposal-json-strings",
     "@babel/plugin-transform-async-to-generator",
+    "react-loadable/babel",
     [
       "import",
       {

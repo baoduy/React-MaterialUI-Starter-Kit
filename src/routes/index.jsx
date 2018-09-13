@@ -1,5 +1,6 @@
-import Dashboard from "../layouts/Dashboard.jsx";
+//import Dashboard from '../layouts/Dashboard.jsx';
+import Loader from '../views/loaders';
 
-const indexRoutes = [{ path: "/", component: Dashboard }];
+const Dashboard = Loader(() => import('../layouts/Dashboard.jsx'));
 
-export default indexRoutes;
+export default [{ path: '/', component: Dashboard }];

@@ -9,18 +9,44 @@ import Notifications from '@material-ui/icons/Notifications';
 import MessageBox from '@material-ui/icons/Message';
 import Unarchive from '@material-ui/icons/Unarchive';
 // core components/views
-import DashboardPage from '../views/Dashboard/Dashboard.jsx';
-import UserProfile from '../views/UserProfile/UserProfile.jsx';
-import UserListing from '../views/UserProfile/UserListing.jsx';
-import TableList from '../views/TableList/TableList.jsx';
-import Typography from '../views/Typography/Typography.jsx';
-import Icons from '../views/Icons/Icons.jsx';
-import Maps from '../views/Maps/Maps.jsx';
-import NotificationsPage from '../views/Notifications/Notifications.jsx';
-import MessageBoxPage from '../views/MessageBox';
-import UpgradeToPro from '../views/UpgradeToPro/UpgradeToPro.jsx';
+//import DashboardPage from '../views/Dashboard/Dashboard.jsx';
+//import UserProfile from '../views/UserProfile/UserProfile.jsx';
+//import UserListing from '../views/UserProfile/UserListing.jsx';
+//import TableList from '../views/TableList/TableList.jsx';
+//import Typography from '../views/Typography/Typography.jsx';
+//import Icons from '../views/Icons/Icons.jsx';
+//import Maps from '../views/Maps/Maps.jsx';
+//import NotificationsPage from '../views/Notifications/Notifications.jsx';
+//import MessageBoxPage from '../views/MessageBox';
+//import UpgradeToPro from '../views/UpgradeToPro/UpgradeToPro.jsx';
 
-const dashboardRoutes = [
+import Loader from '../views/loaders';
+
+const DashboardPage = Loader(() => import('../views/Dashboard/Dashboard.jsx'));
+
+const UserListing = Loader(() =>
+  import('../views/UserProfile/UserListing.jsx')
+);
+
+const TableList = Loader(() => import('../views/TableList/TableList.jsx'));
+
+const Typography = Loader(() => import('../views/Typography/Typography.jsx'));
+
+const Icons = Loader(() => import('../views/Icons/Icons.jsx'));
+
+const Maps = Loader(() => import('../views/Maps/Maps.jsx'));
+
+const NotificationsPage = Loader(() =>
+  import('../views/Notifications/Notifications.jsx')
+);
+
+const MessageBoxPage = Loader(() => import('../views/MessageBox'));
+
+const UpgradeToPro = Loader(() =>
+  import('../views/UpgradeToPro/UpgradeToPro.jsx')
+);
+
+export default [
   {
     path: '/dashboard',
     sidebarName: 'Dashboard',
@@ -86,5 +112,3 @@ const dashboardRoutes = [
   },
   { redirect: true, path: '/', to: '/dashboard', navbarName: 'Redirect' }
 ];
-
-export default dashboardRoutes;
