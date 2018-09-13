@@ -4,7 +4,10 @@ import loading from './ComponentLoader';
 const Loader = (loader: any) =>
   Loadable({
     loader,
-    loading
+    loading,
+    /* devblock:start */
+    delay: 1000
+    /* devblock:end */
   });
 
 export default Loader;

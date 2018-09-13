@@ -1,21 +1,13 @@
-# Webpack Strip Block
+# webpack-remove-block-loader
 
-Webpack loader to strip blocks of code marked by special comment tags. Useful for removing code that you don't want in your production webpack bundle (e.g. verbose console warnings, etc).
+The `webpack-remove-block-loader` is Webpack loader to strip blocks of code marked by special comment tags. Useful for removing code that you don't want in your production webpack bundle (e.g. verbose console warnings, etc).
 
-Example:
-In your client js source files:
+Example: the code in side `/* PrdDeletion:start */` and `/* PrdDeletion:end */` will be removed in PRD bundle.
 
 ```javascript
-var makeFoo(bar, baz) {
-    // The following code will be stripped with our webpack loader
-    /* develblock:start */
-    if (bar instanceof Bar !== true) {
-        throw new Error('makeFoo: bar param is required and must be instance of Bar');
-    }
-    /* develblock:end */
-
-    // This code would remain
-    return new Foo(bar, baz);
+  /* devblock:start */
+  console.log(`base URL is ${base}`);
+  /* devblock:end */
 }
 ```
 
@@ -30,9 +22,15 @@ var makeFoo(bar, baz) {
    ```json
    {
         "test": /\.(js|jsx|ts|tsx)$/,
-        "enforce": 'pre',
-        //exclude: /(node_modules|bower_components|\.spec\.js)/,
-        "use": ['webpack-strip-block']
+        //exclude: /node_modules/,
+        "use": [
+          {
+            "loader": 'webpack-remove-block-loader',
+            "options": {
+              "active": !devMode,
+            }
+          }
+        ]
     },
    ```
 

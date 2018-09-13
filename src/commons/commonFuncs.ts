@@ -6,7 +6,7 @@ import Default from './constants.js';
 //correct URL for Reserved proxy
 //Get the millisecond of current time.
 
-export function GetBaseUrl() {
+export const GetBaseUrl = () => {
   const key = 'BASE_URL';
 
   const base: string =
@@ -15,10 +15,13 @@ export function GetBaseUrl() {
     '/';
 
   window.sessionStorage.setItem(key, base);
+
+  /* devblock:start */
   console.log(`base URL is ${base}`);
+  /* devblock:end */
 
   return base;
-}
+};
 
 export const newGuid = () => uuidv4();
 
