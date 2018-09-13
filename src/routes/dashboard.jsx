@@ -20,59 +20,33 @@ import Unarchive from '@material-ui/icons/Unarchive';
 //import MessageBoxPage from '../views/MessageBox';
 //import UpgradeToPro from '../views/UpgradeToPro/UpgradeToPro.jsx';
 
-import Loadable from 'react-loadable';
-import loading from '../views/loaders/ComponentLoader';
+import Loader from '../views/loaders';
 
-const DashboardPage = Loadable({
-  loader: () => import('../views/Dashboard/Dashboard.jsx'),
-  loading,
-  /* develblock:start */
-  //Running on DEV environment we will take delay for testing purpose.
-  delay: 1000
-  /* develblock:end */
-});
+const DashboardPage = Loader(() => import('../views/Dashboard/Dashboard.jsx'));
 
-const UserListing = Loadable({
-  loader: () => import('../views/UserProfile/UserListing.jsx'),
-  loading
-});
+const UserListing = Loader(() =>
+  import('../views/UserProfile/UserListing.jsx')
+);
 
-const TableList = Loadable({
-  loader: () => import('../views/TableList/TableList.jsx'),
-  loading
-});
+const TableList = Loader(() => import('../views/TableList/TableList.jsx'));
 
-const Typography = Loadable({
-  loader: () => import('../views/Typography/Typography.jsx'),
-  loading
-});
+const Typography = Loader(() => import('../views/Typography/Typography.jsx'));
 
-const Icons = Loadable({
-  loader: () => import('../views/Icons/Icons.jsx'),
-  loading
-});
+const Icons = Loader(() => import('../views/Icons/Icons.jsx'));
 
-const Maps = Loadable({
-  loader: () => import('../views/Maps/Maps.jsx'),
-  loading
-});
+const Maps = Loader(() => import('../views/Maps/Maps.jsx'));
 
-const NotificationsPage = Loadable({
-  loader: () => import('../views/Notifications/Notifications.jsx'),
-  loading
-});
+const NotificationsPage = Loader(() =>
+  import('../views/Notifications/Notifications.jsx')
+);
 
-const MessageBoxPage = Loadable({
-  loader: () => import('../views/MessageBox'),
-  loading
-});
+const MessageBoxPage = Loader(() => import('../views/MessageBox'));
 
-const UpgradeToPro = Loadable({
-  loader: () => import('../views/UpgradeToPro/UpgradeToPro.jsx'),
-  loading
-});
+const UpgradeToPro = Loader(() =>
+  import('../views/UpgradeToPro/UpgradeToPro.jsx')
+);
 
-const dashboardRoutes = [
+export default [
   {
     path: '/dashboard',
     sidebarName: 'Dashboard',
@@ -138,5 +112,3 @@ const dashboardRoutes = [
   },
   { redirect: true, path: '/', to: '/dashboard', navbarName: 'Redirect' }
 ];
-
-export default dashboardRoutes;

@@ -13,9 +13,7 @@ import NotificationType from '../components/Notification/NotificationType';
 //Because it needs to connect to Redux actions to send the notification.
 @connect(
   undefined,
-  dispatch => {
-    return { actions: bindActionCreators(NotificationActions, dispatch) };
-  }
+  dispatch => ({ actions: bindActionCreators(NotificationActions, dispatch) })
 )
 export default class ExceptionHandler extends React.Component {
   constructor(props, context) {
