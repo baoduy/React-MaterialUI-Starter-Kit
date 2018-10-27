@@ -1,18 +1,18 @@
-import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Hidden from "@material-ui/core/Hidden";
+import withStyles from '@material-ui/core/styles/withStyles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Hidden from '@material-ui/core/Hidden';
 // @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
+import Menu from '@material-ui/icons/Menu';
 // core components
-import HeaderLinks from "./HeaderLinks";
+import HeaderLinks from './HeaderLinks';
 
-import headerStyle from "./headerStyle.jsx";
+import headerStyle from './headerStyle.jsx';
 
 function Header({
   classes,
@@ -35,7 +35,7 @@ function Header({
   }
 
   const appBarClasses = classNames({
-    [" " + classes[color]]: color
+    [' ' + classes[color]]: color
   });
   return (
     <AppBar className={classes.appBar + appBarClasses}>
@@ -64,7 +64,7 @@ function Header({
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
+  color: PropTypes.oneOf(['primary', 'info', 'success', 'warning', 'danger']),
   notificationBackgroundImage: PropTypes.string,
   notifications: PropTypes.array,
   onNotificationChange: PropTypes.func.isRequired,

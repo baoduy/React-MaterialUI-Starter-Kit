@@ -31,7 +31,7 @@ export default class ExceptionHandler extends React.Component {
   }
 
   /**
-   * Exceptio handling for any error throw by any children control.
+   * Exception handling for any error throw by any children control.
    *
    * @memberof ExceptionHandler
    */
