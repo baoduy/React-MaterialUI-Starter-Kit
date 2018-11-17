@@ -111,7 +111,7 @@
     "react-hot-loader": "^4.3.11",
     "redux-devtools-extension": "^2.13.5",
     "redux-immutable-state-invariant": "^2.1.0",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "size-plugin": "^1.0.1",
