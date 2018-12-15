@@ -82,7 +82,7 @@
     "bundlesize": "^0.17.0",
     "compression": "^1.7.3",
     "copy-webpack-plugin": "^4.5.4",
-    "css-loader": "^1.0.0",
+    "css-loader": "^2.0.0",
     "cssnano": "^4.1.7",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
