@@ -6,7 +6,12 @@
 [![PeerDependencies](https://img.shields.io/david/peer/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit?type=peer)
 [![Dependencies](https://img.shields.io/david/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit)
 [![DevDependencies](https://img.shields.io/david/dev/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit?type=develop)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d65b2073-05b2-4f0c-80b4-595b560b57f3/deploy-status)](https://app.netlify.com/sites/pedantic-hypatia-cf3a12/deploys)
 
 ## Documentation
 
 Refer [here](/docs/index.md) for details
+
+## Demo
+
+[react.drunkcoding.net](http://react.drunkcoding.net/dashboard)
