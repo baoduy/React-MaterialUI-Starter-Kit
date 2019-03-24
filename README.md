@@ -14,4 +14,4 @@ Refer [here](/docs/index.md) for details
 
 ## Demo
 
-[react.drunkcoding.net](http://react.drunkcoding.net/dashboard)
+[react.drunkcoding.net](http://react.drunkcoding.net)
