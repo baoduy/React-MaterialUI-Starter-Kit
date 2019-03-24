@@ -7,8 +7,6 @@
 [![Dependencies](https://img.shields.io/david/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit)
 [![DevDependencies](https://img.shields.io/david/dev/baoduy/React-MaterialUI-Started-Kit.svg)](https://david-dm.org/baoduy/React-MaterialUI-Started-Kit?type=develop)
 
-The details documents is being added into docs folder and hosted in [here](https://baoduy.github.io/React-MaterialUI-Starter-Kit/).
+## Documentation
 
-## See also
-
-- [React-Bootstrap-Started-Kit](https://github.com/baoduy/React-Bootstrap-Started-Kit)
+Refer [here](/docs/index.md) for details

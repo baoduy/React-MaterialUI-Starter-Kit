@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createBrowserHistory } from 'history';
-import { Router, Route, Switch, BrowserRouter } from 'react-router-dom';
-import Provider from 'react-redux-thunk-store';
-import ExceptionHandler from './layouts/ExceptionHandler';
-import { GetBaseUrl } from './commons/commonFuncs';
-
 //Sample to import LESS or SCSS
 //Style-sheets
 import './assets/scss/material-dashboard-react.scss';
+
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
+
+import ExceptionHandler from './layouts/ExceptionHandler';
+import { GetBaseUrl } from './commons/commonFuncs';
+import Provider from 'react-redux-thunk-store';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createBrowserHistory } from 'history';
+import indexRoutes from 'routes/index.jsx';
+import reducers from './reducers';
+
 //import './assets/less/material-dashboard-react.less';
 //Sample to import LESS or SCSS
-
-import reducers from './reducers';
-import indexRoutes from 'routes/index.jsx';
 
 //indicate whether application is running on PRD or not
 const isPrd = process.env.NODE_ENV === 'production';

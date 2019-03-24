@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 //import { Manager, Target, Popper } from "react-popper";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Hidden from "@material-ui/core/Hidden";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Hidden from '@material-ui/core/Hidden';
 // @material-ui/icons
-import Person from "@material-ui/icons/Person";
-import Dashboard from "@material-ui/icons/Dashboard";
-import Search from "@material-ui/icons/Search";
+import Person from '@material-ui/icons/Person';
+import Dashboard from '@material-ui/icons/Dashboard';
+import Search from '@material-ui/icons/Search';
 // core components
-import CustomInput from "../CustomInput/CustomInput.jsx";
-import Button from "../CustomButtons/Button.jsx";
+import CustomInput from '../CustomInput/CustomInput.jsx';
+import Button from '../CustomButtons/Button.jsx';
 
-import NotificationCenter from "../../components/Notification";
-import headerLinksStyle from "./headerLinksStyle";
+import NotificationCenter from '../../components/Notification';
+import headerLinksStyle from './headerLinksStyle';
 
 function HeaderLinks({
   classes,
@@ -27,12 +27,12 @@ function HeaderLinks({
       <div className={classes.searchWrapper}>
         <CustomInput
           formControlProps={{
-            className: classes.margin + " " + classes.search
+            className: classes.margin + ' ' + classes.search
           }}
           inputProps={{
-            placeholder: "Search",
+            placeholder: 'Search',
             inputProps: {
-              "aria-label": "Search"
+              'aria-label': 'Search'
             }
           }}
         />
@@ -41,7 +41,7 @@ function HeaderLinks({
         </Button>
       </div>
       <Button
-        color={window.innerWidth > 959 ? "transparent" : "white"}
+        color={window.innerWidth > 959 ? 'transparent' : 'white'}
         justIcon={window.innerWidth > 959}
         simple={!(window.innerWidth > 959)}
         aria-label="Dashboard"
@@ -55,7 +55,7 @@ function HeaderLinks({
       <NotificationCenter
         {...others}
         ButtonProps={{
-          color: window.innerWidth > 959 ? "transparent" : "white",
+          color: window.innerWidth > 959 ? 'transparent' : 'white',
           justIcon: window.innerWidth > 959,
           simple: !(window.innerWidth > 959),
           classes: {
@@ -69,7 +69,7 @@ function HeaderLinks({
         image={notificationBackgroundImage}
       />
       <Button
-        color={window.innerWidth > 959 ? "transparent" : "white"}
+        color={window.innerWidth > 959 ? 'transparent' : 'white'}
         justIcon={window.innerWidth > 959}
         simple={!(window.innerWidth > 959)}
         aria-label="Person"

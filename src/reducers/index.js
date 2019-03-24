@@ -1,18 +1,8 @@
-import {
-  Reducer as dashBoardReducers
-} from '../actions/Dashboard';
-import {
-  Reducer as MessageBoxReducer
-} from '../actions/MessageBox';
-import {
-  Reducer as NotificationReducer
-} from '../actions/Notifications';
-import {
-  Reducer as UserReducer
-} from '../actions/Users';
-import {
-  reducer as formReducer
-} from 'redux-form';
+import { Reducer as dashBoardReducers } from '../actions/Dashboard';
+import { Reducer as MessageBoxReducer } from '../actions/MessageBox';
+import { Reducer as NotificationReducer } from '../actions/Notifications';
+import { Reducer as UserReducer } from '../actions/Users';
+import { reducer as formReducer } from 'redux-form';
 
 const reducers = {
   charts: dashBoardReducers.chartsReducer,
