@@ -87,7 +87,7 @@ class App extends React.Component {
 
         <Sidebar
           routes={dashboardRoutes}
-          logoText={'Creative Tim'}
+          logoText={'Drunkcoding'}
           logo={logo}
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}
