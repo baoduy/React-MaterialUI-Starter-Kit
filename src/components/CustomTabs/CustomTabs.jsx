@@ -1,20 +1,18 @@
-import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
-
-// material-ui components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
 // core components
-import Card from "../Card/Card.jsx";
-import CardBody from "../Card/CardBody.jsx";
-import CardHeader from "../Card/CardHeader.jsx";
-import LinearProgress from "@material-ui/core/LinearProgress";
-
-import customTabsStyle from "./customTabsStyle.jsx";
+import Card from '../Card/Card.jsx';
+import CardBody from '../Card/CardBody.jsx';
+import CardHeader from '../Card/CardHeader.jsx';
+import LinearProgress from '@material-ui/core/LinearProgress';
+// nodejs library to set properties for components
+import PropTypes from 'prop-types';
+import React from 'react';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
+// nodejs library that concatenates classes
+import classNames from 'classnames';
+import customTabsStyle from './customTabsStyle.jsx';
+// material-ui components
+import withStyles from '@material-ui/core/styles/withStyles';
 
 class CustomTabs extends React.Component {
   state = {
@@ -52,7 +50,7 @@ class CustomTabs extends React.Component {
               root: classes.tabsRoot,
               indicator: classes.displayNone
             }}
-            scrollable
+            variant="scrollable"
             scrollButtons="auto"
           >
             {tabs.map((prop, key) => {
@@ -96,11 +94,11 @@ class CustomTabs extends React.Component {
 CustomTabs.propTypes = {
   classes: PropTypes.object.isRequired,
   headerColor: PropTypes.oneOf([
-    "warning",
-    "success",
-    "danger",
-    "info",
-    "primary"
+    'warning',
+    'success',
+    'danger',
+    'info',
+    'primary'
   ]),
   title: PropTypes.string,
   tabs: PropTypes.arrayOf(
