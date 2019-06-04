@@ -1,24 +1,26 @@
-import React from 'react';
+import {
+  renderInputFile,
+  renderTextField
+} from '../../commons/commonControlRenderers';
+
+import Avatar from '@material-ui/core/Avatar';
+import Badge from '@material-ui/core/Badge';
 import Button from '@material-ui/core/Button';
+import Card from '../Card/Card';
+import CardBody from '../Card/CardBody';
+import CardHeader from '../Card/CardHeader';
+import Close from '@material-ui/icons/Close';
+import { Field } from 'redux-form';
 import Grid from '@material-ui/core/Grid';
 import GridItem from '../Grid/GridItem';
-import Card from '../Card/Card';
-import CardHeader from '../Card/CardHeader';
-import CardBody from '../Card/CardBody';
-import Close from '@material-ui/icons/Close';
-import Save from '@material-ui/icons/Save';
-import Avatar from '@material-ui/core/Avatar';
-import { getAvatar } from '../../commons/commonFuncs';
-import Badge from '@material-ui/core/Badge';
-import Update from '@material-ui/icons/CloudUpload';
-import withStyles from '@material-ui/core/styles/withStyles';
-import userStyles from './userFormStyles';
 import PropTypes from 'prop-types';
-import { Field } from 'redux-form';
-import {
-  renderTextField,
-  renderInputFile
-} from '../../commons/commonControlRenderers';
+import React from 'react';
+import Save from '@material-ui/icons/Save';
+import Update from '@material-ui/icons/CloudUpload';
+import { getAvatar } from '../../commons/commonFuncs';
+import userStyles from './userFormStyles';
+import withStyles from '@material-ui/core/styles/withStyles';
+
 function UserForm({
   user,
   handleSubmit,

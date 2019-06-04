@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render WithStyles(NotificationCenter) tests Render 3 items 1`] = `
+exports[`Render Notification tests Render 3 items 1`] = `
 Array [
   Array [
     <button

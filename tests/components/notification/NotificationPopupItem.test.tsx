@@ -1,12 +1,12 @@
 /*eslint no-console: ["off", { allow: ["warn", "error"] }] */
 
-import React from "react";
-import { mount } from "enzyme";
+import * as React from 'react';
 
-import NotificationPopupItem from "../../../src/components/Notification/NotificationPopupItem";
-import Type from "../../../src/components/Notification/NotificationType";
+import NotificationPopupItem from '../../../src/components/Notification/NotificationPopupItem';
+import Type from '../../../src/components/Notification/NotificationType';
+import { mount } from 'enzyme';
 
-const render = ({ onClose, ...rest } = {}) => {
+const render = ({ onClose, ...rest }: any = {}) => {
   if (!onClose) onClose = () => true;
 
   const item = mount(
@@ -21,11 +21,11 @@ const render = ({ onClose, ...rest } = {}) => {
   return item;
 };
 
-const promiseComponent = ({ displayIn, ...rest }) =>
+const promiseComponent = ({ displayIn, ...rest }: any) =>
   new Promise((resolve, reject) => {
     let called = false;
 
-    const item = render({
+    render({
       ...rest,
       displayIn: displayIn,
       onClose: () => {
@@ -39,18 +39,18 @@ const promiseComponent = ({ displayIn, ...rest }) =>
     }, displayIn + 2);
   });
 
-describe("Testing NotificationPopupItem component", () => {
-  test("onClose will be called", () => {
+describe('Testing NotificationPopupItem component', () => {
+  test('onClose will be called', () => {
     const pm = promiseComponent({ displayIn: 2 });
     return expect(pm).resolves.toBe(true);
   });
 
-  test("if displayIn is 0 the onClose wont be called", () => {
+  test('if displayIn is 0 the onClose wont be called', () => {
     const pm = promiseComponent({ displayIn: 0 });
     return expect(pm).rejects.toBe(false);
   });
 
-  test("update displayIn from 0 to 5 the onClose will be called", async () => {
+  test('update displayIn from 0 to 5 the onClose will be called', async () => {
     const item = render({ displayIn: 0 });
 
     //DisplayIn = 0
@@ -70,55 +70,55 @@ describe("Testing NotificationPopupItem component", () => {
     await expect(p2).resolves.toBe(true);
   });
 
-  test("throw exception when set unknown Type", () => {
+  test('throw exception when set unknown Type', () => {
     const original = console.error;
     console.error = jest.fn();
-    render({ type: "Hello" });
+    render({ type: 'Hello' });
 
     expect(console.error).toHaveBeenCalled();
     console.error = original;
   });
 
-  test("throw exception when set icon Type", () => {
+  test('throw exception when set icon Type', () => {
     const original = console.error;
     console.error = jest.fn();
-    render({ icon: "Hello" });
+    render({ icon: 'Hello' });
 
     expect(console.error).toHaveBeenCalled();
     console.error = original;
   });
 
-  test("onClose must be a func", () => {
+  test('onClose must be a func', () => {
     const original = console.error;
     console.error = jest.fn();
-    render({ onClose: "Hello" });
+    render({ onClose: 'Hello' });
 
     expect(console.error).toHaveBeenCalled();
     console.error = original;
   });
 
-  test("onClick must be a func", () => {
+  test('onClick must be a func', () => {
     const original = console.error;
     console.error = jest.fn();
-    render({ onClick: "Hello" });
+    render({ onClick: 'Hello' });
 
     expect(console.error).toHaveBeenCalled();
     console.error = original;
   });
 
-  test("onClick test", () => {
+  test('onClick test', () => {
     var onClick = jest.fn();
     const wrapper = render({ onClick });
 
     const btn = wrapper.findWhere(
-      b => b.type() === "div" && b.prop("onClick") === onClick
+      b => b.type() === 'div' && b.prop('onClick') === onClick
     );
 
     expect(wrapper).toMatchSnapshot();
     //Message button and Close button
     expect(btn.length).toBe(1);
 
-    btn.simulate("click");
+    btn.simulate('click');
     expect(onClick).toBeCalled();
   });
 
@@ -151,7 +151,7 @@ describe("Testing NotificationPopupItem component", () => {
     const icon = <div id="icon">Duy</div>;
     const item = render({ type: Type.WARNING, icon });
 
-    expect(item.find("#icon").length).toBe(1);
+    expect(item.find('#icon').length).toBe(1);
     expect(item).toMatchSnapshot();
   });
 

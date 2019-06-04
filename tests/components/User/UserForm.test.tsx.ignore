@@ -1,10 +1,16 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import UserForm from '../../../src/components/User/UserForm';
+import * as React from 'react';
 
-const render = ({ user, onClose, onSave } = {}) => {
+import UserForm from '../../../src/components/User/UserForm';
+import { mount } from 'enzyme';
+
+const render = ({ user, onClose, onSave }: any = {}) => {
   const item = mount(
-    <UserForm user={user} onClose={onClose} onSave={onSave} />
+    <UserForm
+      user={user}
+      onClose={onClose}
+      onSave={onSave}
+      handleSubmit={() => {}}
+    />
   );
 
   if (item.mount) item.mount();

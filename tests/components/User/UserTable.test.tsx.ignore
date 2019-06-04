@@ -1,6 +1,7 @@
-import React from 'react';
-import { mount } from 'enzyme';
+import * as React from 'react';
+
 import UserTable from '../../../src/components/User/UserTable';
+import { mount } from 'enzyme';
 
 const render = ({
   data,
@@ -9,7 +10,7 @@ const render = ({
   onDeleteClick,
   columns,
   defaultPageSize
-} = {}) => {
+}: any = {}) => {
   const item = mount(
     <UserTable
       data={data}
@@ -24,11 +25,13 @@ const render = ({
   if (item.mount) item.mount();
   return item;
 };
+
 describe('Testing UserTable', () => {
   test('render component', () => {
     const item = render();
     expect(item).toMatchSnapshot();
   });
+
   test('on click add', () => {
     const onAddClick = jest.fn();
     const wrapper = render({ onAddClick: onAddClick });
@@ -37,6 +40,7 @@ describe('Testing UserTable', () => {
     btn.simulate('click');
     expect(onAddClick).toBeCalled();
   });
+
   test('on click edit', () => {
     const onEditClick = jest.fn();
     const data = [{ name: 'tuan' }];
@@ -51,11 +55,13 @@ describe('Testing UserTable', () => {
       data: data,
       columns: columns
     });
+
     const btn = wrapper.find('button[title="Edit"]');
     expect(wrapper).toMatchSnapshot();
-    btn.simulate('click');
+    if (btn) btn.simulate('click');
     expect(onEditClick).toBeCalled();
   });
+
   test('on click delete', () => {
     const onDeleteClick = jest.fn();
     const data = [{ name: 'tuan' }];
@@ -71,6 +77,7 @@ describe('Testing UserTable', () => {
       columns: columns
     });
     const btn = wrapper.find('button[title="Delete"]');
+
     expect(wrapper).toMatchSnapshot();
     btn.simulate('click');
     expect(onDeleteClick).toBeCalled();

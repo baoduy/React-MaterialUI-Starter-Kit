@@ -1,3 +1,5 @@
+require('jest-localstorage-mock');
+
 import { getImgSrc, newGuid } from '../../src/commons/commonFuncs';
 
 window.sessionStorage.setItem('BASE_URL', '/ReactJs');
@@ -18,7 +20,7 @@ test('getImgSrc should not add basename to url', () => {
 });
 
 test('getImgSrc should return original object', () => {
-  const url = { a: 1 };
+  const url: any = { a: 1 };
   expect(getImgSrc(url)).toBe(url);
 });
 

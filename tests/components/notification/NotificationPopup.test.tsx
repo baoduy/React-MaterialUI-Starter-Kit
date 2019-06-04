@@ -1,13 +1,12 @@
 /*eslint no-console: ["off", { allow: ["warn", "error"] }] */
 
-import React from "react";
-import ReactTestUtils from "react-dom/test-utils";
-import { mount } from "enzyme";
+import * as React from 'react';
 
-import NotificationPopup from "../../../src/components/Notification/NotificationPopup";
-import Type from "../../../src/components/Notification/NotificationType";
+import NotificationPopup from '../../../src/components/Notification/NotificationPopup';
+import Type from '../../../src/components/Notification/NotificationType';
+import { mount } from 'enzyme';
 
-const render = ({ callBack, ...rest } = {}) => {
+const render = ({ callBack, ...rest }: any = {}) => {
   if (!callBack) callBack = () => true;
 
   const item = mount(<NotificationPopup {...rest} onClose={callBack} />);
@@ -16,30 +15,30 @@ const render = ({ callBack, ...rest } = {}) => {
   return item;
 };
 
-describe(`Render ${NotificationPopup.displayName} tests`, () => {
-  test("Render 3 items", () => {
+describe(`Render NotificationPopup tests`, () => {
+  test('Render 3 items', () => {
     const item = render({
       dataSource: [
         {
           type: Type.CONFIRM,
-          message: "Hello"
+          message: 'Hello'
         },
         {
           type: Type.INFO,
-          message: "Hello"
+          message: 'Hello'
         },
         {
           type: Type.DANGER,
-          message: "Hello"
+          message: 'Hello'
         }
       ]
     });
 
     expect(item).toMatchSnapshot();
-    expect(item.find("svg").length).toBe(6);
+    expect(item.find('svg').length).toBe(6);
   });
 
-  test("Error when no DataSource", () => {
+  test('Error when no DataSource', () => {
     const original = console.error;
     console.error = jest.fn();
     render();
@@ -48,7 +47,7 @@ describe(`Render ${NotificationPopup.displayName} tests`, () => {
     console.error = original;
   });
 
-  test("Error when DataSource is wrong type", () => {
+  test('Error when DataSource is wrong type', () => {
     const original = console.error;
     console.error = jest.fn();
     render({ dataSource: [{}, {}, {}] });
@@ -57,20 +56,20 @@ describe(`Render ${NotificationPopup.displayName} tests`, () => {
     console.error = original;
   });
 
-  test("onClose called", () => {
+  test('onClose called', () => {
     const item = render({
       dataSource: [
         {
           type: Type.CONFIRM,
-          message: "Hello"
+          message: 'Hello'
         },
         {
           type: Type.INFO,
-          message: "Hello"
+          message: 'Hello'
         },
         {
           type: Type.DANGER,
-          message: "Hello",
+          message: 'Hello',
           onClose: () => true
         }
       ],

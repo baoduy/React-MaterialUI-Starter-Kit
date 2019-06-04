@@ -1,17 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
-import NotificationPanel from "./NotificationPanel";
-import NotificationPopup from "./NotificationPopup";
-import NotificationStatus from "./NotificationStatus";
-import { Notifications, NotificationsActive } from "@material-ui/icons";
-import { Badge, Tooltip } from "@material-ui/core";
-import withStyles from '@material-ui/core/styles/withStyles';
-import Button from "../CustomButtons/Button";
-import NotificationCenterStyle from "./jss";
-import NotificationItemPropTypes from "./NotificationItemPropTypes";
-import linq from "linq";
+import { Badge, Tooltip } from '@material-ui/core';
+import { Notifications, NotificationsActive } from '@material-ui/icons';
 //helper
-import { getUnreadItems, getItemsForPopup } from "./helper";
+import { getItemsForPopup, getUnreadItems } from './helper';
+
+import Button from '../CustomButtons/Button';
+import NotificationCenterStyle from './jss';
+import NotificationItemPropTypes from './NotificationItemPropTypes';
+import NotificationPanel from './NotificationPanel';
+import NotificationPopup from './NotificationPopup';
+import NotificationStatus from './NotificationStatus';
+import PropTypes from 'prop-types';
+import React from 'react';
+import linq from 'linq';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 function defaultButtonComponent({
   onClick,
@@ -32,7 +33,7 @@ function defaultButtonComponent({
           color={badgeColor}
         >
           <NotificationsActive
-            className={classes.icon + " " + classes.iconActive}
+            className={classes.icon + ' ' + classes.iconActive}
           />
         </Badge>
       )}
@@ -172,10 +173,10 @@ export default class NotificationCenter extends React.Component {
 NotificationCenter.defaultProps = {
   ButtonComponent: defaultButtonComponent,
   NotificationPanelComponent: defaultNotificationPanelComponent,
-  badgeColor: "secondary",
-  unReadBadgeColor: "error",
+  badgeColor: 'secondary',
+  unReadBadgeColor: 'error',
   items: [],
-  title: "Notification Center",
+  title: 'Notification Center',
   ButtonProps: {},
   NotificationPanelProps: {},
   displayIn: 3000,
@@ -198,8 +199,8 @@ NotificationCenter.propTypes = {
   subsequentDelay: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
-  badgeColor: PropTypes.oneOf(["primary", "secondary", "error"]),
-  unReadBadgeColor: PropTypes.oneOf(["primary", "secondary", "error"]),
+  badgeColor: PropTypes.oneOf(['primary', 'secondary', 'error']),
+  unReadBadgeColor: PropTypes.oneOf(['primary', 'secondary', 'error']),
   //The background image of Notification Panel
   image: PropTypes.string
 };
