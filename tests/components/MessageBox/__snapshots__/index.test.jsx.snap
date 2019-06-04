@@ -1,694 +1,2525 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testing WithStyles(MessageBox) component render confirm 1`] = `
-<div
-  aria-labelledby="message-box-title-confirm"
-  className="MuiModal-root-26 MuiDialog-root-15 MuiDialog-scrollPaper-16"
-  role="dialog"
->
-  <div
-    aria-hidden="true"
-    className="MuiBackdrop-root-28"
-    onClick={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-  />
-  <div
-    className="MuiPaper-root-30 MuiPaper-elevation24-56 MuiPaper-rounded-31 MuiDialog-paper-18 MessageBox-dialog-1 MuiDialog-paperScrollPaper-19"
-    role="document"
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-    tabIndex="-1"
-  >
-    <h2
-      className="MuiTypography-root-57 MuiTypography-title-63 MessageBox-confirm-5"
-      id="message-box-title-confirm"
-    >
-      Confirmation
-    </h2>
-    <div
-      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
+<Portal
+  containerInfo={
+    <body
+      style="overflow: hidden; padding-right: 0px;"
     >
       <div
-        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
       >
         <div
-          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
         >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-181 MessageBox-confirmIcon-6"
-            focusable="false"
-            style={
-              Object {
-                "float": "left",
-                "fontSize": 100,
-                "paddingTop": "5px",
-              }
-            }
-            viewBox="0 0 24 24"
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
           >
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-            />
-          </svg>
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="message-box-title-confirm"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-confirm-5"
+              id="message-box-title-confirm"
+            >
+              Confirmation
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-confirmIcon-6"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-raised-220 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="CANCEL"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Cancel
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <div
+    aria-labelledby="message-box-title-confirm"
+    className="MuiModal-root-29 MuiDialog-root-15"
+    onKeyDown={[Function]}
+    role="dialog"
+  >
+    <div
+      aria-hidden="true"
+      className="MuiBackdrop-root-31"
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    />
+    <div
+      className="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      role="document"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      tabIndex="-1"
+    >
+      <div
+        className="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+      >
+        <h2
+          className="MuiTypography-root-60 MuiTypography-title-66 MessageBox-confirm-5"
+          id="message-box-title-confirm"
+        >
+          Confirmation
+        </h2>
+        <div
+          className="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+        >
+          <div
+            className="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+          >
+            <div
+              className="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-195 MessageBox-confirmIcon-6"
+                focusable="false"
+                role="presentation"
+                style={
+                  Object {
+                    "float": "left",
+                    "fontSize": 100,
+                    "paddingTop": "5px",
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiGrid-item-98 GridItem-grid-194"
+            >
+              <p>
+                Hello
+              </p>
+            </div>
+          </div>
         </div>
         <div
-          className="MuiGrid-item-84 GridItem-grid-180"
+          className="MuiDialogActions-root-204"
         >
-          <p>
-            Hello
-          </p>
+          <button
+            className="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-raised-220 MessageBox-button-4 MuiDialogActions-action-205"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+            value="CANCEL"
+          >
+            <span
+              className="MuiButton-label-207"
+            >
+              Cancel
+            </span>
+            <span
+              className="MuiTouchRipple-root-235"
+            />
+          </button>
+          <button
+            autoFocus={true}
+            className="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+            value="OK"
+          >
+            <span
+              className="MuiButton-label-207"
+            >
+              Ok
+            </span>
+            <span
+              className="MuiTouchRipple-root-235"
+            />
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="MuiDialogActions-root-188"
-    >
-      <button
-        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-raised-202 MessageBox-button-4 MuiDialogActions-action-189"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-        value="CANCEL"
-      >
-        <span
-          className="MuiButton-label-191"
-        >
-          Cancel
-        </span>
-        <span
-          className="MuiTouchRipple-root-217"
-        />
-      </button>
-      <button
-        autoFocus={true}
-        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-        value="OK"
-      >
-        <span
-          className="MuiButton-label-191"
-        >
-          Ok
-        </span>
-        <span
-          className="MuiTouchRipple-root-217"
-        />
-      </button>
-    </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Testing WithStyles(MessageBox) component render danger 1`] = `
-<div
-  aria-labelledby="message-box-title-danger"
-  className="MuiModal-root-26 MuiDialog-root-15 MuiDialog-scrollPaper-16"
-  role="dialog"
->
-  <div
-    aria-hidden="true"
-    className="MuiBackdrop-root-28"
-    onClick={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-  />
-  <div
-    className="MuiPaper-root-30 MuiPaper-elevation24-56 MuiPaper-rounded-31 MuiDialog-paper-18 MessageBox-dialog-1 MuiDialog-paperScrollPaper-19"
-    role="document"
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-    tabIndex="-1"
-  >
-    <h2
-      className="MuiTypography-root-57 MuiTypography-title-63 MessageBox-danger-13"
-      id="message-box-title-danger"
-    >
-      Error
-    </h2>
-    <div
-      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
+<Portal
+  containerInfo={
+    <body
+      style="overflow: hidden; padding-right: 0px;"
     >
       <div
-        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
       >
         <div
-          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
         >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-181 MessageBox-dangerIcon-14"
-            focusable="false"
-            style={
-              Object {
-                "float": "left",
-                "fontSize": 100,
-                "paddingTop": "5px",
-              }
-            }
-            viewBox="0 0 24 24"
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
           >
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
-            />
-          </svg>
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-confirm"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-confirm-5"
+              id="message-box-title-confirm"
+            >
+              Confirmation
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-confirmIcon-6"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-raised-220 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="CANCEL"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Cancel
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="message-box-title-danger"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-danger-13"
+              id="message-box-title-danger"
+            >
+              Error
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-dangerIcon-14"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <div
+    aria-labelledby="message-box-title-danger"
+    className="MuiModal-root-29 MuiDialog-root-15"
+    onKeyDown={[Function]}
+    role="dialog"
+  >
+    <div
+      aria-hidden="true"
+      className="MuiBackdrop-root-31"
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    />
+    <div
+      className="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      role="document"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      tabIndex="-1"
+    >
+      <div
+        className="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+      >
+        <h2
+          className="MuiTypography-root-60 MuiTypography-title-66 MessageBox-danger-13"
+          id="message-box-title-danger"
+        >
+          Error
+        </h2>
+        <div
+          className="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+        >
+          <div
+            className="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+          >
+            <div
+              className="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-195 MessageBox-dangerIcon-14"
+                focusable="false"
+                role="presentation"
+                style={
+                  Object {
+                    "float": "left",
+                    "fontSize": 100,
+                    "paddingTop": "5px",
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiGrid-item-98 GridItem-grid-194"
+            >
+              <p>
+                Hello
+              </p>
+            </div>
+          </div>
         </div>
         <div
-          className="MuiGrid-item-84 GridItem-grid-180"
+          className="MuiDialogActions-root-204"
         >
-          <p>
-            Hello
-          </p>
+          <button
+            autoFocus={true}
+            className="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+            value="OK"
+          >
+            <span
+              className="MuiButton-label-207"
+            >
+              Ok
+            </span>
+            <span
+              className="MuiTouchRipple-root-235"
+            />
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="MuiDialogActions-root-188"
-    >
-      <button
-        autoFocus={true}
-        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-        value="OK"
-      >
-        <span
-          className="MuiButton-label-191"
-        >
-          Ok
-        </span>
-        <span
-          className="MuiTouchRipple-root-217"
-        />
-      </button>
-    </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Testing WithStyles(MessageBox) component render info 1`] = `
-<div
-  aria-labelledby="message-box-title-info"
-  className="MuiModal-root-26 MuiDialog-root-15 MuiDialog-scrollPaper-16"
-  role="dialog"
->
-  <div
-    aria-hidden="true"
-    className="MuiBackdrop-root-28"
-    onClick={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-  />
-  <div
-    className="MuiPaper-root-30 MuiPaper-elevation24-56 MuiPaper-rounded-31 MuiDialog-paper-18 MessageBox-dialog-1 MuiDialog-paperScrollPaper-19"
-    role="document"
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-    tabIndex="-1"
-  >
-    <h2
-      className="MuiTypography-root-57 MuiTypography-title-63 MessageBox-info-7"
-      id="message-box-title-info"
-    >
-      Information
-    </h2>
-    <div
-      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
+<Portal
+  containerInfo={
+    <body
+      style="overflow: hidden; padding-right: 0px;"
     >
       <div
-        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
       >
         <div
-          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
         >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-181 MessageBox-infoIcon-8"
-            focusable="false"
-            style={
-              Object {
-                "float": "left",
-                "fontSize": 100,
-                "paddingTop": "5px",
-              }
-            }
-            viewBox="0 0 24 24"
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
           >
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-            />
-          </svg>
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <div
+    aria-labelledby="message-box-title-info"
+    className="MuiModal-root-29 MuiDialog-root-15"
+    onKeyDown={[Function]}
+    role="dialog"
+  >
+    <div
+      aria-hidden="true"
+      className="MuiBackdrop-root-31"
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    />
+    <div
+      className="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      role="document"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      tabIndex="-1"
+    >
+      <div
+        className="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+      >
+        <h2
+          className="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+          id="message-box-title-info"
+        >
+          Information
+        </h2>
+        <div
+          className="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+        >
+          <div
+            className="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+          >
+            <div
+              className="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                focusable="false"
+                role="presentation"
+                style={
+                  Object {
+                    "float": "left",
+                    "fontSize": 100,
+                    "paddingTop": "5px",
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiGrid-item-98 GridItem-grid-194"
+            >
+              <p>
+                Hello
+              </p>
+            </div>
+          </div>
         </div>
         <div
-          className="MuiGrid-item-84 GridItem-grid-180"
+          className="MuiDialogActions-root-204"
         >
-          <p>
-            Hello
-          </p>
+          <button
+            autoFocus={true}
+            className="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+            value="OK"
+          >
+            <span
+              className="MuiButton-label-207"
+            >
+              Ok
+            </span>
+            <span
+              className="MuiTouchRipple-root-235"
+            />
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="MuiDialogActions-root-188"
-    >
-      <button
-        autoFocus={true}
-        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-        value="OK"
-      >
-        <span
-          className="MuiButton-label-191"
-        >
-          Ok
-        </span>
-        <span
-          className="MuiTouchRipple-root-217"
-        />
-      </button>
-    </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Testing WithStyles(MessageBox) component render success 1`] = `
-<div
-  aria-labelledby="message-box-title-success"
-  className="MuiModal-root-26 MuiDialog-root-15 MuiDialog-scrollPaper-16"
-  role="dialog"
->
-  <div
-    aria-hidden="true"
-    className="MuiBackdrop-root-28"
-    onClick={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-  />
-  <div
-    className="MuiPaper-root-30 MuiPaper-elevation24-56 MuiPaper-rounded-31 MuiDialog-paper-18 MessageBox-dialog-1 MuiDialog-paperScrollPaper-19"
-    role="document"
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-    tabIndex="-1"
-  >
-    <h2
-      className="MuiTypography-root-57 MuiTypography-title-63 MessageBox-success-9"
-      id="message-box-title-success"
-    >
-      Successfully
-    </h2>
-    <div
-      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
+<Portal
+  containerInfo={
+    <body
+      style="overflow: hidden; padding-right: 0px;"
     >
       <div
-        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
       >
         <div
-          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
         >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-181 MessageBox-successIcon-10"
-            focusable="false"
-            style={
-              Object {
-                "float": "left",
-                "fontSize": 100,
-                "paddingTop": "5px",
-              }
-            }
-            viewBox="0 0 24 24"
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
           >
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-            />
-          </svg>
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-confirm"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-confirm-5"
+              id="message-box-title-confirm"
+            >
+              Confirmation
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-confirmIcon-6"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-raised-220 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="CANCEL"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Cancel
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-danger"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-danger-13"
+              id="message-box-title-danger"
+            >
+              Error
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-dangerIcon-14"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="message-box-title-success"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-success-9"
+              id="message-box-title-success"
+            >
+              Successfully
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-successIcon-10"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <div
+    aria-labelledby="message-box-title-success"
+    className="MuiModal-root-29 MuiDialog-root-15"
+    onKeyDown={[Function]}
+    role="dialog"
+  >
+    <div
+      aria-hidden="true"
+      className="MuiBackdrop-root-31"
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    />
+    <div
+      className="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      role="document"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      tabIndex="-1"
+    >
+      <div
+        className="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+      >
+        <h2
+          className="MuiTypography-root-60 MuiTypography-title-66 MessageBox-success-9"
+          id="message-box-title-success"
+        >
+          Successfully
+        </h2>
+        <div
+          className="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+        >
+          <div
+            className="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+          >
+            <div
+              className="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-195 MessageBox-successIcon-10"
+                focusable="false"
+                role="presentation"
+                style={
+                  Object {
+                    "float": "left",
+                    "fontSize": 100,
+                    "paddingTop": "5px",
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiGrid-item-98 GridItem-grid-194"
+            >
+              <p>
+                Hello
+              </p>
+            </div>
+          </div>
         </div>
         <div
-          className="MuiGrid-item-84 GridItem-grid-180"
+          className="MuiDialogActions-root-204"
         >
-          <p>
-            Hello
-          </p>
+          <button
+            autoFocus={true}
+            className="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+            value="OK"
+          >
+            <span
+              className="MuiButton-label-207"
+            >
+              Ok
+            </span>
+            <span
+              className="MuiTouchRipple-root-235"
+            />
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="MuiDialogActions-root-188"
-    >
-      <button
-        autoFocus={true}
-        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-        value="OK"
-      >
-        <span
-          className="MuiButton-label-191"
-        >
-          Ok
-        </span>
-        <span
-          className="MuiTouchRipple-root-217"
-        />
-      </button>
-    </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Testing WithStyles(MessageBox) component render warning 1`] = `
-<div
-  aria-labelledby="message-box-title-warning"
-  className="MuiModal-root-26 MuiDialog-root-15 MuiDialog-scrollPaper-16"
-  role="dialog"
->
-  <div
-    aria-hidden="true"
-    className="MuiBackdrop-root-28"
-    onClick={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-  />
-  <div
-    className="MuiPaper-root-30 MuiPaper-elevation24-56 MuiPaper-rounded-31 MuiDialog-paper-18 MessageBox-dialog-1 MuiDialog-paperScrollPaper-19"
-    role="document"
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-    tabIndex="-1"
-  >
-    <h2
-      className="MuiTypography-root-57 MuiTypography-title-63 MessageBox-warning-11"
-      id="message-box-title-warning"
-    >
-      Warning
-    </h2>
-    <div
-      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
+<Portal
+  containerInfo={
+    <body
+      style="overflow: hidden; padding-right: 0px;"
     >
       <div
-        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
       >
         <div
-          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
         >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-181 MessageBox-warningIcon-12"
-            focusable="false"
-            style={
-              Object {
-                "float": "left",
-                "fontSize": 100,
-                "paddingTop": "5px",
-              }
-            }
-            viewBox="0 0 24 24"
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
           >
-            <path
-              d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-            />
-          </svg>
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-confirm"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-confirm-5"
+              id="message-box-title-confirm"
+            >
+              Confirmation
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-confirmIcon-6"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-raised-220 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="CANCEL"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Cancel
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-danger"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-danger-13"
+              id="message-box-title-danger"
+            >
+              Error
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-dangerIcon-14"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="message-box-title-success"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-success-9"
+              id="message-box-title-success"
+            >
+              Successfully
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-successIcon-10"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="message-box-title-warning"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
+        >
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+          >
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-warning-11"
+              id="message-box-title-warning"
+            >
+              Warning
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-warningIcon-12"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <div
+    aria-labelledby="message-box-title-warning"
+    className="MuiModal-root-29 MuiDialog-root-15"
+    onKeyDown={[Function]}
+    role="dialog"
+  >
+    <div
+      aria-hidden="true"
+      className="MuiBackdrop-root-31"
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    />
+    <div
+      className="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      role="document"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      tabIndex="-1"
+    >
+      <div
+        className="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+      >
+        <h2
+          className="MuiTypography-root-60 MuiTypography-title-66 MessageBox-warning-11"
+          id="message-box-title-warning"
+        >
+          Warning
+        </h2>
+        <div
+          className="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+        >
+          <div
+            className="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+          >
+            <div
+              className="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-195 MessageBox-warningIcon-12"
+                focusable="false"
+                role="presentation"
+                style={
+                  Object {
+                    "float": "left",
+                    "fontSize": 100,
+                    "paddingTop": "5px",
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiGrid-item-98 GridItem-grid-194"
+            >
+              <p>
+                Hello
+              </p>
+            </div>
+          </div>
         </div>
         <div
-          className="MuiGrid-item-84 GridItem-grid-180"
+          className="MuiDialogActions-root-204"
         >
-          <p>
-            Hello
-          </p>
+          <button
+            autoFocus={true}
+            className="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+            value="OK"
+          >
+            <span
+              className="MuiButton-label-207"
+            >
+              Ok
+            </span>
+            <span
+              className="MuiTouchRipple-root-235"
+            />
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="MuiDialogActions-root-188"
-    >
-      <button
-        autoFocus={true}
-        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-        value="OK"
-      >
-        <span
-          className="MuiButton-label-191"
-        >
-          Ok
-        </span>
-        <span
-          className="MuiTouchRipple-root-217"
-        />
-      </button>
-    </div>
   </div>
-</div>
+</Portal>
 `;
 
 exports[`Testing WithStyles(MessageBox) component render without error 1`] = `
-<div
-  aria-labelledby="message-box-title-info"
-  className="MuiModal-root-26 MuiDialog-root-15 MuiDialog-scrollPaper-16"
-  role="dialog"
->
-  <div
-    aria-hidden="true"
-    className="MuiBackdrop-root-28"
-    onClick={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-  />
-  <div
-    className="MuiPaper-root-30 MuiPaper-elevation24-56 MuiPaper-rounded-31 MuiDialog-paper-18 MessageBox-dialog-1 MuiDialog-paperScrollPaper-19"
-    role="document"
-    style={
-      Object {
-        "opacity": 1,
-        "willChange": "opacity",
-      }
-    }
-    tabIndex="-1"
-  >
-    <h2
-      className="MuiTypography-root-57 MuiTypography-title-63 MessageBox-info-7"
-      id="message-box-title-info"
-    >
-      Information
-    </h2>
-    <div
-      className="MuiDialogContent-root-82 MessageBox-dialogContent-2"
+<Portal
+  containerInfo={
+    <body
+      style="overflow: hidden; padding-right: 0px;"
     >
       <div
-        className="MuiGrid-container-83 MuiGrid-align-items-xs-baseline-94 MessageBox-content-3"
+        aria-labelledby="message-box-title-info"
+        class="MuiModal-root-29 MuiDialog-root-15"
+        role="dialog"
       >
         <div
-          className="MuiGrid-item-84 MuiGrid-grid-xs-4-115 MuiGrid-grid-sm-2-127 MuiGrid-grid-md-2-141 GridItem-grid-180"
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
+          aria-hidden="true"
+          class="MuiBackdrop-root-31"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        />
+        <div
+          class="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+          role="document"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="-1"
         >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-181 MessageBox-infoIcon-8"
-            focusable="false"
-            style={
-              Object {
-                "float": "left",
-                "fontSize": 100,
-                "paddingTop": "5px",
-              }
-            }
-            viewBox="0 0 24 24"
+          <div
+            class="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
           >
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-            />
-          </svg>
+            <h2
+              class="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+              id="message-box-title-info"
+            >
+              Information
+            </h2>
+            <div
+              class="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+            >
+              <div
+                class="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+              >
+                <div
+                  class="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+                  style="padding: 0px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                    focusable="false"
+                    role="presentation"
+                    style="font-size: 100px; float: left; padding-top: 5px;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiGrid-item-98 GridItem-grid-194"
+                >
+                  <p>
+                    Hello
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiDialogActions-root-204"
+            >
+              <button
+                class="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+                tabindex="0"
+                type="button"
+                value="OK"
+              >
+                <span
+                  class="MuiButton-label-207"
+                >
+                  Ok
+                </span>
+                <span
+                  class="MuiTouchRipple-root-235"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  }
+>
+  <div
+    aria-labelledby="message-box-title-info"
+    className="MuiModal-root-29 MuiDialog-root-15"
+    onKeyDown={[Function]}
+    role="dialog"
+  >
+    <div
+      aria-hidden="true"
+      className="MuiBackdrop-root-31"
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    />
+    <div
+      className="MuiDialog-container-18 MuiDialog-scrollPaper-16"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      role="document"
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      tabIndex="-1"
+    >
+      <div
+        className="MuiPaper-root-33 MuiPaper-elevation24-59 MuiPaper-rounded-34 MuiDialog-paper-19 MessageBox-dialog-1 MuiDialog-paperScrollPaper-20"
+      >
+        <h2
+          className="MuiTypography-root-60 MuiTypography-title-66 MessageBox-info-7"
+          id="message-box-title-info"
+        >
+          Information
+        </h2>
+        <div
+          className="MuiDialogContent-root-96 MessageBox-dialogContent-2"
+        >
+          <div
+            className="MuiGrid-container-97 MuiGrid-align-items-xs-baseline-108 MessageBox-content-3"
+          >
+            <div
+              className="MuiGrid-item-98 MuiGrid-grid-xs-4-129 MuiGrid-grid-sm-2-141 MuiGrid-grid-md-2-155 GridItem-grid-194"
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-195 MessageBox-infoIcon-8"
+                focusable="false"
+                role="presentation"
+                style={
+                  Object {
+                    "float": "left",
+                    "fontSize": 100,
+                    "paddingTop": "5px",
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiGrid-item-98 GridItem-grid-194"
+            >
+              <p>
+                Hello
+              </p>
+            </div>
+          </div>
         </div>
         <div
-          className="MuiGrid-item-84 GridItem-grid-180"
+          className="MuiDialogActions-root-204"
         >
-          <p>
-            Hello
-          </p>
+          <button
+            autoFocus={true}
+            className="MuiButtonBase-root-232 MuiButton-root-206 MuiButton-contained-217 MuiButton-containedPrimary-218 MuiButton-raised-220 MuiButton-raisedPrimary-221 MessageBox-button-4 MuiDialogActions-action-205"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+            value="OK"
+          >
+            <span
+              className="MuiButton-label-207"
+            >
+              Ok
+            </span>
+            <span
+              className="MuiTouchRipple-root-235"
+            />
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="MuiDialogActions-root-188"
-    >
-      <button
-        autoFocus={true}
-        className="MuiButtonBase-root-214 MuiButton-root-190 MuiButton-contained-199 MuiButton-containedPrimary-200 MuiButton-raised-202 MuiButton-raisedPrimary-203 MessageBox-button-4 MuiDialogActions-action-189"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-        value="OK"
-      >
-        <span
-          className="MuiButton-label-191"
-        >
-          Ok
-        </span>
-        <span
-          className="MuiTouchRipple-root-217"
-        />
-      </button>
-    </div>
   </div>
-</div>
+</Portal>
 `;

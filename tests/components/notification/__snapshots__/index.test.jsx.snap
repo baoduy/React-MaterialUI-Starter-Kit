@@ -5,16 +5,17 @@ Array [
   Array [
     <button
       aria-describedby={null}
-      className="MuiButtonBase-root-55 MuiButton-root-31 MuiButton-text-33 MuiButton-flat-36 RegularButton-button-14"
+      className="MuiButtonBase-root-58 MuiButton-root-32 MuiButton-text-34 MuiButton-flat-37 RegularButton-button-15"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
       onMouseDown={[Function]}
-      onMouseEnter={[Function]}
       onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       onMouseUp={[Function]}
       onTouchEnd={[Function]}
       onTouchMove={[Function]}
@@ -24,12 +25,13 @@ Array [
       type="button"
     >
       <span
-        className="MuiButton-label-32"
+        className="MuiButton-label-33"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-58"
+          className="MuiSvgIcon-root-61"
           focusable="false"
+          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -38,7 +40,7 @@ Array [
         </svg>
       </span>
       <span
-        className="MuiTouchRipple-root-65"
+        className="MuiTouchRipple-root-90"
       />
     </button>,
     "",
