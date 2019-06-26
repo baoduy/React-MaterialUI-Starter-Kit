@@ -90,7 +90,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
-    "eslint": "^5.16.0",
+    "eslint": "^6.0.1",
     "eslint-plugin-react": "^7.12.4",
     "express": "^4.16.4",
     "extract-css-chunks-webpack-plugin": "^4.3.2",
