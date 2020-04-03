@@ -158,7 +158,7 @@
     "redux-toolbelt": "^2.2.2",
     "redux-toolbelt-thunk": "^2.1.2",
     "url-join": "^4.0.0",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.3"
   },
   "jest": {
     "coverageDirectory": "<rootDir>/tests/__coverage__/",
