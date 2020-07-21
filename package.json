@@ -151,7 +151,7 @@
     "react-redux": "^7.0.2",
     "react-redux-thunk-store": "^1.0.1",
     "react-router-dom": "^5.0.0",
-    "react-table": "^6.10.0",
+    "react-table": "^7.3.2",
     "redux": "^4.0.1",
     "redux-form": "^8.2.0",
     "redux-thunk": "^2.3.0",
