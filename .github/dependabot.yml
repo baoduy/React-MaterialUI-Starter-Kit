@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.20
+    - 26.0.22
+  - dependency-name: react-table
+    versions:
+    - 7.6.3
+  - dependency-name: react-chartist
+    versions:
+    - 0.14.3
